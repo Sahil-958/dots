@@ -34,11 +34,11 @@ element-text selected {
 }
 
 prompt {
-  text-color:#ffffff;
+  text-color:@foreground;
 }
 
 entry {
-  text-color:#ffffff;
+  text-color:@foreground;
 }
 
 /* vim: ft=sass
