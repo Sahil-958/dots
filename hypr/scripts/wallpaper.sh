@@ -16,24 +16,27 @@ case $1 in
 	    path=$(cat ~/.cache/current_wall_path.txt)
 	    wal -q -i $path
         else
-            wal -q -i ~/walls/
+	    wallpath=$(find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | shuf -n 1)
+            wal -q -i $wallpath
         fi
     ;;
 
     # Select wallpaper with rofi
     "select")
-        selected=$(ls -1 ~/walls| rofi -dmenu -replace -config ~/dots/rofi/config-wallpaper.rasi)
+        selected=$( find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" -printf "%f\n"| rofi -dmenu -replace -config ~/dots/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i ~/walls/$selected
+	wallpath=$(find ~/walls/ -type f -name $selected)
+	wal -q -i $wallpath  
     ;;
 
     # Randomly select wallpaper 
     *)
         notify-send "selecting wallpaper randomly"
-        wal -q -i ~/walls/
+	    wallpath=$(find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | shuf -n 1)
+            wal -q -i $wallpath
     ;;
 
 esac
@@ -41,22 +44,27 @@ esac
 # ----------------------------------------------------- 
 # Load current pywal color scheme
 # ----------------------------------------------------- 
+
 source "$HOME/.cache/wal/colors.sh"
 echo "Wallpaper: $wallpaper"
 
 # ----------------------------------------------------- 
 # Copy selected wallpaper into .cache folder
 # ----------------------------------------------------- 
+
 echo "$wallpaper" > ~/.cache/current_wall_path.txt
 cp $wallpaper ~/.cache/current_wallpaper.png
+
 # ----------------------------------------------------- 
 # get wallpaper iamge name
 # ----------------------------------------------------- 
-newwall=$(echo $wallpaper | sed "s|$HOME/walls/||g")
+
+newwall=$(echo $wallpaper | xargs basename)
 
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
+
 ~/dots/waybar/launch.sh
 
 # ----------------------------------------------------- 
