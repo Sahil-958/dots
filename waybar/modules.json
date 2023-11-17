@@ -60,6 +60,7 @@
         "on-click": "sleep 0.1 && ~/dots/scripts/cliphist.sh",
         "on-click-right": "sleep 0.1 && ~/dots/scripts/cliphist.sh d",
         "on-click-middle": "sleep 0.1 && ~/dots/scripts/cliphist.sh w",
+	"on-scroll-up": "sleep 0.1 && ~/dots/scripts/cliphist.sh q",
         "tooltip": false
     },
    
@@ -194,7 +195,8 @@
         "format-alt": "{icon}  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": [" ", " ", " ", " ", " "],
+	"on-click": "kinfocenter kcm_energyinfo"
     },
 
     // Pulseaudio
