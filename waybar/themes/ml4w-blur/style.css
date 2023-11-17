@@ -59,6 +59,7 @@ window#waybar {
     background-color: @workspacesbackground2;
     transition: all 0.3s ease-in-out;
     opacity: 0.4;
+    min-width: 12px;
 }
 
 #workspaces button.active {
