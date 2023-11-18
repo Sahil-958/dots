@@ -17,7 +17,7 @@ case $1 in
             cliphist wipe
        fi
        ;;
-    q) cliphist list | rofi -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist decode | qrencode -o- -l H -s 25 -m 2 --dpi=192 | swappy -f - 
+    q) cliphist list | rofi -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist decode | qrencode -o- -l H -s 25 -m 2 --dpi=192 | swappy -f - || notify-send "Text too large to encode" -t 10000 -u critical
        ;;
     *) cliphist list | rofi -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist decode | wl-copy
        ;;
