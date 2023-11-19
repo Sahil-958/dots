@@ -9,6 +9,12 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+#To avoid duplicate commands in History
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
+#When resizing a terminal emulator, Bash may not receive the resize signal. This will cause typed text to not wrap correctly and overlap the prompt. The checkwinsize shell option checks the window size after each command and, if necessary, updates the values of LINES and COLUMNS. 
+shopt -s checkwinsize
+
 fcd(){
 	cd "$(find -type d | fzf)"
 }
@@ -65,6 +71,8 @@ fi
 
 alias hr='history | sort -hu | sed "s/^[ \t]*[0-9]\+[ \t]*//"| fzf --reverse --height=60% |bash' 
 
+#Souring the below does the same as the command_not_found_handle does but i can customize the funtion to my likings
+#source /usr/share/doc/pkgfile/command-not-found.bash
 command_not_found_handle(){
 	echo "$1 Command Not Found! Run cnf $1 To search"
 }
