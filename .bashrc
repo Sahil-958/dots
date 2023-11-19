@@ -7,7 +7,22 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
+
+
+#PS1='[\u@\h \W]\$ '
+#Starship function to generate the custom prompt
+__main() {
+                local major="${BASH_VERSINFO[0]}"
+                local minor="${BASH_VERSINFO[1]}"
+
+                if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
+                    source <(/usr/bin/starship init bash --print-full-init)
+                else
+                    source /dev/stdin <<<"$(/usr/bin/starship init bash --print-full-init)"
+                fi
+            }
+            __main
+            unset -f __main
 
 #To avoid duplicate commands in History
 export HISTCONTROL=ignoredups
