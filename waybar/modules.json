@@ -220,6 +220,13 @@
         "on-click": "pavucontrol"
     },
 
+    //Brightness 
+    "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": [ "󰛩","󱩎","󱩎","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"  ],
+    },
+
     // Bluetooth
     "bluetooth": {
         "format-disabled": "",

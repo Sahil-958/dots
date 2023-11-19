@@ -277,7 +277,7 @@ window#waybar.empty #window {
  * Pulseaudio
  * ----------------------------------------------------- */
 
-#pulseaudio {
+#pulseaudio,#backlight {
     background-color: @backgroundlight;
     font-size: 16px;
     color: @textcolor2;
@@ -397,9 +397,6 @@ label:focus {
     background-color: #000000;
 }
 
-#backlight {
-    background-color: #90b1b1;
-}
 
 #network {
     background-color: #2980b9;

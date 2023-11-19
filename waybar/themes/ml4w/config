@@ -50,6 +50,7 @@
         "network",
         //"custom/updates",
         "pulseaudio",
+	"backlight",
         "battery", 
         "group/hardware",
         "custom/cliphist",
