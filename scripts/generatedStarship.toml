@@ -1,0 +1,128 @@
+format = """
+[░▒▓](#a8876c)\
+[  ](bg:#a8876c fg:#f1c19b)\
+$sudo\
+[](bg:#f1c19b fg:#a8876c)\
+$username\
+$hostname\
+$directory\
+[](fg:#f1c19b bg:#CF8950)\
+$git_branch\
+$git_status\
+[](fg:#CF8950 bg:#AF7445)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:#AF7445 bg:#8D603C)\
+$time\
+[](fg:#8D603C)\
+\n$character\
+"""
+
+right_format="""
+[](fg:#f1c19b bg:transparent)\
+$status\
+[](fg:#f1c19b bg:transparent)\
+"""
+add_newline = false
+
+[character]
+#success_symbol = '[❯](#00ff00) '
+#error_symbol = '[❯](#ff0000)'
+success_symbol = '[❯](#f1c19b)'
+error_symbol = '[❯](#ff0000)'
+
+[username]
+style_user = 'fg:#976742 bg:#f1c19b'
+style_root = 'black bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)[@$hostname:](fg:#976742 bg:#f1c19b)'
+trim_at = '.'
+ssh_symbol = '󰣀'
+disabled = false
+
+[sudo]
+format ='[$symbol]($style)'
+style = 'bg:#a8876c fg:#f1c19b'
+symbol = '󰚌 '
+disabled = false
+
+[directory]
+style = "fg:#976742 bg:#f1c19b"
+before_repo_root_style = "fg:#976742 bg:#f1c19b"
+repo_root_style="fg:#976742 bg:#f1c19b"
+read_only= "󰉑"
+read_only_style= "bg:#BE804D"
+format = "[$path]($style)[$read_only]($read_only_style)"
+repo_root_format="[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path  ]($style)[$read_only]($read_only_style)"
+truncation_length = 6
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰽰 "
+"Pictures" = " "
+
+
+[git_branch]
+symbol = "󰘬"
+style = "bg:#CF8950"
+format = '[[ $symbol $branch ](fg:#f1c19b bg:#CF8950)]($style)'
+
+[git_status]
+style = "bg:#CF8950"
+format = '[[($all_status$ahead_behind )](fg:#f1c19b bg:#CF8950)]($style)'
+#added by me
+conflicted = ' 🏳 '
+ahead = '󰵵🏎 ⇡${count}'
+behind = '󰱬 ⇣${count}'
+diverged = '󰚛 ⇕⇡${ahead_count}⇣${behind_count}'
+up_to_date = ' ✓ '
+untracked = '  '
+stashed = ' 📦 '
+modified = ' 󰷉 '
+staged = '[++\($count\)](green)'
+renamed = ' 󰇹 '
+deleted = ' 🗑 '
+
+[nodejs]
+symbol = ""
+style = "bg:#AF7445"
+format = '[[ $symbol ($version) ](fg:#f1c19b bg:#AF7445)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#AF7445"
+format = '[[ $symbol ($version) ](fg:#f1c19b bg:#AF7445)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#AF7445"
+format = '[[ $symbol ($version) ](fg:#f1c19b bg:#AF7445)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#AF7445"
+format = '[[ $symbol ($version) ](fg:#f1c19b bg:#AF7445)]($style)'
+
+[time]
+disabled = false
+time_format = "%A %d %b %I:%M %P" # Hour:Minute Format
+style = "bg:#8D603C"
+format = '[[  $time ](fg:#CF8950 bg:#8D603C)]($style)'
+
+[status]
+style = 'fg:#976742 bg:#f1c19b'
+symbol = ''
+success_symbol = ''
+format = '[ $symbol $common_meaning$signal_name$maybe_int]($style)'
+map_symbol = true
+disabled = false
