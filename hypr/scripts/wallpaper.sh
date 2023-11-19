@@ -68,6 +68,13 @@ newwall=$(echo $wallpaper | xargs basename)
 ~/dots/waybar/launch.sh
 
 # ----------------------------------------------------- 
+# Generate the starship.toml file with new colors
+# -----------------------------------------------------
+
+~/dots/scripts/waltostarship.sh
+
+
+# ----------------------------------------------------- 
 # Set the new wallpaper
 # -----------------------------------------------------
 # transition_type="wipe"
