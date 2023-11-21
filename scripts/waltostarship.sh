@@ -1,17 +1,5 @@
 #!/bin/bash
 source ~/.cache/wal/colors.sh
-#a3aed2 as color8
-#090c0c as foreground done
-#c9cbff as color 7 done
-#394260 as color 14 done
-#2e374c as color 3 done
-#212736 as color3 done
-#6c7086 as color 9 done
-#4c4f69 as color 2 done
-#f38ba8 as color 13
-#a0a9cb as color 1 
-#
-
 
 output=$(cat <<EOF
 format = """
@@ -146,4 +134,4 @@ EOF
 )
 
 #echo "$output" 
-printf "%b\n" "$output" > ~/dots/scripts/generatedStarship.toml
+printf "%b\n" "$output" > ~/.config/starship.toml
