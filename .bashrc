@@ -39,7 +39,7 @@ fhcd(){
 }
 
 frcd(){
-        sudo cd "$(sudo find / -type d -not -path '*snapshot*'| fzf)"
+         cd "$(sudo find / -type d -not -path '*snapshot*'| fzf)"
 }
 
 open(){
@@ -56,7 +56,7 @@ openh(){
 
 
 openr(){
-	xdg-open "$(sudo find / -type f |fzf)"
+	xdg-open "$( find / -type f |fzf)"
 }
 
 snapr(){
