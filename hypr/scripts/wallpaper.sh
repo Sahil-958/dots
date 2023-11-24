@@ -7,7 +7,7 @@
 #                   |_|         |_|               
 #  
 # ----------------------------------------------------- 
-
+isFromCache=false
 case $1 in
 
     # Load wallpaper from .cache of last session 
@@ -15,6 +15,7 @@ case $1 in
         if [ -f ~/.cache/current_wall_path.txt ]; then
 	    path=$(cat ~/.cache/current_wall_path.txt)
 	    wal -q -i $path
+	    isFromCache=true
         else
 	    wallpath=$(find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | shuf -n 1)
             wal -q -i $wallpath
@@ -93,5 +94,14 @@ swww img $wallpaper \
 # ----------------------------------------------------- 
 sleep 1
 notify-send "Colors and Wallpaper updated" "with image $newwall"
+
+# ----------------------------------------------------- 
+# Generate the new gtk,qt etc with oomox file with new colors
+# -----------------------------------------------------
+if [ "$isFromCache" = false ]; then
+echo "passed"
+~/dots/scripts/genQTGTK.sh
+
+fi
 
 echo "DONE!"
