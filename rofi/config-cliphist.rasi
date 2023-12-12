@@ -250,3 +250,5 @@ error-message {
     background-color:            @background;
     text-color:                  @foreground;
 }
+
+@import "~/dots/rofi/pywal.rasi"
