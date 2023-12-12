@@ -90,8 +90,13 @@ swww img $wallpaper \
     --transition-pos "$( hyprctl cursorpos )"
 
 # ----------------------------------------------------- 
-# Send notification
+# Update Dunst theme and Send notification
 # ----------------------------------------------------- 
+~if [ "$isFromCache" = false ]; then
+echo "passed"
+~/dots/scripts/updateRest.sh
+fi
+
 sleep 1
 notify-send "Colors and Wallpaper updated" "with image $newwall"
 
