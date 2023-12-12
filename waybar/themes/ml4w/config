@@ -52,6 +52,7 @@
         "pulseaudio",
 	"backlight",
         "battery", 
+	"tray",
         "group/hardware",
         "custom/cliphist",
         "custom/exit",

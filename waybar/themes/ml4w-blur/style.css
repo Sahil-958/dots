@@ -345,7 +345,7 @@ window#waybar.empty #window {
     color: @textcolor2;
     border-radius: 15px;
     padding: 2px 15px 0px 10px;
-    margin: 8px 15px 8px 0px;
+    margin: 8px 10px 8px 0px;
     opacity:0.8;
 }
 
@@ -376,7 +376,10 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-    background-color: #2980b9;
+    background-color: @backgroundlight;
+    margin: 8px 10px 8px 0px;
+    padding: 2px 8px;
+    border-radius: 15px;
 }
 
 #tray > .passive {
