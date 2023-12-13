@@ -92,7 +92,7 @@ swww img $wallpaper \
 # ----------------------------------------------------- 
 # Update Dunst theme and Send notification
 # ----------------------------------------------------- 
-~if [ "$isFromCache" = false ]; then
+if [ "$isFromCache" = false ]; then
 echo "passed"
 ~/dots/scripts/updateRest.sh
 fi
