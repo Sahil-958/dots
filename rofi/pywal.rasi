@@ -35,6 +35,7 @@
 }
 window {
     background-color: @background;
+    border-color: @separatorcolor;
 }
 mainbox {
     border-color:     @separatorcolor;
