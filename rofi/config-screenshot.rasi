@@ -251,4 +251,4 @@ error-message {
     text-color:                  @foreground;
 }
 
-@import "~/dots/rofi/pyawl.rasi"
+@import "~/dots/rofi/pywal.rasi"
