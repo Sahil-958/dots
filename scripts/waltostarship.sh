@@ -121,7 +121,7 @@ format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
 disabled = false
 time_format = "%A %d %b %I:%M %P" # Hour:Minute Format
 style = "bg:$color9"
-format = '[[  \$time ](fg:$color14 bg:$color9)](\$style)'
+format = '[[ \$time](fg:$color14 bg:$color9)](\$style)'
 
 [status]
 style = 'fg:$color2 bg:$color7'
