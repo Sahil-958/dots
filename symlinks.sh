@@ -1,8 +1,8 @@
 # FOR PACKAGE LIST UPDATION
-ln -s ~/dots/package_list_contorl/packgae_update.sh /usr/bin
-ln -s ~/dots/package_list_contorl/update_package_list.hook /etc/pacman.d/hooks/
-ln -s ~/dots/package_list_contorl/pkglist_hooks_generated.txt /etc/pacman.d/hooks/
-ln -s ~/dots/package_list_contorl/pkglist_forgien_hooks_generated.txt /etc/pacman.d/hooks/
+ln -s ~/dots/package_list_control/packgae_update.sh /usr/bin
+ln -s ~/dots/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
+ln -s ~/dots/package_list_control/pkglist_hooks_generated.txt /etc/pacman.d/hooks/
+ln -s ~/dots/package_list_control/pkglist_forgien_hooks_generated.txt /etc/pacman.d/hooks/
 
 # FOR HYPRLAND AND OTHER GUI UTILS
 ln -s ~/dots/hypr ~/.config/
