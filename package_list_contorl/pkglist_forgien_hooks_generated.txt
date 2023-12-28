@@ -1,0 +1,9 @@
+cava 0.9.1-1
+librewolf-bin 120.0.1-1
+oomox-qt5-styleplugin-git 1.4.1.r36.ge15cd47-1
+pikaur 1.18.3-1
+swaylock-effects-git r420.7c5681c-1
+swww 0.8.1-0
+themix-full-git 1.15.1-1
+vscodium-bin 1.85.0.23343-1
+wlogout 1.1.1-3
