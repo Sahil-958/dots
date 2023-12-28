@@ -1,15 +1,18 @@
+#i found out that the below thing isn't needed anymore as vim can do that with regx i thought that can't be done with vim that's why in the frist place i tired to make something like below but as now i know how to do that in vim ( check vim regx manual page for info how to do that ) i no longer need this script but keeping it as i might help as a template when i need to rename or do any other things with regx. As i love the name i chosen for it Surgex or sergex;  Surgex - Super Regx and sounds fun, looks nice that's all i need to keep this in my repo LOL. And if you are reading this you are probably procastinating so i would suggest you to finish your work :)
 #!/bin/sh
 
 # Define the usage message
 usage() {
-  echo "Usage: $0 -M "pattern" -R "pattern" -F "file_path""
+  echo "Usage: $0 -m "pattern" -r "pattern" -f "file_path" -s "Substitution String Here" "
+  echo "Options marked with * are required."
   echo "Options:"
-  echo "  -M  Specify Pattern to Match"
-  echo "  -R  Specify Pattern whose matches going to be removed from matches matched by -M flag pattern"
-  echo "  -F  Specify file on which operation is Performed"
+  echo "*  -m  Specify Pattern to Match"
+  echo "*  -r  Specify Pattern whose matches going to be substituted with -s string from matches matched by -M flag pattern"
+  echo "*  -f  Specify file on which operation is Performed"
+  echo "   -s  Specify the substitution string that will be inserted in place of remove pattern result;Default value is empty string"
   exit 1
 }
-
+SUBSTITUTE=""
 
 while [[ $# -gt 0 ]]
 do
@@ -22,11 +25,15 @@ do
                         shift
                 ;;
                 -r|--remove)
-                        REMOVE="$2"
+                        REMOVE="${2}"
                         shift
                         ;;
                 -f|--file)
                         FILE="${2}"
+                        shift
+                ;;
+                -s|--substitute)
+                        SUBSTITUTE="${2}"
                         shift
                 ;;
                 *)
@@ -36,13 +43,19 @@ do
         esac
         shift
 done
-echo "results $MATCH $FILE $REMOVE"
+
+if [ -z "$FILE" ] || [ -z "$REMOVE" ] || [ -z "$MATCH" ]; then
+usage
+exit 1
+fi
+
+echo -e "MATCH_PATTERN:$MATCH \n FILE_PATH:$FILE\nREMOVE PATTERN: $REMOVE\nSUBSTITUTE_STRING:$SUBSTITUTE"
 matches=$(grep -ioP "$MATCH" "$FILE")
 IFS=$'\n'
 for match in $matches
 do
-    updated=$(echo $match |sed -r "s/$REMOVE//")
-    echo "$match ->$updated"
+    updated=$(echo $match |sed -r "s/$REMOVE/$SUBSTITUTE/")
+    echo "$match -> $updated"
 done
 
 
@@ -60,7 +73,7 @@ case "$answer" in
     sleep 1
     for match in $matches
     do
-        updated=$(echo $match |sed -r "s/$REMOVE//")
+        updated=$(echo $match |sed -r "s/$REMOVE/$SUBSTITUTE/")
         sed -ri "s/$match/$updated/g" "$FILE"
     done
     echo "Done Processing"
@@ -76,7 +89,7 @@ case "$answer" in
     cp $FILE $FILE.bak
     for match in $matches
     do
-        updated=$(echo $match |sed -r "s/$REMOVE//")
+        updated=$(echo $match |sed -r "s/$REMOVE/$SUBSTITUTE/")
         sed -ri "s/$match/$updated/g" "$FILE"
     done
     echo "Done Processing."
