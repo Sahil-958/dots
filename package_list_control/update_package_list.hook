@@ -6,4 +6,4 @@ Target = *
 
 [Action]
 When = PostTransaction
-Exec = /bin/sh -c '/usr/bin/package_update.sh'
+Exec = /bin/sh -c 'sudo -u sawhill /usr/bin/package_update.sh'
