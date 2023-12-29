@@ -30,6 +30,7 @@ grim 1.4.1-1
 grub 2:2.12rc1-7
 grub-btrfs 4.13-1
 gwenview 23.08.4-1
+htop 3.2.2-1
 hyprland 0.33.1-2
 imagemagick 7.1.1.23-1
 imlib2 1.12.1-1
