@@ -476,7 +476,7 @@ script = ~/dots/scripts/playNotificationSound.sh
 [global]
 frame_color = "{foreground}"
 separator_color = "{background}"
-hightlight= "{foreground}"
+highlight= "{foreground}"
 
 [urgency_low]
     msg_urgency = low
@@ -485,7 +485,7 @@ hightlight= "{foreground}"
 
 [urgency_normal]
     msg_urgency = normal
-    background = "{foreground}A0"
+    background = "{background}A0"
     foreground = "{foreground}"
 
 [urgency_critical]
