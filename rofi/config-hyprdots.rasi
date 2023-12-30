@@ -43,52 +43,6 @@ mode-switcher{
 }
 
 
-element normal.normal {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element normal.urgent {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element normal.active {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element selected.normal {
-    background-color:            @color11;
-    text-color:                  @foreground;
-}
-
-element selected.urgent {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element selected.active {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element alternate.normal {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element alternate.urgent {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element alternate.active {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-
 
 /*****----- Message -----*****/
 message {
@@ -219,4 +173,50 @@ element-text {
     background-color:            transparent;
     text-color:                  inherit;
 }
+
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element normal.urgent {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element normal.active {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @trans-color7;
+    text-color:                  @foreground;
+}
+
+element selected.urgent {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element selected.active {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element alternate.normal {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element alternate.urgent {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
+element alternate.active {
+    background-color:            inherit;
+    text-color:                  @foreground;
+}
+
 
