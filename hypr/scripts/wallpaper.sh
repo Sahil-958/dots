@@ -8,6 +8,9 @@
 #  
 # ----------------------------------------------------- 
 isFromCache=false
+cache_file="$HOME/.cache/current_wallpaper"
+rasi_file="$HOME/.cache/current_wallpaper.rasi"
+ 
 case $1 in
 
     # Load wallpaper from .cache of last session 
@@ -24,7 +27,14 @@ case $1 in
 
     # Select wallpaper with rofi
     "select")
-        selected=$( find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" -printf "%f\n"| rofi -dmenu -replace -config ~/dots/rofi/config-wallpaper.rasi)
+    selected=$( find "$HOME/walls/" -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | sort -R | while read rfile 
+    do
+        basename=$(basename $rfile)
+        echo -en "$basename\x00icon\x1f/${rfile}\n"
+    done | rofi -dmenu -replace -config ~/dots/rofi/config-wallpaper.rasi)
+
+        
+#    selected=$( find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" -printf "%f\n"| rofi -dmenu -replace -config ~/dots/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
@@ -55,6 +65,7 @@ echo "Wallpaper: $wallpaper"
 
 echo "$wallpaper" > ~/.cache/current_wall_path.txt
 cp $wallpaper ~/.cache/current_wallpaper.png
+echo "* { current-image: url(\"$wallpaper\", height); }" > "$rasi_file" 
 
 # ----------------------------------------------------- 
 # get wallpaper iamge name

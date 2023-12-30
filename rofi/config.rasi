@@ -14,7 +14,7 @@ configuration {
     modi:                       "drun,run";
     font:                       "Fira Sans Bold 12";
     show-icons:                 true;
-    icon-theme:                 "kora";
+    icon-theme:                 "testing_cli";
     display-drun:               "APPS";
     display-run:                "RUN";
     display-filebrowser:        "FILES";
@@ -47,7 +47,7 @@ window {
     anchor:                       center;
     fullscreen:                   false;
     enabled:                      true;
-    border-radius:                10px;
+    border-radius:                0px;
     background-color:             transparent;
 }
 
@@ -251,4 +251,3 @@ error-message {
     text-color:                  @foreground;
 }
 
-@import "~/dots/rofi/pywal.rasi"

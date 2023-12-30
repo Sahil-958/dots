@@ -13,12 +13,7 @@
 configuration {
     modi:                       "drun,run";
     font:                       "Fira Sans Bold 10";
-    show-icons:                 false;
-    icon-theme:                 "kora";
-    display-drun:               "APPS";
-    display-run:                "RUN";
-    display-filebrowser:        "FILES";
-    display-window:             "WINDOW";
+    show-icons:                 true;
 	hover-select:               true;
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
@@ -32,15 +27,15 @@ configuration {
 
 /* ---- Window ---- */
 window {
-    width:                        900px;
+    width:                        1200px;
     x-offset:                     0px;
     y-offset:                     65px;
     spacing:                      0px;
     padding:                      0px;
     margin:                       0px; 
-    color:                        #FFFFFF;
+    color:                        @foreground;
     border:                       3px;
-    border-color:                 #FFFFFF;
+    border-color:                 @foreground;
     cursor:                       "default";
     transparency:                 "real";
     location:                     north;
@@ -137,15 +132,15 @@ button selected {
 /* ---- Listview ---- */
 listview {
     enabled:                      true;
-    columns:                      1;
-    lines:                        8;
+    columns:                      2;
+    lines:                        2;
     cycle:                        true;
     dynamic:                      true;
     scrollbar:                    false;
     layout:                       vertical;
     reverse:                      false;
     fixed-height:                 true;
-    fixed-columns:                true;
+    fixed-columns:                false;
     spacing:                      0px;
     padding:                      10px;
     margin:                       0px;
@@ -212,8 +207,10 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        35%;
     cursor:                      inherit;
+    padding:                     0px;
+    margin:                      0px;
 }
 
 element-text {
@@ -251,4 +248,3 @@ error-message {
     text-color:                  @foreground;
 }
 
-@import "~/dots/rofi/pywal.rasi"
