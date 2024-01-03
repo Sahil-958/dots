@@ -10,10 +10,10 @@ inputbar {
     enabled:                      true;
     text-color:                   @foreground;
     spacing:                      10px;
-    padding:                      15px;
+    padding:                      5px;
     border-radius:                0px;
     border-color:                 @foreground;
-    background-color:             transparent;
+    background-color:             @color14;
     children:                     [ "textbox-prompt-colon", "entry" ];
 }
 
