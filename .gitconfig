@@ -1,0 +1,74 @@
+[user]
+	name = Sahil
+	email = 118348625+Sahil-958@users.noreply.github.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[pager]
+	branch = true
+
+; .gitconfig file with default values, explanations, possible options, and additional information
+
+[core]
+    ; Git's basic behavior and repository settings
+    autocrlf = input       ; Text files line endings handling: 
+                           ;   - input: Convert CRLF to LF on commit but not on checkout
+                           ;   - true: Convert CRLF to LF on commit and vice versa
+                           ;   - false: No line ending conversion (Default: input)
+    excludesfile = ~/.gitignore    ; Path to global gitignore file (Default: none)
+    editor = vim           ; Default text editor for Git (Default: none)
+
+[alias]
+    ; Custom Git aliases for commands
+    co = checkout          ; Shortcut for 'checkout'
+    ci = commit            ; Shortcut for 'commit'
+    st = status            ; Shortcut for 'status'
+    br = branch            ; Shortcut for 'branch'
+    df = diff              ; Shortcut for 'diff'
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit    ; Custom log format with graph (Default: none)
+
+[credential]
+    ; Configuration for storing credentials
+    helper = cache --timeout=300    ; Credential caching timeout in seconds
+                                     ;   - cache: Basic caching
+                                     ;   - store: Permanent storage (Default: none)
+
+[diff]
+    ; Configuration for how Git displays differences
+    tool = vimdiff          ; Diff tool to be used 
+                             ;   - vimdiff: Vim's diff mode
+                             ;   - meld: Visual diff and merge tool
+                             ;   - vscode: Visual Studio Code's built-in diff tool (Default: none)
+
+[merge]
+    ; Configuration for handling merges
+    tool = vimdiff          ; Merge tool to be used 
+                             ;   - vimdiff: Vim's diff mode
+                             ;   - meld: Visual diff and merge tool
+                             ;   - vscode: Visual Studio Code's built-in diff tool (Default: none)
+[push]
+    ; Configuration for push behavior
+    default = simple        ; Pushes the current branch to its upstream branch
+                             ;   - simple: Pushes the current branch to the corresponding remote branch
+                             ;   - matching: Pushes all local branches to corresponding remote branches (Default: matching)
+
+[pull]
+    ; Configuration for pull behavior
+    rebase = false          ; Rebase instead of merge when pulling (Default: false)
+
+[color]
+    ; Configuration for output coloring
+    ui = auto               ; Git will automatically colorize its output when possible
+                             ;   - auto: Enable output coloring if output is to a terminal (Default: auto)
+[init]
+    ; Configuration for new repository initialization
+    defaultBranch = main   ; Default branch name for new repositories (Default: master)
+
+[gc]
+    ; Garbage collection configuration
+    auto = 670              ; Automatically run 'git gc' if loose object count exceeds this number (Default: 670)
+
+
