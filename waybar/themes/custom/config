@@ -33,10 +33,9 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "custom/wallpaper",
-        "custom/waybarthemes",          
         "wlr/taskbar",
-        "hyprland/window"
+        "hyprland/window",
+        "group/hardware",
     ],
 
     // Modules Center
@@ -53,8 +52,9 @@
     	"backlight",
     	"tray", 
         "battery",
-        "group/hardware",
         "custom/cliphist",
+        "custom/wallpaper",
+        "custom/waybarthemes",
         "custom/exit",
         "clock"
     ],
