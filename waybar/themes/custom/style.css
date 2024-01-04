@@ -27,7 +27,7 @@ window#waybar {
 
 #workspaces {
     background: @workspacesbackground1;
-    margin: 0px 1px 2px 1px;
+    margin: 0px 1px 4px 1px;
     padding: 0px 10px;
     border-radius: 0px;;
     border: 0px;
@@ -76,10 +76,10 @@ window#waybar {
 
 tooltip {
     border-radius: 0px;;
-    background-color: @backgroundlight;
+    background-color: @backgrounddark;
     opacity:0.8;
-    padding:20px;
-    margin:0px;
+    padding:10px;
+    margin: 15px;
 }
 
 tooltip label {
@@ -103,8 +103,11 @@ tooltip label {
 }
 
 window#waybar.empty #window {
-    /*background-color:transparent;*/
+    background-color:transparent;
     margin-left: 0px;
+}
+window#waybar.empty #taskbar{
+    border-radius: 0px 0px 15px 15px;
 }
 
 /* -----------------------------------------------------
