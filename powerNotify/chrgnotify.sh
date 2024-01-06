@@ -16,13 +16,15 @@ function notify(){
     #sudo -u $user WAYLAND_DISPLAY=$way1 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus /usr/bin/notify-send "$@"
     #echo "$display $way0 $way1 $user $uid $@"
     #DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus  /usr/bin/notify-send "$@"
+    # Get some random icon
+    icon=$(find ~/.icons/ -name "*adapter*"|shuf -n 1)
 
 
     #only needed portion of the function
     user=$(who | awk '{print $1}' | head -n 1)
     uid=$(id -u $user)
     echo "$display $way0 $way1 $user $uid $@"
-    DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus  /usr/bin/notify-send "$@"
+    DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus  /usr/bin/notify-send -i "$icon" "$@"
 }
 
 case $1 in
