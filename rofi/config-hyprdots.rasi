@@ -1,5 +1,5 @@
 listbox {
-    spacing:                     20px;
+    spacing:                     0px;
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "inputbar", "message", "listview" ];
@@ -8,7 +8,7 @@ listbox {
 /* ---- Inputbar ---- */
 inputbar {
     enabled:                      true;
-    text-color:                   @foreground;
+    text-color:                   @background;
     spacing:                      10px;
     padding:                      5px;
     border-radius:                0px;
