@@ -1,3 +1,4 @@
-ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", RUN+="/usr/bin/su sawhill -c '/usr/bin/chrgnotify plugged'"
-ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", RUN+="/usr/bin/su sawhill -c '/usr/bin/chrgnotify unplugged'"
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", RUN+="/usr/bin/su sawhill -c 'chrgnotify plugged'"
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", RUN+="/usr/bin/su sawhill -c'chrgnotify unplugged'"
+#ACTION=="change", SUBSYSTEM=="power_supply", ATTR{capacity}=="85", ATTR{status}=="Charging", RUN+="/usr/bin/su sawhill -c '/usr/bin/chrgnotify  \"Battery percentage reached 85%% \"'"
 
