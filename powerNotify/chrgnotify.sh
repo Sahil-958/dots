@@ -23,17 +23,24 @@ function notify(){
     #only needed portion of the function
     user=$(who | awk '{print $1}' | head -n 1)
     uid=$(id -u $user)
-    echo "$display $way0 $way1 $user $uid $@"
     DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus  /usr/bin/notify-send -i "$icon" "$@"
 }
 
+per=$(cat /sys/class/power_supply/BAT0/capacity)
+
 case $1 in
     plugged) notify "Charger Plugged"
-       ;;
-    
-    unplugged) notify "Charger Unplugged"
-       ;;
-    *) notify "Undefined Option"
-     ;;
+             echo -e "$(date +%s)\n$per" > /tmp/chargeLog
+    ;;
+    unplugged) 
+               time=$(cat /tmp/chargeLog 2>/dev/null | head -n 1 || echo "can't retrieve status")
+               currentTime=$(date +%s)
+               preCharg=$(cat /tmp/chargeLog 2>/dev/null | tail -n 1 || echo "can't retrieve status")
+               chargDiff="$(($per - $preCharg ))"
+               timeDiff=$(("$currentTime" - $time))
+               formattedTime=$(date -d "@$timeDiff" -u +%H:%M:%S)
+               notify "Charger Unplugged" "Chargred $chargDiff% in $formattedTime"
+    ;;
+    *) notify ">|$1|<"
+    ;;
 esac
- 
