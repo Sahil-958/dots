@@ -48,6 +48,7 @@ noto-fonts-emoji 1:2.042-1
 oomox-qt5-styleplugin-git 1.4.1.r36.ge15cd47-1
 os-prober 1.81-1
 pavucontrol 1:5.0+r64+geba9ca6-1
+pdftk 3.3.3-3
 pikaur 1.18.3-1
 pipewire-pulse 1:1.0.0-2
 polkit-kde-agent 5.27.10-1
