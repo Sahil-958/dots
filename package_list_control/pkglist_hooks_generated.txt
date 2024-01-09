@@ -24,6 +24,7 @@ firefox 121.0-1
 firewalld 2.0.2-1
 fzf 0.44.1-1
 gammastep 2.0.9-2
+ghostscript 10.02.1-1
 git 2.43.0-1
 grim 1.4.1-1
 grub 2:2.12-1
