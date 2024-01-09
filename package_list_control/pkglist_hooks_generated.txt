@@ -54,7 +54,6 @@ polkit-kde-agent 5.27.10-1
 python-pyqt5 5.15.10-1
 python-pywal 3.3.0-8
 python-qrencode 1.2-13
-qpdf 11.7.0-1
 qt5-graphicaleffects 5.15.11-1
 qt5-quickcontrols 5.15.11-1
 qt5-quickcontrols2 5.15.11+kde+r5-1
