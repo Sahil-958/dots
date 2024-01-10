@@ -8,8 +8,6 @@
 #  
 # ----------------------------------------------------- 
 isFromCache=false
-cache_file="$HOME/.cache/current_wallpaper"
-rasi_file="$HOME/.cache/current_wallpaper.rasi"
  
 case $1 in
 
@@ -64,8 +62,6 @@ echo "Wallpaper: $wallpaper"
 # ----------------------------------------------------- 
 
 echo "$wallpaper" > ~/.cache/current_wall_path.txt
-cp $wallpaper ~/.cache/current_wallpaper.png
-echo "* { current-image: url(\"$wallpaper\", height); }" > "$rasi_file" 
 
 # ----------------------------------------------------- 
 # get wallpaper iamge name
