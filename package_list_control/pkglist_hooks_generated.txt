@@ -11,7 +11,6 @@ breeze-icons 5.113.0-1
 brightnessctl 0.5.1-2
 btop 1.3.0-1
 calibre 7.3.0-1
-cava 0.9.1-1
 cliphist 1:0.4.0-2
 cmatrix 2.0-2
 cmus 2.10.0-4
