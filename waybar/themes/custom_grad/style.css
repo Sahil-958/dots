@@ -34,7 +34,7 @@ window#waybar {
     font-style: normal;
     font-size: 16px;
     color: @textcolor1;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 20px 20px;
 }
 
 #workspaces button {
@@ -61,8 +61,6 @@ window#waybar {
     color: @textcolor1;
     background: @workspacesbackground2;
     opacity:0.7;
-    border-radius: 0 0 15px 15px;
-    margin-top: 0;
 }
 
 /* -----------------------------------------------------
