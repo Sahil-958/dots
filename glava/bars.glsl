@@ -1,0 +1,1 @@
+/home/sawhill/.cache/wal/bars.glsl

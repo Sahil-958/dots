@@ -16,4 +16,7 @@ ln -s ~/dots/gtkrc-2.0 ~/.config/
 ln -s ~/dots/gtkrc ~/.config/
 ln -s ~/dots/konsolerc ~/.config/
 ln -s ~/dots/swappy ~/.config/
+ln -s ~/dots/glava ~/.config/
+ln -s ~/.cache/wal/bars.glsl ~/dots/glava/
+
 
