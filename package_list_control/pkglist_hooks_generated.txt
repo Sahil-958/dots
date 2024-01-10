@@ -25,6 +25,7 @@ firewalld 2.1.0-1
 fzf 0.44.1-1
 gammastep 2.0.9-2
 git 2.43.0-1
+glava 1.6.3-3
 grim 1.4.1-1
 grub 2:2.12-1
 grub-btrfs 4.13-1
