@@ -1,6 +1,6 @@
 
 /* Vertical scale, larger values will amplify output */
-#define VSCALE 300
+#define VSCALE 150
 /* Rendering direction, either -1 (outwards) or 1 (inwards). */
 #define DIRECTION 1
 
