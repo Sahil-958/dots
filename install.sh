@@ -35,7 +35,7 @@ fi
 
 mount $root_partition /mnt 
 mount --mkdir $home_partition /mnt/home
-mount --mkdir $efi_partition /mnt/boot/efi
+mount --mkdir $efi_partition /mnt/boot/EFI
 swapon $swap_partition
 
 pacstrap /mnt base linux linux-firmware
@@ -66,8 +66,8 @@ echo "127.0.1.1       $hostname.localdomain $hostname" >> /etc/hosts
 echo "Set root password"
 passwd
 pacman --noconfirm -S grub efibootmgr os-prober
-mkdir /boot/efi
-grub-install --target=x86_64-efi --efi-directory=/mnt/boot/efi --bootloader-id=GRU\B
+mkdir -p /boot/EFI
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
 sed -i 's/quiet/pci=noaer/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -89,6 +89,8 @@ chmod +x $ai3_path
 su -c $ai3_path -s /bin/sh $username
 exit 0
 
+echo "sleep 10sec"
+sleep 10
 #part3
 set -x
 set -e
