@@ -1,8 +1,11 @@
 # == MY ARCH SETUP INSTALLER == #
+set -x 
+set -e
 #part1
 printf '\033c'
 echo "Welcome to sawhill's arch installer script (using bugswriter's script as a base)"
 sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
+reflector --country 'IN' --latest 50 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 pacman --noconfirm -Sy archlinux-keyring
 loadkeys us
 timedatectl set-ntp true
@@ -45,6 +48,8 @@ arch-chroot /mnt ./arch_install2.sh
 exit 
 
 #part2
+set -x
+set -e
 printf '\033c'
 pacman -S --noconfirm sed curl
 sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
@@ -72,9 +77,10 @@ sed -i 's/quiet/pci=noaer/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-pkglist=$(curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_hooks_generated.txt ||echo "amd-ucode ark base base-devel bash-completion blueman bluez-utils breeze breeze-gtk breeze-icons brightnessctl btop calibre cliphist cmatrix cmus dmenu dolphin dolphin-plugins dunst efibootmgr ffmpegthumbs firefox firewalld fzf gammastep git glava grim grub grub-btrfs gwenview hyprland imagemagick imlib2 jq konsole linux linux-firmware man-db mesa-utils neofetch neovim nethogs network-manager-applet networkmanager noto-fonts-emoji os-prober pavucontrol pipewire-pulse polkit-kde-agent python-pyqt5 python-pywal python-qrencode qbittorrent qpdf qt5-graphicaleffects qt5-quickcontrols qt5-quickcontrols2 qt5ct qt6-wayland qt6ct reflector rofi sddm slurp snapper starship swappy sxiv terminus-font tldr tree ttf-fira-sans unzip vi vim viu vlc waybar wl-clipboard xautolock xclip xdg-desktop-portal-hyprland xf86-video-amdgpu xf86-video-ati xf86-video-nouveau xorg-server xorg-xbacklight xorg-xev xorg-xinit xorg-xkill xorg-xprop xorg-xsetroot yt-dlp zip")
+curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_hooks_generated.txt > pkglist.txt ||echo "amd-ucode ark base base-devel bash-completion blueman bluez-utils breeze breeze-gtk breeze-icons brightnessctl btop calibre cliphist cmatrix cmus dmenu dolphin dolphin-plugins dunst efibootmgr ffmpegthumbs firefox firewalld fzf gammastep git glava grim grub grub-btrfs gwenview hyprland imagemagick imlib2 jq konsole linux linux-firmware man-db mesa-utils neofetch neovim nethogs network-manager-applet networkmanager noto-fonts-emoji os-prober pavucontrol pipewire-pulse polkit-kde-agent python-pyqt5 python-pywal python-qrencode qbittorrent qpdf qt5-graphicaleffects qt5-quickcontrols qt5-quickcontrols2 qt5ct qt6-wayland qt6ct reflector rofi sddm slurp snapper starship swappy sxiv terminus-font tldr tree ttf-fira-sans unzip vi vim viu vlc waybar wl-clipboard xautolock xclip xdg-desktop-portal-hyprland xf86-video-amdgpu xf86-video-ati xf86-video-nouveau xorg-server xorg-xbacklight xorg-xev xorg-xinit xorg-xkill xorg-xprop xorg-xsetroot yt-dlp zip" > pkglist.txt
 
-pacman -S --noconfirm "$pkglist"
+pacman -S --noconfirm --needed - < pkglist.txt
+
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 echo "Enter Username: "
 read username
@@ -89,6 +95,8 @@ su -c $ai3_path -s /bin/sh $username
 exit 
 
 #part3
+set -x
+set -e
 printf '\033c'
 cd $HOME
 sudo echo " %wheel ALL=(ALL:ALL) ALL" | tee -a  /etc/sudoers
@@ -100,9 +108,9 @@ cd pikaur
 makepkg -fsri
 cd
 
-forgien_pkgs=$(curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_forgien_hooks_generated.txt ||echo "librewolf-bin oomox-qt5-styleplugin-git pikaur swaylock-effects-git swww themix-full-git vscodium-bin wlogout")
+curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_forgien_hooks_generated.txt > foregien_pkgs.txt ||echo "librewolf-bin oomox-qt5-styleplugin-git pikaur swaylock-effects-git swww themix-full-git vscodium-bin wlogout") > foregien_pkgs.txt
 
-pikaur -S "$forgien_pkgs"
+pikaur -S --noconfirm --needed - < forgien_pkgs.txt
 
 echo "making symlinks"
 cd dots
