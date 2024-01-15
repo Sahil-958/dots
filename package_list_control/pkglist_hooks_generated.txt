@@ -1,4 +1,5 @@
 amd-ucode
+arch-install-scripts
 ark
 base
 base-devel
