@@ -10,18 +10,35 @@ lsblk
 echo "Enter the drive: "
 read drive
 cfdisk $drive 
-echo "Enter the linux partition: "
-read partition
-mkfs.ext4 $partition 
-read -p "Did you also create efi partition? [y/n]" answer
+
+echo "Enter the linux root partition: "
+read root_partition
+mkfs.btrfs $root_partition
+btrfs filesystem label $root_partition ROOT 
+
+echo "Enter the linux home partition: "
+read home_partition
+mkfs.btrfs $home_partition 
+btrfs filesystem label $home_partition HOME
+
+echo "Enter the swap partition: "
+read swap_partition 
+mkswap -L SWAP $swap_partition 
+
+read -p "Did you also want to create efi partition? [y/n]" answer
 if [[ $answer = y ]] ; then
   echo "Enter EFI partition: "
-  read efipartition
-  mkfs.vfat -F 32 $efipartition
+  read efi_partition
+  mkfs.vfat -F 32 -n BOOT $efi_partition
 fi
-mount $partition /mnt 
+
+mount $root_partition /mnt 
+mount --mkdir $home_partition /mnt/home
+mount --mkdir $efi_partition /mnt/boot
+swapon $swap_partition
+
 pacstrap /mnt base base-devel linux linux-firmware
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -L /mnt >> /mnt/etc/fstab
 sed '1,/^#part2$/d' `basename $0` > /mnt/arch_install2.sh
 chmod +x /mnt/arch_install2.sh
 arch-chroot /mnt ./arch_install2.sh
@@ -61,7 +78,7 @@ pacman -S --noconfirm "$pkglist"
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 echo "Enter Username: "
 read username
-useradd -m -G wheel -s /bin/zsh $username
+useradd -m -G wheel -s /bin/bash $username
 passwd $username
 echo "Pre-Installation Finish Reboot now"
 ai3_path=/home/$username/arch_install3.sh
@@ -75,7 +92,7 @@ exit
 printf '\033c'
 cd $HOME
 sudo echo " %wheel ALL=(ALL:ALL) ALL" | tee -a  /etc/sudoers
-git clone  https://github.com/Sahil-958/dots.git tmpdotfiles
+git clone  https://github.com/Sahil-958/dots.git 
 
 # pikaur: AUR helper
 git clone https://aur.archlinux.org/pikaur.git
@@ -90,6 +107,7 @@ pikaur -S "$forgien_pkgs"
 echo "making symlinks"
 cd dots
 sudo ln -s ~/dots/package_list_control/packgae_update.sh /usr/bin
+sudo mkdir -p /etc/pacman.d/hooks
 sudo ln -s ~/dots/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
 sudo ln -s ~/dots/package_list_control/pkglist_hooks_generated.txt /etc/pacman.d/hooks/
 sudo ln -s ~/dots/package_list_control/pkglist_forgien_hooks_generated.txt /etc/pacman.d/hooks/
@@ -101,8 +119,8 @@ sudo ln -s ~/dots/gammastep ~/.config/
 sudo ln -s ~/dots/gtk-3.0 ~/.config/
 sudo ln -s ~/dots/gtk-4.0 ~/.config/
 sudo ln -s ~/dots/gtkrc-2.0 ~/.config/
+sudo ln -s ~/dots/gtkrc-2.0 ~/
 sudo ln -s ~/dots/gtkrc ~/.config/
-sudo ln -s ~/dots/konsolerc ~/.config/
 sudo ln -s ~/dots/swappy ~/.config/
 sudo ln -s ~/dots/glava ~/.config/
 sudo ln -s ~/.cache/wal/bars.glsl ~/dots/glava/
@@ -118,10 +136,25 @@ sudo mkdir -p /etc/udev/rules.d
 sudo ln -s ~/dots/powerNotify/99-bat.rules /etc/udev/rules.d/
 sudo ln -s ~/.cache/wal/pywal.colorscheme ~/dots/konsole
 sudo ln -s ~/dots/konsole ~/.local/share/
+sudo ln -s ~/dots/konsolerc ~/.config/
 sudo cp -r ~/dots/fonts /usr/share/fonts
 sudo cp -r ~/dots/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
 sudo cp ~/dots/sddm.conf /etc/
+sudo ln -s ~/dots/.inputrc ~/
+sudo ln -s ~/dots/.bashrc ~/
+sudo ln -s ~/dots/.gitconfig ~/
+sudo ln -s ~/dots/.vimrc ~/
+sudo cp ~/dots/grub /etc/default/
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo cp ~/dots/mkinitcpio.conf /etc/
+sudo mkinitcpio -P
 
+echo "/* Always authenticate Admins by prompting for the root
+ * password, similar to the rootpw option in sudo
+ */
+polkit.addAdminRule(function(action, subject) {
+    return ["unix-user:root"];
+});" | sudo tee /etc/polkit-1/rules.d/49-rootpw_global.rules
 echo "don't foreget to change default password of the user created which is same as username"
 
 exit
