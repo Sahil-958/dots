@@ -16,11 +16,11 @@ cfdisk $drive
 
 echo "Enter the linux root partition: "
 read root_partition
-mkfs.ext4 -f -L ROOT $root_partition
+mkfs.ext4 -L ROOT $root_partition
 
 echo "Enter the linux home partition: "
 read home_partition
-mkfs.ext4 -f -L HOME $home_partition 
+mkfs.ext4 -L HOME $home_partition 
 
 echo "Enter the swap partition: "
 read swap_partition 
@@ -66,7 +66,8 @@ echo "127.0.1.1       $hostname.localdomain $hostname" >> /etc/hosts
 echo "Set root password"
 passwd
 pacman --noconfirm -S grub efibootmgr os-prober
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+mkdir /boot/efi
+grub-install --target=x86_64-efi --efi-directory=/mnt/boot/efi --bootloader-id=GRU\B
 sed -i 's/quiet/pci=noaer/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -86,8 +87,7 @@ sed '1,/^#part3$/d' arch_install2.sh > $ai3_path
 chown $username:$username $ai3_path
 chmod +x $ai3_path
 su -c $ai3_path -s /bin/sh $username
-sleep 5
-exit 
+exit 0
 
 #part3
 set -x
@@ -105,9 +105,9 @@ cd
 
 curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_forgien_hooks_generated.txt > foregien_pkgs.txt ||echo "librewolf-bin oomox-qt5-styleplugin-git pikaur swaylock-effects-git swww themix-full-git vscodium-bin wlogout") > foregien_pkgs.txt
 
-pkgs=$(cat foregien_pkgs.txt)
+#pkgs=$(cat foregien_pkgs.txt)
 
-pikaur -S "$pkgs"
+#pikaur -S "$pkgs"
 
 echo "making symlinks"
 cd dots
