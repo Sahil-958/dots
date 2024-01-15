@@ -5,7 +5,7 @@ set -e
 printf '\033c'
 echo "Welcome to sawhill's arch installer script (using bugswriter's script as a base)"
 sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
-reflector --country 'IN' --latest 50 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+reflector --country 'IN' --latest 50 --sort rate --save /etc/pacman.d/mirrorlist
 pacman --noconfirm -Sy archlinux-keyring
 loadkeys us
 timedatectl set-ntp true
@@ -16,13 +16,11 @@ cfdisk $drive
 
 echo "Enter the linux root partition: "
 read root_partition
-mkfs.btrfs $root_partition
-btrfs filesystem label $root_partition ROOT 
+mkfs.ext4 -f -L ROOT $root_partition
 
 echo "Enter the linux home partition: "
 read home_partition
-mkfs.btrfs $home_partition 
-btrfs filesystem label $home_partition HOME
+mkfs.ext4 -f -L HOME $home_partition 
 
 echo "Enter the swap partition: "
 read swap_partition 
@@ -32,15 +30,15 @@ read -p "Did you also want to create efi partition? [y/n]" answer
 if [[ $answer = y ]] ; then
   echo "Enter EFI partition: "
   read efi_partition
-  mkfs.vfat -F 32 -n BOOT $efi_partition
+  mkfs.fat -F 32 -n BOOT $efi_partition
 fi
 
 mount $root_partition /mnt 
 mount --mkdir $home_partition /mnt/home
-mount --mkdir $efi_partition /mnt/boot
+mount --mkdir $efi_partition /mnt/boot/efi
 swapon $swap_partition
 
-pacstrap /mnt base base-devel linux linux-firmware
+pacstrap /mnt base linux linux-firmware
 genfstab -L /mnt >> /mnt/etc/fstab
 sed '1,/^#part2$/d' `basename $0` > /mnt/arch_install2.sh
 chmod +x /mnt/arch_install2.sh
@@ -65,13 +63,9 @@ echo $hostname > /etc/hostname
 echo "127.0.0.1       localhost" >> /etc/hosts
 echo "::1             localhost" >> /etc/hosts
 echo "127.0.1.1       $hostname.localdomain $hostname" >> /etc/hosts
-mkinitcpio -P
+echo "Set root password"
 passwd
 pacman --noconfirm -S grub efibootmgr os-prober
-echo "Enter EFI partition: " 
-read efipartition
-mkdir /boot/efi
-mount $efipartition /boot/efi 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 sed -i 's/quiet/pci=noaer/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
@@ -82,7 +76,7 @@ curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_co
 pacman -S --noconfirm --needed - < pkglist.txt
 
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-echo "Enter Username: "
+echo -n "Enter Username: "
 read username
 useradd -m -G wheel -s /bin/bash $username
 passwd $username
@@ -92,6 +86,7 @@ sed '1,/^#part3$/d' arch_install2.sh > $ai3_path
 chown $username:$username $ai3_path
 chmod +x $ai3_path
 su -c $ai3_path -s /bin/sh $username
+sleep 5
 exit 
 
 #part3
@@ -99,7 +94,7 @@ set -x
 set -e
 printf '\033c'
 cd $HOME
-sudo echo " %wheel ALL=(ALL:ALL) ALL" | tee -a  /etc/sudoers
+echo " %wheel ALL=(ALL:ALL) ALL" | sudo tee -a  /etc/sudoers
 git clone  https://github.com/Sahil-958/dots.git 
 
 # pikaur: AUR helper
@@ -110,48 +105,50 @@ cd
 
 curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_forgien_hooks_generated.txt > foregien_pkgs.txt ||echo "librewolf-bin oomox-qt5-styleplugin-git pikaur swaylock-effects-git swww themix-full-git vscodium-bin wlogout") > foregien_pkgs.txt
 
-pikaur -S --noconfirm --needed - < forgien_pkgs.txt
+pkgs=$(cat foregien_pkgs.txt)
+
+pikaur -S "$pkgs"
 
 echo "making symlinks"
 cd dots
-sudo ln -s ~/dots/package_list_control/packgae_update.sh /usr/bin
+sudo ln -sf ~/dots/package_list_control/packgae_update.sh /usr/bin
 sudo mkdir -p /etc/pacman.d/hooks
-sudo ln -s ~/dots/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
-sudo ln -s ~/dots/package_list_control/pkglist_hooks_generated.txt /etc/pacman.d/hooks/
-sudo ln -s ~/dots/package_list_control/pkglist_forgien_hooks_generated.txt /etc/pacman.d/hooks/
-sudo ln -s ~/dots/hypr ~/.config/
-sudo ln -s ~/dots/waybar ~/.config/
-sudo ln -s ~/dots/rofi ~/.config/
-sudo ln -s ~/dots/wlogout ~/.config/
-sudo ln -s ~/dots/gammastep ~/.config/
-sudo ln -s ~/dots/gtk-3.0 ~/.config/
-sudo ln -s ~/dots/gtk-4.0 ~/.config/
-sudo ln -s ~/dots/gtkrc-2.0 ~/.config/
-sudo ln -s ~/dots/gtkrc-2.0 ~/
-sudo ln -s ~/dots/gtkrc ~/.config/
-sudo ln -s ~/dots/swappy ~/.config/
-sudo ln -s ~/dots/glava ~/.config/
-sudo ln -s ~/.cache/wal/bars.glsl ~/dots/glava/
-sudo ln -s ~/.cache/wal/circle.glsl ~/dots/glava/
-sudo ln -s ~/.cache/wal/graph.glsl ~/dots/glava/
-sudo ln -s ~/.cache/wal/wave.glsl ~/dots/glava/
-sudo ln -s ~/dots/dunst ~/.config
-sudo ln -s ~/dots/mimeapps.list ~/.config
-sudo ln -s ~/dots/swappy ~/.config
-sudo ln -s ~/dots/swaylock ~/.config
-sudo ln -s ~/dots/wal ~/.config
+sudo ln -sf ~/dots/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
+sudo ln -sf ~/dots/package_list_control/pkglist_hooks_generated.txt /etc/pacman.d/hooks/
+sudo ln -sf ~/dots/package_list_control/pkglist_forgien_hooks_generated.txt /etc/pacman.d/hooks/
+sudo ln -sf ~/dots/hypr ~/.config/
+sudo ln -sf ~/dots/waybar ~/.config/
+sudo ln -sf ~/dots/rofi ~/.config/
+sudo ln -sf ~/dots/wlogout ~/.config/
+sudo ln -sf ~/dots/gammastep ~/.config/
+sudo ln -sf ~/dots/gtk-3.0 ~/.config/
+sudo ln -sf ~/dots/gtk-4.0 ~/.config/
+sudo ln -sf ~/dots/gtkrc-2.0 ~/.config/
+sudo ln -sf ~/dots/gtkrc-2.0 ~/
+sudo ln -sf ~/dots/gtkrc ~/.config/
+sudo ln -sf ~/dots/swappy ~/.config/
+sudo ln -sf ~/dots/glava ~/.config/
+sudo ln -sf ~/.cache/wal/bars.glsl ~/dots/glava/
+sudo ln -sf ~/.cache/wal/circle.glsl ~/dots/glava/
+sudo ln -sf ~/.cache/wal/graph.glsl ~/dots/glava/
+sudo ln -sf ~/.cache/wal/wave.glsl ~/dots/glava/
+sudo ln -sf ~/dots/dunst ~/.config
+sudo ln -sf ~/dots/mimeapps.list ~/.config
+sudo ln -sf ~/dots/swappy ~/.config
+sudo ln -sf ~/dots/swaylock ~/.config
+sudo ln -sf ~/dots/wal ~/.config
 sudo mkdir -p /etc/udev/rules.d
-sudo ln -s ~/dots/powerNotify/99-bat.rules /etc/udev/rules.d/
-sudo ln -s ~/.cache/wal/pywal.colorscheme ~/dots/konsole
-sudo ln -s ~/dots/konsole ~/.local/share/
-sudo ln -s ~/dots/konsolerc ~/.config/
+sudo ln -sf ~/dots/powerNotify/99-bat.rules /etc/udev/rules.d/
+sudo ln -sf ~/.cache/wal/pywal.colorscheme ~/dots/konsole
+sudo ln -sf ~/dots/konsole ~/.local/share/
+sudo ln -sf ~/dots/konsolerc ~/.config/
 sudo cp -r ~/dots/fonts /usr/share/fonts
 sudo cp -r ~/dots/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
 sudo cp ~/dots/sddm.conf /etc/
-sudo ln -s ~/dots/.inputrc ~/
-sudo ln -s ~/dots/.bashrc ~/
-sudo ln -s ~/dots/.gitconfig ~/
-sudo ln -s ~/dots/.vimrc ~/
+sudo ln -sf ~/dots/.inputrc ~/
+sudo ln -sf ~/dots/.bashrc ~/
+sudo ln -sf ~/dots/.gitconfig ~/
+sudo ln -sf ~/dots/.vimrc ~/
 sudo cp ~/dots/grub /etc/default/
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo cp ~/dots/mkinitcpio.conf /etc/
