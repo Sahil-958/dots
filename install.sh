@@ -141,6 +141,7 @@ sudo ln -sf ~/.cache/wal/circle.glsl ~/dots/glava/
 sudo ln -sf ~/.cache/wal/graph.glsl ~/dots/glava/
 sudo ln -sf ~/.cache/wal/wave.glsl ~/dots/glava/
 sudo ln -sf ~/dots/dunst ~/.config
+sudo ln -sf ~/.cache/wal/dunstrc ~/dots/dunst/ 
 sudo ln -sf ~/dots/mimeapps.list ~/.config
 sudo ln -sf ~/dots/swappy ~/.config
 sudo ln -sf ~/dots/swaylock ~/.config
