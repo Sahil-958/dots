@@ -92,7 +92,6 @@ echo -n "2.."
 sleep 5
 echo -n "1"
 sleep 5
-exit 0
 echo "enter disk to unmount"
 read disk
 umount -R $disk
@@ -121,9 +120,9 @@ curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_co
 
 #pkgs=$(cat foregien_pkgs.txt)
 
-#pikaur -S "$pkgs"
+pikaur -S swww 
 cd
-mkdir Desktop Downloads Documents Music Pictures Videos
+mkdir -p Desktop Downloads Documents Music Pictures Videos .local/share
 git clone --depth=1 https://github.com/Sahil-958/walls.git 
 git clone --depth=1 https://github.com/Sahil-958/apexNotificationSounds.git  ~/Music/apexNotificationSounds
 
@@ -144,7 +143,7 @@ sudo ln -sf ~/dots/gammastep ~/.config/
 sudo ln -sf ~/dots/gtk-3.0 ~/.config/
 sudo ln -sf ~/dots/gtk-4.0 ~/.config/
 sudo ln -sf ~/dots/gtkrc-2.0 ~/.config/
-sudo ln -sf ~/dots/gtkrc-2.0 ~/
+sudo ln -sf ~/dots/gtkrc-2.0 ~/.gtkrc-2.0
 sudo ln -sf ~/dots/gtkrc ~/.config/
 sudo ln -sf ~/dots/swappy ~/.config/
 sudo ln -sf ~/dots/glava ~/.config/
