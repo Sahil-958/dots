@@ -153,6 +153,9 @@ sudo ln -sf ~/dots/.inputrc ~/
 sudo ln -sf ~/dots/.bashrc ~/
 sudo ln -sf ~/dots/.gitconfig ~/
 sudo ln -sf ~/dots/.vimrc ~/
+sudo ln -sf ~/dots/qt5ct ~/.config/
+sudo ln -sf ~/dots/qt6ct ~/.config/
+cp ~/dots/environment /etc/
 sudo cp ~/dots/grub /etc/default/
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo cp ~/dots/mkinitcpio.conf /etc/
