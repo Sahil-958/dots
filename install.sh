@@ -129,7 +129,7 @@ git clone --depth=1 https://github.com/Sahil-958/apexNotificationSounds.git  ~/M
 echo "making symlinks"
 cd dots
 sudo ln -sf ~/dots/wal ~/.config/
-wal -i ~/walls/quotes_and_text/copy_from_another_quote_minimal.png
+~/dots/hypr/scripts/wallpaper.sh random
 sudo ln -sf ~/dots/package_list_control/packgae_update.sh /usr/bin
 sudo mkdir -p /etc/pacman.d/hooks
 sudo ln -sf ~/dots/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
