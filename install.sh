@@ -86,11 +86,9 @@ ai3_path=/home/$username/arch_install3.sh
 sed '1,/^#part3$/d' arch_install2.sh > $ai3_path
 chown $username:$username $ai3_path
 chmod +x $ai3_path
-su -c $ai3_path -s /bin/sh $username
+#su -c $ai3_path -s /bin/sh $username
 exit 0
 
-echo "sleep 10sec"
-sleep 10
 #part3
 set -x
 set -e
@@ -110,9 +108,14 @@ curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_co
 #pkgs=$(cat foregien_pkgs.txt)
 
 #pikaur -S "$pkgs"
+cd
+git clone https://github.com/Sahil-958/walls.git 
+git clone https://github.com/Sahil-958/apexNotificaitonSounds.git ~/Music/
 
 echo "making symlinks"
 cd dots
+sudo ln -sf ~/dots/wal ~/.config
+wal -i ~/walls/quotes_and_text/copy_from_another_quote_minimal.png
 sudo ln -sf ~/dots/package_list_control/packgae_update.sh /usr/bin
 sudo mkdir -p /etc/pacman.d/hooks
 sudo ln -sf ~/dots/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
@@ -138,12 +141,11 @@ sudo ln -sf ~/dots/dunst ~/.config
 sudo ln -sf ~/dots/mimeapps.list ~/.config
 sudo ln -sf ~/dots/swappy ~/.config
 sudo ln -sf ~/dots/swaylock ~/.config
-sudo ln -sf ~/dots/wal ~/.config
 sudo mkdir -p /etc/udev/rules.d
 sudo ln -sf ~/dots/powerNotify/99-bat.rules /etc/udev/rules.d/
 sudo ln -sf ~/.cache/wal/pywal.colorscheme ~/dots/konsole
-sudo ln -sf ~/dots/konsole ~/.local/share/
 sudo ln -sf ~/dots/konsolerc ~/.config/
+sudo ln -sf ~/dots/konsole ~/.local/share/
 sudo cp -r ~/dots/fonts /usr/share/fonts
 sudo cp -r ~/dots/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
 sudo cp ~/dots/sddm.conf /etc/
@@ -162,10 +164,6 @@ echo "/* Always authenticate Admins by prompting for the root
 polkit.addAdminRule(function(action, subject) {
     return ["unix-user:root"];
 });" | sudo tee /etc/polkit-1/rules.d/49-rootpw_global.rules
-
-cd
-git clone https://github.com/Sahil-958/walls.git 
-git clone https://github.com/Sahil-958/apexNotificaitonSounds.git ~/Music/
 
 echo "don't foreget to change default password of the user created which is same as username"
 
