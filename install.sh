@@ -127,7 +127,7 @@ git clone --depth=1 https://github.com/Sahil-958/apexNotificaitonSounds.git ~/Mu
 
 echo "making symlinks"
 cd dots
-sudo ln -sf ~/dots/wal ~/.config
+sudo ln -sf ~/dots/wal ~/.config/
 wal -i ~/walls/quotes_and_text/copy_from_another_quote_minimal.png
 sudo ln -sf ~/dots/package_list_control/packgae_update.sh /usr/bin
 sudo mkdir -p /etc/pacman.d/hooks
@@ -150,11 +150,11 @@ sudo ln -sf ~/.cache/wal/bars.glsl ~/dots/glava/
 sudo ln -sf ~/.cache/wal/circle.glsl ~/dots/glava/
 sudo ln -sf ~/.cache/wal/graph.glsl ~/dots/glava/
 sudo ln -sf ~/.cache/wal/wave.glsl ~/dots/glava/
-sudo ln -sf ~/dots/dunst ~/.config
+sudo ln -sf ~/dots/dunst ~/.config/
 sudo ln -sf ~/.cache/wal/dunstrc ~/dots/dunst/ 
-sudo ln -sf ~/dots/mimeapps.list ~/.config
-sudo ln -sf ~/dots/swappy ~/.config
-sudo ln -sf ~/dots/swaylock ~/.config
+sudo ln -sf ~/dots/mimeapps.list ~/.config/
+sudo ln -sf ~/dots/swappy ~/.config/
+sudo ln -sf ~/dots/swaylock ~/.config/
 sudo mkdir -p /etc/udev/rules.d
 sudo ln -sf ~/dots/powerNotify/99-bat.rules /etc/udev/rules.d/
 sudo ln -sf ~/.cache/wal/pywal.colorscheme ~/dots/konsole
