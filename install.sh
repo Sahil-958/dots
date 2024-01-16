@@ -85,11 +85,13 @@ ai3_path=/home/$username/arch_install3.sh
 sed '1,/^#part3$/d' arch_install2.sh > $ai3_path
 chown $username:$username $ai3_path
 chmod +x $ai3_path
-#su -c $ai3_path -s /bin/sh $username
 sudo systemctl enable NetworkManager.service
 echo  "Rebooting in 3.."
+sleep 5
 echo -n "2.."
+sleep 5
 echo -n "1"
+sleep 5
 exit 0
 echo "enter disk to unmount"
 read disk
@@ -123,7 +125,7 @@ curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_co
 cd
 mkdir Desktop Downloads Documents Music Pictures Videos
 git clone --depth=1 https://github.com/Sahil-958/walls.git 
-git clone --depth=1 https://github.com/Sahil-958/apexNotificaitonSounds.git ~/Music/
+git clone --depth=1 https://github.com/Sahil-958/apexNotificationSounds.git  ~/Music/apexNotificationSounds
 
 echo "making symlinks"
 cd dots
