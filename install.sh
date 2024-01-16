@@ -94,7 +94,7 @@ set -e
 printf '\033c'
 cd $HOME
 echo " %wheel ALL=(ALL:ALL) ALL" | sudo tee -a  /etc/sudoers
-git clone  --depth=1 https://github.com/Sahil-958/dots.git 
+git clone  --depth=1 https://github.com/Sahil-958/dots.git && find ~/dots -type f  -not -path "*.git*" -exec sed -i "s/sawhill/$USER/g" {} +
 
 # pikaur: AUR helper
 git clone https://aur.archlinux.org/pikaur.git
