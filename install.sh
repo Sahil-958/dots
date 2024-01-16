@@ -120,7 +120,7 @@ curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_co
 
 #pkgs=$(cat foregien_pkgs.txt)
 
-pikaur -S swww 
+pikaur -S swww  themeix-full-git
 cd
 mkdir -p Desktop Downloads Documents Music Pictures Videos .local/share
 git clone --depth=1 https://github.com/Sahil-958/walls.git 
