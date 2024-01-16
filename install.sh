@@ -5,7 +5,7 @@ set -e
 printf '\033c'
 echo "Welcome to sawhill's arch installer script (using bugswriter's script as a base)"
 sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
-reflector --country 'IN' --latest 50 --sort rate --save /etc/pacman.d/mirrorlist
+#reflector --country 'IN' --latest 50 --sort rate --save /etc/pacman.d/mirrorlist
 pacman --noconfirm -Sy archlinux-keyring
 loadkeys us
 timedatectl set-ntp true
@@ -86,15 +86,28 @@ sed '1,/^#part3$/d' arch_install2.sh > $ai3_path
 chown $username:$username $ai3_path
 chmod +x $ai3_path
 #su -c $ai3_path -s /bin/sh $username
+sudo systemctl enable NetworkManager.service
+echo  "Rebooting in 3.."
+echo -n "2.."
+echo -n "1"
 exit 0
+echo "enter disk to unmount"
+read disk
+umount -R $disk
+reboot
 
 #part3
 set -x
 set -e
 printf '\033c'
 cd $HOME
+sudo systemctl enable --now NetworkManager.service
+sudo systemctl enable sddm.service
+nmtui
+
 echo " %wheel ALL=(ALL:ALL) ALL" | sudo tee -a  /etc/sudoers
-git clone  --depth=1 https://github.com/Sahil-958/dots.git && find ~/dots -type f  -not -path "*.git*" -exec sed -i "s/sawhill/$USER/g" {} +
+git clone  --depth=1 https://github.com/Sahil-958/dots.git
+#find ~/dots -type f  -not -path "*.git*" -exec sed -i "s/sawhill/$USER/g" {} +
 
 # pikaur: AUR helper
 git clone https://aur.archlinux.org/pikaur.git
@@ -111,9 +124,6 @@ cd
 mkdir Desktop Downloads Documents Music Pictures Videos
 git clone --depth=1 https://github.com/Sahil-958/walls.git 
 git clone --depth=1 https://github.com/Sahil-958/apexNotificaitonSounds.git ~/Music/
-
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable sddm.service
 
 echo "making symlinks"
 cd dots
