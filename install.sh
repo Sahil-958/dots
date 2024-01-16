@@ -69,7 +69,6 @@ pacman --noconfirm -S grub efibootmgr os-prober
 mkdir -p /boot/EFI
 grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
 sed -i 's/quiet/pci=noaer/g' /etc/default/grub
-sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_hooks_generated.txt > pkglist.txt ||echo "amd-ucode ark base base-devel bash-completion blueman bluez-utils breeze breeze-gtk breeze-icons brightnessctl btop calibre cliphist cmatrix cmus dmenu dolphin dolphin-plugins dunst efibootmgr ffmpegthumbs firefox firewalld fzf gammastep git glava grim grub grub-btrfs gwenview hyprland imagemagick imlib2 jq konsole linux linux-firmware man-db mesa-utils neofetch neovim nethogs network-manager-applet networkmanager noto-fonts-emoji os-prober pavucontrol pipewire-pulse polkit-kde-agent python-pyqt5 python-pywal python-qrencode qbittorrent qpdf qt5-graphicaleffects qt5-quickcontrols qt5-quickcontrols2 qt5ct qt6-wayland qt6ct reflector rofi sddm slurp snapper starship swappy sxiv terminus-font tldr tree ttf-fira-sans unzip vi vim viu vlc waybar wl-clipboard xautolock xclip xdg-desktop-portal-hyprland xf86-video-amdgpu xf86-video-ati xf86-video-nouveau xorg-server xorg-xbacklight xorg-xev xorg-xinit xorg-xkill xorg-xprop xorg-xsetroot yt-dlp zip" > pkglist.txt
@@ -95,7 +94,7 @@ set -e
 printf '\033c'
 cd $HOME
 echo " %wheel ALL=(ALL:ALL) ALL" | sudo tee -a  /etc/sudoers
-git clone  https://github.com/Sahil-958/dots.git 
+git clone  --depth=1 https://github.com/Sahil-958/dots.git 
 
 # pikaur: AUR helper
 git clone https://aur.archlinux.org/pikaur.git
@@ -109,8 +108,12 @@ curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_co
 
 #pikaur -S "$pkgs"
 cd
-git clone https://github.com/Sahil-958/walls.git 
-git clone https://github.com/Sahil-958/apexNotificaitonSounds.git ~/Music/
+mkdir Desktop Downloads Documents Music Pictures Videos
+git clone --depth=1 https://github.com/Sahil-958/walls.git 
+git clone --depth=1 https://github.com/Sahil-958/apexNotificaitonSounds.git ~/Music/
+
+sudo systemctl enable NetworkManager.service
+sudo systemctl enable sddm.service
 
 echo "making symlinks"
 cd dots
