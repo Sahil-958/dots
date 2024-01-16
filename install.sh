@@ -105,7 +105,7 @@ cd pikaur
 makepkg -fsri
 cd
 
-curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_forgien_hooks_generated.txt > foregien_pkgs.txt ||echo "librewolf-bin oomox-qt5-styleplugin-git pikaur swaylock-effects-git swww themix-full-git vscodium-bin wlogout") > foregien_pkgs.txt
+curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/package_list_control/pkglist_forgien_hooks_generated.txt > foregien_pkgs.txt ||echo "librewolf-bin oomox-qt5-styleplugin-git pikaur swaylock-effects-git swww themix-full-git vscodium-bin wlogout" > foregien_pkgs.txt
 
 #pkgs=$(cat foregien_pkgs.txt)
 
