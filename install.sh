@@ -154,6 +154,7 @@ sudo ln -sf ~/dots/swappy ~/.config/
 sudo ln -sf ~/dots/swaylock ~/.config/
 sudo mkdir -p /etc/udev/rules.d
 sudo ln -sf ~/dots/powerNotify/99-bat.rules /etc/udev/rules.d/
+sudo ln -sf ~/dots/powerNotify/chrgnotify.sh /usr/bin/chrgnotify
 sudo ln -sf ~/.cache/wal/colors-konsole.colorscheme ~/dots/konsole/pywal.colorscheme
 sudo ln -sf ~/dots/konsolerc ~/.config/
 sudo ln -sf ~/dots/konsole ~/.local/share/
