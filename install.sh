@@ -39,7 +39,7 @@ mount --mkdir $efi_partition /mnt/boot/EFI
 swapon $swap_partition
 
 pacstrap /mnt base linux linux-firmware
-genfstab -L /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 sed '1,/^#part2$/d' `basename $0` > /mnt/arch_install2.sh
 chmod +x /mnt/arch_install2.sh
 arch-chroot /mnt ./arch_install2.sh
