@@ -186,6 +186,5 @@ polkit.addAdminRule(function(action, subject) {
     return ["unix-user:root"];
 });" | sudo tee /etc/polkit-1/rules.d/49-rootpw_global.rules
 
-echo "don't foreget to change default password of the user created which is same as username"
 
 exit
