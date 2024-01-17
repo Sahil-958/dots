@@ -65,6 +65,7 @@ reflector
 rofi
 sddm
 slurp
+smartmontools
 snapper
 starship
 swappy
