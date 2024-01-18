@@ -40,6 +40,14 @@ case $1 in
 	wallpath=$(find ~/walls/ -type f -name $selected)
 	wal -q -i $wallpath  
     ;;
+    
+    # Randomly select Remote wallpaper 
+    remote)
+        notify-send "selecting Remote wallpaper randomly"
+	    wallpath="/home/sawhill/.cache/current_wallpaper.png"
+        ./remote_wall.sh
+        wal -q -i $wallpath
+    ;;
 
     # Randomly select wallpaper 
     *)
