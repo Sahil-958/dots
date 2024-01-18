@@ -94,7 +94,7 @@ window {
     cursor:                      "default";
     spacing:                     0px;
     padding:                     0px;
-    border-radius:               0px;
+    border-radius: 0px;
     border-color:                transparent;
     background-color:            transparent;
 }
