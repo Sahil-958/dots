@@ -34,6 +34,7 @@ gwenview
 hyprland
 imagemagick
 imlib2
+jdk8-openjdk
 jq
 konsole
 linux
