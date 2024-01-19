@@ -10,3 +10,14 @@
 
 #NOT USING THEMEIX BASE 16 USING PYWAL TEMPLATES INSTEAD
 killall dunst; dunst &
+
+#SDDM THEME UPDATE
+wall_path=$(cat /home/sawhill/.cache/current_wall_path.txt)
+cat $wall_path > /usr/share/sddm/themes/sugar_candy/Backgrounds/Background.png
+
+source /home/sawhill/.cache/wal/colors.sh
+
+sed -i "s/^Background=.*$/Background=\"Backgrounds\/Background.png\"/g" /usr/share/sddm/themes/sugar_candy/theme.conf
+sed -i "s/MainColor=.*$/MainColor=\"$foreground\"/g" /usr/share/sddm/themes/sugar_candy/theme.conf
+sed -i "s/AccentColor=.*$/AccentColor=\"$foreground\"/g" /usr/share/sddm/themes/sugar_candy/theme.conf
+sed -i "s/BackgroundColor=.*$/BackgroundColor=\"$background\"/g" /usr/share/sddm/themes/sugar_candy/theme.conf

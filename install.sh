@@ -160,6 +160,7 @@ sudo ln -sf ~/dots/konsolerc ~/.config/
 sudo ln -sf ~/dots/konsole ~/.local/share/
 sudo cp -r ~/dots/fonts /usr/share/fonts
 sudo cp -r ~/dots/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
+sudo chown -r sawhill:sawhill /usr/share/sddm/themes/sugar_candy #So that script can modify it without elevated privleges 
 sudo cp ~/dots/sddm.conf /etc/
 sudo ln -sf ~/dots/.inputrc ~/
 sudo ln -sf ~/dots/.bashrc ~/
