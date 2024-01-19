@@ -220,3 +220,4 @@ element alternate.active {
 }
 
 
+@import "~/.cache/current_wall.rasi"

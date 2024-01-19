@@ -252,3 +252,4 @@ error-message {
     text-color:                  @foreground;
 }
 
+@import "~/.cache/current_wall.rasi"
