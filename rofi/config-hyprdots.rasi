@@ -2,7 +2,7 @@ listbox {
     spacing:                     0px;
     background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "inputbar", "listview" ];
 }
 
 /* ---- Inputbar ---- */
@@ -89,7 +89,8 @@ window {
     color:                       @foreground;
     enabled:                     true;
     fullscreen:                  false;
-    width:                       100%;
+    width:                       80%;
+    height:                      80%;
     transparency:                "real";
     cursor:                      "default";
     spacing:                     0px;
@@ -118,14 +119,14 @@ listview {
     scrollbar:                   false;
     margin:                      0px;
     background-color:            transparent;
-    border:                      0px;
+    border:                      0;
     columns:                     3;
     lines:                       1;
     spacing:                     50px;
-    padding:                     50px 60px 50px 60px;
-    cycle:                       true;
+    padding:                     50px 60px 0px 60px;
+    cycle:                       false;
     layout:                      vertical;
-    reverse:                     true;
+    reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
     cursor:                      "default";
@@ -139,16 +140,12 @@ element {
     background-color:            @background;
     border:                      2px;
     enabled:                     true;
-    orientation:                 horizontal;
+    orientation:                 vertical;
     spacing:                     0px;
-    border-radius:               40px;
+    border-radius:               20px;
     text-color:                  @foreground;
 }
-@media(max-aspect-ratio: 1.8) {
-    element {
-        orientation:             vertical;
-    }
-}
+
 element selected.normal {
     background-color:            @background;
     text-color:                  @foreground;
@@ -160,7 +157,7 @@ element-icon {
     cursor:                      inherit;
     padding:                     0px;
     margin:                      0px;
-    size:                        33%;
+    size:                        27%;
 }
 
 element-text {
