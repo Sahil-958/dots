@@ -8,7 +8,7 @@
 #  
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
-
+source ~/.cache/wal/colors.sh
 DIR="$HOME/Pictures/screenshots/"
 NAME="screenshot_$(date +%d%m%Y_%H%M%S).png"
 
@@ -21,7 +21,7 @@ choice=$(echo -e "$options" | rofi -dmenu -replace -config ~/dots/rofi/config-sc
 
 case $choice in
     $option2)
-        grim -g "$(slurp)" - | swappy -f -
+        grim -g "$(slurp -c "$background" -b "${foreground}B0")" - | swappy -f -
         notify-send "Screenshot created" "Mode: Selected area"
     ;;
     $option3)
