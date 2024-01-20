@@ -47,6 +47,7 @@ nethogs
 network-manager-applet
 networkmanager
 noto-fonts-emoji
+obs-studio
 os-prober
 pavucontrol
 pipewire-pulse
