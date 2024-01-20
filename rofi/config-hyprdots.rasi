@@ -8,14 +8,14 @@ listbox {
 /* ---- Inputbar ---- */
 inputbar {
     enabled:                      true;
-    text-color:                   @background;
+    text-color:                   @foreground;
     spacing:                      10px;
     padding:                      10px 5px;
     margin:                       0px 48px;
-    border-radius:                0 0 15px 15px;
+    border-radius:                0 0 10px 10px;
     border-color:                 @foreground;
-    border:                       0 3px 3px 3px;
-    background-color:             @color14;
+    border:                       0 2px 2px 2px;
+    background-color:             @trans-color14;
     children:                     [ "textbox-prompt-colon", "entry" ];
 }
 
@@ -26,12 +26,12 @@ textbox-prompt-colon {
     padding:                      0 0 0 8px;
     background-color:             transparent;
     text-color:                   inherit;
-    font:                        "JetBrainsMono Nerd Font 14";
+    font:                        "JetBrainsMono Nerd Font Bold 16";
 }
 
 entry {
     enabled:                      true;
-    font:                        "JetBrainsMono Nerd Font 12";
+    font:                        "JetBrainsMono Nerd Font Bold 14";
     background-color:             transparent;
     text-color:                   inherit;
     cursor:                       text;
@@ -148,7 +148,7 @@ element {
     enabled:                     true;
     orientation:                 vertical;
     spacing:                     0px;
-    border-radius:               20px;
+    border-radius:               15px;
     text-color:                  @foreground;
 }
 
