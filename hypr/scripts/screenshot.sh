@@ -22,11 +22,11 @@ choice=$(echo -e "$options" | rofi -dmenu -replace -config ~/dots/rofi/config-sc
 case $choice in
     $option2)
         grim -g "$(slurp -c "$background" -b "${foreground}B0")" - | swappy -f -
-        notify-send "Screenshot created" "Mode: Selected area"
+        notify-send -i "/home/sawhill/.icons/testing_cli/actions/16/zoom-fit-selection.svg" "Screenshot created" "Mode: Selected area"
     ;;
     $option3)
         sleep 3
         grim - | swappy -f -
-        notify-send "Screenshot created" "Mode: Fullscreen"
+        notify-send -i "/home/sawhill/.icons/testing_cli/apps/16/camera.svg" "Screenshot created" "Mode: Fullscreen"
     ;;
 esac
