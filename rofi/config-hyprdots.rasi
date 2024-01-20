@@ -10,9 +10,11 @@ inputbar {
     enabled:                      true;
     text-color:                   @background;
     spacing:                      10px;
-    padding:                      5px;
-    border-radius:                0px;
+    padding:                      10px 5px;
+    margin:                       0px 48px;
+    border-radius:                0 0 15px 15px;
     border-color:                 @foreground;
+    border:                       0 3px 3px 3px;
     background-color:             @color14;
     children:                     [ "textbox-prompt-colon", "entry" ];
 }
@@ -21,12 +23,15 @@ textbox-prompt-colon {
     enabled:                      true;
     expand:                       false;
     str:                          "";
+    padding:                      0 0 0 8px;
     background-color:             transparent;
     text-color:                   inherit;
+    font:                        "JetBrainsMono Nerd Font 14";
 }
 
 entry {
     enabled:                      true;
+    font:                        "JetBrainsMono Nerd Font 12";
     background-color:             transparent;
     text-color:                   inherit;
     cursor:                       text;
@@ -95,8 +100,9 @@ window {
     cursor:                      "default";
     spacing:                     0px;
     padding:                     0px;
-    border-radius: 0px;
-    border-color:                transparent;
+    border-radius:               0px;
+    border:                      3px;
+    border-color:                @foreground;
     background-color:            transparent;
 }
 
@@ -117,13 +123,13 @@ listview {
     enabled:                     true;
     dynamic:                     true;
     scrollbar:                   false;
-    margin:                      0px;
+    margin:                      30px;
     background-color:            transparent;
     border:                      0;
     columns:                     3;
     lines:                       1;
-    spacing:                     50px;
-    padding:                     50px 60px 0px 60px;
+    spacing:                     35px;
+    padding:                     10px;
     cycle:                       false;
     layout:                      vertical;
     reverse:                     false;
