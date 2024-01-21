@@ -70,7 +70,7 @@ echo "Wallpaper: $wallpaper"
 # ----------------------------------------------------- 
 
 echo "$wallpaper" > ~/.cache/current_wall_path.txt
-echo "mainbox { background-image: url(\"$wallpaper\", height); }" > ~/.cache/current_wall.rasi
+echo "mainbox { background-image: url(\"$wallpaper\", width); }" > ~/.cache/current_wall.rasi
 
 # ----------------------------------------------------- 
 # get wallpaper iamge name
