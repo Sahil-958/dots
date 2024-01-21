@@ -11,7 +11,7 @@ case $1 in
 		hyprctl keyword misc:cursor_zoom_factor 1.0
 		;;
 	rofi)
-		customVal=$(rofi -dmenu -config ~/dots/rofi/config-compact.rasi)
+        customVal=$(rofi -dmenu -config ~/dots/rofi/config-dmenu.rasi -p "Enter Zoom Value:")
 		hyprctl keyword misc:cursor_zoom_factor $customVal
 		;;
 	*)
