@@ -33,6 +33,7 @@ configuration {
 /* ---- Window ---- */
 window {
     width:                        900px;
+    height:                       50%;
     x-offset:                     0px;
     y-offset:                     0px;
     spacing:                      0px;
@@ -54,33 +55,12 @@ window {
 /* ---- Mainbox ---- */
 mainbox {
     enabled:                      true;
-    orientation:                  horizontal;
-    spacing:                      0px;
-    margin:                       0px;
-    background-color:             @background;
-    
-    children:                     ["imagebox","listbox"];
-}
-
-/* ---- Imagebox ---- */
-imagebox {
-    padding:                      18px;
-    background-color:             transparent;
     orientation:                  vertical;
-    children:                     [ "inputbar", "dummy", "mode-switcher" ];
-}
-
-/* ---- Listbox ---- */
-listbox {
-    spacing:                     20px;
-    background-color:            transparent;
-    orientation:                 vertical;
-    children:                    [ "message", "listview" ];
-}
-
-/* ---- Dummy ---- */
-dummy {
-    background-color:            transparent;
+    spacing:                      10px;
+    margin:                       0px;
+    padding:                      20px;
+    background-color:             @background;
+    children:                     ["inputbar","listview", "mode-switcher"];
 }
 
 /* ---- Inputbar ---- */
@@ -116,7 +96,9 @@ entry {
 mode-switcher{
     enabled:                      true;
     spacing:                      20px;
-    background-color:             transparent;
+    background-color:             @trans-background;
+    padding:                      10px;
+    border-radius:                10px;
     text-color:                   @foreground;
 }
 
@@ -137,7 +119,7 @@ button selected {
 /* ---- Listview ---- */
 listview {
     enabled:                      true;
-    columns:                      1;
+    columns:                      3;
     lines:                        8;
     cycle:                        true;
     dynamic:                      true;
@@ -149,8 +131,9 @@ listview {
     spacing:                      0px;
     padding:                      10px;
     margin:                       0px;
-    background-color:             @background;
+    background-color:             @trans-background;
     border:0px;
+    border-radius:                10px;
 }
 
 /* ---- Element ---- */
@@ -222,16 +205,6 @@ element-text {
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
-}
-
-/*****----- Message -----*****/
-message {
-    background-color:            transparent;
-    border:0px;
-    margin:20px 0px 0px 0px;
-    padding:0px;
-    spacing:0px;
-    border-radius: 10px;
 }
 
 textbox {
