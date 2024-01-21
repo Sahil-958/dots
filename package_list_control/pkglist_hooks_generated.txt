@@ -53,6 +53,7 @@ os-prober
 pavucontrol
 pipewire-pulse
 polkit-kde-agent
+python-pip
 python-pyqt5
 python-pywal
 python-qrencode
