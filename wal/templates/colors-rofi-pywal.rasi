@@ -1,5 +1,5 @@
 * {{
-    background: rgba(0,0,1,0.5);
+    background: {background};
     foreground: {foreground};
     color0:     {color0};
     color1:     {color1};
