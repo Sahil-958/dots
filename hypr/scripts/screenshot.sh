@@ -12,14 +12,18 @@ source ~/.cache/wal/colors.sh
 DIR="$HOME/Pictures/screenshots/"
 NAME="screenshot_$(date +%d%m%Y_%H%M%S).png"
 
+option1="Window"
 option2="Selected area"
 option3="Fullscreen (delay 3 sec)"
 
-options="$option2\n$option3"
+options="$option1\n$option2\n$option3"
 
-choice=$(echo -e "$options" | rofi -dmenu -replace -config ~/dots/rofi/config-screenshot.rasi -i -no-show-icons -l 2 -width 30 -p "Take Screenshot")
+choice=$(echo -e "$options" | rofi -dmenu -replace -config ~/dots/rofi/config-dmenu.rasi -i -p "Take Screenshot")
 
 case $choice in
+    $option1)
+    ~/dots/hypr/scripts/window_screenshot.sh
+    ;;
     $option2)
         grim -g "$(slurp -c "$background" -b "${foreground}B0")" - | swappy -f -
         notify-send -i "/home/sawhill/.icons/testing_cli/actions/16/zoom-fit-selection.svg" "Screenshot created" "Mode: Selected area"
