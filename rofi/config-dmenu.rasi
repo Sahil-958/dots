@@ -54,7 +54,7 @@ mainbox {
     orientation:                  horizontal;
     spacing:                      0px;
     margin:                       0px;
-    background-color:             @background;
+    background-color:             @trans-background;
     children:                     ["listbox"];
 }
 
@@ -83,7 +83,7 @@ inputbar {
     padding:                      15px;
     border-radius:                0px;
     border-color:                 @foreground;
-    background-color:             @background;
+    background-color:             @trans-background;
     children:                     [ "prompt", "textbox-prompt-colon", "entry" ];
 }
 
@@ -138,7 +138,7 @@ listview {
     spacing:                      0px;
     padding:                      10px;
     margin:                       0px;
-    background-color:             @background;
+    background-color:             @trans-background;
     border:0px;
 }
 
@@ -148,7 +148,7 @@ element {
     padding:                      10px;
     margin:                       5px;
     cursor:                       pointer;
-    background-color:             @background;
+    background-color:             @trans-background;
     border-radius:                5px;
     border:                       2px;
 }
@@ -227,7 +227,7 @@ textbox {
     padding:                     15px;
     margin:                      0px;
     border-radius:               0px;
-    background-color:            @background;
+    background-color:            @trans-background;
     text-color:                  @foreground;
     vertical-align:              0.5;
     horizontal-align:            0.0;
@@ -236,7 +236,7 @@ textbox {
 error-message {
     padding:                     15px;
     border-radius:               20px;
-    background-color:            @background;
+    background-color:            @trans-background;
     text-color:                  @foreground;
 }
 
