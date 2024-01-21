@@ -5,7 +5,7 @@ suru="suruplus"
 suru_aspromauros="suruplus_aspromauros"
 none="Do not Generate Icons"
 
-choice=$(printf "$numix\n$suru\n$suru_aspromauros\n$papirus\n$none" | rofi -dmenu) 
+choice=$(printf "$numix\n$suru\n$suru_aspromauros\n$papirus\n$none" | rofi -dmenu -p "Select Icon Theme" -config ~/dots/rofi/config-dmenu.rasi) 
 
 
 if [ "$choice" != "$none" ] ; then
