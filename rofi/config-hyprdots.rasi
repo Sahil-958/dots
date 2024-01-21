@@ -1,5 +1,5 @@
 listbox {
-    spacing:                     0px;
+    spacing:                     10px;
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "inputbar", "listview" ];
@@ -10,7 +10,7 @@ inputbar {
     enabled:                      true;
     text-color:                   @foreground;
     spacing:                      10px;
-    padding:                      10px 5px;
+    padding:                      5px 5px;
     margin:                       0px 48px;
     border-radius:                0 0 10px 10px;
     border-color:                 @foreground;
@@ -26,12 +26,12 @@ textbox-prompt-colon {
     padding:                      0 0 0 8px;
     background-color:             transparent;
     text-color:                   inherit;
-    font:                        "JetBrainsMono Nerd Font Bold 16";
+    font:                        "JetBrainsMono Nerd Font Bold 14";
 }
 
 entry {
     enabled:                      true;
-    font:                        "JetBrainsMono Nerd Font Bold 14";
+    font:                        "JetBrainsMono Nerd Font Bold 12";
     background-color:             transparent;
     text-color:                   inherit;
     cursor:                       text;
