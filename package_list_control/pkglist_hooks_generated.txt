@@ -69,7 +69,6 @@ qt6ct
 reflector
 rofi
 sddm
-shutter
 slurp
 smartmontools
 snapper
