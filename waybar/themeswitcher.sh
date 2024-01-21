@@ -44,7 +44,7 @@ done
 # Show rofi dialog
 # ----------------------------------------------------- 
 listNames=${listNames::-2}
-choice=$(echo -e "$listNames" | rofi -dmenu -i -location 2 -config ~/dots/rofi/config-dmenu.rasi -no-show-icons  -p "Select Waybar Theme:" -theme-str 'window {height: 59%; width: 40%;y-offset:5%;}') 
+choice=$(echo -e "$listNames" | rofi -dmenu -i -location 2 -config ~/dots/rofi/config-dmenu.rasi -no-show-icons  -p "Select Waybar Theme:" -theme-str 'window {height: 40%; width: 40%;y-offset:5%;} listview{columns: 3; fixed-columns:false;}') 
 
 # ----------------------------------------------------- 
 # Set new theme by writing the theme information to ~/.cache/.themestyle.sh
