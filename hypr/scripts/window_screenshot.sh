@@ -1,7 +1,15 @@
 #!/bin/sh
 hyprctl_output=$(hyprctl clients -j)
 titles=$(echo "$hyprctl_output" | jq -r 'map(select(.title != "")) | .[].title')
-title=$(echo -e "$titles\nnone" | rofi -dmenu -p "Select Window To Capture" -i -config ~/dots/rofi/config-dmenu.rasi)
+case $1 in
+       term)
+           title=$(echo -e "$titles\nnone" | fzf)
+           ;;
+        *)
+           title=$(echo -e "$titles\nnone" | rofi -dmenu -p "Select Window To Capture" -i -config ~/dots/rofi/config-dmenu.rasi)
+           ;;
+esac
+
 if ! echo "$titles" | grep -q "^$title$"; then
     notify-send "Selected option does not match any window. Exiting script."
     exit 1
@@ -38,5 +46,5 @@ hyprctl dispatch workspace $id
 hyprctl dispatch focuswindow "$initialTitle"
 
 sleep 1s
-grim -g "$(($atx - $border_size )),$(($aty - $border_size)) $(($sizex + $border_size + $border_size))x$(($sizey + $border_size + $border_size))" - | swappy -f -
+grim -g "$atx,$aty ${sizex}x$sizey" - | swappy -f -
 
