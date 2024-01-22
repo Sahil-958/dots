@@ -30,6 +30,7 @@ right_format="""
 [](fg:$color7 bg:transparent)\\
 """
 add_newline = false
+continuation_prompt = '[❯❯]($foreground)'
 
 [character]
 #success_symbol = '[❯](#00ff00) '
