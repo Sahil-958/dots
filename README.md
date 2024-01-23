@@ -1,10 +1,79 @@
 # Dotfiles Repository
 
-**Note: This repository is in alpha stage and primarily for personal use. The organization and configurations may change significantly in the future.**
+> [!NOTE]  
+> This repository is in alpha stage and primarily for personal use. The organization and configurations may change significantly in the future.
+
+> [!Tip]
+> The best way to use these dotfiles to copy specify things that you like such as the rofi wallpaper view, starship prompt, SDDM theme, Some parts of scripts etc or use it as a base for your dots just like it did from Stephan Rabbe [dotfiles](https://gitlab.com/stephan-raabe/dotfiles) and from there started customzing them to my requirements i didn't like the way Stephan's scritps for wallpapers and etc were written so tweaked them, waybar theme etc. I just want to say don't just clone my repo and pull new changes blindly as they may break the dots.
 
 ## Overview
 
 This repository contains my personal dotfiles and configuration files. It's currently in an early, experimental phase, and may not be suitable for general use.
+
+### How it looks:
+
+#### SDDM Pywal Generated Themes
+|||
+|---|---|
+|![screenshots/sddm01.png](screenshots/sddm01.png)|![screenshots/sddm02.png](screenshots/sddm02.png)|
+|![screenshots/sddm03.png](screenshots/sddm03.png)|![screenshots/sddm04.png](screenshots/sddm04.png)|
+
+#### Starship Pywal ColorScheme
+|||
+|-|-|
+|![screenshots/starship_git.png](screenshots/starship_git.png)|![screenshots/starship_cont_prompt.png](screenshots/starship_cont_prompt.png)|
+
+![screenshots/starship01.png](screenshots/starship01.png)
+![screenshots/starship03.png](screenshots/starship02.png)
+![screenshots/starship03.png](screenshots/starship03.png)
+
+> [!NOTE]  
+>From now on only single pywal colors scheme is shown to keep README from bloating with images
+
+#### Firefox with Pywal Colorscheme (pywalfox Extension not required)
+|||
+|---|---|
+|![screenshots/browser_github.png](screenshots/browser_github.png)|![screenshots/browser_monkeytype.png](screenshots/browser_monkeytype.png)|
+|![screenshots/browser_reddit.png](screenshots/browser_reddit.png)|![screenshots/browser_searXNG.png](screenshots/browser_searXNG.png)|
+
+#### Rofi with Pywal Colorscheme
+|||
+|---|---|
+![screenshots/rofi_app_selector.png](screenshots/rofi_app_selector.png)|![screenshots/rofi_command_runner.png](screenshots/rofi_command_runner.png)|
+|![screenshots/rofi_waybar_theme_selector.png](screenshots/rofi_waybar_theme_selector.png)| ![rofi Screenshot](screenshots/rofi_screenshot.png)|
+|![screenshots/rofi_clipboard.png](screenshots/rofi_clipboard.png)||
+
+![screenshots/rofi_wall_selector.png](screenshots/rofi_wall_selector.png)
+Ignore the Wallpaper names (they doesn't reflect wallpaper content as Miscrosoft's Vison api doesn't did a great job renaming them.)
+
+
+
+#### Btop (System Moniotor)|Terminal: Konsole
+![screenshots/terminal_btop.png](screenshots/terminal_btop.png)
+
+#### Dolphin File Manager
+![screenshots/dolphin_fm.png](screenshots/dolphin_fm.png)
+
+#### Waybar
+![screenshots/waybar.png](screenshots/waybar.png)
+
+
+#### Dunst
+![screenshots/dunst_powerNotify.png](screenshots/dunst_powerNotify.png)
+
+![screenshots/dunst_screenshot.png](screenshots/dunst_screenshot.png)
+
+#### Glava
+![screenshots/glava_bar.png](screenshots/glava_bar.png)
+
+![screenshots/glava_full.png](screenshots/glava_full.png)
+
+#### Wlogout (Soon Going to replaced with a rofi window)
+![screenshots/wlogout.png](screenshots/wlogout.png)
+
+
+
+
 
 ## Installation
 
@@ -101,9 +170,4 @@ spam the ESC button to exit out of it and continue with the script
 - After which link will setup symlinks from the dots folder to .config and all other places
 
 - Now again reboot the system and Enjoy Hyprland.
-
-
-
-
-
 
