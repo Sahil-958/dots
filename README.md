@@ -44,7 +44,7 @@ This repository contains my personal dotfiles and configuration files. It's curr
 |![screenshots/rofi_clipboard.png](screenshots/rofi_clipboard.png)||
 
 ![screenshots/rofi_wall_selector.png](screenshots/rofi_wall_selector.png)
-Ignore the Wallpaper names (they doesn't reflect wallpaper content as Miscrosoft's Vison api doesn't did a great job renaming them.)
+Ignore the Wallpaper names (they doesn't reflect wallpaper content as Miscrosoft's Vision api doesn't did a great job renaming them.)
 
 
 
