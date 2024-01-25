@@ -72,48 +72,49 @@ Ignore the Wallpaper names (they don't reflect wallpaper content as Microsoft's 
 
 - First flash a usb stick with arch iso using following command:
 
-```bash
-cat arch_iso_file.iso > /dev/sdX 
-```
-where /dev/sdX is your usb stick. I you want to see progress use commands like pv.
+    ```bash
+    cat arch_iso_file.iso > /dev/sdX 
+    ```
+    where /dev/sdX is your usb stick. I you want to see progress use commands like pv.
 
 - Boot into arch ISO
 - Use follwing commands to connect to internet via WIFI
 
-```zsh
-iwctl
-```
+    ```zsh
+    iwctl
+    ```
 
-```zsh
-station wlanX scan
-```
+    ```zsh
+    station wlanX scan
+    ```
 
-```zsh
-station wlanX connnect SSID_of_your_WIFI
-```
-Passkey: <ENTER YOUR PASSKEY>
+    ```zsh
+    station wlanX connnect SSID_of_your_WIFI
+    ```
+    Passkey: <ENTER YOUR PASSKEY>
 
 - After that enter into bash shell by running.
 
-```zsh
-bash
-```
-Copy the install script to a file using following command:
+    ```zsh
+    bash
+    ```
+    Copy the install script to a file using following command:
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/insall.sh > install.sh
-```
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/Sahil-958/dots/main/insall.sh > install.sh
+    ```
 
-Provide the executable Permission to the file:
-```bash
-chmod +x install.sh
-```
+    Provide the executable Permission to the file:
+    ```bash
+    chmod +x install.sh
+    ```
 
-Before running it with ``./install.sh`` check the content of file by ``cat install.sh`` just to make sure that curl didn't return any error in case of wrong URL.
-In future the URL might change so  here is general URL for you to fill: 
-```bash
-curl -fsSL https://raw.githubusercontent.com/user_name/repo_name/branch_name/filename.txt > install.sh
-```
+    Before running it with ``./install.sh`` check the content of file by ``cat install.sh`` just to make sure that curl didn't return any error in case of wrong URL.
+    In future the URL might change so  here is general URL for you to fill: 
+   
+     ```bash
+    curl -fsSL https://raw.githubusercontent.com/user_name/repo_name/branch_name/filename.txt > install.sh
+    ```
 
 - After that run the script with ``./install.sh``
 
@@ -144,9 +145,9 @@ curl -fsSL https://raw.githubusercontent.com/user_name/repo_name/branch_name/fil
 - Press CTRL-C to interrrup the script and then enter ``exit`` to exit from chroot enviornment and go back to iso 
 - After that unmout all the mounted paritions by running
 
-```bash
-umount -R /dev/sdX 
-```
+    ```bash
+    umount -R /dev/sdX 
+    ```
 - Enter ``reboot`` to now reboot
 
 - Press F1-F9 (whatever keys that is used to open UEFI boot menu) 
