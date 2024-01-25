@@ -1,14 +1,14 @@
 # Dotfiles Repository
 
 > [!NOTE]  
-> This repository is in alpha stage and primarily for personal use. The organization and configurations may change significantly in the future.
+> This repository is in the alpha stage and primarily for personal use. The organization and configurations may change significantly in the future.
 
 > [!Tip]
-> The best way to use these dotfiles to copy specify things that you like such as the rofi wallpaper view, starship prompt, SDDM theme, Some parts of scripts etc or use it as a base for your dots just like it did from Stephan Rabbe [dotfiles](https://gitlab.com/stephan-raabe/dotfiles) and from there started customzing them to my requirements i didn't like the way Stephan's scritps for wallpapers and etc were written so tweaked them, waybar theme etc. I just want to say don't just clone my repo and pull new changes blindly as they may break the dots.
+> The best way to use these dotfiles is to copy specific things that you like, such as the rofi wallpaper view, starship prompt, SDDM theme, some parts of scripts, etc. Or use them as a base for your dots, just as I did with Stephan Rabbe's [dotfiles](https://gitlab.com/stephan-raabe/dotfiles). From there, start customizing them to your requirements. For example, I didn't like the way Stephan's scripts for wallpapers were written, so I tweaked them, along with the waybar theme, etc. I want to emphasize: don't just clone my repo and pull new changes blindly, as they may not work well for you.
 
 ## Overview
 
-This repository contains my personal dotfiles and configuration files. It's currently in an early, experimental phase, and may not be suitable for general use.
+This repository contains my personal dotfiles and configuration files. It's currently in an early, experimental phase and may not be suitable for general use.
 
 ### How it looks:
 
@@ -28,7 +28,7 @@ This repository contains my personal dotfiles and configuration files. It's curr
 ![screenshots/starship03.png](screenshots/starship03.png)
 
 > [!NOTE]  
->From now on only single pywal colors scheme is shown to keep README from bloating with images
+> From now on, only a single pywal color scheme is shown to prevent the README from bloating with images.
 
 #### Firefox with Pywal Colorscheme (pywalfox Extension not required)
 |||
@@ -44,11 +44,9 @@ This repository contains my personal dotfiles and configuration files. It's curr
 |![screenshots/rofi_clipboard.png](screenshots/rofi_clipboard.png)||
 
 ![screenshots/rofi_wall_selector.png](screenshots/rofi_wall_selector.png)
-Ignore the Wallpaper names (they doesn't reflect wallpaper content as Miscrosoft's Vision api doesn't did a great job renaming them.)
+Ignore the Wallpaper names (they don't reflect wallpaper content as Microsoft's Vision API didn't do a great job renaming them.)
 
-
-
-#### Btop (System Moniotor)|Terminal: Konsole
+#### Btop (System Monitor) | Terminal: Konsole
 ![screenshots/terminal_btop.png](screenshots/terminal_btop.png)
 
 #### Dolphin File Manager
@@ -56,7 +54,6 @@ Ignore the Wallpaper names (they doesn't reflect wallpaper content as Miscrosoft
 
 #### Waybar
 ![screenshots/waybar.png](screenshots/waybar.png)
-
 
 #### Dunst
 ![screenshots/dunst_powerNotify.png](screenshots/dunst_powerNotify.png)
@@ -68,12 +65,8 @@ Ignore the Wallpaper names (they doesn't reflect wallpaper content as Miscrosoft
 
 ![screenshots/glava_full.png](screenshots/glava_full.png)
 
-#### Wlogout (Soon Going to replaced with a rofi window)
+#### Wlogout (Soon Going to be replaced with a rofi window)
 ![screenshots/wlogout.png](screenshots/wlogout.png)
-
-
-
-
 
 ## Installation
 
