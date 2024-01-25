@@ -44,7 +44,8 @@ This repository contains my personal dotfiles and configuration files. It's curr
 |![screenshots/rofi_clipboard.png](screenshots/rofi_clipboard.png)||
 
 ![screenshots/rofi_wall_selector.png](screenshots/rofi_wall_selector.png)
-Ignore the Wallpaper names (they don't reflect wallpaper content as Microsoft's Vision API didn't do a great job renaming them.)
+
+<small>Please disregard the wallpaper names, as they may not accurately reflect the content of each wallpaper. This discrepancy arises because Microsoft's Vision API did not consistently provide accurate renaming.<small>
 
 #### Btop (System Monitor) | Terminal: Konsole
 ![screenshots/terminal_btop.png](screenshots/terminal_btop.png)
