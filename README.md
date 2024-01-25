@@ -70,6 +70,8 @@ Ignore the Wallpaper names (they don't reflect wallpaper content as Microsoft's 
 
 ## Installation
 
+1. **Preparing & Booting into Installation Media** 
+
 - First flash a usb stick with arch iso using following command:
 
     ```bash
@@ -91,7 +93,8 @@ Ignore the Wallpaper names (they don't reflect wallpaper content as Microsoft's 
     ```zsh
     station wlanX connnect SSID_of_your_WIFI
     ```
-    Passkey: <ENTER YOUR PASSKEY>
+
+2. **Downloading & Running the Installation Script**
 
 - After that enter into bash shell by running.
 
@@ -118,6 +121,8 @@ Ignore the Wallpaper names (they don't reflect wallpaper content as Microsoft's 
 
 - After that run the script with ``./install.sh``
 
+3. **Partitioning & Formatting the Installtion Disk **
+
 - Enter the installtion disk e.g. ``/dev/sda``
 
 - Make the paritions using cfdisk, write the newly created parition table, press q to quit cfdisk
@@ -132,13 +137,17 @@ Ignore the Wallpaper names (they don't reflect wallpaper content as Microsoft's 
 
 - If y is entered for EFI parition then enter the EFI parition e.g. ``/dev/sda1``
 
+4. **System Configuration**
+
 - After that enter name for your host e.g. ``your_nice_host_name``
 
-- Enter your root password & enter password again to confim that
+- Enter your root password
 
 - Enter username e.g. ``demo_user``
 
-- Enter password for newly created user and confim that by entering it again.
+- Enter password for newly created user
+
+5. **Rebooting For Post-installtion**
 
 - After that the script will prompt you to reboot (you can still do most of step without reboot but it's better to reboot)
 
@@ -152,16 +161,17 @@ Ignore the Wallpaper names (they don't reflect wallpaper content as Microsoft's 
 
 - Press F1-F9 (whatever keys that is used to open UEFI boot menu) 
 
-- Select the item named same as your hostname setted during the installtion
+- Select the list item named the same as your hostname set during the installation
 
-- After booting into the system run the script again with ``./arch_install3.sh``
+6. **Running the Post-installtion Script**
 
-- This will start the NetworkManager and open NMTUI to let you connet to the Internet after connecting via nutui
-spam the ESC button to exit out of it and continue with the script
+- After booting into the system,run the script again with ``./arch_install3.sh``
+
+- This will start the NetworkManager and open NMTUI to let you connect to the Internet. After connecting via NMTUI, press the ESC button to exit out of it and continue with the script.
 
 - After which the script will install the pikaur (AUR helper) and install the packages from AUR
 
-- After which link will setup symlinks from the dots folder to .config and all other places
+- Then the script will setup symlinks from the dots folder to .config and all other places
 
 - Now again reboot the system and Enjoy Hyprland.
 
