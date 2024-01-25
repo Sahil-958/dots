@@ -35,5 +35,5 @@ hyprctl dispatch workspace $id
 hyprctl dispatch focuswindow "$initialTitle"
 
 sleep 1s
-grim -g "$atx,$aty ${sizex}x$sizey" - | swappy -f -
-
+#grim -g "$atx,$aty ${sizex}x$sizey" - | swappy -f -
+grim -g "$(($atx - $border_size)),$(($aty - $border_size)) $(($sizex + $border_size + $border_size))x$(($sizey + $border_size + $border_size))" - | swappy -f -
