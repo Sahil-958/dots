@@ -30,16 +30,6 @@ initialTitle="$8"
 fullscreenMode="$9"
 
 border_size=$(hyprctl getoption -j general:border_size | jq .int)
-echo "Title: $title"
-echo "Class: $class"
-echo "atx: $atx"
-echo "aty: $aty"
-echo "sizex: $sizex"
-echo "sizey: $sizey"
-echo "ID: $id"
-echo "initialTitle: $initialTitle"
-echo "fullscreenMode: $fullscreenMode"
-echo "Command Executed: grim -g "$(($atx + $border_size + $border_size)),$(($aty - $border_size)) $(($sizex + $border_size + $border_size))x$(($sizey + $border_size + $border_size))" - | swappy -f -"
 
 hyprctl dispatch workspace $id
 hyprctl dispatch focuswindow "$initialTitle"
