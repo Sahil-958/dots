@@ -1,42 +1,34 @@
 #!/bin/bash
 
-#CAUTION: If you are gonna use this script note that unauthenticated api requests are limited by github this script make 2 rate and 2 resource requests each time it's run and we get 60 requests per hour for unauthenticated requests
-#You can use following to check the status: curl https://api.github.com/rate_limit 
+# Note that GitHub api calls are rate limitied
+# You can use the following to check the status: curl https://api.github.com/rate_limit
 
-#
-# Replace the following placeholders with your GitHub username, repository name, branch, and directory path
-username="Sahil-958"
-repo="walls"
-branch="main"
+dest_dir="/home/sawhill/wall/remote"
 
-# Replace the following placeholders with your GitHub username, repository name, branch, and directory path
-username1="Sahil-958"
-repo1="walls_superset"
-branch1="main"
+# Define repositories and branches as arrays
+# User/Repo_name:Branch_name
+repositories=(
+    "Sahil-958/walls:main"
+    "Sahil-958/walls_superset:main"
+)
 
-# Get the list of files in the repository using GitHub API with recursive tree listing
-tree_url="https://api.github.com/repos/$username/$repo/git/trees/$branch?recursive=1"
-tree_url1="https://api.github.com/repos/$username1/$repo1/git/trees/$branch1?recursive=1"
-file_list=$(curl -s "$tree_url" | jq -r '.tree[] | select(.type == "blob") | .path'| sed '/\(\.jpeg|\.jpg\|\.png\|\.gif\|\.webp\)/!d')
-file_list1=$(curl -s "$tree_url1" | jq -r '.tree[] | select(.type == "blob") | .path'| sed '/\(\.jpeg|\.jpg\|\.png\|\.gif\|\.webp\)/!d')
+# Generate a random number between 0 and 1 to select a repository
+random_index=$(( RANDOM % ${#repositories[@]} ))
 
-random_file=$(echo -e "$file_list"| shuf -n 1)
-random_file1=$(echo -e "$file_list1"| shuf -n 1)
+# Function to get a random file from a repository
+get_file() {
+    local repo_branch=(${repositories[$1]//:/ })  # Split repository and branch
+    local repo=${repo_branch[0]}
+    local branch=${repo_branch[1]}
+    local tree_url="https://api.github.com/repos/$repo/git/trees/$branch?recursive=1"
+    local file_list=$(curl -s "$tree_url" | jq -r '.tree[] | select(.type == "blob") | .path' | grep -E '\.(jpeg|jpg|png|gif|webp)$')
+    local random_file_path=$(echo -e "$file_list" | shuf -n 1)
+    local subdir_name=$(dirname "$random_file_path")
+    local file_name=$(basename "$random_file_path")
+    mkdir -p "$dest_dir/$subdir_name"
+    curl -fsSL "https://raw.githubusercontent.com/$repo/$branch/$random_file_path" > "$dest_dir/$subdir_name/$file_name"
+}
 
-# Generate a random number between 1 and 2
-random_number=$(( (RANDOM % 2) + 1 ))
-# random_number=$(echo "1 2" | shuf -n 1) backup for shell that doesn't have RANDOM var
-
-# Switch case statement based on the random number
-case $random_number in
-    1)
-        curl -fsSL "https://raw.githubusercontent.com/$username/$repo/$branch/$random_file" > ~/.cache/current_wallpaper.png
-        ;;
-    2)
-        curl -fsSL "https://raw.githubusercontent.com/$username1/$repo1/$branch1/$random_file1" > ~/.cache/current_wallpaper.png
-        ;;
-    *)
-        echo "Invalid random number"
-        ;;
-esac
+# Call the function with the randomly selected repository index
+get_file "$random_index"
 
