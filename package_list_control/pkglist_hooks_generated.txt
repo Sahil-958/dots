@@ -66,6 +66,7 @@ qt5-quickcontrols2
 qt5ct
 qt6-wayland
 qt6ct
+qtcreator
 reflector
 rofi
 sddm
