@@ -6,7 +6,7 @@
 # |____/ \___|_|  \___|\___|_| |_|___/_| |_|\___/ \__| 
 #                                                      
 #  
-# by Stephan Raabe (2023) 
+ 
 # ----------------------------------------------------- 
 source ~/.cache/wal/colors.sh
 DIR="$HOME/Pictures/screenshots/"
