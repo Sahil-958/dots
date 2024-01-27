@@ -85,3 +85,5 @@ cnf (){
 #Starship function to generate the custom prompt
 eval "$(starship init bash)"
 
+# Added path to access scripts more easily
+export PATH="$HOME/dots/scripts:$PATH"
