@@ -20,6 +20,7 @@ dolphin
 dolphin-plugins
 dunst
 efibootmgr
+espeak-ng
 ffmpegthumbs
 firefox
 firewalld
