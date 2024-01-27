@@ -72,6 +72,7 @@ sddm
 slurp
 smartmontools
 snapper
+sox
 starship
 swappy
 sxiv
