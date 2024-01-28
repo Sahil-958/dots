@@ -71,7 +71,7 @@ listbox {
     spacing:                     10px;
     background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "inputbar", "listview" ];
+    children:                    [ "inputbar", "message", "listview" ];
 }
 
 
@@ -217,14 +217,13 @@ element-text {
 message {
     background-color:            transparent;
     border:0px;
-    margin:20px 0px 0px 0px;
+    margin:0px;
     padding:0px;
     spacing:0px;
-    border-radius: 10px;
 }
 
 textbox {
-    padding:                     15px;
+    padding:                     10px;
     margin:                      0px;
     border-radius:               0px;
     background-color:            @trans-background;
