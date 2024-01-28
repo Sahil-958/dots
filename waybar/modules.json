@@ -70,8 +70,8 @@
     // Wallpaper
     "custom/wallpaper": {
         "format": "",
-        "on-click": "~/dots/hypr/scripts/wallpaper.sh select",
-        "on-click-right": "~/dots/hypr/scripts/wallpaper.sh",
+        "on-click": "~/dots/scripts/wallpaper.sh select",
+        "on-click-right": "~/dots/scripts/wallpaper.sh",
         "tooltip": false
     },
 

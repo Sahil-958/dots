@@ -125,7 +125,7 @@ echo "making symlinks"
 cd dots
 set +e
 sudo ln -sf ~/dots/wal ~/.config/
-~/dots/hypr/scripts/wallpaper.sh random
+~/dots/scripts/wallpaper.sh random
 sudo ln -sf ~/dots/package_list_control/packgae_update.sh /usr/bin
 sudo mkdir -p /etc/pacman.d/hooks
 sudo ln -sf ~/dots/package_list_control/update_package_list.hook /etc/pacman.d/hooks/

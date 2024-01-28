@@ -22,7 +22,7 @@ choice=$(echo -e "$options" | rofi -dmenu -replace -config ~/dots/rofi/config-dm
 
 case $choice in
     $option1)
-    ~/dots/hypr/scripts/window_screenshot.sh
+    ~/dots/scripts/window_screenshot.sh
     ;;
     $option2)
         grim -g "$(slurp -c "$background" -b "${foreground}B0")" - | swappy -f -
