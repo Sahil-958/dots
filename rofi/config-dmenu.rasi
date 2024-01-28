@@ -51,11 +51,11 @@ window {
 /* ---- Mainbox ---- */
 mainbox {
     enabled:                      true;
-    orientation:                  horizontal;
-    spacing:                      0px;
+    orientation:                  vertical;
+    spacing:                      10px;
     margin:                       0px;
     background-color:             @trans-background;
-    children:                     ["listbox"];
+    children:                     ["inputbar", "listbox"];
 }
 
 /* ---- Imagebox ---- */
@@ -68,10 +68,10 @@ imagebox {
 
 /* ---- Listbox ---- */
 listbox {
-    spacing:                     10px;
+    spacing:                     0px;
     background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "message", "listview" ];
 }
 
 
