@@ -25,3 +25,6 @@ sed -i "s/OverrideLoginButtonTextColor=.*$/OverrideLoginButtonTextColor=\"$backg
 
 # Check if glava is running if running restart it 
 pgrep glava && killall glava && glava
+
+# Update Swaylock wallpaper path
+sed -i "s|image=.*$|image=$wall_path|g" ~/dots/swaylock/config

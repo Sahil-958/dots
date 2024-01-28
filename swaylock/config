@@ -5,7 +5,6 @@
 # |____/ \_/\_/ \__,_|\__, |_|\___/ \___|_|\_\ 
 #                     |___/                    
 #  
- 
 # ----------------------------------------------------- 
 
 ignore-empty-password
@@ -20,7 +19,7 @@ datestr=%a, %e of %B
 
 # Add an image as a background 
 # In my setup the current wallpaper (requires wallpaper scripts in /scripts)
-image=~/.cache/current_wallpaper.png
+image=/home/sawhill/walls/dharmx_walls/anime/a_log_cabin_in_the_woods.png
 
 # Fade in time
 fade-in=1
