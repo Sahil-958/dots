@@ -41,7 +41,7 @@ window {
     margin:                       0px; 
     color:                        #FFFFFF;
     border:                       3px;
-    border-color:                 #FFFFFF;
+    border-color:                 @foreground;
     cursor:                       "default";
     transparency:                 "real";
     location:                     center;
