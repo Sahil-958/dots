@@ -89,7 +89,7 @@ Pane {
             id: formBackground
             anchors.fill: form
             anchors.centerIn: form
-            color: root.palette.window
+            color: config.FormBackgroundColor !== "" ? config.FormBackgroundColor : root.palette.window
             visible: config.HaveFormBackground == "true" ? true : false
             opacity: config.HaveFormBackgroundOpacity 
             z: 1
