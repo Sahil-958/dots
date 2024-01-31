@@ -78,19 +78,6 @@ echo "mainbox { background-image: url(\"$wallpaper\", width); }" > ~/.cache/curr
 newwall=$(echo $wallpaper | xargs basename)
 
 # ----------------------------------------------------- 
-# Reload waybar with new colors
-# -----------------------------------------------------
-
-~/dots/waybar/launch.sh
-
-# ----------------------------------------------------- 
-# Generate the starship.toml file with new colors
-# -----------------------------------------------------
-
-~/dots/scripts/waltostarship.sh
-
-
-# ----------------------------------------------------- 
 # Set the new wallpaper
 # -----------------------------------------------------
 # transition_type="wipe"
@@ -114,14 +101,5 @@ fi
 
 sleep 1
 notify-send "Colors and Wallpaper updated" "with image $newwall"
-
-# ----------------------------------------------------- 
-# Generate the new gtk,qt etc with oomox file with new colors
-# -----------------------------------------------------
-if [ "$isFromCache" = false ]; then
-echo "passed"
-~/dots/scripts/genQTGTK.sh
-
-fi
 
 echo "DONE!"
