@@ -1,4 +1,3 @@
-aylurs-gtk-shell-git
 librewolf-bin
 oomox-qt5-styleplugin-git
 pikaur
