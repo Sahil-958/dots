@@ -25,7 +25,7 @@ case $choice in
     ~/dots/scripts/window_screenshot.sh
     ;;
     $option2)
-        grim -g "$(slurp -c "$background" -b "${foreground}B0")" - | swappy -f -
+        grim -g "$(slurp -b "${background}90" -c "${foreground}")" - | swappy -f -
         notify-send -i "/home/sawhill/.icons/testing_cli/actions/16/zoom-fit-selection.svg" "Screenshot created" "Mode: Selected area"
     ;;
     $option3)
