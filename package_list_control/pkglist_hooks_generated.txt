@@ -47,6 +47,7 @@ nethogs
 network-manager-applet
 networkmanager
 noto-fonts-emoji
+nvme-cli
 obs-studio
 os-prober
 pavucontrol
