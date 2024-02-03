@@ -185,7 +185,7 @@ echo "/* Always authenticate Admins by prompting for the root
  * password, similar to the rootpw option in sudo
  */
 polkit.addAdminRule(function(action, subject) {
-    return ["unix-user:root"];
+    return [\"unix-user:root\"];
 });" | sudo tee /etc/polkit-1/rules.d/49-rootpw_global.rules
 
 
