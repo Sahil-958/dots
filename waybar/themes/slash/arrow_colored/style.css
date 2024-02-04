@@ -1,0 +1,158 @@
+@import '../../../../../.cache/wal/colors-waybar.css';
+
+/*
+    ┏┓┓ ┏┳┓  ┏┓┏┓┓ ┏┓┳┓┏┓
+    ┃┃┃┃┃┃┃  ┃ ┃┃┃ ┃┃┣┫┗┓
+    ┗┛┗┻┛┛┗  ┗┛┗┛┗┛┗┛┛┗┗┛
+*/
+
+/* waybar area/group colors*/
+@define-color apps @background;
+@define-color taskbar @trans-background8;
+@define-color window @trans-background6;
+@define-color stat @trans-background4;
+
+@define-color workspaces @trans-background4;
+
+@define-color devices @trans-background5;
+@define-color system @trans-background7;
+@define-color clock_bg @background;
+@define-color clock @foreground;
+
+/* workspace text colors */
+@define-color workspace_fg @foreground;
+@define-color act_wrk_fg rgba(0, 0, 0, 1);
+@define-color use_wrk_fg @color5;
+/* workspace button-background colors */
+@define-color workspace_bg rgba(0, 0, 0, 1.0);
+@define-color act_wrk_bg @foreground;
+/* taskbar button-background colors */
+@define-color taskbar_bg rgba(255, 255, 255, 0.2);
+
+@import '../style.css';
+
+#l-clock {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @apps;
+border-top: 15 solid @apps;
+margin-left:0;
+}
+
+#r-clock {
+border-left: 15 solid @apps;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}
+
+#l-apps {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @apps;
+border-top: 15 solid @apps;
+margin-left:0;
+}
+
+#r-apps {
+border-left: 15 solid @apps;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}
+
+#l-quicklinks {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @quicklinks;
+border-top: 15 solid @quicklinks;
+margin-left:0;
+}
+
+#r-quicklinks {
+border-left: 15 solid @quicklinks;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}
+
+#l-window {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @window;
+border-top: 15 solid @window;
+margin-left:0;
+}
+
+#r-window {
+border-left: 15 solid @window;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}
+
+#l-workspaces {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @workspaces;
+border-top: 15 solid @workspaces;
+margin-left:0;
+}
+
+#r-workspaces {
+border-left: 15 solid @workspaces;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}
+
+#l-taskbar {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @taskbar;
+border-top: 15 solid @taskbar;
+margin-left:0;
+}
+
+#r-taskbar {
+border-left: 15 solid @taskbar;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}
+
+#l-stat {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @stat;
+border-top: 15 solid @stat;
+margin-left:0;
+}
+
+#r-stat {
+border-left: 15 solid @stat;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}
+
+#l-devices {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @devices;
+border-top: 15 solid @devices;
+margin-left:0;
+}
+
+#r-devices {
+border-left: 15 solid @devices;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}
+
+#l-system {
+border-left: 15 solid transparent;
+border-bottom: 15 solid @system;
+border-top: 15 solid @system;
+margin-left:0;
+}
+
+#r-system {
+border-left: 15 solid @system;
+border-bottom: 15 solid transparent;
+border-top: 15 solid transparent;
+margin-right:-15;
+}

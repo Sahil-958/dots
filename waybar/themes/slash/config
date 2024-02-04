@@ -10,8 +10,9 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
+    "margin-top": 1,
     // Load Modules
-    "include": ["~/dots/waybar/themes/forward_slash/modules.json"],
+    "include": ["~/dots/waybar/themes/slash/modules.json"],
 
 // Positions //
 
