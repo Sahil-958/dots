@@ -53,7 +53,7 @@
 
     "disk": {
         "interval": 30,
-        "format": "   {percentage_used}% ",
+        "format": " {percentage_used}% ",
         "path": "/",
         "on-click": "konsole -e btop"
     }, 
@@ -140,7 +140,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-charging": "  {capacity}%",
         "format-plugged": "  {capacity}%",
         "format-alt": "{icon}  {time}",
@@ -163,11 +163,11 @@
     "network": {
     	"interval":1,
         "format": "{ifname}",
-        "format-wifi": "   {signalStrength}%  {bandwidthDownBits}  {bandwidthUpBits}",
-        "format-ethernet": "  {ipaddr}",
+        "format-wifi": "  {signalStrength}%  {bandwidthDownBits}  {bandwidthUpBits}",
+        "format-ethernet": " {ipaddr}",
         "format-disconnected": "Not connected", //An empty format will hide the module.
         "tooltip-format": " {ifname} via {gwaddri}",
-        "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+        "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
@@ -184,7 +184,7 @@
     // Pulseaudio
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": "{icon}{volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -212,7 +212,7 @@
    //Brightness 
     "backlight": {
     "device": "intel_backlight",
-    "format": "{icon}  {percent}%",
+    "format": "{icon} {percent}%",
     "format-icons": [ "󰛩","󱩎","󱩎","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"  ],
     },
 
