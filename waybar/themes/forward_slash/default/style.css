@@ -1,0 +1,33 @@
+@import '../../../../../.cache/wal/colors-waybar.css';
+
+/*
+    ┏┓┓ ┏┳┓  ┏┓┏┓┓ ┏┓┳┓┏┓
+    ┃┃┃┃┃┃┃  ┃ ┃┃┃ ┃┃┣┫┗┓
+    ┗┛┗┻┛┛┗  ┗┛┗┛┗┛┗┛┛┗┗┛
+*/
+
+/* waybar area/group colors*/
+@define-color apps rgba(0, 0, 0, 0.6);
+@define-color quicklinks rgba(0, 0, 0, 0.4);
+@define-color workspaces rgba(0, 0, 0, 0.6);
+@define-color taskbar rgba(0, 0, 0, 0.4);
+@define-color clock @foreground;
+@define-color stat rgba(0, 0, 0, 0.4);
+@define-color devices rgba(0, 0, 0, 0.6);
+@define-color system rgba(0, 0, 0, 0.4);
+/* workspace text colors */
+@define-color workspace_fg @foreground;
+@define-color act_wrk_fg rgba(0, 0, 0, 1);
+@define-color use_wrk_fg @color5;
+/* workspace button-background colors */
+@define-color workspace_bg rgba(0, 0, 0, 0.6);
+@define-color window rgba(0, 0, 0, 0.7);
+@define-color act_wrk_bg @foreground;
+/* taskbar button-background colors */
+@define-color taskbar_bg rgba(255, 255, 255, 0.2);
+/* updates-widget icon+text colors */
+@define-color updates_green #a3be8c;
+@define-color updates_yellow #ff9a3c;
+@define-color updates_red #dc2f2f;
+
+@import '../style.css';

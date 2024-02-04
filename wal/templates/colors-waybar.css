@@ -18,3 +18,32 @@
 @define-color color13 {color13};
 @define-color color14 {color14};
 @define-color color15 {color15};
+
+@define-color trans-background1 rgba({background.rgb},0.1);
+@define-color trans-background2 rgba({background.rgb},0.2);
+@define-color trans-background3 rgba({background.rgb},0.3);
+@define-color trans-background4 rgba({background.rgb},0.4);
+@define-color trans-background5 rgba({background.rgb},0.5);
+@define-color trans-background6 rgba({background.rgb},0.6);
+@define-color trans-background7 rgba({background.rgb},0.7);
+@define-color trans-background8 rgba({background.rgb},0.8);
+@define-color trans-background9 rgba({background.rgb},0.9);
+
+@define-color trans-foreground rgba({foreground.rgb},0.6);
+@define-color trans-color0 rgba({color0.rgb},0.6);
+@define-color trans-color1 rgba({color1.rgb},0.6);
+@define-color trans-color2 rgba({color2.rgb},0.6);
+@define-color trans-color3 rgba({color3.rgb},0.6);
+@define-color trans-color4 rgba({color4.rgb},0.6);
+@define-color trans-color5 rgba({color5.rgb},0.6);
+@define-color trans-color6 rgba({color6.rgb},0.6);
+@define-color trans-color7 rgba({color7.rgb},0.6);
+@define-color trans-color8 rgba({color8.rgb},0.6);
+@define-color trans-color9 rgba({color9.rgb},0.6);
+@define-color trans-color10 rgba({color10.rgb},0.6);
+@define-color trans-color11 rgba({color11.rgb},0.6);
+@define-color trans-color12 rgba({color12.rgb},0.6);
+@define-color trans-color13 rgba({color13.rgb},0.6);
+@define-color trans-color14 rgba({color14.rgb},0.6);
+@define-color trans-color15 rgba({color15.rgb},0.6);
+

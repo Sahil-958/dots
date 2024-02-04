@@ -1,35 +1,3 @@
-@import '../../../../../.cache/wal/colors-waybar.css';
-
-/*
-    ┏┓┓ ┏┳┓  ┏┓┏┓┓ ┏┓┳┓┏┓
-    ┃┃┃┃┃┃┃  ┃ ┃┃┃ ┃┃┣┫┗┓
-    ┗┛┗┻┛┛┗  ┗┛┗┛┗┛┗┛┛┗┗┛
-*/
-
-/* waybar area/group colors*/
-@define-color apps rgba(0, 0, 0, 0.6);
-@define-color quicklinks rgba(0, 0, 0, 0.4);
-@define-color workspaces rgba(0, 0, 0, 0.6);
-@define-color taskbar rgba(0, 0, 0, 0.4);
-@define-color clock @foreground;
-@define-color timer rgba(0, 0, 0, 0.4);
-@define-color devices rgba(0, 0, 0, 0.6);
-@define-color system rgba(0, 0, 0, 0.4);
-/* workspace text colors */
-@define-color workspace_fg @foreground;
-@define-color act_wrk_fg rgba(0, 0, 0, 1);
-@define-color use_wrk_fg @color5;
-/* workspace button-background colors */
-@define-color workspace_bg rgba(0, 0, 0, 0.6);
-@define-color act_wrk_bg @foreground;
-/* taskbar button-background colors */
-@define-color taskbar_bg rgba(255, 255, 255, 0.2);
-/* updates-widget icon+text colors */
-@define-color updates_green #a3be8c;
-@define-color updates_yellow #ff9a3c;
-@define-color updates_red #dc2f2f;
-
-
 /*
     ┏┓┏┓┳┓┏┓┳┓┏┓┓
     ┃┓┣ ┃┃┣ ┣┫┣┫┃
@@ -180,7 +148,7 @@ margin-right:-15;
     padding: 0px 10px 0px 10px;
     margin: 0;
     min-width: 30px;
-    background: @timer;
+    background: @stat;
 }
 
 /*
@@ -295,18 +263,18 @@ background: @quicklinks;
 
 #l-window {
 border-left: 15 solid transparent;
-border-bottom: 30 solid @workspace_bg;
+border-bottom: 30 solid @window;
 margin-left:0;
 }
 
 #r-window {
-border-left: 15 solid @workspace_bg;
+border-left: 15 solid @window;
 border-bottom: 30 solid transparent;
 margin-right:-15;
 }
 
 #window {
-background: @workspace_bg;
+background: @window;
 }
 
 window#waybar.empty #window, window#waybar.empty #l-window, window#waybar.empty #r-window {
@@ -370,18 +338,18 @@ background: @taskbar;
 
 #l-stat {
 border-left: 15 solid transparent;
-border-bottom: 30 solid @timer;
+border-bottom: 30 solid @stat;
 margin-left:0;
 }
 
 #r-stat {
-border-left: 15 solid @timer;
+border-left: 15 solid @stat;
 border-bottom: 30 solid transparent;
 margin-right:-15;
 }
 
-#custom-timer {
-background: @timer;
+#custom-stat {
+background: @stat;
 }
 
 /*
