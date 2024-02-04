@@ -2,6 +2,7 @@ librewolf-bin
 oomox-qt5-styleplugin-git
 pikaur
 swaylock-effects-git
+swaync
 swww
 themix-full-git
 vscodium-bin
