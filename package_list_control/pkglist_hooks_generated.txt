@@ -76,6 +76,7 @@ snapper
 sox
 sshfs
 starship
+stow
 swappy
 sxiv
 terminus-font
