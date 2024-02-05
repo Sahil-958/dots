@@ -59,7 +59,7 @@ snapl(){
 hc(){
 local selectedCommand
 
-selectedCommand=$(history | sort -hu | sed "s/^[ \t]*[0-9]\+[ \t]*//"|uniq | fzf --reverse --height=60% )
+selectedCommand=$(history | sed "s/^[ \t]*[0-9]\+[ \t]*//"| sort -u | fzf --reverse --height=60% )
 echo "Copying $selectedCommand "
 
 if [ $XDG_SESSION_TYPE = "wayland"  ];  then	
@@ -69,7 +69,7 @@ else
 fi
 }
 
-alias hr='history | sort -hu | sed "s/^[ \t]*[0-9]\+[ \t]*//"| fzf --reverse --height=60% |bash' 
+alias hr='history | sed "s/^[ \t]*[0-9]\+[ \t]*//"| sort -u | fzf --reverse --height=60% |bash' 
 
 #Souring the below does the same as the command_not_found_handle does but i can customize the funtion to my likings
 #source /usr/share/doc/pkgfile/command-not-found.bash
