@@ -246,7 +246,7 @@
 
     //Brightness 
     "backlight": {
-    "device": "intel_backlight",
+    "device": "amdgpu_bl2",
     "format": "{icon}  {percent}%",
     "format-icons": [ "󰛩","󱩎","󱩎","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"  ],
     },
