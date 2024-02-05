@@ -80,6 +80,7 @@ stow
 swappy
 sxiv
 terminus-font
+tesseract
 tldr
 tree
 ttf-fira-sans
