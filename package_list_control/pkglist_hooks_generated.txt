@@ -81,6 +81,7 @@ swappy
 sxiv
 terminus-font
 tesseract
+tesseract-data-eng
 tldr
 tree
 ttf-fira-sans
