@@ -46,6 +46,7 @@ neovim
 nethogs
 network-manager-applet
 networkmanager
+nodejs
 noto-fonts-emoji
 obs-studio
 os-prober
