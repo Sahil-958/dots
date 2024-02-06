@@ -30,6 +30,16 @@
 @define-color trans-background9 rgba({background.rgb},0.9);
 
 @define-color trans-foreground rgba({foreground.rgb},0.6);
+@define-color trans-foreground1 rgba({foreground.rgb},0.1);
+@define-color trans-foreground2 rgba({foreground.rgb},0.2);
+@define-color trans-foreground3 rgba({foreground.rgb},0.3);
+@define-color trans-foreground4 rgba({foreground.rgb},0.4);
+@define-color trans-foreground5 rgba({foreground.rgb},0.5);
+@define-color trans-foreground6 rgba({foreground.rgb},0.6);
+@define-color trans-foreground7 rgba({foreground.rgb},0.7);
+@define-color trans-foreground8 rgba({foreground.rgb},0.8);
+@define-color trans-foreground9 rgba({foreground.rgb},0.9);
+
 @define-color trans-color0 rgba({color0.rgb},0.6);
 @define-color trans-color1 rgba({color1.rgb},0.6);
 @define-color trans-color2 rgba({color2.rgb},0.6);

@@ -127,7 +127,7 @@ tooltip {
     font-weight: bold;
     font-size: 14px;
     color: @clock;
-    background: @apps;
+    background: @clock-bg;
     padding: 0px 10px 0px 10px;
     margin: 0;
     opacity: 1;
@@ -135,12 +135,12 @@ tooltip {
 
 #l-clock {
 border-left: 15 solid transparent;
-border-bottom: 30 solid @apps;
+border-bottom: 30 solid @clock-bg;
 margin-left:0;
 }
 
 #r-clock {
-border-left: 15 solid @apps;
+border-left: 15 solid @clock-bg;
 border-bottom: 30 solid transparent;
 margin-right:-15;
 }
@@ -226,18 +226,19 @@ min-height:0px;
 
 #l-apps {
 border-left: 15 solid transparent;
-border-bottom: 30 solid @apps;
+border-bottom: 30 solid @apps-bg;
 margin-left:0;
 }
 
 #r-apps {
-border-left: 15 solid @apps;
+border-left: 15 solid @apps-bg;
 border-bottom: 30 solid transparent;
 margin-right:-15;
 }
 
 #custom-appmenu {
-    background: @apps;
+    background: @apps-bg;
+    color: @apps;
 }
 
 /*

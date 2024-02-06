@@ -7,11 +7,13 @@
 */
 
 /* waybar area/group colors*/
-@define-color apps rgba(0, 0, 0, 0.6);
+@define-color apps-bg rgba(0, 0, 0, 0.6);
+@define-color apps @foreground;
 @define-color quicklinks rgba(0, 0, 0, 0.4);
 @define-color workspaces rgba(0, 0, 0, 0.6);
 @define-color taskbar rgba(0, 0, 0, 0.4);
 @define-color clock @foreground;
+@define-color clock-bg rgba(0, 0, 0, 0.6);
 @define-color stat rgba(0, 0, 0, 0.4);
 @define-color devices rgba(0, 0, 0, 0.6);
 @define-color system rgba(0, 0, 0, 0.4);
@@ -35,13 +37,13 @@
 
 #l-clock {
 border-left: 15 solid transparent;
-border-bottom: 15 solid @apps;
-border-top: 15 solid @apps;
+border-bottom: 15 solid @clock-bg;
+border-top: 15 solid @clock-bg;
 margin-left:0;
 }
 
 #r-clock {
-border-left: 15 solid @apps;
+border-left: 15 solid @clock-bg;
 border-bottom: 15 solid transparent;
 border-top: 15 solid transparent;
 margin-right:-15;
@@ -49,13 +51,13 @@ margin-right:-15;
 
 #l-apps {
 border-left: 15 solid transparent;
-border-bottom: 15 solid @apps;
-border-top: 15 solid @apps;
+border-bottom: 15 solid @apps-bg;
+border-top: 15 solid @apps-bg;
 margin-left:0;
 }
 
 #r-apps {
-border-left: 15 solid @apps;
+border-left: 15 solid @apps-bg;
 border-bottom: 15 solid transparent;
 border-top: 15 solid transparent;
 margin-right:-15;

@@ -7,18 +7,18 @@
 */
 
 /* waybar area/group colors*/
-@define-color apps @foreground;
-@define-color apps-bg @background;
-@define-color taskbar @trans-background8;
-@define-color window @trans-background6;
-@define-color stat @trans-background4;
+@define-color apps-bg @foreground;
+@define-color apps @background;
+@define-color taskbar @trans-foreground8;
+@define-color window @trans-foreground6;
+@define-color stat @trans-foreground4;
 
-@define-color workspaces @trans-background4;
+@define-color workspaces @trans-foreground4;
 
-@define-color devices @trans-background5;
-@define-color system @trans-background7;
-@define-color clock-bg @background;
-@define-color clock @foreground;
+@define-color devices @trans-foreground5;
+@define-color system @trans-foreground7;
+@define-color clock-bg @foreground;
+@define-color clock @background;
 
 /* workspace text colors */
 @define-color workspace_fg @foreground;

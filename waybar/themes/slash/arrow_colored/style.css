@@ -7,7 +7,8 @@
 */
 
 /* waybar area/group colors*/
-@define-color apps @background;
+@define-color apps-bg @background;
+@define-color apps @foreground;
 @define-color taskbar @trans-background8;
 @define-color window @trans-background6;
 @define-color stat @trans-background4;
@@ -16,7 +17,7 @@
 
 @define-color devices @trans-background5;
 @define-color system @trans-background7;
-@define-color clock_bg @background;
+@define-color clock-bg @background;
 @define-color clock @foreground;
 
 /* workspace text colors */
@@ -33,13 +34,13 @@
 
 #l-clock {
 border-left: 15 solid transparent;
-border-bottom: 15 solid @apps;
-border-top: 15 solid @apps;
+border-bottom: 15 solid @clock-bg;
+border-top: 15 solid @clock-bg;
 margin-left:0;
 }
 
 #r-clock {
-border-left: 15 solid @apps;
+border-left: 15 solid @clock;
 border-bottom: 15 solid transparent;
 border-top: 15 solid transparent;
 margin-right:-15;
@@ -47,13 +48,13 @@ margin-right:-15;
 
 #l-apps {
 border-left: 15 solid transparent;
-border-bottom: 15 solid @apps;
-border-top: 15 solid @apps;
+border-bottom: 15 solid @apps-bg;
+border-top: 15 solid @apps-bg;
 margin-left:0;
 }
 
 #r-apps {
-border-left: 15 solid @apps;
+border-left: 15 solid @apps-bg;
 border-bottom: 15 solid transparent;
 border-top: 15 solid transparent;
 margin-right:-15;
