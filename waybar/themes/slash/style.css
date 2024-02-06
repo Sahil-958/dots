@@ -188,6 +188,7 @@ margin-right:-15;
 @keyframes blink {
     to {
         background-color: @transparent;
+        color: @textcolor;
     }
 }
 
