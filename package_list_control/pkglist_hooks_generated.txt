@@ -54,6 +54,7 @@ pavucontrol
 perl-rename
 pipewire-pulse
 polkit-kde-agent
+pv
 python-pip
 python-pyqt5
 python-pywal
