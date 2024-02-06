@@ -7,6 +7,7 @@
 */
 
 /* waybar area/group colors*/
+@define-color textcolor @foreground;
 @define-color apps-bg rgba(0, 0, 0, 0.6);
 @define-color apps @foreground;
 @define-color quicklinks rgba(0, 0, 0, 0.4);

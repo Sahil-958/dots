@@ -13,7 +13,7 @@
 }
 
 window#waybar {
-    color: @foreground;
+    color: @textcolor;
     background: transparent;
 }
 
@@ -126,7 +126,6 @@ tooltip {
     font-family: "Futura Bk BT";
     font-weight: bold;
     font-size: 14px;
-    color: @clock;
     background: @clock-bg;
     padding: 0px 10px 0px 10px;
     margin: 0;
@@ -189,7 +188,6 @@ margin-right:-15;
 @keyframes blink {
     to {
         background-color: @transparent;
-        color: @textcolor2;
     }
 }
 
@@ -238,7 +236,6 @@ margin-right:-15;
 
 #custom-appmenu {
     background: @apps-bg;
-    color: @apps;
 }
 
 /*
