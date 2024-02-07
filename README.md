@@ -55,6 +55,12 @@ This repository contains my personal dotfiles and configuration files. It's curr
 
 #### Waybar
 ![screenshots/waybar.png](screenshots/waybar.png)
+![screenshot_waybar](screenshots/waybar_arrow_centered_light.png)
+![screenshot_waybar](screenshots/waybar_slash_light.png)
+![screenshot_waybar](screenshots/waybar_arrow_default.png)
+![screenshot_waybar](screenshots/waybar_arrow_centered_dark.png)
+![screenshot_waybar](screenshots/waybar_slash_dark.png)
+
 
 #### Dunst
 ![screenshots/dunst_powerNotify.png](screenshots/dunst_powerNotify.png)
