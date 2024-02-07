@@ -19,6 +19,7 @@ dolphin
 dolphin-plugins
 dunst
 efibootmgr
+enblend-enfuse
 ffmpegthumbs
 firefox
 firewalld
