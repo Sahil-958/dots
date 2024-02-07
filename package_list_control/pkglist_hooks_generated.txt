@@ -80,7 +80,6 @@ sshfs
 starship
 stow
 swappy
-sxiv
 terminus-font
 tesseract
 tesseract-data-eng
