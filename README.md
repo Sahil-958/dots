@@ -13,10 +13,8 @@ This repository contains my personal dotfiles and configuration files. It's curr
 ### How it looks:
 
 #### SDDM Pywal Generated Themes
-|||
-|---|---|
-|![screenshots/sddm01.png](screenshots/sddm01.png)|![screenshots/sddm02.png](screenshots/sddm02.png)|
-|![screenshots/sddm03.png](screenshots/sddm03.png)|![screenshots/sddm04.png](screenshots/sddm04.png)|
+
+![screenshots/sddm.png](screenshots/sddm.png)
 
 #### Starship Pywal ColorScheme
 |||
