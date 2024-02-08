@@ -21,9 +21,7 @@ This repository contains my personal dotfiles and configuration files. It's curr
 |-|-|
 |![screenshots/starship_git.png](screenshots/starship_git.png)|![screenshots/starship_cont_prompt.png](screenshots/starship_cont_prompt.png)|
 
-![screenshots/starship01.png](screenshots/starship01.png)
-![screenshots/starship03.png](screenshots/starship02.png)
-![screenshots/starship03.png](screenshots/starship03.png)
+![screenshots/starship.png](screenshots/starship.png)
 
 > [!NOTE]  
 > From now on, only a single pywal color scheme is shown to prevent the README from bloating with images.
