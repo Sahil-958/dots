@@ -60,10 +60,7 @@ for ((i = 0; i < num_images; i++)); do
     {
     convert "${images[i]}" -background none -rotate "$angle" -trim +repage png:"${parts[i]}"
     # Calculate the dimensions of the first image
-    image_width=$(identify -format "%w" "${parts[i]}")
-    image_height=$(identify -format "%h" "${parts[i]}")
-    posx=$(identify -format "%[fx:page.x]" "${parts[i]}")
-    posy=$(identify -format "%[fx:page.y]" "${parts[i]}")
+    read image_width image_height posx posy <<< $(identify -format "%w %h %[fx:page.x] %[fx:page.y]" "${parts[i]}")
     crop_height=$((image_height / $num_images ))
 
     position=$((crop_height * i))
@@ -90,8 +87,7 @@ convert output.png -background none -rotate "$angle" -trim +repage png:output.pn
 
 echo "Done"
 
-W=$(identify -format "%w" "output.png")
-H=$(identify -format "%h" "output.png")
+read W H <<< $(identify -format "%w %h" "output.png")
  
 if [[ "$radius" -ne 0 ]]; then
     echo -n "Rounding Inner Image | Status: "
