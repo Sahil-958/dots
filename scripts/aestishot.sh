@@ -57,6 +57,7 @@ done
 echo -n "Rotating and merging | Status: "
 # Crop the parts using the calculated positions
 for ((i = 0; i < num_images; i++)); do
+    {
     convert "${images[i]}" -background none -rotate "$angle" -trim +repage png:"${parts[i]}"
     # Calculate the dimensions of the first image
     image_width=$(identify -format "%w" "${parts[i]}")
@@ -68,8 +69,11 @@ for ((i = 0; i < num_images; i++)); do
     position=$((crop_height * i))
     new_posy=$((posy + position))
     convert "${parts[i]}" -crop "${image_width}x${crop_height}+${posx}+${new_posy}" png:"${parts[i]}"
-
+    } &
 done
+
+# Wait for all background jobs to finish
+wait
 
 # Combine the parts vertically and save as output.png
 convert "${parts[@]::${#parts[@]}-2}" -append output.png
