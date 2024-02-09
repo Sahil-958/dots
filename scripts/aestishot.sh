@@ -44,6 +44,7 @@ if [ ${#images[@]} -eq 0 ]; then
     usage
 fi
 
+echo "Hang tight this may take some time"
 # Calculate the height of each cropped part
 num_images=${#images[@]}
 
@@ -53,6 +54,7 @@ for ((i = 0; i < $(($num_images + 2)); i++)); do
     parts+=( "$(mktemp /tmp/part_$i.XXXXXX.png)" )
 done
 
+echo -n "Rotating and merging | Status: "
 # Crop the parts using the calculated positions
 for ((i = 0; i < num_images; i++)); do
     convert "${images[i]}" -background none -rotate "$angle" -trim +repage png:"${parts[i]}"
@@ -72,33 +74,46 @@ done
 # Combine the parts vertically and save as output.png
 convert "${parts[@]::${#parts[@]}-2}" -append output.png
 
-if [[ -n "$angle" ]]; then
-    if [[ "$angle" == -* ]]; then
-        # If it starts with "-", replace it with "+"
-        angle="${angle/-/}"
-    else
-        # If it doesn't start with "-", prepend it with "-"
-        angle="-${angle}"
-    fi
-
-    convert output.png -background none -rotate "$angle" -trim +repage png:output.png
+if [[ "$angle" == -* ]]; then
+    # If it starts with "-", replace it with "+"
+    angle="${angle/-/}"
+else
+    # If it doesn't start with "-", prepend it with "-"
+    angle="-${angle}"
 fi
 
-fromColor=$(convert "${images[0]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
-toColor=$(convert "${images[-1]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
+convert output.png -background none -rotate "$angle" -trim +repage png:output.png
 
-echo "$fromColor $toColor"
+echo "Done"
+
 W=$(identify -format "%w" "output.png")
 H=$(identify -format "%h" "output.png")
-if [[ -n "$angle" ]]; then
-    magick -size $(( W + padding ))x$(( H + padding ))  -define gradient:angle=$(( 180 - $angle )) gradient:"$fromColor-$toColor" png:"${parts[-1]}"
-
+ 
+if [[ "$radius" -ne 0 ]]; then
+    echo -n "Rounding Inner Image | Status: "
     convert -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" "${parts[-2]}"
     convert output.png -matte "${parts[-2]}" -compose DstIn -composite output.png
 
-    composite -gravity center output.png "${parts[-1]}"  output.png
+    echo "Done"
+else
+    echo "Radius:$radius Skipping Rounding"
 fi
 
-# Clean up temporary files
-rm "${parts[@]}"
+if [[ "$padding" -ne 0 ]]; then
+    echo -n "Adding gradient padding "
+    fromColor=$(convert "${images[0]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
+    toColor=$(convert "${images[-1]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
 
+    echo -n "with Colors $fromColor $toColor | Status: "
+   magick -size $(( W + padding ))x$(( H + padding ))  -define gradient:angle=$(( 180 - $angle )) gradient:"$fromColor-$toColor" png:"${parts[-1]}"
+
+    composite -gravity center output.png "${parts[-1]}"  output.png
+    echo "Done"
+else
+    echo "Padding:$padding Skipping Padding"
+fi
+# Clean up temporary files
+echo -n "Cleaning Up temporary files | Status: "
+rm "${parts[@]}"
+echo "Done"
+echo "Check out the output.png"
