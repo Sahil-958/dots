@@ -14,7 +14,7 @@ if ! echo "$titles" | grep -qF "$title"; then
     exit 1
 fi
 
-result=$(echo "$hyprctl_output" | jq -r ".[] | select(.title | contains(\"$title\")) | .title, (.class // empty), .at[0], .at[1], .size[0], .size[1], .workspace.id, .initialTitle, .fullscreenMode ")
+result=$(echo "$hyprctl_output" | jq -r ".[] | select(.title | contains(\"$title\")) | .title, (.class // empty), .at[0], .at[1], .size[0], .size[1], .workspace.id, .initialTitle, .fullscreenMode, .pid ")
 
 IFS='
 ' # Set IFS to newline
@@ -28,11 +28,11 @@ sizey="$6"
 id="$7"
 initialTitle="$8"
 fullscreenMode="$9"
-
+pid="${10}"
 border_size=$(hyprctl getoption -j general:border_size | jq .int)
 
 hyprctl dispatch workspace $id
-hyprctl dispatch focuswindow "$initialTitle"
+hyprctl dispatch focuswindow "$pid"
 
 sleep 1s
 if [ "$class" = "Rofi" ]; then
