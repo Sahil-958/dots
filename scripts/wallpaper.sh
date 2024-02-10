@@ -29,7 +29,7 @@ case $1 in
     do
         basename=$(basename $rfile)
         echo -en "$basename\x00icon\x1f/${rfile}\n"
-    done | rofi -dmenu -replace -config ~/dots/rofi/config-hyprdots.rasi)
+    done | rofi -window-title "Wall Selector" -dmenu -replace -config ~/dots/rofi/config-hyprdots.rasi)
 
         
 #    selected=$( find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" -printf "%f\n"| rofi -dmenu -replace -config ~/dots/rofi/config-wallpaper.rasi)

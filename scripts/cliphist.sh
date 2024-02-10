@@ -10,15 +10,15 @@
 # ----------------------------------------------------- 
 
 case $1 in
-    d) cliphist list | rofi -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist delete
+    d) cliphist list | rofi -window-title "Clipboard" -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist delete
        ;;
 
-    w) if [ `echo -e "Clear\nCancel" | rofi -dmenu -config ~/dots/rofi/config-short.rasi` == "Clear" ] ; then
+    w) if [ `echo -e "Clear\nCancel" | rofi -window-title "Clipboard" -dmenu -config ~/dots/rofi/config-short.rasi` == "Clear" ] ; then
             cliphist wipe
        fi
        ;;
-    q) cliphist list | rofi -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist decode | qrencode -o- -l H -s 25 -m 2 --dpi=192 | swappy -f - || notify-send "Text too large to encode" -t 10000 -u critical
+    q) cliphist list | rofi -window-title "Clipboard" -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist decode | qrencode -o- -l H -s 25 -m 2 --dpi=192 | swappy -f - || notify-send "Text too large to encode" -t 10000 -u critical
        ;;
-    *) cliphist list | rofi -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist decode | wl-copy
+    *) cliphist list | rofi -window-title "Clipboard" -dmenu -config ~/dots/rofi/config-cliphist.rasi | cliphist decode | wl-copy
        ;;
 esac
