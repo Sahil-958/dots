@@ -13,7 +13,7 @@ images=()
 padding=80
 radius=20
 angle=9
-
+output="output"
 while [[ $# -gt 0 ]]; do
     case $1 in
        -p)
@@ -23,6 +23,10 @@ while [[ $# -gt 0 ]]; do
         -r)
             shift
             radius=$1
+            ;;
+        -o)
+            shift
+            output=$1
             ;;
         -a)
             shift
@@ -72,8 +76,8 @@ done
 # Wait for all background jobs to finish
 wait
 
-# Combine the parts vertically and save as output.png
-convert "${parts[@]::${#parts[@]}-2}" -append output.png
+# Combine the parts vertically and save as "$output".png
+convert "${parts[@]::${#parts[@]}-2}" -append "$output".png
 
 if [[ "$angle" == -* ]]; then
     # If it starts with "-", replace it with "+"
@@ -83,16 +87,16 @@ else
     angle="-${angle}"
 fi
 
-convert output.png -background none -rotate "$angle" -trim +repage png:output.png
+convert "$output".png -background none -rotate "$angle" -trim +repage png:"$output".png
 
 echo "Done"
 
-read W H <<< $(identify -format "%w %h" "output.png")
+read W H <<< $(identify -format "%w %h" ""$output".png")
  
 if [[ "$radius" -ne 0 ]]; then
     echo -n "Rounding Inner Image | Status: "
     convert -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" "${parts[-2]}"
-    convert output.png -matte "${parts[-2]}" -compose DstIn -composite output.png
+    convert "$output".png -matte "${parts[-2]}" -compose DstIn -composite "$output".png
 
     echo "Done"
 else
@@ -107,7 +111,7 @@ if [[ "$padding" -ne 0 ]]; then
     echo -n "with Colors $fromColor $toColor | Status: "
    magick -size $(( W + padding ))x$(( H + padding ))  -define gradient:angle=$(( 180 - $angle )) gradient:"$fromColor-$toColor" png:"${parts[-1]}"
 
-    composite -gravity center output.png "${parts[-1]}"  output.png
+    composite -gravity center "$output".png "${parts[-1]}"  "$output".png
     echo "Done"
 else
     echo "Padding:$padding Skipping Padding"
@@ -116,4 +120,4 @@ fi
 echo -n "Cleaning Up temporary files | Status: "
 rm "${parts[@]}"
 echo "Done"
-echo "Check out the output.png"
+echo "Check out the "$output".png"
