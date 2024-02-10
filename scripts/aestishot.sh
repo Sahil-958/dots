@@ -14,6 +14,7 @@ padding=80
 radius=20
 angle=9
 output="output"
+type="png"
 while [[ $# -gt 0 ]]; do
     case $1 in
        -p)
@@ -23,6 +24,10 @@ while [[ $# -gt 0 ]]; do
         -r)
             shift
             radius=$1
+            ;;
+        -t)
+            shift
+            type=$1
             ;;
         -o)
             shift
@@ -55,29 +60,29 @@ num_images=${#images[@]}
 # Create temporary files for parts
 parts=()
 for ((i = 0; i < $(($num_images + 2)); i++)); do
-    parts+=( "$(mktemp /tmp/part_$i.XXXXXX.png)" )
+    parts+=( "$(mktemp /tmp/part_$i.XXXXXX.$type)" )
 done
 
 echo -n "Rotating and merging | Status: "
 # Crop the parts using the calculated positions
 for ((i = 0; i < num_images; i++)); do
     {
-    convert -quality 100 "${images[i]}" -background none -rotate "$angle" -trim +repage png:"${parts[i]}"
+    convert -quality 100 "${images[i]}" -background none -rotate "$angle" -trim +repage $type:"${parts[i]}"
     # Calculate the dimensions of the first image
     read image_width image_height posx posy <<< $(identify -format "%w %h %[fx:page.x] %[fx:page.y]" "${parts[i]}")
     crop_height=$((image_height / $num_images ))
 
     position=$((crop_height * i))
     new_posy=$((posy + position))
-    convert -quality 100 "${parts[i]}" -crop "${image_width}x${crop_height}+${posx}+${new_posy}" png:"${parts[i]}"
+    convert -quality 100 "${parts[i]}" -crop "${image_width}x${crop_height}+${posx}+${new_posy}" $type:"${parts[i]}"
     } &
 done
 
 # Wait for all background jobs to finish
 wait
 
-# Combine the parts vertically and save as "$output".png
-convert -quality 100 "${parts[@]::${#parts[@]}-2}" -append "$output".png
+# Combine the parts vertically and save as "$output".$type
+convert -quality 100 "${parts[@]::${#parts[@]}-2}" -append "$output".$type
 
 if [[ "$angle" == -* ]]; then
     # If it starts with "-", replace it with "+"
@@ -87,16 +92,16 @@ else
     angle="-${angle}"
 fi
 
-convert -quality 100 "$output".png -background none -rotate "$angle" -trim +repage png:"$output".png
+convert -quality 100 "$output".$type -background none -rotate "$angle" -trim +repage $type:"$output".$type
 
 echo "Done"
 
-read W H <<< $(identify -format "%w %h" ""$output".png")
+read W H <<< $(identify -format "%w %h" ""$output".$type")
  
 if [[ "$radius" -ne 0 ]]; then
     echo -n "Rounding Inner Image | Status: "
-    convert -quality 100 -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" png:"${parts[-2]}"
-    convert -quality 100 "$output".png -matte "${parts[-2]}" -compose DstIn -composite "$output".png
+    convert -quality 100 -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" $type:"${parts[-2]}"
+    convert -quality 100 "$output".$type -matte "${parts[-2]}" -compose DstIn -composite "$output".$type
 
     echo "Done"
 else
@@ -109,9 +114,9 @@ if [[ "$padding" -ne 0 ]]; then
     toColor=$(convert "${images[-1]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
 
     echo -n "with Colors $fromColor $toColor | Status: "
-   magick -size $(( W + padding ))x$(( H + padding ))  -define gradient:angle=$(( 180 - $angle )) gradient:"$fromColor-$toColor" png:"${parts[-1]}"
+   magick -size $(( W + padding ))x$(( H + padding ))  -define gradient:angle=$(( 180 - $angle )) gradient:"$fromColor-$toColor" $type:"${parts[-1]}"
 
-    composite -gravity center "$output".png "${parts[-1]}"  "$output".png
+    composite -gravity center "$output".$type "${parts[-1]}"  "$output".$type
     echo "Done"
 else
     echo "Padding:$padding Skipping Padding"
@@ -120,4 +125,4 @@ fi
 echo -n "Cleaning Up temporary files | Status: "
 rm "${parts[@]}"
 echo "Done"
-echo "Check out the "$output".png"
+echo "Check out the "$output".$type"
