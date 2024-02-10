@@ -95,7 +95,7 @@ read W H <<< $(identify -format "%w %h" ""$output".png")
  
 if [[ "$radius" -ne 0 ]]; then
     echo -n "Rounding Inner Image | Status: "
-    convert -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" "${parts[-2]}"
+    convert -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" png:"${parts[-2]}"
     convert "$output".png -matte "${parts[-2]}" -compose DstIn -composite "$output".png
 
     echo "Done"
