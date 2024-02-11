@@ -1,11 +1,19 @@
 #!/bin/bash
 
 usage() {
-    echo "Usage: $0 [options] <image1> <image2> ... -r <angle>"
+    echo "Usage: $0 [options] <image1> <image2>"
     echo "Options:"
+    echo "  -h Prints this useage"
     echo "  -p <padding>     Padding size for the gradient background (default: 80)"
     echo "  -r <radius>      Corner radius for the output image (default: 20)"
     echo "  -a <angle>       Angle to rotate the output image by (default: 9)"
+    echo "  -t <png|jpeg|...|tiff>  File Format CAUTION: JPEG might not work very well"
+    echo "  -o <file Name>   Name of the output file (default: output.png)"   
+    echo "  -gf <color> Speicfy Gradient fromColor color (default: generated from first supplied image)"
+    echo "  -gt <color> Speicfy Gradient toColor color (default: generated from last supplied image)"
+    echo "  -ga <angle> Speicfy Gradient Angle (default: 180-angle)"
+    echo "EXAMPLE:"
+    echo "$0 -r 25 -p 32 -a 9 -gf "#ff0000" -gt "#00ff00" -ga 90 -t png -o myoutput images*.png"
     exit 1
 }
 
@@ -33,9 +41,24 @@ while [[ $# -gt 0 ]]; do
             shift
             output=$1
             ;;
+        -gf)
+            shift
+            fromColor="$1"
+            ;;
+        -ga)
+            shift
+            gradAngle="$1"
+            ;;
+        -gt)
+            shift
+            toColor="$1"
+            ;;
         -a)
             shift
             angle=$1
+            ;;
+        -h)
+            usage
             ;;
         -*)
             echo "Unrecognized option: $1" >&2
@@ -47,6 +70,10 @@ while [[ $# -gt 0 ]]; do
     esac
     shift
 done
+
+if [[ -z "$gradAngle" ]]; then
+gradAngle=$(( 180 - $angle ))
+fi
 
 if [ ${#images[@]} -eq 0 ]; then
     echo "No images provided."
@@ -67,14 +94,14 @@ echo -n "Rotating and merging | Status: "
 # Crop the parts using the calculated positions
 for ((i = 0; i < num_images; i++)); do
     {
-    convert  "${images[i]}" -background none -rotate "$angle" -trim +repage $type:"${parts[i]}"
+    convert "${images[i]}" -background none -rotate "$angle" -trim +repage $type:"${parts[i]}"
     # Calculate the dimensions of the first image
     read image_width image_height posx posy <<< $(identify -format "%w %h %[fx:page.x] %[fx:page.y]" "${parts[i]}")
     crop_height=$((image_height / $num_images ))
 
     position=$((crop_height * i))
     new_posy=$((posy + position))
-    convert  "${parts[i]}" -crop "${image_width}x${crop_height}+${posx}+${new_posy}" $type:"${parts[i]}"
+    convert "${parts[i]}" -crop "${image_width}x${crop_height}+${posx}+${new_posy}" $type:"${parts[i]}"
     } &
 done
 
@@ -82,7 +109,7 @@ done
 wait
 
 # Combine the parts vertically and save as "$output".$type
-convert  "${parts[@]::${#parts[@]}-2}" -append "$output".$type
+convert "${parts[@]::${#parts[@]}-2}" -append "$output".$type
 
 if [[ "$angle" == -* ]]; then
     # If it starts with "-", replace it with "+"
@@ -92,7 +119,7 @@ else
     angle="-${angle}"
 fi
 
-convert  "$output".$type -background none -rotate "$angle" -trim +repage $type:"$output".$type
+convert "$output".$type -background none -rotate "$angle" -trim +repage $type:"$output".$type
 
 echo "Done"
 
@@ -100,8 +127,8 @@ read W H <<< $(identify -format "%w %h" ""$output".$type")
  
 if [[ "$radius" -ne 0 ]]; then
     echo -n "Rounding Inner Image | Status: "
-    convert  -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" $type:"${parts[-2]}"
-    convert  "$output".$type -matte "${parts[-2]}" -compose DstIn -composite "$output".$type
+    convert -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" $type:"${parts[-2]}"
+    convert "$output".$type -matte "${parts[-2]}" -compose DstIn -composite "$output".$type
 
     echo "Done"
 else
@@ -109,12 +136,15 @@ else
 fi
 
 if [[ "$padding" -ne 0 ]]; then
-    echo -n "Adding gradient padding "
+    if [[ -z "$fromColor" ]]; then
     fromColor=$(convert "${images[0]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
+    fi
+    if [[ -z "$toColor" ]]; then
     toColor=$(convert "${images[-1]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
+    fi
 
     echo -n "with Colors $fromColor $toColor | Status: "
-   magick -size $(( W + padding ))x$(( H + padding ))  -define gradient:angle=$(( 180 - $angle )) gradient:"$fromColor-$toColor" $type:"${parts[-1]}"
+   magick -size $(( W + padding ))x$(( H + padding ))  -define gradient:angle=$gradAngle gradient:"$fromColor-$toColor" $type:"${parts[-1]}"
 
     composite -gravity center "$output".$type "${parts[-1]}"  "$output".$type
     echo "Done"
