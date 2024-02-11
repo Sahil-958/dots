@@ -94,14 +94,14 @@ echo -n "Rotating and merging | Status: "
 # Crop the parts using the calculated positions
 for ((i = 0; i < num_images; i++)); do
     {
-    convert "${images[i]}" -background none -rotate "$angle" -trim +repage $type:"${parts[i]}"
+    magick "${images[i]}" -background none -rotate "$angle" -trim +repage $type:"${parts[i]}"
     # Calculate the dimensions of the first image
     read image_width image_height posx posy <<< $(identify -format "%w %h %[fx:page.x] %[fx:page.y]" "${parts[i]}")
     crop_height=$((image_height / $num_images ))
 
     position=$((crop_height * i))
     new_posy=$((posy + position))
-    convert "${parts[i]}" -crop "${image_width}x${crop_height}+${posx}+${new_posy}" $type:"${parts[i]}"
+    magick "${parts[i]}" -crop "${image_width}x${crop_height}+${posx}+${new_posy}" $type:"${parts[i]}"
     } &
 done
 
@@ -109,7 +109,7 @@ done
 wait
 
 # Combine the parts vertically and save as "$output".$type
-convert "${parts[@]::${#parts[@]}-2}" -append "$output".$type
+magick "${parts[@]::${#parts[@]}-2}" -append "$output".$type
 
 if [[ "$angle" == -* ]]; then
     # If it starts with "-", replace it with "+"
@@ -119,7 +119,7 @@ else
     angle="-${angle}"
 fi
 
-convert "$output".$type -background none -rotate "$angle" -trim +repage $type:"$output".$type
+magick "$output".$type -background none -rotate "$angle" -trim +repage $type:"$output".$type
 
 echo "Done"
 
@@ -127,8 +127,8 @@ read W H <<< $(identify -format "%w %h" ""$output".$type")
  
 if [[ "$radius" -ne 0 ]]; then
     echo -n "Rounding Inner Image | Status: "
-    convert -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" $type:"${parts[-2]}"
-    convert "$output".$type -matte "${parts[-2]}" -compose DstIn -composite "$output".$type
+    magick -size "${W}x${H}" xc:none -draw "roundrectangle 0,0,$W,$H,$radius,$radius" $type:"${parts[-2]}"
+    magick "$output".$type -alpha Set "${parts[-2]}" -compose DstIn -composite "$output".$type
 
     echo "Done"
 else
@@ -137,10 +137,10 @@ fi
 
 if [[ "$padding" -ne 0 ]]; then
     if [[ -z "$fromColor" ]]; then
-    fromColor=$(convert "${images[0]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
+    fromColor=$(magick "${images[0]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
     fi
     if [[ -z "$toColor" ]]; then
-    toColor=$(convert "${images[-1]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
+    toColor=$(magick "${images[-1]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
     fi
 
     echo -n "with Colors $fromColor $toColor | Status: "
