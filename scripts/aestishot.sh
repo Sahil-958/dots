@@ -136,6 +136,7 @@ else
 fi
 
 if [[ "$padding" -ne 0 ]]; then
+    echo -n "Adding gradient padding "
     if [[ -z "$fromColor" ]]; then
     fromColor=$(magick "${images[0]}" -alpha off -resize 1x1 -format "#%[hex:u]" info:-)
     fi
