@@ -35,9 +35,9 @@ This repository contains my personal dotfiles and configuration files. It's curr
 #### Rofi with Pywal Colorscheme
 |||
 |---|---|
-![screenshots/rofi_app_selector.png](screenshots/rofi_app_selector.png)|![screenshots/rofi_command_runner.png](screenshots/rofi_command_runner.png)|
-|![screenshots/rofi_waybar_theme_selector.png](screenshots/rofi_waybar_theme_selector.png)| ![rofi Screenshot](screenshots/rofi_screenshot.png)|
-|![screenshots/rofi_clipboard.png](screenshots/rofi_clipboard.png)||
+![screenshots/rofi_app_selector.png](screenshots/rofi_app_selector.png)|![screenshots/rofi_calc.png](screenshots/rofi_calc.png)|
+|![screenshots/rofi_emoji.png](screenshots/rofi_emoji.png)| ![screenshot/rofi_nerd.png](screenshots/rofi_nerd.png)|
+|![screenshots/rofi_clipboard.png](screenshots/rofi_clipboard.png)|![screenshots/rofi_screenshot.png](screenshots/rofi_screenshot.png)|
 
 ![screenshots/rofi_wall_selector.png](screenshots/rofi_wall_selector.png)
 
