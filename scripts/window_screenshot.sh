@@ -9,7 +9,9 @@ case $1 in
            title=$(echo -e "$titles\nnone" | rofi -dmenu -p "Select Window To Capture" -i -config ~/dots/rofi/config-dmenu.rasi)
            ;;
 esac
-if ! echo "$titles" | grep -qF "$title"; then
+
+[[ -z $title ]] && exit 0
+if [[ ! "$titles" =~ "$title" ]]; then
     notify-send "Selected option does not match any window. Exiting script."
     exit 1
 fi
