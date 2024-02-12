@@ -11,6 +11,8 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "margin-top": 2,
+    "margin-left": 4,
+    "margin-right": 4,
     // Load Modules
     "include": ["~/dots/waybar/themes/slash/modules.json"],
 
