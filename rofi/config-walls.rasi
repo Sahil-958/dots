@@ -123,9 +123,10 @@ listview {
     enabled:                     true;
     dynamic:                     false;
     scrollbar:                   false;
-    margin:                      0px 65px;
+    margin:                      0px 65px 30px 65px;
     background-color:            transparent;
-    border:                      0 4;
+    border:                      0 8 2 8;
+    border-radius:               0 0 25px 25px;
     columns:                     3;
     lines:                       1;
     spacing:                     0;
@@ -149,11 +150,6 @@ element {
     text-color:                  @foreground;
 }
 
-element selected.normal {
-    background-color:            @background;
-    text-color:                  @foreground;
-}
-
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
@@ -163,7 +159,7 @@ element-icon {
     size:                        27%;
     border:                      15px 2px 15px 2px;
     border-radius:               25px;
-    border-color:                @background;
+    border-color:                @foreground;
 }
 
 element-text {
@@ -177,12 +173,11 @@ element-text {
 }
 
 element-icon selected.normal{
-    border-color:                @foreground;
+    border-color:                @background;
 }
 
 element-text selected.normal{
     text-color:                  @foreground;
-    blink: true;
 }
 
 element normal.normal {
