@@ -14,6 +14,7 @@ icon_dir+="/$wall"
 echo "$icon_dir"
 if [ -d "$icon_dir" ]; then
     echo "exist"
+    rm ~/.icons/testing_cli
     ln -sf "$icon_dir" ~/.icons/testing_cli
     notify-send "Updated Icon Theme ColorScheme"
     exit 0
@@ -31,6 +32,7 @@ $run_script -o testing_cli -d "$icon_dir" ~/.cache/wal/colors-oomox > >(while re
 	dunstify -t 100000 -h int:value:$progress "Generating Icons Colorscheme..." 
 done)
 
+rm ~/.icons/testing_cli
 ln -sf "$icon_dir" ~/.icons/testing_cli
 
 dunstify "Icon ColorScheme Generation Completed" 
