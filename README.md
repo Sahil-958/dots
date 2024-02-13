@@ -68,7 +68,10 @@ This repository contains my personal dotfiles and configuration files. It's curr
 
 ![screenshots/glava_full.png](screenshots/glava_full.png)
 
-#### Wlogout (Soon Going to be replaced with a rofi window)
+#### Rofi Powermenu (Wlogout Replacement)
+![screenshots/wlogout.png](screenshots/rofi_powermenu.png)
+
+#### Wlogout (Replaced with a rofi)
 ![screenshots/wlogout.png](screenshots/wlogout.png)
 
 ## Installation
