@@ -1,5 +1,6 @@
 amd-ucode
 arch-install-scripts
+aria2
 ark
 base
 base-devel
