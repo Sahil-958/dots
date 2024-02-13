@@ -1,0 +1,127 @@
+/* Pywal Generated */
+:root {{
+  --color5: var(--user-input, {color5}); /* Default color or user-defined color */
+  --color6: var(--user-input, {color6}); /* Default color or user-defined color */
+  --color2: var(--user-input, {color2}); /* Default color or user-defined color */
+  --color1: var(--user-input, {color1}80); /* Default color or user-defined color */
+  --foreground: var(--user-input, {foreground}); /* Default color or user-defined color */
+  --background: var(--user-input, {background}); /* Default color or user-defined color */
+}}
+
+#vimiumHintMarkerContainer div.internalVimiumHintMarker, #vimiumHintMarkerContainer div.vimiumHintMarker {{
+  padding: 3px 4px;
+  background: var(--background);
+  border: 1;
+  border-color: var(--foreground);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}}
+
+#vimiumHintMarkerContainer div span {{
+  color: var(--foreground);
+  text-shadow: none;
+}}
+
+#vimiumHintMarkerContainer div > .matchingCharacter {{
+  opacity: 1.0;
+}}
+
+#vimiumHintMarkerContainer div > .matchingCharacter ~ span {{
+  color: var(--background);
+}}
+
+#vomnibar {{
+  background: var(--background);
+  border: 2px solid var(--foreground);
+  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  max-height: calc(100vh - 70px);
+  overflow: hidden;
+}}
+
+@keyframes show {{
+  0% {{
+    transform: translateY(50px);
+    opacity: 0;
+  }}
+  100% {{
+    transform: translateY(0);
+    opacity: 1;
+  }}
+}}
+
+#vomnibar input {{
+  color: var(--foreground);
+  background: var(--background);
+  border: none;
+  height: unset;
+  padding: 16px 30px;
+}}
+
+#vomnibar .vomnibarSearchArea {{
+  border: none;
+  padding: unset;
+  background: var(--background)
+}}
+
+#vomnibar ul {{
+  padding: 0;
+  margin: 0;
+  background: var(--background);
+  border-top: 1px solid var(--foreground);
+}}
+
+#vomnibar li {{
+  padding: 10px;
+  border-bottom: 1px solid var(--foreground)
+}}
+
+#vomnibar li .vomnibarTopHalf,
+#vomnibar li .vomnibarBottomHalf {{
+  padding: 3px 0;
+}}
+
+#vomnibar li .vomnibarSource {{
+  color: var(--foreground);
+}}
+
+#vomnibar li em,
+#vomnibar li .vomnibarTitle {{
+  color: var(--foreground);
+  font-weight: bold;
+}}
+
+#vomnibar li .vomnibarUrl {{
+  color: var(--color6);
+}}
+
+#vomnibar li .vomnibarMatch {{
+  color:var(--color5); 
+  font-weight: bold;
+}}
+
+#vomnibar li .vomnibarTitle .vomnibarMatch {{
+  color: var(--color5);
+}}
+
+#vomnibar li.vomnibarSelected {{
+  background-color: var(--color1);
+}}
+
+div.vimiumHUD {{
+  background: var(--background);
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}}
+
+div.vimiumHUD span#hud-find-input,
+div.vimiumHUD .vimiumHUDSearchAreaInner {{
+  color: var(--foreground)
+}}
+
+div.vimiumHUD .hud-find {{
+  background-color: var(--background);
+  border: none;
+}}
+
+div.vimiumHUD .vimiumHUDSearchArea {{
+  background-color: var(--background);
+}}
