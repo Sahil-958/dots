@@ -10,17 +10,19 @@
 /* Outline width (in pixels, set to 0 to disable outline drawing) */
 #define BAR_OUTLINE_WIDTH 0
 /* Amplify magnitude of the results each bar displays */
-#define AMPLIFY 300
+#define AMPLIFY 180
 /* Whether the current settings use the alpha channel;
    enabling this is required for alpha to function
    correctly on X11 with `"native"` transparency. */
 #define USE_ALPHA 0
 /* How strong the gradient changes */
-#define GRADIENT_POWER 60
+#define GRADIENT_POWER 90
 /* Bar color changes with height */
-#define GRADIENT (d / GRADIENT_POWER + 1)
+/* #define GRADIENT ( d / GRADIENT_POWER + 1) */
 /* Bar color */
-#define COLOR ({foreground} * GRADIENT)
+/* #define COLOR ({foreground} * GRADIENT) */
+#define COLOR mix({foreground},{color2}, clamp(d / 100, 0, 1))
+#define COLOR mix({foreground},{color2}, 0.3)
 /* Direction that the bars are facing, 0 for inward, 1 for outward */
 #define DIRECTION 0
 /* Whether to switch left/right audio buffers */
