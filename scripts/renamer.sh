@@ -9,13 +9,21 @@ MICROSOFT_VISION_API_ENDPOINT='https://basher.cognitiveservices.azure.com'
 # Maximum number of parallel processes
 MAX_PARALLEL_JOBS=3
 
+# Get terminal width
+TERM_WIDTH=$(tput cols)
+
 ALLOWED_IMAGE_EXTENSIONS=('jpeg' 'jpg' 'png')
 logs=$(mktemp)
 
 rename_img() {
     local old="$1"
-    local old_name=$(basename $old)
     local new="$2"
+    if [ "${new#ERROR_}" != "$new" ]; then
+        # String starts with "ERROR_"
+        echo -e "Skipping image [$old]\nReason: ${new#ERROR_} "
+        return
+    fi
+    local old_name=$(basename $old)
     local base_dir=$(dirname $old)
     local ext=${old##*.}
     local new_name="$new.$ext"
@@ -59,60 +67,84 @@ get_caption() {
             echo "Invalid API version. Please specify either 'v3.2', 'v4.0_caption', or 'v4.0_denseCaptions'."
             exit 1
             ;;
-    esac
-    
+    esac 
+
     local response=$(curl -s -X POST -H "Ocp-Apim-Subscription-Key: $MICROSOFT_VISION_API_KEY" -H "Content-Type: application/octet-stream" --data-binary @"$image_file" "$request_url")
-    local caption_text=$( echo "$response" | jq -r "$filter")
-   
+    local caption_text=$( echo "$response" | jq -er "$filter // (\"ERROR_\" + .error.message)" )
+    
     if [[ -n "$response_file" ]]; then
         echo "$response" >> "$response_file"
     fi 
-
-    if [[ -n "$space_replacement" ]]; then
+ 
+    if [ -n "$space_replacement" ] && [ "${new#ERROR_}" != "$new" ]; then
     caption_text="${caption_text// /$space_replacement}"        
     fi 
+
     echo "$caption_text"
 }
 
 process_image() {
-    local caption=$(get_caption "$1")
-    local result=$(rename_img "$1" "$caption")
-    echo "$result" >> $logs
+   if [ $(stat -c %s "$1") -le 20971520 ]; then
+        local caption=$(get_caption "$1")
+        local result=$(rename_img "$1" "$caption")
+        echo "$result" >> $logs
+    else
+        echo "The specified file [$1] is not under 20,971,520 bytes (20.97MB) Please reduce the Size." >> $logs
+    fi
 }
 
 init() {
-    echo "Max Parallel Jobs is: $MAX_PARALLEL_JOBS"
-    local directory="$1"
-    if [ -d "$directory" ]; then
-        IFS=$'\n'
-        local images=()
-        readarray -t images < <(find "$directory" -type f -regex ".*\.\(jpg\|jpeg\|png\)")
-        local count=0
-        for image in "${images[@]}"; do
-            if [ "$count" -lt "$MAX_PARALLEL_JOBS" ]; then
-                ((count++))
-                echo "Processing image - $image"
-                process_image "$image" &
+    if [ -n "$single_file" ]; then
+        if [ -f "$single_file" ]; then
+            # Get the file extension
+            file_extension="${single_file##*.}"
+            file_extension="${file_extension,,}"  # Convert to lowercase for case-insensitive comparison
+            # Check if the file extension indicates an image file
+            if [[ "$file_extension" == "png" || "$file_extension" == "jpg" || "$file_extension" == "jpeg" ]]; then
+                echo "Processing Single image file: $single_file"
+                process_image "$single_file"
             else
-                echo "Maximum parallel jobs reached. Waiting for a free slot to process image - $image"
-                wait -n
-                ((count--))
-                echo "Processing image - $image"
-                process_image "$image" &
-                ((count++))
+                echo "Skipping non-image file: $single_file" >> $logs
             fi
-        done
-        wait
-        echo "Logs:"
-        echo "_______________________________________________________"
-        cat $logs
-        echo "_______________________________________________________"
-        if [[ -n "$log_file" ]]; then
-            cat $logs > "$log_file"
-        fi 
-        rm $logs
-    else
-        echo "Directory not found: $directory"
+        else
+            echo "Error: File '$single_file' does not exist." >> $logs
+        fi
+    fi
+    
+    if [ -n "$dir" ]; then
+        if [ -d "$dir" ]; then
+            echo "Max Parallel Jobs is: $MAX_PARALLEL_JOBS"
+            IFS=$'\n'
+            local images=()
+            readarray -t images < <(find "$dir" -type f -regex ".*\.\(jpg\|jpeg\|png\)")
+            if [ ${#images[@]} -eq 0 ]; then
+                echo "No image files found in directory and it's sub directories: $dir" >> $logs
+                return
+            fi
+            local count=0
+            for image in "${images[@]}"; do
+                if [ "$count" -lt "$MAX_PARALLEL_JOBS" ]; then
+                    ((count++))
+                    echo "Processing image - $image"
+                    process_image "$image" &
+                else
+                    echo "Maximum parallel jobs reached. Waiting for a free slot to process image - $image"
+                    wait -n
+                    ((count--))
+                    echo "Processing image - $image"
+                    process_image "$image" &
+                    ((count++))
+                fi
+            done
+            wait
+        else
+            echo "Error: Directory '$dir' does not exist." >> $logs
+            return
+        fi
+    else 
+        echo "Error: No valid input provided." >> $logs
+        usage
+        return
     fi
 }
 
@@ -128,6 +160,7 @@ usage() {
     echo "  -r Accpets a file name to save the responses from api"
     echo "  -r Accpets a file name to save the logs"
     echo "  -sr By default names have spaces in them so use -sr flag to send a space replacement like _ or -"
+    echo "  -sf Accept a single file instead of a dir"
     echo "Example:"
     echo "$0 -p 5 -sr _ -r responses.txt -kf api_key.txt -endpoint \"https://basher.cognitiveservices.azure.com\" ~/Pictures/"
    exit 1
@@ -138,6 +171,10 @@ while [[ $# -gt 0 ]]; do
        -p)
             shift
             MAX_PARALLEL_JOBS=$1
+            ;;
+       -sf)
+            shift
+            single_file="$1"
             ;;
        -sr)
             shift
@@ -176,4 +213,16 @@ while [[ $# -gt 0 ]]; do
     esac
     shift
 done
-init "$dir"
+
+init
+echo -e "\nLogs:"
+# Print underscores equal to terminal width
+printf "%-${TERM_WIDTH}s\n" "_" | tr ' ' '_'
+cat $logs
+# Print underscores equal to terminal width
+printf "%-${TERM_WIDTH}s\n" "_" | tr ' ' '_'
+
+if [[ -n "$log_file" ]]; then
+    cat $logs > "$log_file"
+fi 
+rm $logs
