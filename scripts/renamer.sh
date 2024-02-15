@@ -107,6 +107,9 @@ init() {
         echo "_______________________________________________________"
         cat $logs
         echo "_______________________________________________________"
+        if [[ -n "$log_file" ]]; then
+            cat $logs > "$log_file"
+        fi 
         rm $logs
     else
         echo "Directory not found: $directory"
@@ -123,6 +126,7 @@ usage() {
     echo "  -endpoint Url of the vision api endpoint ex: 'https://basher.cognitiveservices.azure.com'"
     echo "  -p Set Concurrency Level How many image to process parallely (default: 3)"
     echo "  -r Accpets a file name to save the responses from api"
+    echo "  -r Accpets a file name to save the logs"
     echo "  -sr By default names have spaces in them so use -sr flag to send a space replacement like _ or -"
     echo "Example:"
     echo "$0 -p 5 -sr _ -r responses.txt -kf api_key.txt -endpoint \"https://basher.cognitiveservices.azure.com\" ~/Pictures/"
@@ -138,6 +142,10 @@ while [[ $# -gt 0 ]]; do
        -sr)
             shift
             space_replacement="$1"
+            ;;
+       -l)
+            shift
+            log_file=$1
             ;;
        -r)
             shift
