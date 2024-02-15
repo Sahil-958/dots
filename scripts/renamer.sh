@@ -14,13 +14,14 @@ logs=$(mktemp)
 
 rename_img() {
     local old="$1"
+    local old_name=$(basename $old)
     local new="$2"
     local base_dir=$(dirname $old)
     local ext=${old##*.}
     local new_name="$new.$ext"
     local counter=1
     if [ "$base_dir/$new_name" = "$old" ]; then
-        echo -e "   Old name:[$(basename $old)] == new name:[$new_name] Skipped"
+        echo -e "   Old name:[$old_name] == new name:[$new_name] Skipped"
         return 1
     fi
     while [ -e "$base_dir/$new_name" ]; do
@@ -34,18 +35,44 @@ rename_img() {
     done
 
     mv "$old" "$base_dir/$new_name"
-    echo "Renaming $old to $new_name"
+    echo "Renaming [$old_name] to [$new_name]"
 }
 
 get_caption() {
     local image_file="$1"
-    local request_url="$MICROSOFT_VISION_API_ENDPOINT/vision/v3.2/describe?maxCandidates=1&language=en&model-version=latest"
-    local headers="Content-Type: application/octet-stream"
-    local response=$(curl -s -X POST -H "Ocp-Apim-Subscription-Key: $MICROSOFT_VISION_API_KEY" -H "$headers" --data-binary @"$image_file" "$request_url")
-    local caption_text=$(echo "$response" | jq -r '.description.captions[0].text')
+    local api_version="${2:-v4.0_caption}"  # Default to v4.0_caption if no version is provided
+    
+    case $api_version in
+        "v3.2")
+            local request_url="$MICROSOFT_VISION_API_ENDPOINT/vision/v3.2/describe?maxCandidates=1&language=en&model-version=latest"
+            local filter=".description.captions[0].text"
+            ;;
+        "v4.0_caption")
+            local request_url="$MICROSOFT_VISION_API_ENDPOINT/computervision/imageanalysis:analyze?api-version=2023-10-01&features=caption&model-version=latest&language=en"
+            local filter=".captionResult.text"
+            ;;
+        "v4.0_denseCaptions")
+            local request_url="$MICROSOFT_VISION_API_ENDPOINT/computervision/imageanalysis:analyze?api-version=2023-10-01&features=denseCaptions&model-version=latest&language=en"
+            local filter=".denseCaptionsResult.values[0].text"
+            ;;
+        *)
+            echo "Invalid API version. Please specify either 'v3.2', 'v4.0_caption', or 'v4.0_denseCaptions'."
+            exit 1
+            ;;
+    esac
+    
+    local response=$(curl -s -X POST -H "Ocp-Apim-Subscription-Key: $MICROSOFT_VISION_API_KEY" -H "Content-Type: application/octet-stream" --data-binary @"$image_file" "$request_url")
+    local caption_text=$( echo "$response" | jq -r "$filter")
+   
+    if [[ -n "$response_file" ]]; then
+        echo "$response" >> "$response_file"
+    fi 
+
+    if [[ -n "$space_replacement" ]]; then
+    caption_text="${caption_text// /$space_replacement}"        
+    fi 
     echo "$caption_text"
 }
-
 
 process_image() {
     local caption=$(get_caption "$1")
@@ -95,8 +122,10 @@ usage() {
     echo "  -kf Same as the -key flag but uses file as input for api key (To hide the key in screen recording scenarios)"
     echo "  -endpoint Url of the vision api endpoint ex: 'https://basher.cognitiveservices.azure.com'"
     echo "  -p Set Concurrency Level How many image to process parallely (default: 3)"
+    echo "  -r Accpets a file name to save the responses from api"
+    echo "  -sr By default names have spaces in them so use -sr flag to send a space replacement like _ or -"
     echo "Example:"
-    echo "$0 -p 5 ~/walls/"
+    echo "$0 -p 5 -sr _ -r responses.txt -kf api_key.txt -endpoint \"https://basher.cognitiveservices.azure.com\" ~/Pictures/"
    exit 1
 }
 
@@ -105,6 +134,14 @@ while [[ $# -gt 0 ]]; do
        -p)
             shift
             MAX_PARALLEL_JOBS=$1
+            ;;
+       -sr)
+            shift
+            space_replacement="$1"
+            ;;
+       -r)
+            shift
+            response_file=$1
             ;;
        -kf)
             shift
