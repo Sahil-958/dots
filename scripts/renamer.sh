@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# Change Below as by the time i push it to github i alredy had removed the azure resource"
+# Removed Azure resources: 
+# The Microsoft Vision API key and endpoint have been removed. 
+# Please replace the following variables with your own:
 MICROSOFT_VISION_API_KEY='22d12becea494ddb8e3a8544cb858b50'
 MICROSOFT_VISION_API_ENDPOINT='https://basher.cognitiveservices.azure.com'
 
@@ -89,6 +91,9 @@ usage() {
     echo "Usage: $0 [options] <image1 dir>"
     echo "Options:"
     echo "  -h Prints this useage"
+    echo "  -key API key for vision api ex: '22d12becea494ddb8e3a8544cb858b50'"
+    echo "  -kf Same as the -key flag but uses file as input for api key (To hide the key in screen recording scenarios)"
+    echo "  -endpoint Url of the vision api endpoint ex: 'https://basher.cognitiveservices.azure.com'"
     echo "  -p Set Concurrency Level How many image to process parallely (default: 3)"
     echo "Example:"
     echo "$0 -p 5 ~/walls/"
@@ -100,6 +105,18 @@ while [[ $# -gt 0 ]]; do
        -p)
             shift
             MAX_PARALLEL_JOBS=$1
+            ;;
+       -kf)
+            shift
+            MICROSOFT_VISION_API_KEY=$(cat $1)
+            ;;
+       -key)
+            shift
+            MICROSOFT_VISION_API_KEY="$1"
+            ;;
+       -endpoint)
+            shift
+            MICROSOFT_VISION_API_ENDPOINT="$1"
             ;;
        -h)
             usage
