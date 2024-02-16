@@ -69,6 +69,13 @@ else
 fi
 }
 
+stats(){
+echo "╔══════════════════════════════╗"
+echo "║  Top 10 Most Used Commands   ║"
+echo "╠══════════════════════════════╣"
+history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -10 | awk '{print "║ " NR". " $2 "\t║\t" $1 " times\t║"}' | column -t -s $'\t' && echo "╚══════════════════════════════╝"
+
+}
 alias hr='history | sed "s/^[ \t]*[0-9]\+[ \t]*//"| sort -u | fzf --reverse --height=60% |bash' 
 
 #Souring the below does the same as the command_not_found_handle does but i can customize the funtion to my likings
