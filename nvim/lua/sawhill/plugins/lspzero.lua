@@ -33,17 +33,46 @@ return {
             local cmp_action = lsp_zero.cmp_action()
 
             cmp.setup({
-                formatting = lsp_zero.cmp_format(),
-                mapping = cmp.mapping.preset.insert({
+                preselect = 'item',
+                completion = {
+                    completeopt = 'menu,menuone,noinsert'
+                },
+                --formatting = lsp_zero.cmp_format(),
+                formatting = {
+                    -- changing the order of fields so the icon is the first
+                    fields = { 'menu', 'abbr', 'kind' },
+
+                    -- here is where the change happens
+                    format = function(entry, item)
+                        local menu_icon = {
+                            nvim_lsp = 'λ',
+                            luasnip = '⋗',
+                            buffer = 'Ω',
+                            path = '🖫',
+                            nvim_lua = 'Π',
+                        }
+
+                        item.menu = menu_icon[entry.source.name]
+                        return item
+                    end,
+                },
+                mapping = {
                     ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-p>'] = cmp.mapping.select_next_prev({ behavior = 'select' }),
-                    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
+                    ['<C-p>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+                    ['<C-n>'] = cmp.mapping.select_next_item({behavior = 'select'}),
                     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
                     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
                     ['<C-d>'] = cmp.mapping.scroll_docs(4),
                     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
                     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-                })
+                    ['<Tab>'] = cmp_action.tab_complete(),
+                    ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+                },
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                }
             })
         end
     },
