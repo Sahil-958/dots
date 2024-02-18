@@ -1,34 +1,55 @@
 #!/bin/bash
 source ~/.cache/wal/colors.sh
+case $1 in
+    round)
+        icon=""
+        icon1=""
+        ;; 
+    backslash)
+        icon=""
+        icon1=""
+        ;;
+    arrow)
+        icon="" 
+        icon1=""
+        ;;  
+    slash)
+        icon=""
+        icon1=""
+        ;;
+    pixelated) 
+        icon=""
+        icon1="" 
+        ;;
+    *)
+        icon=""
+        icon1=""
+        ;;
+esac
 
 output=$(cat <<EOF
 format = """
 [░▒▓]($color8)\\
 [  ](bg:$color8 fg:$foreground)\\
 \$sudo\\
-[](bg:$color7 fg:$color8)\\
+[$icon1](bg:$color7 fg:$color8)\\
 \$username\\
 \$hostname\\
 \$directory\\
-[](fg:$color7 bg:$color14)\\
+[$icon1](fg:$color7 bg:$color14)\\
 \$git_branch\\
 \$git_status\\
-[](fg:$color14 bg:$color3)\\
+[$icon](fg:$color14 bg:$color3)\\
 \$nodejs\\
 \$rust\\
 \$golang\\
 \$php\\
-[](fg:$color3 bg:$color9)\\
+[$icon](fg:$color3 bg:$color9)\\
 \$time\\
-[](fg:$color9)\\
+[$icon](fg:$color9)\\
 \\\n\$character\\
 """
 
-right_format="""
-[](fg:$color7 bg:transparent)\\
-\$status\\
-[](fg:$color7 bg:transparent)\\
-"""
 add_newline = false
 continuation_prompt = '[❯❯]($foreground)'
 
@@ -120,7 +141,7 @@ format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
 
 [time]
 disabled = false
-time_format = "%A %d %b %I:%M %P" # Hour:Minute Format
+time_format = "%A %d %b %I:%M %P " # Hour:Minute Format
 style = "bg:$color9"
 format = '[[ \$time](fg:$color14 bg:$color9)](\$style)'
 
