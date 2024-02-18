@@ -48,6 +48,7 @@ network-manager-applet
 networkmanager
 nodejs
 noto-fonts-emoji
+npm
 obs-studio
 os-prober
 pavucontrol
