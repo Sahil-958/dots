@@ -25,6 +25,12 @@ return {
         -- See `:help telescope` and `:help telescope.setup()`
         require('telescope').setup {
             defaults = {
+                layout_config = {
+                    horizontal = {
+                        preview_cutoff = 0,
+                    },
+                },
+
                 mappings = {
                     i = {
                         ['<C-u>'] = false,
@@ -88,7 +94,7 @@ return {
         local function telescope_live_grep_open_files()
             builtin.live_grep {
                 grep_open_files = true,
-               prompt_title = 'Live Grep in Open Files',
+                prompt_title = 'Live Grep in Open Files',
             }
         end
         vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
