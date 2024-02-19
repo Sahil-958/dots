@@ -167,6 +167,7 @@ sudo ln -sf ~/dots/.inputrc ~/
 sudo ln -sf ~/dots/.bashrc ~/
 sudo ln -sf ~/dots/.gitconfig ~/
 sudo ln -sf ~/dots/.vimrc ~/
+sudo ln -sf ~/dots/nvim ~/.config/
 sudo ln -sf ~/dots/qtct/qt5ct.conf ~/.config/qt5ct/
 sudo ln -sf ~/dots/qtct/qt6ct.conf ~/.config/qt6ct/
 rm -rf ~/.icons
