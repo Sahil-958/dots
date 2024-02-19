@@ -9,9 +9,11 @@ message="$uptime | Updates Available: $updates"
 action=$(echo '
 
 󰍃
-' | rofi -dmenu -format 'd' -kb-select-1 's' -kb-select-2 'r' -kb-select-3 'e' -kb-select-4 'l' -i -matching regex -config "~/dots/rofi/config-power.rasi" -p "$prompt" -mesg "$message" -theme-str '
-window { fullscreen: true; }
-')
+' | rofi -dmenu -format 'd' -kb-select-1 's' -kb-select-2 'r' -kb-select-3 'e' -kb-select-4 'l' -i -matching regex -config "~/dots/rofi/config-power.rasi" -p "$prompt" -mesg "$message" -theme-str "
+textbox-greeting{
+content: \"Don't forget to touch the grass\";
+}
+")
 
 # Check the selected action and run the appropriate command
 case $action in

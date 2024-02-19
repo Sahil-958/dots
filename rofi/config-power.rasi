@@ -12,8 +12,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       90%;
-    height:                      90%;
+    width:                       80%;
+    height:                      80%;
     border-radius:               0;
     border:                      4px;
     border-color:                @foreground;
@@ -23,28 +23,52 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     30px;
+    orientation:                 vertical;
+    spacing:                     3%;
     margin:                      0;
+    padding:                     18% 8% 8% 8%;        
     background-color:            transparent;
-    children:                    [ "prompt", "listview", "message" ];
+    children:                    [ "greeting", "listview", "message" ];
 }
 
 prompt {
-    enabled:                     true;
-    font:                        "ComicShannsMono Nerd Font Bold 26";
+    enabled:                     false;
+    font:                        "ComicShannsMono Nerd Font Bold 14";
     background-color:            @trans-background;
-    margin:                      20% 10% 10% 10%;
-    padding:                     40px 23%;
-    border:                      2px;
-    border-radius:               6px;
+    margin:                      0 0 6% 0;
+    padding:                     4% 16%;
+    border:                      2px 2px 15px 2px;
+    border-radius:               0 0 6px 6px;
     border-color:                @foreground;
     text-color:                  @foreground;
 }
 
-/*****----- Message -----*****/
+//*****----- Greeting Message -----*****/
+greeting {
+    expand:                      false;
+    margin:                      0 0 4% 0;
+    padding:                     40px 0;
+    border-radius:               6px;
+    border:                      2;
+    background-color:            @trans-background;
+    text-color:                  @foreground;
+    children:                    [ "textbox-greeting" ];
+}
+
+textbox-greeting {
+  content:                     "Enter you greeting message from script";
+  font:                        "ComicShannsMono Nerd Font Bold 28";
+  background-color:            transparent;
+  text-color:                  inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+  expand:                      true;
+}
+
+//*****----- Message -----*****/
 message {
     enabled:                     true;
-    margin:                      0 10%;
+    margin:                      0;
     padding:                     50px 0;
     border-radius:               6px;
     border:                      2;
@@ -53,6 +77,7 @@ message {
 }
 
 textbox {
+    expand:                      true;
     font:                        "ComicShannsMono Nerd Font Bold 18";
     background-color:            transparent;
     text-color:                  inherit;
@@ -73,24 +98,24 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    spacing:                     10;
+    spacing:                     5;
     padding:                     0;
     border:                      0;
-    border-radius:               5;
+    border-radius:               0;
     background-color:            transparent;
     cursor:                      "default";
-    margin:                      0 10%;
+    margin:                      0;
 }
 
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     45px 35px;
+    padding:                     3% 6%;
     border-radius:               5px;
     background-color:            @background;
     text-color:                  @foreground;
     border:                      2 2 15px 2;
-    border-radius:               0 0 30 30;
+    border-radius:               0 0 6 6;
     border-color:                @background; 
     cursor:                      pointer;
 }
@@ -98,6 +123,7 @@ element {
 element-text {
     font:                       "CommicShannsMono Nerd Font 48";
     background-color:            transparent;
+    expand:                      true;
     text-color:                  inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
