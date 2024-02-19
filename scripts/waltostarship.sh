@@ -40,10 +40,49 @@ format = """
 \$git_branch\\
 \$git_status\\
 [$icon](fg:$color14 bg:$color3)\\
-\$nodejs\\
-\$rust\\
+\$buf\\
+\$bun\\
+\$c\\
+\${custom.cpp}\\
+\${custom.c_sharp}\\
+\$cmake\\
+\$cobol\\
+\$crystal\\
+\$daml\\
+\$dart\\
+\$deno\\
+\$dotnet\\
+\$elixir\\
+\$elm\\
+\$erlang\\
+\$fennel\\
 \$golang\\
+\$haskell\\
+\$helm\\
+\$java\\
+\$julia\\
+\$kotlin\\
+\$lua\\
+\$nim\\
+\$nodejs\\
+\$ocaml\\
+\$opa\\
+\$package\\
+\$perl\\
 \$php\\
+\$purescript\\
+\$python\\
+\$raku\\
+\$red\\
+\$rlang\\
+\$ruby\\
+\$rust\\
+\$scala\\
+\$swift\\
+\$typst\\
+\$vagrant\\
+\$vlang\\
+\$zig\\
 [$icon](fg:$color3 bg:$color9)\\
 \$time\\
 [$icon](fg:$color9)\\
@@ -119,6 +158,20 @@ staged = '[++\(\$count\)](green)'
 renamed = ' 󰇹 '
 deleted = ' 🗑 '
 
+[time]
+disabled = false
+time_format = "%A %d %b %I:%M %P " # Hour:Minute Format
+style = "bg:$color9"
+format = '[[ \$time](fg:$color14 bg:$color9)](\$style)'
+
+[status]
+style = 'fg:$color2 bg:$color7'
+symbol = ''
+success_symbol = ''
+format = '[ \$symbol \$common_meaning\$signal_name\$maybe_int](\$style)'
+map_symbol = true
+disabled = false
+
 [nodejs]
 symbol = ""
 style = "bg:$color3"
@@ -139,19 +192,207 @@ symbol = ""
 style = "bg:$color3"
 format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
 
-[time]
-disabled = false
-time_format = "%A %d %b %I:%M %P " # Hour:Minute Format
-style = "bg:$color9"
-format = '[[ \$time](fg:$color14 bg:$color9)](\$style)'
+[buf]
+symbol="buf"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
 
-[status]
-style = 'fg:$color2 bg:$color7'
-symbol = ''
-success_symbol = ''
-format = '[ \$symbol \$common_meaning\$signal_name\$maybe_int](\$style)'
-map_symbol = true
-disabled = false
+[bun]
+symbol="󰳯 "
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[c]
+symbol="󰙱 "
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[custom.cpp]
+disabled=false
+symbol=""
+extensions=["cpp"]
+style="bg:$color3"
+command='cpp --version | head -n 1 | grep -oP "\d+\.\d+\.\d+"'
+format = '[[ \$symbol (\$output) ](fg:$color7 bg:$color3)](\$style)'
+
+[custom.c_sharp]
+disabled=false
+symbol=" "
+extensions=["cs"]
+style="bg:$color3"
+command='csc --version | head -n 1 | grep -oP "\d+\.\d+\.\d+"'
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[cmake]
+symbol="cmake"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[cobol]
+symbol="COBOL"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[crystal]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[daml]
+symbol=" daml"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[dart]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[deno]
+symbol="deno"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[dotnet]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[elixir]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[elm]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[erlang]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[fennel]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[haskell]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[helm]
+symbol="󰠳 helm"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[java]
+symbol="󰬷"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[julia]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[kotlin]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[lua]
+symbol="󰢱"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[nim]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[ocaml]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[opa]
+symbol="󰵰"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[package]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[perl]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[purescript]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[python]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[raku]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[red]
+symbol="󱥒 red"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[rlang]
+symbol="rlang"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[ruby]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[scala]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[swift]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[typst]
+symbol="typst"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[vagrant]
+symbol=" vagrant"
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[vlang]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
+[zig]
+symbol=""
+style="bg:$color3"
+format = '[[ \$symbol (\$version) ](fg:$color7 bg:$color3)](\$style)'
+
 EOF
 )
 
