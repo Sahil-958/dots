@@ -26,21 +26,29 @@ function notify(){
     DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus  /usr/bin/notify-send -i "$icon" "$@"
 }
 
+function stats(){
+       time=$(cat /tmp/chargeLog 2>/dev/null | head -n 1 || echo "can't retrieve status")
+       currentTime=$(date +%s)
+       preCharg=$(cat /tmp/chargeLog 2>/dev/null | tail -n 1 || echo "can't retrieve status")
+       chargDiff="$(($per - $preCharg ))"
+       timeDiff=$(("$currentTime" - $time))
+       formattedTime=$(date -d "@$timeDiff" -u +%H:%M:%S)
+}
+
+chargDiff=""
+formattedTime=""
 per=$(cat /sys/class/power_supply/BAT0/capacity)
 
 case $1 in
-    plugged) notify "Charger Plugged"
+    plugged) 
+             stats
+             notify "Charger Plugged" "Dischargred $chargDiff% in $formattedTime"
              echo -e "$(date +%s)\n$per" > /tmp/chargeLog
     ;;
     unplugged) 
-               notify "Charger Unplugged" 
-               time=$(cat /tmp/chargeLog 2>/dev/null | head -n 1 || echo "can't retrieve status")
-               currentTime=$(date +%s)
-               preCharg=$(cat /tmp/chargeLog 2>/dev/null | tail -n 1 || echo "can't retrieve status")
-               chargDiff="$(($per - $preCharg ))"
-               timeDiff=$(("$currentTime" - $time))
-               formattedTime=$(date -d "@$timeDiff" -u +%H:%M:%S)
-               notify "Battery Stats" "Chargred $chargDiff% in $formattedTime"
+               stats
+               notify "Charger Unplugged" "Chargred $chargDiff% in $formattedTime"
+               echo -e "$(date +%s)\n$per" > /tmp/chargeLog
     ;;
     *) notify ">|$1|<"
     ;;
