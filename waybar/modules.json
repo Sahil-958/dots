@@ -121,7 +121,7 @@
     // Power Menu
     "custom/exit": {
         "format": "",
-        "on-click": "wlogout",
+        "on-click": "~/dots/scripts/powermenu.sh",
         "tooltip": false
     },
 
