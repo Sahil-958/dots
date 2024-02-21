@@ -37,6 +37,7 @@ jq
 kdeconnect
 konsole
 kruler
+libcaca
 linux
 linux-firmware
 man-db
