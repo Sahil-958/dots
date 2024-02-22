@@ -95,6 +95,7 @@ viu
 vlc
 waybar
 wl-clipboard
+wofi
 xautolock
 xclip
 xdg-desktop-portal-hyprland
