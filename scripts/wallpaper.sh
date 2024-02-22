@@ -44,7 +44,7 @@ case $1 in
     # Randomly select Remote wallpaper 
     remote)
         notify-send "selecting Remote wallpaper randomly"
-        wallpath="$(~/dots/scripts/remote_wall.sh)"
+        wallpath="$(~/dots/scripts/remote_wall.sh -m random)"
         wal -q -i $wallpath
     ;;
 
