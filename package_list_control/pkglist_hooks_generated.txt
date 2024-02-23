@@ -25,7 +25,6 @@ firewalld
 fzf
 gammastep
 git
-git-sizer
 glava
 grim
 grub
