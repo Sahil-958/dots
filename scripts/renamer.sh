@@ -76,7 +76,7 @@ get_caption() {
         echo "$response" >> "$response_file"
     fi 
  
-    if [ -n "$space_replacement" ] && [ "${new#ERROR_}" != "$new" ]; then
+    if [ -n "$space_replacement" ] && [ "${caption_text#ERROR_}" == "$caption_text" ]; then
     caption_text="${caption_text// /$space_replacement}"        
     fi 
 
@@ -158,7 +158,7 @@ usage() {
     echo "  -endpoint Url of the vision api endpoint ex: 'https://basher.cognitiveservices.azure.com'"
     echo "  -p Set Concurrency Level How many image to process parallely (default: 3)"
     echo "  -r Accpets a file name to save the responses from api"
-    echo "  -r Accpets a file name to save the logs"
+    echo "  -l Accpets a file name to save the logs"
     echo "  -sr By default names have spaces in them so use -sr flag to send a space replacement like _ or -"
     echo "  -sf Accept a single file instead of a dir"
     echo "Example:"
