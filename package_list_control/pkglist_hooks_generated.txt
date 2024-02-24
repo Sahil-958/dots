@@ -74,6 +74,7 @@ rofi
 rofi-calc
 rofi-emoji
 sddm
+shellharden
 slurp
 smartmontools
 snapper
