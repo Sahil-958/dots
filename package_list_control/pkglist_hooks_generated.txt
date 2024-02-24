@@ -73,6 +73,7 @@ ripgrep
 rofi
 rofi-calc
 rofi-emoji
+rust
 sddm
 shellharden
 slurp
