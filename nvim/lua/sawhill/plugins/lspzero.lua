@@ -130,7 +130,7 @@ return {
                 -- to learn the available actions
                 local opts = { buffer = bufnr, remap = false }
                 lsp_zero.default_keymaps({ buffer = bufnr })
-                vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, opts)
+                vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format() end, opts) --<leader>f is used for local format using conform plugin so using lf for format
                 --[[
                     DEFAULTS
                     K:
