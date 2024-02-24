@@ -23,8 +23,8 @@ rename_img() {
         echo -e "Skipping image [$old]\nReason: ${new#ERROR_} "
         return
     fi
-    local old_name=$(basename $old)
-    local base_dir=$(dirname $old)
+    local old_name=$(basename "$old")
+    local base_dir=$(dirname "$old")
     local ext=${old##*.}
     local new_name="$new.$ext"
     local counter=1
@@ -141,7 +141,7 @@ init() {
             echo "Error: Directory '$dir' does not exist." >> $logs
             return
         fi
-    else 
+    elif [ -z "$single_file" ]; then 
         echo "Error: No valid input provided." >> $logs
         usage
         return
