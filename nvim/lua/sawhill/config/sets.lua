@@ -25,6 +25,11 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.textwidth = 80
+
+-- Set colorcolumn to highlight columns after 'textwidth'
+vim.opt.colorcolumn = tostring(vim.api.nvim_get_option('textwidth') + 1)
+vim.cmd('highlight colorcolumn guibg=fg')
+
 
 vim.g.mapleader = " "
