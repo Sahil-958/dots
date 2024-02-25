@@ -29,7 +29,8 @@ vim.opt.textwidth = 80
 
 -- Set colorcolumn to highlight columns after 'textwidth'
 vim.opt.colorcolumn = tostring(vim.api.nvim_get_option('textwidth') + 1)
-vim.cmd('highlight colorcolumn guibg=fg')
-
-
+local hl_group = vim.api.nvim_get_hl_by_name('Visual', true)
+local hl_group_bg = string.format("#%06x", hl_group.background)
+vim.cmd('highlight ColorColumn guibg=' .. hl_group_bg .. ' gui=NONE')
+-- vim.cmd('highlight ColorColumn guibg=#111111 gui=NONE')
 vim.g.mapleader = " "
