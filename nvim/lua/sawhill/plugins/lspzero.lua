@@ -95,7 +95,7 @@ return {
                             cmp.select_next_item({ behavior = 'select' })
                             --cmp_action.tab_complete()
                         else
-                            local tabstop = vim.opt.tabstop:get()
+                            local tabstop = vim.api.nvim_get_option('tabstop')
                             vim.cmd("normal! i" .. string.rep(" ", tabstop))
                         end
                     end),
@@ -131,6 +131,7 @@ return {
                 local opts = { buffer = bufnr, remap = false }
                 lsp_zero.default_keymaps({ buffer = bufnr })
                 vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format() end, opts) --<leader>f is used for local format using conform plugin so using lf for format
+                vim.keymap.set("n", "<leader>qf", function() vim.lsp.buf.code_action() end, opts)
                 --[[
                     DEFAULTS
                     K:
