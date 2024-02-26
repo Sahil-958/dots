@@ -33,7 +33,7 @@ rename_img() {
         return 1
     fi
     while [ -e "$base_dir/$new_name" ]; do
-        if [ $counter -lt 10 ]; then
+        if [ "$counter" -lt 10 ]; then
             padded_counter="0$counter"  # Add padding for single-digit numbers
         else
             padded_counter="$counter"
@@ -76,7 +76,7 @@ get_caption() {
         echo "$response" >> "$response_file"
     fi 
  
-    if [ -n "$space_replacement" ] && [ "${caption_text#ERROR_}" == "$caption_text" ]; then
+    if [ "$space_replacement" != "" ] && [ "${caption_text#ERROR_}" == "$caption_text" ]; then
     caption_text="${caption_text// /$space_replacement}"        
     fi 
 
@@ -84,17 +84,17 @@ get_caption() {
 }
 
 process_image() {
-   if [ $(stat -c %s "$1") -le 20971520 ]; then
+   if [ "$(stat -c %s "$1")" -le 20971520 ]; then
         local caption=$(get_caption "$1")
         local result=$(rename_img "$1" "$caption")
-        echo "$result" >> $logs
+        echo "$result" >> "$logs"
     else
-        echo "The specified file [$1] is not under 20,971,520 bytes (20.97MB) Please reduce the Size." >> $logs
+        echo "The specified file [$1] is not under 20,971,520 bytes (20.97MB) Please reduce the Size." >> "$logs"
     fi
 }
 
 init() {
-    if [ -n "$single_file" ]; then
+    if [ "$single_file" != "" ]; then
         if [ -f "$single_file" ]; then
             # Get the file extension
             file_extension="${single_file##*.}"
@@ -104,21 +104,21 @@ init() {
                 echo "Processing Single image file: $single_file"
                 process_image "$single_file"
             else
-                echo "Skipping non-image file: $single_file" >> $logs
+                echo "Skipping non-image file: $single_file" >> "$logs"
             fi
         else
-            echo "Error: File '$single_file' does not exist." >> $logs
+            echo "Error: File '$single_file' does not exist." >> "$logs"
         fi
     fi
     
-    if [ -n "$dir" ]; then
+    if [ "$dir" != "" ]; then
         if [ -d "$dir" ]; then
             echo "Max Parallel Jobs is: $MAX_PARALLEL_JOBS"
             IFS=$'\n'
             local images=()
             readarray -t images < <(find "$dir" -type f -regex ".*\.\(jpg\|jpeg\|png\)")
             if [ ${#images[@]} -eq 0 ]; then
-                echo "No image files found in directory and it's sub directories: $dir" >> $logs
+                echo "No image files found in directory and it's sub directories: $dir" >> "$logs"
                 return
             fi
             local count=0
@@ -138,13 +138,12 @@ init() {
             done
             wait
         else
-            echo "Error: Directory '$dir' does not exist." >> $logs
+            echo "Error: Directory '$dir' does not exist." >> "$logs"
             return
         fi
-    elif [ -z "$single_file" ]; then 
-        echo "Error: No valid input provided." >> $logs
+    elif [ "$single_file" = "" ]; then 
+        echo "Error: No valid input provided." >> "$logs"
         usage
-        return
     fi
 }
 
@@ -163,7 +162,7 @@ usage() {
     echo "  -sf Accept a single file instead of a dir"
     echo "Example:"
     echo "$0 -p 5 -sr _ -r responses.txt -kf api_key.txt -endpoint \"https://basher.cognitiveservices.azure.com\" ~/Pictures/"
-   exit 1
+    exit 1
 }
 
 while [[ $# -gt 0 ]]; do
@@ -190,7 +189,7 @@ while [[ $# -gt 0 ]]; do
             ;;
        -kf)
             shift
-            MICROSOFT_VISION_API_KEY=$(cat $1)
+            MICROSOFT_VISION_API_KEY=$(cat "$1")
             ;;
        -key)
             shift
@@ -218,11 +217,11 @@ init
 echo -e "\nLogs:"
 # Print underscores equal to terminal width
 printf "%-${TERM_WIDTH}s\n" "_" | tr ' ' '_'
-cat $logs
+cat "$logs"
 # Print underscores equal to terminal width
 printf "%-${TERM_WIDTH}s\n" "_" | tr ' ' '_'
 
 if [[ -n "$log_file" ]]; then
-    cat $logs > "$log_file"
+    cat "$logs" > "$log_file"
 fi 
-rm $logs
+rm "$logs"
