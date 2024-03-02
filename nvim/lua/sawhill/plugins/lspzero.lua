@@ -102,8 +102,14 @@ return {
                     ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
                 },
                 window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    --completion = cmp.config.window.bordered(),
+                    --documentation = cmp.config.window.bordered(),
+                    completion = {
+                        border = "single",
+                    },
+                    documentation = {
+                        border = "single",
+                    },
                 }
             })
         end
