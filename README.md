@@ -75,6 +75,10 @@ This repository contains my personal dotfiles and configuration files. It's curr
 #### Wlogout (Replaced with a rofi)
 ![screenshots/wlogout.png](screenshots/wlogout.png)
 
+#### Neofetch
+![screenshots/neofetch.png](screenshots/neofetch.png)
+(I like this one more tho: Computer are like air conditioners, they stop working efficiently when you open windows but that's messes up my alignments and looks a bit akward)
+
 ## Installation
 
 1. **Preparing & Booting into Installation Media** 
