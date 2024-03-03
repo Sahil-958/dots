@@ -12,15 +12,14 @@ MAX_PARALLEL_JOBS=3
 # Get terminal width
 TERM_WIDTH=$(tput cols)
 
-ALLOWED_IMAGE_EXTENSIONS=('jpeg' 'jpg' 'png')
-logs=$(mktemp)
+logs=$(mktemp -t logs_XXXXXX.txt)
 
 rename_img() {
     local old="$1"
     local new="$2"
     if [ "${new#ERROR_}" != "$new" ]; then
         # String starts with "ERROR_"
-        echo -e "Skipping image [$old]\nReason: ${new#ERROR_} "
+        echo -e "Skipping image [$old]\nReason: ${new#ERROR_} " >> "$logs"
         return
     fi
     local old_name=$(basename "$old")
@@ -29,7 +28,7 @@ rename_img() {
     local new_name="$new.$ext"
     local counter=1
     if [ "$base_dir/$new_name" = "$old" ]; then
-        echo -e "   Old name:[$old_name] == new name:[$new_name] Skipped"
+        echo -e "   Old name:[$old_name] == new name:[$new_name] Skipped" >> "$logs"
         return 1
     fi
     while [ -e "$base_dir/$new_name" ]; do
@@ -41,9 +40,12 @@ rename_img() {
         new_name="${new}_$padded_counter.$ext"
         counter=$((counter + 1))
     done
-
-    mv "$old" "$base_dir/$new_name"
-    echo "Renaming [$old_name] to [$new_name]"
+    if [ -f "$review_rename" ]; then
+        echo "mv \"$old\" \"$base_dir/$new_name\" && echo \"Renaming [$old_name] to [$new_name]\" >> $logs" >> "$review_rename"
+    else
+       mv "$old" "$base_dir/$new_name"
+       echo "Renaming [$old_name] to [$new_name]" >> "$logs"
+    fi  
 }
 
 get_caption() {
@@ -64,7 +66,7 @@ get_caption() {
             local filter=".denseCaptionsResult.values[0].text"
             ;;
         *)
-            echo "Invalid API version. Please specify either 'v3.2', 'v4.0_caption', or 'v4.0_denseCaptions'."
+            echo "Invalid API version. Please specify either 'v3.2', 'v4.0_caption', or 'v4.0_denseCaptions'." >> "$logs"
             exit 1
             ;;
     esac 
@@ -86,9 +88,8 @@ get_caption() {
 process_image() {
    if [ "$(stat -c %s "$1")" -le 20971520 ]; then
         local caption=$(get_caption "$1")
-        local result=$(rename_img "$1" "$caption")
-        echo "$result" >> "$logs"
-    else
+        rename_img "$1" "$caption"
+   else
         echo "The specified file [$1] is not under 20,971,520 bytes (20.97MB) Please reduce the Size." >> "$logs"
     fi
 }
@@ -165,6 +166,7 @@ usage() {
     echo "  -sr By default names have spaces in them so use -sr flag to send a space replacement like _ or -"
     echo "  -sf Accept a single file instead of a dir"
     echo "  -d Accepts a depth level to search for images in sub directories. By default all sub directories are searched if depth is not provided or set to 0"
+    echo "  -R Review the renaming commands before executing them by open them in $EDITOR"
     echo "Example:"
     echo "$0 -p 5 -sr _ -r responses.txt -kf api_key.txt -endpoint \"https://basher.cognitiveservices.azure.com\" ~/Pictures/"
     exit 1
@@ -172,6 +174,14 @@ usage() {
 
 while [[ $# -gt 0 ]]; do
     case $1 in
+       -R)
+            review_rename=$(mktemp -t review_rename_XXXXXX.sh)
+echo "#!/bin/bash
+# You can review, edit, or remove the commands.
+# This file gets executed when you exit your editor.
+# If there are no renaming commands below then exit and check logs to see why.
+                " > "$review_rename"
+            ;;
        -p)
             shift
             MAX_PARALLEL_JOBS=$1
@@ -223,6 +233,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 init
+if [ -f "$review_rename" ]; then
+   "$EDITOR" "$review_rename" 
+   bash "$review_rename"
+   rm "$review_rename"
+fi
 echo -e "\nLogs:"
 # Print underscores equal to terminal width
 printf "%-${TERM_WIDTH}s\n" "_" | tr ' ' '_'
