@@ -75,6 +75,7 @@ rofi
 rofi-calc
 rofi-emoji
 rust
+screenkey
 sddm
 slurp
 smartmontools
