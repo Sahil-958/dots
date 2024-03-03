@@ -116,7 +116,11 @@ init() {
             echo "Max Parallel Jobs is: $MAX_PARALLEL_JOBS"
             IFS=$'\n'
             local images=()
-            readarray -t images < <(find "$dir" -type f -regex ".*\.\(jpg\|jpeg\|png\)")
+            if [ "$depth" = "" ] || [ "$depth" -eq 0 ]; then
+                readarray -t images < <(find "$dir" -type f -regex ".*\.\(jpg\|jpeg\|png\)")
+            else
+                readarray -t images < <(find "$dir" -maxdepth "$depth" -type f -regex ".*\.\(jpg\|jpeg\|png\)")
+            fi
             if [ ${#images[@]} -eq 0 ]; then
                 echo "No image files found in directory and it's sub directories: $dir" >> "$logs"
                 return
@@ -160,6 +164,7 @@ usage() {
     echo "  -l Accpets a file name to save the logs"
     echo "  -sr By default names have spaces in them so use -sr flag to send a space replacement like _ or -"
     echo "  -sf Accept a single file instead of a dir"
+    echo "  -d Accepts a depth level to search for images in sub directories. By default all sub directories are searched if depth is not provided or set to 0"
     echo "Example:"
     echo "$0 -p 5 -sr _ -r responses.txt -kf api_key.txt -endpoint \"https://basher.cognitiveservices.azure.com\" ~/Pictures/"
     exit 1
@@ -182,6 +187,10 @@ while [[ $# -gt 0 ]]; do
        -l)
             shift
             log_file=$1
+            ;;
+       -d)
+            shift
+            depth=$1
             ;;
        -r)
             shift
