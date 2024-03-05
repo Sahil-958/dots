@@ -91,6 +91,7 @@ tldr
 tree
 ttf-fira-sans
 unzip
+usbutils
 vi
 vim
 viu
