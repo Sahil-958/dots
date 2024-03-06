@@ -1,7 +1,6 @@
 librewolf-bin
 oomox-qt5-styleplugin-git
 pikaur
-showmethekey
 swaylock-effects-git
 swww
 themix-full-git

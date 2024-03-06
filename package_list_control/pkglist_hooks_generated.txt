@@ -53,7 +53,6 @@ npm
 obs-studio
 os-prober
 pavucontrol
-perl-rename
 pipewire-pulse
 polkit-kde-agent
 pv
@@ -83,7 +82,6 @@ snapper
 sox
 sshfs
 starship
-stow
 swappy
 terminus-font
 tesseract
