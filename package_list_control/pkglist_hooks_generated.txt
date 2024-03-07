@@ -55,14 +55,12 @@ os-prober
 pavucontrol
 pipewire-pulse
 polkit-kde-agent
-pv
 python-opencv
 python-pip
 python-pyqt5
 python-pywal
 python-qrencode
 qbittorrent
-qpdf
 qt5-graphicaleffects
 qt5-quickcontrols
 qt5-quickcontrols2
@@ -90,7 +88,6 @@ tldr
 tree
 ttf-fira-sans
 unzip
-usbutils
 vi
 vim
 viu
