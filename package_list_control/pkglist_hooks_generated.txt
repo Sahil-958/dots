@@ -5,6 +5,7 @@ ark
 base
 base-devel
 bash-completion
+bind
 blueman
 bluez-utils
 breeze
