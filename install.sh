@@ -12,35 +12,35 @@ timedatectl set-ntp true
 lsblk
 echo "Enter the drive: "
 read drive
-cfdisk $drive 
+cfdisk "$drive" 
 
 echo "Enter the linux root partition: "
 read root_partition
-mkfs.ext4 -L ROOT $root_partition
+mkfs.ext4 -L ROOT "$root_partition"
 
 echo "Enter the linux home partition: "
 read home_partition
-mkfs.ext4 -L HOME $home_partition 
+mkfs.ext4 -L HOME "$home_partition" 
 
 echo "Enter the swap partition: "
 read swap_partition 
-mkswap -L SWAP $swap_partition 
+mkswap -L SWAP "$swap_partition" 
 
 read -p "Did you also want to create efi partition? [y/n]" answer
 if [[ $answer = y ]] ; then
   echo "Enter EFI partition: "
   read efi_partition
-  mkfs.fat -F 32 -n BOOT $efi_partition
+  mkfs.fat -F 32 -n BOOT "$efi_partition"
 fi
 
-mount $root_partition /mnt 
-mount --mkdir $home_partition /mnt/home
-mount --mkdir $efi_partition /mnt/boot/EFI
-swapon $swap_partition
+mount "$root_partition" /mnt 
+mount --mkdir "$home_partition" /mnt/home
+mount --mkdir "$efi_partition" /mnt/boot/EFI
+swapon "$swap_partition"
 
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
-sed '1,/^#part2$/d' `basename $0` > /mnt/arch_install2.sh
+sed '1,/^#part2$/d' "$(basename "$0")" > /mnt/arch_install2.sh
 chmod +x /mnt/arch_install2.sh
 arch-chroot /mnt ./arch_install2.sh
 exit 
@@ -59,7 +59,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=us" > /etc/vconsole.conf
 echo "Hostname: "
 read hostname
-echo $hostname > /etc/hostname
+echo "$hostname" > /etc/hostname
 echo "127.0.0.1       localhost" >> /etc/hosts
 echo "::1             localhost" >> /etc/hosts
 echo "127.0.1.1       $hostname.localdomain $hostname" >> /etc/hosts
@@ -67,7 +67,7 @@ echo "Set root password"
 passwd
 pacman --noconfirm -S grub efibootmgr os-prober
 mkdir -p /boot/EFI
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=$hostname
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id="$hostname"
 sed -i 's/quiet/pci=noaer/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -80,13 +80,13 @@ pacman -S --noconfirm --needed - < pkglist.txt
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 echo -n "Enter Username: "
 read username
-useradd -m -G wheel -s /bin/bash $username
-passwd $username
+useradd -m -G wheel -s /bin/bash "$username"
+passwd "$username"
 echo "Pre-Installation Finish Reboot now"
 ai3_path=/home/$username/arch_install3.sh
-sed '1,/^#part3$/d' arch_install2.sh > $ai3_path
-chown $username:$username $ai3_path
-chmod +x $ai3_path
+sed '1,/^#part3$/d' arch_install2.sh > "$ai3_path"
+chown "$username:$username" "$ai3_path"
+chmod +x "$ai3_path"
 echo  "Sleeping 50sec so you can exit by pressing CTRL-C and reboot"
 sleep 50
 
@@ -94,7 +94,7 @@ sleep 50
 set -x
 set -e
 printf '\033c'
-cd $HOME
+cd "$HOME"
 sudo systemctl enable --now NetworkManager.service
 sudo systemctl enable sddm.service
 nmtui
@@ -114,7 +114,7 @@ sed -i '/pikaur/d' foregien_pkgs.txt
 pkgs=$(tr '\n' ' ' < foregien_pkgs.txt)
 
 set +e
-pikaur -S $pkgs
+pikaur -S "$pkgs"
 cd
 set -e
 mkdir -p Desktop Downloads Documents Music Pictures Videos .local/share
@@ -161,7 +161,7 @@ sudo ln -sf ~/dots/konsolerc ~/.config/
 sudo ln -sf ~/dots/konsole ~/.local/share/
 sudo cp -r ~/dots/fonts /usr/share/fonts
 sudo cp -r ~/dots/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
-sudo chown -r sawhill:sawhill /usr/share/sddm/themes/sugar_candy #So that script can modify it without elevated privleges 
+sudo chown -R sawhill:sawhill /usr/share/sddm/themes/sugar_candy #So that script can modify it without elevated privleges 
 sudo cp ~/dots/sddm.conf /etc/
 sudo ln -sf ~/dots/.inputrc ~/
 sudo ln -sf ~/dots/.bashrc ~/
