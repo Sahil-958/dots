@@ -18,7 +18,7 @@ return {
                 -- markdown = { "prettier" },
                 -- graphql = { "prettier" },
                 -- lua = { "stylua" },
-                -- python = { "isort", "black" },
+                python = { "isort", "black" },
                 sh = { "shellharden" },
             },
             format_on_save = {
