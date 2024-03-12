@@ -5,3 +5,4 @@ swaylock-effects-git
 swww
 themix-full-git
 vscodium-bin
+wayfire
