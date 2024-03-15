@@ -13,7 +13,7 @@
 # ----------------------------------------------------- 
 # Generate the starship.toml file with new colors
 # -----------------------------------------------------
-~/dots/scripts/waltostarship.sh
+~/dots/scripts/waltostarship.sh arrow
 
 #dunst=$(themix-base16-cli /opt/oomox/plugins/base16/templates/dunst/templates/custom.mustache /opt/oomox/plugins/base16/schemes/py/py.yaml |grep -Ev "ERROR|Image plugin") 
 #echo "$dunst" > ~/dots/dunst/pydunstrc
@@ -30,7 +30,7 @@ killall dunst; dunst &
 
 source /home/sawhill/.cache/wal/colors.sh
 
-cat $wallpaper > /usr/share/sddm/themes/sugar_candy/Backgrounds/Background.png
+cat "$wallpaper" > /usr/share/sddm/themes/sugar_candy/Backgrounds/Background.png
 
 sed -i "s/^Background=.*$/Background=\"Backgrounds\/Background.png\"/g" /usr/share/sddm/themes/sugar_candy/theme.conf
 sed -i "s/MainColor=.*$/MainColor=\"$foreground\"/g" /usr/share/sddm/themes/sugar_candy/theme.conf
