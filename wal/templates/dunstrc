@@ -470,7 +470,7 @@
 #
 # vim: ft=cfg
 [play_sound]
-summary = "*"
+summary = "[^|]*" # Play sound for all notifications that don't start with a pipe
 script = ~/dots/scripts/playNotificationSound.sh
 
 [global]
