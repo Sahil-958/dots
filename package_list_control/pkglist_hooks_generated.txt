@@ -1,6 +1,5 @@
 amd-ucode
 android-tools
-ant
 arch-install-scripts
 ark
 base
