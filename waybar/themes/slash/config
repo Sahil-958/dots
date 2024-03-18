@@ -3,7 +3,7 @@
 {
 // Header //
 
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "mod": "dock",
     "height": 30,
