@@ -89,7 +89,6 @@ tesseract-data-eng
 tldr
 tree
 ttf-fira-sans
-unrar
 unzip
 vi
 vim
