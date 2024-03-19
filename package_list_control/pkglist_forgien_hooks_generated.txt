@@ -1,3 +1,4 @@
+hyprcursor-git
 hyprlang-git
 librewolf-bin
 oomox-qt5-styleplugin-git
