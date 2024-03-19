@@ -1,4 +1,5 @@
 hyprcursor-git
+hypridle-git
 hyprland-git
 hyprlang-git
 librewolf-bin
