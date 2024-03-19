@@ -33,6 +33,7 @@ grub
 grub-btrfs
 gwenview
 hyprland
+hyprlang
 imagemagick
 imlib2
 jdk8-openjdk
