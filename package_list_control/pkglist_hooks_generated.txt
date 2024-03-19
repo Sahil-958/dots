@@ -32,7 +32,6 @@ grim
 grub
 grub-btrfs
 gwenview
-hyprland
 imagemagick
 imlib2
 jdk8-openjdk
