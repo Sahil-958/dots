@@ -160,7 +160,7 @@ sudo cp -r ~/dots/.icons ~/
 
 # ETC
 sudo cp ~/dots/etc/sddm.conf /etc/
-sudo ln -sf ~/dots/etc/package_list_control/packgae_update.sh /usr/bin
+sudo ln -sf ~/dots/etc/package_list_control/package_update.sh /usr/bin/
 sudo mkdir -p /etc/pacman.d/hooks
 sudo ln -sf ~/dots/etc/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
 sudo ln -sf ~/dots/etc/package_list_control/pkglist_hooks_generated.txt /etc/pacman.d/hooks/
