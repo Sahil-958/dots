@@ -124,63 +124,51 @@ git clone --depth=1 https://github.com/Sahil-958/apexNotificationSounds.git  ~/M
 echo "making symlinks"
 cd dots
 set +e
-sudo ln -sf ~/dots/wal ~/.config/
+
+# CONFIG
+#
+sudo ln -sf ~/dots/config/wal ~/.config/
 ~/dots/scripts/wallpaper.sh random
-sudo ln -sf ~/dots/package_list_control/packgae_update.sh /usr/bin
-sudo mkdir -p /etc/pacman.d/hooks
-sudo ln -sf ~/dots/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
-sudo ln -sf ~/dots/package_list_control/pkglist_hooks_generated.txt /etc/pacman.d/hooks/
-sudo ln -sf ~/dots/package_list_control/pkglist_forgien_hooks_generated.txt /etc/pacman.d/hooks/
-sudo ln -sf ~/dots/hypr ~/.config/
-sudo ln -sf ~/dots/waybar ~/.config/
-sudo ln -sf ~/dots/rofi ~/.config/
-sudo ln -sf ~/dots/wlogout ~/.config/
-sudo ln -sf ~/dots/gammastep ~/.config/
-sudo ln -sf ~/dots/gtk-3.0 ~/.config/
-sudo ln -sf ~/dots/gtk-4.0 ~/.config/
-sudo ln -sf ~/dots/gtkrc-2.0 ~/.config/
-sudo ln -sf ~/dots/gtkrc-2.0 ~/.gtkrc-2.0
-sudo ln -sf ~/dots/gtkrc ~/.config/
-sudo ln -sf ~/dots/swappy ~/.config/
-sudo ln -sf ~/dots/glava ~/.config/
-sudo ln -sf ~/.cache/wal/bars.glsl ~/dots/glava/
-sudo ln -sf ~/.cache/wal/circle.glsl ~/dots/glava/
-sudo ln -sf ~/.cache/wal/graph.glsl ~/dots/glava/
-sudo ln -sf ~/.cache/wal/wave.glsl ~/dots/glava/
-sudo ln -sf ~/dots/dunst ~/.config/
-sudo ln -sf ~/.cache/wal/dunstrc ~/dots/dunst/ 
-sudo mkdir -p ~/.config/swaylock
-sudo ln -sf ~/.cache/wal/swaylock ~/dots/swaylock/config
-sudo ln -sf ~/dots/mimeapps.list ~/.config/
-sudo ln -sf ~/dots/swappy ~/.config/
-sudo mkdir -p /etc/udev/rules.d
-sudo ln -sf ~/dots/powerNotify/99-bat.rules /etc/udev/rules.d/
-sudo ln -sf ~/dots/powerNotify/chrgnotify.sh /usr/bin/chrgnotify
+
+sudo ln -sf ~/dots/config/* ~/.config/
+sudo ln -sf ~/.cache/wal/swaylock ~/dots/config/swaylock/config
+sudo ln -sf ~/.cache/wal/*.glsl ~/dots/config/glava/
+sudo ln -sf ~/.cache/wal/dunstrc ~/dots/config/dunst/ 
 sudo ln -sf ~/.cache/wal/colors-konsole.colorscheme ~/dots/konsole/pywal.colorscheme
-sudo ln -sf ~/dots/konsolerc ~/.config/
+
 sudo ln -sf ~/dots/konsole ~/.local/share/
-sudo cp -r ~/dots/fonts /usr/share/fonts
-sudo cp -r ~/dots/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
-sudo chown -R sawhill:sawhill /usr/share/sddm/themes/sugar_candy #So that script can modify it without elevated privleges 
-sudo cp ~/dots/sddm.conf /etc/
 sudo ln -sf ~/dots/.inputrc ~/
 sudo ln -sf ~/dots/.bashrc ~/
 sudo ln -sf ~/dots/.gitconfig ~/
 sudo ln -sf ~/dots/.vimrc ~/
-sudo ln -sf ~/dots/nvim ~/.config/
-sudo ln -sf ~/dots/qtct/qt5ct.conf ~/.config/qt5ct/
-sudo ln -sf ~/dots/qtct/qt6ct.conf ~/.config/qt6ct/
-rm -rf ~/.icons
-sudo cp -r ~/dots/.icons ~/  
+
+
+# MORE COPYING STUFF
+sudo cp -r ~/dots/fonts /usr/share/fonts
+sudo cp -r ~/dots/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
+sudo chown -R sawhill:sawhill /usr/share/sddm/themes/sugar_candy #So that script can modify it without elevated privleges 
+
 echo "
 [Icon Theme]
 Inherits=breeze_cursors
 " | sudo tee /usr/share/icons/default/index.theme
-sudo cp ~/dots/environment /etc/
-sudo cp ~/dots/grub /etc/default/
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-sudo cp ~/dots/mkinitcpio.conf /etc/
-sudo mkinitcpio -P
+
+
+rm -rf ~/.icons
+sudo cp -r ~/dots/.icons ~/  
+
+
+# ETC
+sudo cp ~/dots/etc/sddm.conf /etc/
+sudo ln -sf ~/dots/etc/package_list_control/packgae_update.sh /usr/bin
+sudo mkdir -p /etc/pacman.d/hooks
+sudo ln -sf ~/dots/etc/package_list_control/update_package_list.hook /etc/pacman.d/hooks/
+sudo ln -sf ~/dots/etc/package_list_control/pkglist_hooks_generated.txt /etc/pacman.d/hooks/
+sudo ln -sf ~/dots/etc/package_list_control/pkglist_forgien_hooks_generated.txt /etc/pacman.d/hooks/
+
+sudo mkdir -p /etc/udev/rules.d
+sudo ln -sf ~/dots/etc/powerNotify/99-bat.rules /etc/udev/rules.d/
+sudo ln -sf ~/dots/etc/powerNotify/chrgnotify.sh /usr/bin/chrgnotify
 
 echo "/* Always authenticate Admins by prompting for the root
  * password, similar to the rootpw option in sudo
@@ -188,6 +176,12 @@ echo "/* Always authenticate Admins by prompting for the root
 polkit.addAdminRule(function(action, subject) {
     return [\"unix-user:root\"];
 });" | sudo tee /etc/polkit-1/rules.d/49-rootpw_global.rules
+
+sudo cp ~/dots/etc/environment /etc/
+sudo cp ~/dots/etc/grub /etc/default/
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo cp ~/dots/etc/mkinitcpio.conf /etc/
+sudo mkinitcpio -P
 
 
 exit

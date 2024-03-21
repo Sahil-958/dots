@@ -15,11 +15,11 @@ case $1 in
     "init")
         if [ -f ~/.cache/current_wall_path.txt ]; then
 	    path=$(cat ~/.cache/current_wall_path.txt)
-	    wal -q -i $path
+	    wal -q -i "$path"
 	    isFromCache=true
         else
 	    wallpath=$(find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | shuf -n 1)
-            wal -q -i $wallpath
+            wal -q -i "$wallpath"
         fi
     ;;
 
@@ -27,32 +27,32 @@ case $1 in
     "select")
     selected=$( find "$HOME/walls/" -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | sort -R | while read rfile 
     do
-        basename=$(basename $rfile)
+        basename=$(basename "$rfile")
         echo -en "$basename\x00icon\x1f/${rfile}\n"
-    done | rofi -window-title "Wall Selector" -dmenu -replace -config ~/dots/rofi/config-walls.rasi)
+    done | rofi -window-title "Wall Selector" -dmenu -replace -config ~/dots/config/rofi/config-walls.rasi)
 
         
-#    selected=$( find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" -printf "%f\n"| rofi -dmenu -replace -config ~/dots/rofi/config-wallpaper.rasi)
+#    selected=$( find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" -printf "%f\n"| rofi -dmenu -replace -config ~/dots/config/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
         fi
-	wallpath=$(find ~/walls/ -type f -name $selected)
-	wal -q -i $wallpath  
+	wallpath=$(find ~/walls/ -type f -name "$selected")
+	wal -q -i "$wallpath"  
     ;;
     
     # Randomly select Remote wallpaper 
     remote)
         notify-send "selecting Remote wallpaper randomly"
         wallpath="$(~/dots/scripts/remote_wall.sh -m random)"
-        wal -q -i $wallpath
+        wal -q -i "$wallpath"
     ;;
 
     # Randomly select wallpaper 
     *)
         notify-send "selecting wallpaper randomly"
 	    wallpath=$(find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | shuf -n 1)
-            wal -q -i $wallpath
+            wal -q -i "$wallpath"
     ;;
 
 esac
@@ -75,7 +75,7 @@ echo "mainbox { background-image: url(\"$wallpaper\", width); }" > ~/.cache/curr
 # get wallpaper iamge name
 # ----------------------------------------------------- 
 
-newwall=$(echo $wallpaper | xargs basename)
+newwall=$(echo "$wallpaper" | xargs basename)
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
@@ -84,10 +84,10 @@ newwall=$(echo $wallpaper | xargs basename)
 # transition_type="outer"
  transition_type="random"
 
-swww img $wallpaper \
+swww img "$wallpaper" \
     --transition-bezier .43,1.19,1,.4 \
     --transition-fps=60 \
-    --transition-type=$transition_type \
+    --transition-type="$transition_type" \
     --transition-duration=1.0 \
     --transition-pos "$( hyprctl cursorpos )"
 

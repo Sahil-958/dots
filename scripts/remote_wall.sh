@@ -126,6 +126,6 @@ if [[ $mode == "random" ]]; then
 elif [[ $mode == "fzf" ]]; then
     fetch_and_process_wallpapers "fzf"
 elif [[ $mode == "rofi" ]]; then
-    fetch_and_process_wallpapers "rofi -dmenu -config ~/dots/rofi/config-dmenu.rasi -i -p 'Select a wallpaper' -theme-str 'window{ width: 60%; height: 40%; }'" 
+    fetch_and_process_wallpapers "rofi -dmenu -config ~/dots/config/rofi/config-dmenu.rasi -i -p 'Select a wallpaper' -theme-str 'window{ width: 60%; height: 40%; }'" 
 
 fi
