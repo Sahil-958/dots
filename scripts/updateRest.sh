@@ -16,12 +16,12 @@
 ~/dots/scripts/waltostarship.sh arrow
 
 #dunst=$(themix-base16-cli /opt/oomox/plugins/base16/templates/dunst/templates/custom.mustache /opt/oomox/plugins/base16/schemes/py/py.yaml |grep -Ev "ERROR|Image plugin") 
-#echo "$dunst" > ~/dots/dunst/pydunstrc
-#killall dunst; cat ~/dots/dunst/dunstrc ~/dots/dunst/pydunstrc |dunst -conf - &
+#echo "$dunst" > ~/dots/config/dunst/pydunstrc
+#killall dunst; cat ~/dots/config/dunst/dunstrc ~/dots/config/dunst/pydunstrc |dunst -conf - &
 
 
 #ROFI THEME COLORS UPDATES
-#themix-base16-cli /opt/oomox/plugins/base16/templates/rofi/templates/custom.mustache /opt/oomox/plugins/base16/schemes/py/py.yaml |grep -Ev "ERROR|Image plugin" > ~/dots/rofi/pywal.rasi
+#themix-base16-cli /opt/oomox/plugins/base16/templates/rofi/templates/custom.mustache /opt/oomox/plugins/base16/schemes/py/py.yaml |grep -Ev "ERROR|Image plugin" > ~/dots/config/rofi/pywal.rasi
 
 #NOT USING THEMEIX BASE 16 USING PYWAL TEMPLATES INSTEAD
 killall dunst; dunst &
@@ -46,5 +46,5 @@ pgrep glava && killall glava && glava
 # -----------------------------------------------------
 # Generate Swaylock config with new colors
 # -----------------------------------------------------
-#~/dots/scripts/swaylock.sh
+#~/dots/config/scripts/swaylock.sh
 

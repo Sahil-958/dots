@@ -10,15 +10,15 @@
 # ----------------------------------------------------- 
 # Define keybindings.conf location
 # ----------------------------------------------------- 
-config_file=~/dots/hypr/conf/keybindings.conf
+config_file=~/dots/config/hypr/conf/keybindings.conf
 
 # ----------------------------------------------------- 
 # Parse keybindings
 # ----------------------------------------------------- 
-keybinds=$(grep -oP '(?<=bind = ).*' $config_file)
+keybinds=$(grep -oP '(?<=bind = ).*' "$config_file")
 keybinds=$(echo "$keybinds" | sed 's/$mainMod/SUPER/g'|  sed 's/,\([^,]*\)$/ = \1/' | sed 's/, exec//g' | sed 's/^,//g')
 
 # ----------------------------------------------------- 
 # Show keybindings in rofi
 # ----------------------------------------------------- 
-rofi -dmenu -replace -p "Keybinds" -config ~/dots/rofi/config-compact.rasi <<< "$keybinds"
+rofi -dmenu -replace -p "Keybinds" -config ~/dots/config/rofi/config-compact.rasi <<< "$keybinds"

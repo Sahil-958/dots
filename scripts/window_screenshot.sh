@@ -6,7 +6,7 @@ case $1 in
            title=$(echo -e "$titles\nnone" | fzf)
            ;;
         *)
-           title=$(echo -e "$titles\nnone" | rofi -dmenu -p "Select Window To Capture" -i -config ~/dots/rofi/config-dmenu.rasi)
+           title=$(echo -e "$titles\nnone" | rofi -dmenu -p "Select Window To Capture" -i -config ~/dots/config/rofi/config-dmenu.rasi)
            ;;
 esac
 
