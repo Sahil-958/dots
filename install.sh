@@ -149,10 +149,10 @@ sudo ln -sf ~/.cache/wal/graph.glsl ~/dots/glava/
 sudo ln -sf ~/.cache/wal/wave.glsl ~/dots/glava/
 sudo ln -sf ~/dots/dunst ~/.config/
 sudo ln -sf ~/.cache/wal/dunstrc ~/dots/dunst/ 
+sudo mkdir -p ~/.config/swaylock
 sudo ln -sf ~/.cache/wal/swaylock ~/dots/swaylock/config
 sudo ln -sf ~/dots/mimeapps.list ~/.config/
 sudo ln -sf ~/dots/swappy ~/.config/
-sudo ln -sf ~/dots/swaylock ~/.config/
 sudo mkdir -p /etc/udev/rules.d
 sudo ln -sf ~/dots/powerNotify/99-bat.rules /etc/udev/rules.d/
 sudo ln -sf ~/dots/powerNotify/chrgnotify.sh /usr/bin/chrgnotify
