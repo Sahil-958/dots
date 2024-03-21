@@ -20,7 +20,7 @@ if [ -d "$icon_dir" ]; then
     exit 0
 fi
 
-choice=$(printf "$numix\n$suru\n$suru_aspromauros\n$papirus\n$none" | rofi -dmenu -p "Select Icon Theme" -config ~/dots/config/config/rofi/config-dmenu.rasi) 
+choice=$(printf "$numix\n$suru\n$suru_aspromauros\n$papirus\n$none" | rofi -dmenu -p "Select Icon Theme" -config ~/dots/config/rofi/config-dmenu.rasi) 
 
 if [ "$choice" != "$none" ] ; then
 #	showNotification $line_count &
