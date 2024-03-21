@@ -29,13 +29,13 @@ else
 fi
 
 IFS=';' read -ra arrThemes <<< "$themestyle"
-echo ${arrThemes[0]}
+echo "${arrThemes[0]}"
 
-if [ ! -f ~/dots/waybar/themes${arrThemes[1]}/style.css ]; then
+if [ ! -f ~/dots/waybar/themes"${arrThemes[1]}"/style.css ]; then
     themestyle="/ml4w;/ml4w/light"
 fi
 
 # ----------------------------------------------------- 
 # Loading the configuration
 # ----------------------------------------------------- 
-waybar -c ~/dots/waybar/themes${arrThemes[0]}/config -s ~/dots/waybar/themes${arrThemes[1]}/style.css &
+waybar -c ~/dots/waybar/themes"${arrThemes[0]}"/config -s ~/dots/waybar/themes"${arrThemes[1]}"/style.css &
