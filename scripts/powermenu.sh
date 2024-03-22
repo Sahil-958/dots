@@ -11,7 +11,7 @@ action=$(echo '
 󰍃
 
 󰒲
-' | rofi -dmenu -format 'd' -kb-select-1 's' -kb-select-2 'r' -kb-select-3 'e' -kb-select-4 'l' -kb-select-5 'm' -kb-select-6 'h' -i -matching regex -config ~/dots/config/rofi/config-power.rasi -p "$prompt" -mesg "$message" -theme-str "
+' | rofi -dmenu -format 'd' -kb-select-1 'S' -kb-select-2 'r' -kb-select-3 'e' -kb-select-4 'l' -kb-select-5 's' -kb-select-6 'h' -i -matching regex -config ~/dots/config/rofi/config-power.rasi -p "$prompt" -mesg "$message" -theme-str "
 textbox-greeting{
 content: \"Don't forget to touch the grass\";
 }
