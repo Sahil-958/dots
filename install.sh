@@ -179,6 +179,7 @@ polkit.addAdminRule(function(action, subject) {
 
 sudo cp ~/dots/etc/environment /etc/
 sudo cp ~/dots/etc/grub /etc/default/
+sudo cp ~/dots/etc/sleep.conf /etc/systemd/
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo cp ~/dots/etc/mkinitcpio.conf /etc/
 sudo mkinitcpio -P
