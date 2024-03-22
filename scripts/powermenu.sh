@@ -9,7 +9,9 @@ message="$uptime | Updates Available: $updates"
 action=$(echo '
 
 󰍃
-' | rofi -dmenu -format 'd' -kb-select-1 's' -kb-select-2 'r' -kb-select-3 'e' -kb-select-4 'l' -i -matching regex -config ~/dots/config/rofi/config-power.rasi -p "$prompt" -mesg "$message" -theme-str "
+
+󰒲
+' | rofi -dmenu -format 'd' -kb-select-1 's' -kb-select-2 'r' -kb-select-3 'e' -kb-select-4 'l' -kb-select-5 'm' -kb-select-6 'h' -i -matching regex -config ~/dots/config/rofi/config-power.rasi -p "$prompt" -mesg "$message" -theme-str "
 textbox-greeting{
 content: \"Don't forget to touch the grass\";
 }
@@ -36,6 +38,16 @@ case $action in
         # Run lock command (replace with your preferred lock command)
         sleep 0.5s
         swaylock 
+        ;;
+    "5")
+        # Run suspend command
+        sleep 0.5s
+        systemctl suspend 
+        ;;
+    "6")
+        # Run hibernate command
+        sleep 0.5s
+        systemctl hibernate 
         ;;
     *) 
         # Handle invalid selection or cancellation
