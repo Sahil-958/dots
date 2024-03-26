@@ -85,7 +85,6 @@ sox
 sshfs
 starship
 swappy
-swayidle
 terminus-font
 tesseract
 tesseract-data-eng
