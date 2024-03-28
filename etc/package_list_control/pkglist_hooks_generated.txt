@@ -74,9 +74,6 @@ qt6-wayland
 qt6ct
 reflector
 ripgrep
-rofi
-rofi-calc
-rofi-emoji
 rust
 sddm
 slurp
