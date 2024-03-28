@@ -25,7 +25,6 @@ ffmpegthumbs
 firefox
 firewalld
 fzf
-gammastep
 git
 glava
 grim
