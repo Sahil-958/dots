@@ -41,7 +41,6 @@ jdk8-openjdk
 jq
 kdeconnect
 konsole
-kphotoalbum
 linux
 linux-firmware
 man-db
