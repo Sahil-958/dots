@@ -58,7 +58,6 @@ os-prober
 otf-comicshanns-nerd
 pavucontrol
 pipewire-pulse
-podman
 polkit-kde-agent
 python-opencv
 python-pip
