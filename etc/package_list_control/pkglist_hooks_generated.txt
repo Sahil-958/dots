@@ -55,6 +55,7 @@ npm
 nvtop
 obs-studio
 os-prober
+otf-comicshanns-nerd
 pavucontrol
 pipewire-pulse
 polkit-kde-agent
