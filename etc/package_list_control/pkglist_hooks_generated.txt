@@ -60,6 +60,7 @@ otf-comicshanns-nerd
 pavucontrol
 pipewire-pulse
 podman
+podman-compose
 polkit-kde-agent
 python-opencv
 python-pip
