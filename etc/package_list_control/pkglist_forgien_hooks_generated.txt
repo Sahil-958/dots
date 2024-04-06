@@ -1,7 +1,6 @@
 hyprshade
 librewolf-bin
 oomox-qt5-styleplugin-git
-photoprism
 pikaur
 rofi-calc-git
 rofi-emoji-git
