@@ -95,7 +95,6 @@ viu
 vlc
 waybar
 wl-clipboard
-xautolock
 xclip
 xdg-desktop-portal-hyprland
 xf86-video-amdgpu
