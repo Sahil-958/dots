@@ -5,7 +5,7 @@ function notify(){
     icon=$(find ~/.icons/ -name "*adapter*"|shuf -n 1)
 
     user=$(who | awk '{print $1}' | head -n 1)
-    uid=$(id -u $user)
+    uid=$(id -u "$user")
     DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus  /usr/bin/notify-send -i "$icon" "$@"
 }
 
@@ -34,6 +34,7 @@ case $1 in
                echo -e "$(date +%s)\n$per" > ~/.cache/chargeLog
     ;;
     init)
+             notify "Charginig Stats Initialized"
              echo -e "$(date +%s)\n$per" > ~/.cache/chargeLog
     ;;
     *) notify ">|$1|<"
