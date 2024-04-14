@@ -53,7 +53,7 @@ snaph(){
 }
 
 snapl(){
-	sudo snapper -c $1 list
+	sudo snapper -c "$1" list
 }
 
 hc(){
@@ -62,10 +62,10 @@ local selectedCommand
 selectedCommand=$(history | sed "s/^[ \t]*[0-9]\+[ \t]*//"| sort -u | fzf --reverse --height=60% )
 echo "Copying $selectedCommand "
 
-if [ $XDG_SESSION_TYPE = "wayland"  ];  then	
-	echo $selectedCommand |wl-copy && echo "Command Copied Successfully"
+if [ "$XDG_SESSION_TYPE" = "wayland"  ];  then	
+	echo "$selectedCommand" |wl-copy && echo "Command Copied Successfully"
 else	
-	echo $selectedCommand |xclip -selection clipboard && echo "Command Copied Successfully"
+	echo "$selectedCommand" |xclip -selection clipboard && echo "Command Copied Successfully"
 fi
 }
 
@@ -85,7 +85,7 @@ command_not_found_handle(){
 }
 
 cnf (){
-	pacman -F $1
+	pacman -F "$1"
 }
 
 #PS1='[\u@\h \W]\$ '
