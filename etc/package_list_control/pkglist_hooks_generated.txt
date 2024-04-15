@@ -17,7 +17,6 @@ calibre
 cliphist
 cmatrix
 cmus
-digikam
 dolphin
 dolphin-plugins
 dunst
