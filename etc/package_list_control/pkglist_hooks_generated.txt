@@ -33,7 +33,6 @@ grub-btrfs
 hypridle
 hyprland
 hyprlang
-hyprlock
 imagemagick
 imlib2
 jdk8-openjdk
