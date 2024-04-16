@@ -1,3 +1,4 @@
+hyprlock-git
 hyprshade
 librewolf-bin
 oomox-qt5-styleplugin-git
