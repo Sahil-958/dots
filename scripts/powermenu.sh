@@ -37,7 +37,8 @@ case $action in
     "4")
         # Run lock command (replace with your preferred lock command)
         sleep 0.5s
-        swaylock 
+        #swaylock 
+        hyprlock 
         ;;
     "5")
         # Run suspend command
