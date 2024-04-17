@@ -30,6 +30,7 @@ glava
 grim
 grub
 grub-btrfs
+gwenview
 hypridle
 hyprland
 hyprlang
