@@ -63,7 +63,6 @@ python-pip
 python-pyqt5
 python-pywal
 python-qrencode
-qbittorrent
 qt5-graphicaleffects
 qt5-quickcontrols
 qt5-quickcontrols2
