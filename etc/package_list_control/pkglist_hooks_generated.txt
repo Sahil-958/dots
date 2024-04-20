@@ -41,6 +41,7 @@ jq
 kdeconnect
 konsole
 kscreenlocker
+kscreenlocker5
 linux
 linux-firmware
 man-db
