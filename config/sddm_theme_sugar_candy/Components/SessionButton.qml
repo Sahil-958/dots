@@ -68,6 +68,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             contentItem: Text {
                 text: model.name
+                font.family: config.ButtonFont
                 font.pointSize: root.font.pointSize * 0.8
                 color: selectSession.highlightedIndex === index ? root.palette.highlight.hslLightness >= 0.7 ? "#444444" : "white" : root.palette.window.hslLightness >= 0.8 ? root.palette.highlight.hslLightness >= 0.8 ? "#444444" : root.palette.highlight : "white"
                 verticalAlignment: Text.AlignVCenter
@@ -86,6 +87,7 @@ Item {
         contentItem: Text {
             id: displayedItem
             text: (config.TranslateSession || (textConstantSession + ":")) + " " + selectSession.currentText
+            font.family: config.ButtonFont
             color: root.palette.text
             verticalAlignment: Text.AlignVCenter
             anchors.left: parent.left

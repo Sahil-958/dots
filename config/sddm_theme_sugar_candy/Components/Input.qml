@@ -75,6 +75,7 @@ Column {
                     text: model.name
                     font.pointSize: root.font.pointSize * 0.8
                     font.capitalization: Font.Capitalize
+                    font.family: config.ButtonFont
                     color: selectUser.highlightedIndex === index ? root.palette.highlight.hslLightness >= 0.7 ? "#444" : "white" : root.palette.window.hslLightness >= 0.8 ? root.palette.highlight.hslLightness >= 0.8 ? "#444" : root.palette.highlight : "white"
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
@@ -182,6 +183,7 @@ Column {
             id: username
             text: config.ForceLastUser == "true" ? selectUser.currentText : null
             font.capitalization: config.AllowBadUsernames == "false" ? Font.Capitalize : Font.MixedCase
+            font.family: config.FieldFont
             anchors.centerIn: parent
             height: root.font.pointSize * 3
             width: parent.width
@@ -232,6 +234,7 @@ Column {
             anchors.centerIn: parent
             height: root.font.pointSize * 3
             width: parent.width
+            font.family: config.FieldFont
             focus: config.ForcePasswordFocus == "true" ? true : false
             selectByMouse: true
             echoMode: revealSecret.checked ? TextInput.Normal : TextInput.Password
@@ -315,6 +318,7 @@ Column {
                 anchors.left: indicator.right
                 anchors.leftMargin: indicator.width / 2
                 font.pointSize: root.font.pointSize * 0.8
+                font.family: config.ButtonFont      
                 color: root.palette.text
             }
 
@@ -470,6 +474,7 @@ Column {
                 text: parent.text
                 color: config.OverrideLoginButtonTextColor != "" ? config.OverrideLoginButtonTextColor : root.palette.highlight.hslLightness >= 0.7 ? "#444" : "white"
                 font.pointSize: root.font.pointSize
+                font.family: config.ButtonFont      
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 opacity: 0.5
