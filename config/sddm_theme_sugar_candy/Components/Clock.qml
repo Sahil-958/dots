@@ -36,6 +36,7 @@ Column {
         color: root.palette.text
         renderType: Text.QtRendering
         text: config.HeaderText
+        font.family: config.HeaderFont
     }
 
     Label {
@@ -44,6 +45,7 @@ Column {
         font.pointSize: root.font.pointSize * 3
         color: root.palette.text
         renderType: Text.QtRendering
+        font.family: config.ClockFont
         function updateTime() {
             text = new Date().toLocaleTimeString(Qt.locale(config.Locale), config.HourFormat == "long" ? Locale.LongFormat : config.HourFormat !== "" ? config.HourFormat : Locale.ShortFormat)
         }
@@ -54,6 +56,7 @@ Column {
         anchors.horizontalCenter: parent.horizontalCenter
         color: root.palette.text
         renderType: Text.QtRendering
+        font.family: config.ClockFont
         function updateTime() {
             text = new Date().toLocaleDateString(Qt.locale(config.Locale), config.DateFormat == "short" ? Locale.ShortFormat : config.DateFormat !== "" ? config.DateFormat : Locale.LongFormat)
         }
