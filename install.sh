@@ -134,9 +134,9 @@ sudo ln -sf ~/dots/config/* ~/.config/
 sudo ln -sf ~/.cache/wal/swaylock ~/dots/config/swaylock/config
 sudo ln -sf ~/.cache/wal/*.glsl ~/dots/config/glava/
 sudo ln -sf ~/.cache/wal/dunstrc ~/dots/config/dunst/ 
-sudo ln -sf ~/.cache/wal/colors-konsole.colorscheme ~/dots/konsole/pywal.colorscheme
+sudo ln -sf ~/.cache/wal/colors-konsole.colorscheme ~/dots/config/konsole/pywal.colorscheme
 
-sudo ln -sf ~/dots/konsole ~/.local/share/
+sudo ln -sf ~/dots/config/konsole ~/.local/share/
 sudo ln -sf ~/dots/.inputrc ~/
 sudo ln -sf ~/dots/.bashrc ~/
 sudo ln -sf ~/dots/.gitconfig ~/
