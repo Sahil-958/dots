@@ -79,6 +79,9 @@ This repository contains my personal dotfiles and configuration files. It's curr
 ![screenshots/neofetch.png](screenshots/neofetch.png)
 (I like this one more tho: Computer are like air conditioners, they stop working efficiently when you open windows but that's messes up my alignments and looks a bit akward)
 
+#### Neovim
+![screenshots/nvim.png](screenshots/nvim.png)
+
 ## Installation
 
 1. **Preparing & Booting into Installation Media** 
