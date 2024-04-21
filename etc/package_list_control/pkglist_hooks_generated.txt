@@ -71,6 +71,7 @@ qt6-wayland
 qt6ct
 reflector
 ripgrep
+rofi-calc
 rust
 sddm
 slurp
