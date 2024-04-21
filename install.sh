@@ -145,7 +145,7 @@ sudo ln -sf ~/dots/.vimrc ~/
 
 # MORE COPYING STUFF
 sudo cp -r ~/dots/fonts /usr/share/fonts
-sudo cp -r ~/dots/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
+sudo cp -r ~/dots/config/sddm_theme_sugar_candy/ /usr/share/sddm/themes/sugar_candy
 sudo chown -R sawhill:sawhill /usr/share/sddm/themes/sugar_candy #So that script can modify it without elevated privleges 
 
 echo "
