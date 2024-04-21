@@ -24,6 +24,7 @@ efibootmgr
 ffmpegthumbs
 firefox
 firewalld
+fontforge
 fzf
 git
 glava
