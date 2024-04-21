@@ -4,9 +4,6 @@ librewolf-bin
 ocrmypdf
 oomox-qt5-styleplugin-git
 pikaur
-rofi-calc-git
-rofi-emoji-git
-rofi-lbonn-wayland
 swaylock-effects-git
 swww
 themix-full-git
