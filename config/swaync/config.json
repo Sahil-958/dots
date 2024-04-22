@@ -1,0 +1,128 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "cssPriority": "user",
+
+  "layer": "overlay",
+  "layer-shell": true,
+
+  "control-center-width": 450,
+  "control-center-height": 860, 
+  "fit-to-screen": true,
+
+  "control-center-margin-top": 2,
+  "control-center-margin-bottom": 2,
+  "control-center-margin-right": 1,
+  "control-center-margin-left": 0,
+
+  "control-center-layer": "top",   
+  "control-center-exclusive-zone": true,
+
+  "notification-window-width": 400,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 160,
+  "notification-body-image-width": 200,
+  "notification-2fa-action": true,
+
+  "timeout": 4,
+  "timeout-low": 2,
+  "timeout-critical": 6,
+  "relative-timestamps": true,
+  
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "override-urgency": "unset",
+      "app-name": "Spotify",
+      "summary": "Spotify",
+      "body": "Spotify",
+      "category": "music"
+    }
+  },
+  "widgets": [
+    "buttons-grid",
+    "backlight",
+    "volume",
+    "mpris",
+    "label",
+    "title",
+    "notifications",
+    "dnd"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": " 󰎟 "
+    },
+    "dnd": {
+      "text": "Do not disturb"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": " "
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
+    },
+    "volume": {
+      "label": "󰕾",
+      "show-per-app": true,
+      "show-per-app-icon": true,
+      "show-per-app-label": true,
+      "empty-list-label": "No applications playing audio",
+      "expand-button-label": "󰘖",
+      "collapse-button-label": "󰘕",
+      "icon-size": 24,
+      "animation-type": "slide-down",
+      "animation-duration": 200
+    },
+    "backlight": {
+      "label": "",
+      "icon-size": 24,
+      "device": "amdgpu_bl2",
+      "animation-type": "slide-down",
+      "animation-duration": 200
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": " ",
+          "command": "amixer set Master toggle"
+        },
+        {
+          "label": "",
+          "command": "amixer set Capture toggle"
+        },
+        {
+          "label": " ",
+          "command": "nm-connection-editor"
+        },
+        {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "󰏘",
+          "command": "nwg-look"
+        }
+        
+      ]
+    }
+  }
+}
