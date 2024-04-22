@@ -24,7 +24,8 @@
 #themix-base16-cli /opt/oomox/plugins/base16/templates/rofi/templates/custom.mustache /opt/oomox/plugins/base16/schemes/py/py.yaml |grep -Ev "ERROR|Image plugin" > ~/dots/config/rofi/pywal.rasi
 
 #NOT USING THEMEIX BASE 16 USING PYWAL TEMPLATES INSTEAD
-killall dunst; dunst &
+#killall dunst; dunst &
+swaync-client -rs
 
 #SDDM THEME UPDATE
 
