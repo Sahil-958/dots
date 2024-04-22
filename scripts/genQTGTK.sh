@@ -26,18 +26,18 @@ if [ "$choice" != "$none" ] ; then
 #	showNotification $line_count &
 run_script="/opt/oomox/plugins/icons_$choice/change_color.sh" 
 
+notification_id=$(notify-send -p -t 100000 -h int:value:"0" "genQTGTK.sh" "Generating Icons Colorscheme..." )
+
 "$run_script" -o testing_cli -d "$icon_dir" ~/.cache/wal/colors-oomox > >(while read -r line; do
         chk=$((chk +$(echo "$line"|wc -l)))
         progress=$(( (chk - 1) * 100 / 5  ))
-	dunstify -t 100000 -h int:value:"$progress" "Generating Icons Colorscheme..." 
+	notify-send -t 100000 -h int:value:"$progress" -r "$notification_id" "genQTGTK.sh" "Generating Icons Colorscheme..." 
 done)
 
 rm ~/.icons/testing_cli
 ln -sf "$icon_dir" ~/.icons/testing_cli
 
-dunstify "Icon ColorScheme Generation Completed" 
-sleep 2
-dunstctl close
+notify-send "Icon ColorScheme Generation Completed" -r "$notification_id"
 
 fi
 
