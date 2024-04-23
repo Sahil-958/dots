@@ -204,6 +204,10 @@ progressbar {
     background: @hover;
 }
 
+.widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked {
+    background: @background-alt2;
+    color: @selected;
+}
 
 /* Music player */
 .widget-mpris {
