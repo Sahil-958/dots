@@ -38,8 +38,9 @@
   "script-fail-notify": true,
   "scripts": {
     "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
+      "exec": "playNotificationSound.sh",
+      "urgency": "Normal",
+      "run-on": "receive"
     }
   },
   "notification-visibility": {
