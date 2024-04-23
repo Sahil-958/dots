@@ -31,7 +31,7 @@ notification_id=$(notify-send -p -t 100000 -h int:value:"0" "genQTGTK.sh" "Gener
 "$run_script" -o testing_cli -d "$icon_dir" ~/.cache/wal/colors-oomox > >(while read -r line; do
         chk=$((chk +$(echo "$line"|wc -l)))
         progress=$(( (chk - 1) * 100 / 5  ))
-	notify-send -t 100000 -h int:value:"$progress" -r "$notification_id" "genQTGTK.sh" "Generating Icons Colorscheme..." 
+	notify-send -t 100000 -u "Low" -h int:value:"$progress" -r "$notification_id" "genQTGTK.sh" "Generating Icons Colorscheme..." 
 done)
 
 rm ~/.icons/testing_cli
