@@ -88,7 +88,7 @@
       "expand-button-label": "󰘖",
       "collapse-button-label": "󰘕",
       "icon-size": 24,
-      "animation-type": "slide-down",
+      "animation-type": "slide_down",
       "animation-duration": 200
     },
     "backlight": {
