@@ -8,9 +8,9 @@
 @define-color urgent @color2;
 
 * {
-    color: @text;
 
     all: unset;
+    color: @text;
     font-size: 14px;
     font-family: "JetBrains Mono Nerd Font 10";
     transition: 200ms;
