@@ -113,14 +113,14 @@
           "type": "toggle",
           "active": true,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update_command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+          "update-command": "sh -c 'notify-send \"brr\" && [[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
         },
         {
           "label": "󰂯",
           "type": "toggle",
           "active": false,
           "command": "sh -c 'systemctl is-active --quiet bluetooth.service && ( [[ $SWAYNC_TOGGLE_STATE == true ]] && echo -e \"power on\nquit\" | bluetoothctl || echo -e \"power off\nquit\" | bluetoothctl ) || (echo false && notify-send -t 1999 \"Bluetooth.service Inactive\" \"Try running systemctl start bluetooh.service\") '",
-          "update_command": "sh -c 'systemctl is-active --quiet bluetooth.service && (bluetoothctl show | grep -q \"Powered: yes\" && echo true || echo false) || echo false'"
+          "update-command": "sh -c 'systemctl is-active --quiet bluetooth.service && (bluetoothctl show | grep -q \"Powered: yes\" && echo true || echo false) || echo false'"
         },
         {
           "label": "󰏘",
