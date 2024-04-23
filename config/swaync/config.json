@@ -101,30 +101,46 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": " ",
-          "command": "amixer set Master toggle"
+          "label": "",
+          "type": "toggle",
+          "active": false,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-sink-port @DEFAULT_SINK@ analog-output-headphones || pactl set-sink-port @DEFAULT_SINK@ analog-output-speaker'",
+          "update-command": "sh -c 'pactl list sinks | grep -q \"Active Port: analog-output-headphones\" && echo true || echo false'"
         },
         {
-          "label": "",
-          "command": "amixer set Capture toggle"
+          "label": "",
+          "type": "toggle",
+          "active": false,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-sink-mute @DEFAULT_SINK@ 1 || pactl set-sink-mute @DEFAULT_SINK@ 0'",
+          "update-command": "sh -c 'pactl get-sink-mute @DEFAULT_SINK@ | grep -q \"yes\" && echo true || echo false'"
         },
         {
           "label": " ",
           "type": "toggle",
           "active": true,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update-command": "sh -c 'notify-send \"brr\" && [[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+          "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
         },
         {
-          "label": "󰂯",
+          "label": "",
           "type": "toggle",
           "active": false,
           "command": "sh -c 'systemctl is-active --quiet bluetooth.service && ( [[ $SWAYNC_TOGGLE_STATE == true ]] && echo -e \"power on\nquit\" | bluetoothctl || echo -e \"power off\nquit\" | bluetoothctl ) || (echo false && notify-send -t 1999 \"Bluetooth.service Inactive\" \"Try running systemctl start bluetooh.service\") '",
           "update-command": "sh -c 'systemctl is-active --quiet bluetooth.service && (bluetoothctl show | grep -q \"Powered: yes\" && echo true || echo false) || echo false'"
         },
         {
-          "label": "󰏘",
-          "command": "nwg-look"
+          "label": "",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && (hypridle & notify-send -t 2000 \"Hypridle Started\") || (killall hypridle && notify-send -t 1999 \"Hypridle Stopped\")'",
+          "update-command": "sh -c 'pgrep hypridle && echo true || echo false'"
+        },
+        {
+          "label": "󱎴",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && hyprshade auto || hyprshade off'",
+          "update-command": "sh -c '[[ $(hyprshade current) ]] && echo true || echo false'"
         }
         
       ]
