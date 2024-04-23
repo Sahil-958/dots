@@ -38,7 +38,7 @@
   "script-fail-notify": true,
   "scripts": {
     "example-script": {
-      "exec": "playNotificationSound.sh",
+      "exec": "sh -c 'pgrep mpg123 || mpg123 \"$(find ~/Music/apexNotificationSounds -type f -name '*.mp3'|shuf -n1)\"'",
       "urgency": "Normal",
       "run-on": "receive"
     }
