@@ -145,6 +145,38 @@
         }
         
       ]
+    },
+
+    "menubar": {
+        "menu#power": {
+            "label": "Power",
+            "position": "right",
+            "actions": [
+                {
+                    "label": "Suspend",
+                    "command": "systemctl suspend"
+                },
+
+                {
+                    "label": "Hibernate",
+                    "command": "systemctl hibernate"
+                },
+
+                {
+                    "label": "Shut down",
+                    "command": "systemctl poweroff"
+                }
+            ]
+        },
+        "buttons#screenshot": {
+            "position": "left",
+            "actions": [
+                {
+                    "label": "󰹑",
+                    "command": "screenshot.sh"
+                }
+            ]
+        }
     }
   }
 }
