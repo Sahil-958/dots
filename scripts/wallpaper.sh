@@ -43,14 +43,14 @@ case $1 in
     
     # Randomly select Remote wallpaper 
     remote)
-        notify-send "selecting Remote wallpaper randomly"
+        notify-send "Wallpaper.sh" "selecting Remote wallpaper randomly"
         wallpath="$(~/dots/scripts/remote_wall.sh -m random)"
         wal -q -i "$wallpath"
     ;;
 
     # Randomly select wallpaper 
     *)
-        notify-send "selecting wallpaper randomly"
+        notify-send "Wallpaper.sh" "selecting wallpaper randomly"
 	    wallpath=$(find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | shuf -n 1)
             wal -q -i "$wallpath"
     ;;
@@ -92,14 +92,13 @@ swww img "$wallpaper" \
     --transition-pos "$( hyprctl cursorpos )"
 
 # ----------------------------------------------------- 
-# Update Dunst theme and Send notification
+# Update Rest of program themes and Send notification
 # ----------------------------------------------------- 
 if [ "$isFromCache" = false ]; then
 echo "passed"
 ~/dots/scripts/updateRest.sh
 fi
-
 sleep 1
-notify-send "Colors and Wallpaper updated" "with image $newwall"
-
+body="Colors and Wallpaper updated with image $newwall. <img src=\"$wallpaper\"/>"
+notify-send "Wallpaper.sh" "$body"
 echo "DONE!"
