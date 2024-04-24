@@ -16,7 +16,7 @@ if [[ ! "$titles" =~ "$title" ]]; then
     exit 1
 fi
 
-result=$(echo "$hyprctl_output" | jq -r ".[] | select(.title | contains(\"$title\")) | .title, (.class // empty), .at[0], .at[1], .size[0], .size[1], .workspace.id, .initialTitle, .fullscreenMode, .pid ")
+result=$(echo "$hyprctl_output" | jq -r ".[] | select(.title == \"$title\") | .title, (.class // empty), .at[0], .at[1], .size[0], .size[1], .workspace.id, .initialTitle, .fullscreenMode, .pid ")
 
 IFS='
 ' # Set IFS to newline
