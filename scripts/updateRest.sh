@@ -3,7 +3,8 @@
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
-~/dots/waybar/launch.sh
+#~/dots/waybar/launch.sh
+pkill -USR2 waybar
 
 # ----------------------------------------------------- 
 # Generate the new gtk,qt etc with oomox file with new colors
