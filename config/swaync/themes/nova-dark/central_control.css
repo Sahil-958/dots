@@ -134,11 +134,15 @@ progressbar {
 
 /* Notification clear button */
 .widget-title {
-    font-size: 1.2em;
     margin: 6px;
 }
 
+.widget-title label {
+    font-size: 1.4em;
+}
+
 .widget-title button {
+    font-size: 1.0em;
     background: @background-alt;
     border-radius: 6px;
     padding: 4px 16px;
