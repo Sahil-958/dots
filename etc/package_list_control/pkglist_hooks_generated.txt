@@ -19,7 +19,6 @@ cmatrix
 cmus
 dolphin
 dolphin-plugins
-dunst
 efibootmgr
 ffmpegthumbs
 firefox
