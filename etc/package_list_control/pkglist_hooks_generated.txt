@@ -58,6 +58,7 @@ otf-comicshanns-nerd
 pavucontrol
 pipewire-pulse
 polkit-kde-agent
+powertop
 python-opencv
 python-pip
 python-pyqt5
