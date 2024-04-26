@@ -86,6 +86,7 @@ terminus-font
 tesseract
 tesseract-data-eng
 tldr
+tlp
 tree
 ttf-fira-sans
 unzip
