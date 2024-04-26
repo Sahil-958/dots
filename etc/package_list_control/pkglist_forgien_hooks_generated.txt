@@ -1,7 +1,6 @@
 hyprlock-git
 hyprshade
 librewolf-bin
-ocrmypdf
 oomox-qt5-styleplugin-git
 pikaur
 rofi-calc-git
