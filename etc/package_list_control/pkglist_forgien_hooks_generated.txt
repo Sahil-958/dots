@@ -1,4 +1,3 @@
-aylurs-gtk-shell
 hyprlock-git
 hyprshade
 librewolf-bin
