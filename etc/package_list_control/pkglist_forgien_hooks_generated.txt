@@ -2,6 +2,7 @@ hyprlock-git
 hyprshade
 librewolf-bin
 oomox-qt5-styleplugin-git
+pikaur
 rofi-calc-git
 rofi-emoji-git
 rofi-lbonn-wayland-git
