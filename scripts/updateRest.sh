@@ -41,7 +41,7 @@ sed -i "s/BackgroundColor=.*$/BackgroundColor=\"$background\"/g" /usr/share/sddm
 sed -i "s/OverrideLoginButtonTextColor=.*$/OverrideLoginButtonTextColor=\"$background\"/g" /usr/share/sddm/themes/sugar_candy/theme.conf
 
 # Check if glava is running if running restart it 
-pgrep glava && killall glava && glava
+pgrep glava && killall glava && glava &
 
 
 # Using direct symlink: ln -s ~/.cache/wal/swaylock ~/.config/swaylock/config
