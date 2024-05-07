@@ -109,5 +109,6 @@ xorg-xinit
 xorg-xkill
 xorg-xprop
 xorg-xsetroot
+xreader
 yt-dlp
 zip
