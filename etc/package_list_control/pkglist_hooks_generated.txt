@@ -53,6 +53,7 @@ nodejs
 noto-fonts-emoji
 npm
 obs-studio
+okular
 os-prober
 otf-comicshanns-nerd
 pavucontrol
