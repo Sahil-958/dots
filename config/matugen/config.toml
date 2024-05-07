@@ -1,0 +1,34 @@
+[config]
+reload_apps = false
+set_wallpaper = false
+wallpaper_tool = 'Swww'
+swww_options = [
+    "--transition-type",
+    "center",
+]
+run_after = [
+    [ "echo", "'hello'" ],
+    [ "echo", "'hello again'" ],
+]
+
+[config.reload_apps_list]
+waybar = true
+librewolf = true
+kitty = true
+gtk_theme = true
+dunst = true
+swaync = true
+
+# config_directory/config.toml
+
+#[templates.hyprlock] # First way of adding template
+#input_path = '~/.config/matugen/templates/hyprlock.conf'
+#output_path = '~/.cache/matugen/hyprlock.conf'
+
+[templates]
+hyprlock = { input_path = '~/.config/matugen/templates/hyprlock.conf', output_path = '~/.cache/matugen/hyprlock.conf' }
+hyprland = { input_path = '~/.config/matugen/templates/colors-hyprland.conf', output_path = '~/.cache/matugen/colors-hyprland.conf' }
+glava_graph = { input_path = '~/.config/matugen/templates/graph.glsl', output_path = '~/.cache/matugen/graph.glsl' }
+glava_bars = { input_path = '~/.config/matugen/templates/bars.glsl', output_path = '~/.cache/matugen/bars.glsl' }
+glava_circle = { input_path = '~/.config/matugen/templates/circle.glsl', output_path = '~/.cache/matugen/circle.glsl' }
+glava_radial = { input_path = '~/.config/matugen/templates/radial.glsl', output_path = '~/.cache/matugen/radial.glsl' }
