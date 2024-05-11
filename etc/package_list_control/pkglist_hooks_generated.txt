@@ -59,6 +59,7 @@ pavucontrol
 pipewire-pulse
 polkit-kde-agent
 powertop
+pv
 python-opencv
 python-pip
 python-pyqt5
