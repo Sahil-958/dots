@@ -7,7 +7,6 @@ pikaur
 rofi-calc-git
 rofi-emoji-git
 rofi-lbonn-wayland-git
-showmethekey
 sioyek
 swaylock-effects-git
 swww
