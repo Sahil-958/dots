@@ -37,7 +37,7 @@ done)
 rm ~/.icons/testing_cli
 ln -sf "$icon_dir" ~/.icons/testing_cli
 
-notify-send "Icon ColorScheme Generation Completed" -r "$notification_id"
+notify-send "genQTGTK.sh" "Icon ColorScheme Generation Completed" -r "$notification_id"
 
 fi
 
