@@ -35,127 +35,131 @@
 @import '../style.css';
 
 #l-clock {
-border-left: 15 solid transparent;
-border-bottom: 15 solid @clock-bg;
-border-top: 15 solid @clock-bg;
-margin-left:0;
+    border-left: 15 solid transparent;
+    border-bottom: 15 solid @clock-bg;
+    border-top: 15 solid @clock-bg;
+    margin-left: -14px;
 }
 
+/*
 #r-clock {
-border-left: 15 solid @clock-bg;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-right:-15;
+    border-left: 15 solid @clock-bg;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-right: 0px;
 }
+*/
 
+/*
 #l-apps {
-border-left: 15 solid transparent;
-border-bottom: 15 solid @apps-bg;
-border-top: 15 solid @apps-bg;
-margin-left:0;
+    border-left: 15 solid transparent;
+    border-bottom: 15 solid @apps-bg;
+    border-top: 15 solid @apps-bg;
+    margin-left: -14px;
 }
+*/
 
 #r-apps {
-border-right: 15 solid transparent;
-border-bottom: 15 solid @apps-bg;
-border-top: 15 solid @apps-bg;
-margin-right:-15;
+    border-right: 15 solid transparent;
+    border-bottom: 15 solid @apps-bg;
+    border-top: 15 solid @apps-bg;
+    margin-right: 0px;
 }
 
 #l-quicklinks {
-border-left: 15 solid transparent;
-border-bottom: 15 solid @quicklinks;
-border-top: 15 solid @quicklinks;
-margin-left:0;
+    border-left: 15 solid transparent;
+    border-bottom: 15 solid @quicklinks;
+    border-top: 15 solid @quicklinks;
+    margin-left: -14px;
 }
 
 #r-quicklinks {
-border-left: 15 solid @quicklinks;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-right:-15;
+    border-left: 15 solid @quicklinks;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-right: 0px;
 }
 
 #l-window {
-border-right: 15 solid @window;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-left:-15;
+    border-right: 15 solid @window;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-left: -28px;
 }
 
 #r-window {
-border-right: 15 solid transparent;
-border-bottom: 15 solid @window;
-border-top: 15 solid @window;
-margin-right:-15;
+    border-right: 15 solid transparent;
+    border-bottom: 15 solid @window;
+    border-top: 15 solid @window;
+    margin-right: 0px;
 }
 
 #l-workspaces {
-border-right: 15 solid @workspaces;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-right:0;
+    border-right: 15 solid @workspaces;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-right: 0;
 }
 
 #r-workspaces {
-border-left: 15 solid @workspaces;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-right:-15;
+    border-left: 15 solid @workspaces;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-right: 0px;
 }
 
 #l-taskbar {
-border-right: 15 solid @taskbar;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-left:-15;
+    border-right: 15 solid @taskbar;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-left: -28px;
 }
 
 #r-taskbar {
-border-right: 15 solid transparent;
-border-bottom: 15 solid @taskbar;
-border-top: 15 solid @taskbar;
-margin-right:-15;
+    border-right: 15 solid transparent;
+    border-bottom: 15 solid @taskbar;
+    border-top: 15 solid @taskbar;
+    margin-right: 0px;
 }
 
 #l-stat {
-border-right: 15 solid @stat;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-left:-15;
+    border-right: 15 solid @stat;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-left: -28px;
 }
 
 #r-stat {
-border-right: 15 solid transparent;
-border-bottom: 15 solid @stat;
-border-top: 15 solid @stat;
-margin-right:0;
+    border-right: 15 solid transparent;
+    border-bottom: 15 solid @stat;
+    border-top: 15 solid @stat;
+    margin-right: 0;
 }
 
 #l-devices {
-border-left: 15 solid transparent;
-border-bottom: 15 solid @devices;
-border-top: 15 solid @devices;
-margin-left:0;
+    border-left: 15 solid transparent;
+    border-bottom: 15 solid @devices;
+    border-top: 15 solid @devices;
+    margin-left: 0px;
 }
 
 #r-devices {
-border-left: 15 solid @devices;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-right:-15;
+    border-left: 15 solid @devices;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-right: 0px;
 }
 
 #l-system {
-border-left: 15 solid transparent;
-border-bottom: 15 solid @system;
-border-top: 15 solid @system;
-margin-left:0;
+    border-left: 15 solid transparent;
+    border-bottom: 15 solid @system;
+    border-top: 15 solid @system;
+    margin-left: -14px;
 }
 
 #r-system {
-border-left: 15 solid @system;
-border-bottom: 15 solid transparent;
-border-top: 15 solid transparent;
-margin-right:-15;
+    border-left: 15 solid @system;
+    border-bottom: 15 solid transparent;
+    border-top: 15 solid transparent;
+    margin-right: 0px;
 }
