@@ -32,6 +32,7 @@ gnome-bluetooth-3.0
 grim
 grub
 grub-btrfs
+gtk3-demos
 gwenview
 hypridle
 hyprland
