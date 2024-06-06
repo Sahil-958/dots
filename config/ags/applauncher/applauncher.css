@@ -1,0 +1,81 @@
+.AppLauncherWindow {
+    background-color: transparent;
+}
+
+.AppLauncherWindowBox {
+    /* is needed to keep minimin hight */
+    border: 1px solid transparent;
+}
+
+.AppLauncherRevealerBox {
+    border: 1px solid @foreground;
+    border-radius: 0 0 10px 0;
+    padding: 10px;
+    background-color: alpha(@background, 0.8);
+}
+
+.AppLauncherBox {
+    background-color: alpha(@color1, 0.8);
+    border: 1px solid @foreground;
+    padding: 10px;
+}
+
+.AppLauncherScrollable {
+    background-color: alpha(@background, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* kinda same as the .AppLauncherScrollable as it is a child of it 
+.AppLauncherList {
+    border-radius: 5px;
+}
+*/
+
+
+.AppLauncherEntry {
+    padding: 10px;
+    background-color: alpha(@background, 0.6);
+    color: @foreground;
+    font-size: 1.2em;
+}
+
+
+.AppItemButton,
+.CalcResultButton,
+.FileResultButton {
+    background-color: alpha(@background, 0.6);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.AppItemButton:hover,
+.CalcResultButton:hover,
+.FileResultButton:hover {
+    border: 1px solid alpha(@foreground, 0.8);
+}
+
+.AppItemButton:focus,
+.CalcResultButton:focus,
+.FileResultButton:focus {
+    background-color: alpha(@foreground, 0.4);
+}
+
+/* kinda same as the .AppItemButton as it is a child of it
+.AppItemBox,
+.CalcResultBox
+{}
+*/
+
+.AppItemIcon,
+.CalcResultIcon,
+.FileResultIcon {
+    border-radius: 5px;
+}
+
+.AppItemLabel,
+.CalcResultLabel,
+.FileResultLabel {
+    color: @foreground;
+    font-weight: bold;
+}

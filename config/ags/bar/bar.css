@@ -1,0 +1,129 @@
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+window.BarWindow {
+    background-color: alpha(@background, 0.4);
+    color: @foreground;
+    border: 2px solid @foreground;
+    border-radius: 0px;
+}
+
+.BarMainCenterBox {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.BarLeftBox,
+.BarCenterbox,
+.BarRightBox {}
+
+.BarWorkspaces {
+    background-color: alpha(@color1, 0.6);
+    padding: 0 8px;
+}
+
+.BarWorkspaces button {
+    border-radius: 4px;
+    margin: 4px 4px;
+    padding: 2px 4px;
+    color: alpha(@foreground, 0.4);
+    background-color: alpha(@background, 0.8);
+}
+
+.BarWorkspaces button.BarHasWindow {
+    color: alpha(@foreground, 0.8);
+    border-bottom: 1px solid @foreground;
+}
+
+.BarWorkspaces button.BarActiveWorkspace {
+    background-color: @foreground;
+    color: @background;
+}
+
+.BarWorkspaces button:hover {
+    background-color: alpha(@foreground, 0.8);
+    color: @background;
+}
+
+.BarMediaButton,
+.BarWindowTitleLabel,
+.BarNetworkSpeedLabel,
+.BarSysTrayBox,
+.BarAppTrayBox,
+.BarWifiBox,
+.BarBrightnessBox,
+.BarVolumeBox,
+.BarBatteryNormal,
+.BarBatteryCritical,
+.BarBatteryFull,
+.BarClockLabel,
+.BarControlCenterBox {
+    background-color: alpha(@color1, 0.4);
+    padding: 0px 10px;
+    border-radius: 4px;
+}
+
+
+
+.BarSysTrayBox {
+    padding: 0 0px;
+}
+
+
+.BarAppTrayBox {
+    padding: 2px 10px;
+}
+
+.BarAppTrayButton {
+    padding: 4px 8px;
+    font-size: 18px;
+    background: alpha(@background, 0.2);
+    border-radius: 5px;
+    margin: 2px 4px;
+}
+
+.BarAppTrayButton.Active {
+    background: alpha(@background, 0.6);
+}
+
+.BarSysTrayButton {
+    background-color: transparent;
+    border: none;
+    margin: 0 5px;
+}
+
+.BarBatteryFull {
+    background-color: @foreground;
+    color: @background;
+}
+
+.BarBatteryFull .BarBatteryIcon,
+.BarBatteryFull .BarBatteryLabel {
+    color: @background;
+}
+
+@keyframes blink {
+    to {
+        color: @foreground;
+    }
+}
+
+.BarBatteryCritical .BarBatteryIcon,
+.BarBatteryCritical .BarBatteryLabel {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.BarBatteryNormal .BarBatteryIcon,
+.BarBatteryNormal .BarBatteryLabel {
+    color: alpha(@color1, 0.4);
+}
+
+.BarClockLabel {
+    min-width: 85px;
+}

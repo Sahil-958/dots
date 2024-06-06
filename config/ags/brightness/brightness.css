@@ -1,0 +1,62 @@
+.BrightnessBox {
+    background-color: alpha(@color1, .4);
+    padding: 12px;
+    border-radius: 4px;
+}
+
+/* Trough refers to line in which the leverbar or slider flows
+
+UnderScore(_) is the box containing the leverbar or slider offically called the contents
+Hyphens (-) are the Trough  (the part in which the activer region called highlight slides)
+Greater Than(>) Refers to the highlight (the active region which shows the level)
+The NOB here refers to the button which you hold to change val offically referred as slider
+.....................
+_____________________
+---------------------
+>>>>>>>>>>NOB--------
+---------------------
+_____________________
+.....................
+
+In short: 
+...... is the scale
+_____ is the contents
+----- is the trough
+>>>>> is the highlight
+NOB   is the slider
+*/
+
+scale {
+    margin: 0 10px;
+}
+
+/*levelbar block,*/
+.BrightnessBox highlight {
+    min-height: 10px;
+    background: alpha(@foreground, .6);
+}
+
+.BrightnessBox trough {
+    background-color: alpha(@color1, .6);
+    border-radius: 2px;
+    padding: 2px 0;
+}
+
+.BrightnessBox slider {
+    background-color: @foreground;
+    border-radius: 4px;
+    min-height: 0px;
+    padding: 0 4px;
+}
+
+/*
+levelbar block.empty {
+    background-color: transparent;
+    background-color: red;
+}
+
+levelbar block.filled {
+    background-color: @primary;
+    border-radius: 2px;
+}
+*/

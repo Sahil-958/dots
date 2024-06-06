@@ -1,0 +1,221 @@
+
+const mpris = await Service.import("mpris");
+
+
+const players = mpris.bind("players");
+/** @param {import('types/service/mpris').MprisPlayer} player */
+function Player(player) {
+
+    const FALLBACK_ICON = "audio-x-generic-symbolic";
+    const PLAY_ICON = "media-playback-start-symbolic";
+    const PAUSE_ICON = "media-playback-pause-symbolic";
+    const PREV_ICON = "media-skip-backward-symbolic";
+    const NEXT_ICON = "media-skip-forward-symbolic";
+    const SHUFFLE_ICON = "media-playlist-shuffle-symbolic";
+    const LOOP_ICON = "media-playlist-repeat-symbolic";
+
+    /** @param {number} length */
+    function lengthStr(length) {
+        const min = Math.floor(length / 60);
+        const sec = Math.floor(length % 60);
+        const sec0 = sec < 10 ? "0" : "";
+        return `${min}:${sec0}${sec}`;
+    }
+
+    const img = Widget.Box({
+        class_name: "MediaPlayerImage",
+        vpack: "start",
+        css: player.bind("cover_path").transform(p => {
+            if (!p) {
+                return `
+                min-width: 0px;
+                min-height: 0px;
+                border: none;
+                margin: 0px;
+                padding: 0px;
+                `;
+            } else {
+                return ` 
+                background-image: url('${p}');
+                min-width: 100px;
+                min-height: 100px;
+                `;
+            }
+        },
+        ),
+    });
+
+    const title = Widget.Label({
+        class_name: "MediaPlayerTitle",
+        wrap: true,
+        hpack: "start",
+        maxWidthChars: 30,
+        truncate: "end",
+        label: player.bind("track_title"),
+    });
+
+    const artist = Widget.Label({
+        class_name: "MediaPlayerArtist",
+        wrap: true,
+        hpack: "start",
+        maxWidthChars: 30,
+        lines: 2,
+        truncate: "end",
+        label: player.bind("track_artists").transform(a => a.join(", ")),
+    });
+
+    const positionSlider = Widget.Slider({
+        class_name: "MediaPlayerSlider",
+        draw_value: false,
+        on_change: ({ value }) => player.position = value * player.length,
+        visible: player.bind("length").as(l => l > 0),
+        setup: self => {
+            function update() {
+                const value = player.position / player.length;
+                self.value = value > 0 ? value : 0;
+            }
+            self.hook(player, update);
+            self.hook(player, update, "position");
+            self.poll(1000, update);
+        },
+    });
+
+    const TimeElapsedLabel = Widget.Label({
+        class_name: "MediaPlayerSliderLabelTimeElapsed",
+        hpack: "start",
+        setup: self => {
+            const update = (_, time) => {
+                self.label = lengthStr(time || player.position);
+                self.visible = player.length > 0;
+            };
+
+            self.hook(player, update, "position");
+            self.poll(1000, update);
+        },
+    });
+
+    const TotalTimeLabel = Widget.Label({
+        class_name: "MediaPlayerSliderLabelTotalTime",
+        hpack: "end",
+        visible: player.bind("length").transform(l => l > 0),
+        label: player.bind("length").transform(lengthStr),
+    });
+
+    const icon = Widget.Icon({
+        class_name: "MediaPlayerIcon",
+        hexpand: true,
+        hpack: "end",
+        vpack: "start",
+        tooltip_text: player.identity || "",
+        icon: player.bind("entry").transform(entry => {
+            const name = `${entry}-symbolic`;
+            return Utils.lookUpIcon(name) ? name : FALLBACK_ICON;
+        }),
+    });
+
+    const playPause = Widget.Button({
+        class_name: "MediaPlayerPlayPauseButton",
+        on_clicked: () => player.playPause(),
+        visible: player.bind("can_play"),
+        child: Widget.Icon({
+            icon: player.bind("play_back_status").transform(s => {
+                switch (s) {
+                    case "Playing": return PAUSE_ICON;
+                    case "Paused":
+                    case "Stopped": return PLAY_ICON;
+                }
+            }),
+        }),
+    });
+
+    const prev = Widget.Button({
+        className: "MediaPlayerPrevButton",
+        on_clicked: () => player.previous(),
+        visible: player.bind("can_go_prev"),
+        child: Widget.Icon(PREV_ICON),
+    });
+
+    const next = Widget.Button({
+        className: "MediaPlayerNextButton",
+        on_clicked: () => player.next(),
+        visible: player.bind("can_go_next"),
+        child: Widget.Icon(NEXT_ICON),
+    });
+
+    const shuffle = Widget.Button({
+        className: `MediaPlayerShuffleButton ${player.bind("shuffle_status").emitter.shuffle_status}`,
+        on_clicked: () => {
+            if (player.bind("shuffle_status").emitter.shuffle_status !== null)
+                player.shuffle();
+        },
+        visible: (player.bind("shuffle_status").emitter.shuffle_status === null),
+        child: Widget.Icon(SHUFFLE_ICON),
+    });
+
+    const loop = Widget.Button({
+        className: `MediaPlayerLoopButton ${(player.bind("loop_status").emitter.loop_status)}`,
+        on_clicked: () => {
+            if (player.bind("loop_status").emitter.loop_status !== null)
+                player.loop();
+        },
+        visible: (player.bind("loop_status").emitter.loop_status) === null,
+        child: Widget.Icon(LOOP_ICON),
+    });
+    return Widget.Box(
+        {
+            class_name: "MediaPlayer",
+            vexpand: false,
+            css: player.bind("cover_path").transform(p => {
+                if (p) {
+                    return ` 
+                    background-image: url('${p}');
+                    background-size: cover;
+                    background-position: center;
+                    `;
+                }
+                else return "";
+            }),
+        },
+        img,
+        Widget.Box(
+            {
+                vertical: true,
+                hexpand: true,
+            },
+            Widget.Box([
+                title,
+                icon,
+            ]),
+            artist,
+            positionSlider,
+            Widget.Box({ vexpand: true }),
+            Widget.CenterBox({
+                start_widget: TimeElapsedLabel,
+                center_widget: Widget.Box([
+                    shuffle,
+                    prev,
+                    playPause,
+                    next,
+                    loop,
+                ]),
+                end_widget: TotalTimeLabel,
+            }),
+
+        ),
+    );
+}
+
+function Media() {
+    return Widget.Box({
+        class_name: "MediaBox",
+        vertical: true,
+        children: players.as(p => p.map(Player)),
+        visible: players.as(p => p.length > 0),
+    }).on("realize", self => {
+        self.visible = false;
+    });
+
+}
+
+
+export default Media;
