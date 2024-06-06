@@ -4,6 +4,7 @@ hyprshade-git
 librewolf-bin
 oomox-qt5-styleplugin-git
 pikaur
+pop-launcher-git
 rofi-calc-git
 rofi-emoji-git
 rofi-lbonn-wayland-git
