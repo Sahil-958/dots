@@ -1,0 +1,152 @@
+.MediaBox {
+    background-color: alpha(@color1, .4);
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.MediaBox.Hidden {
+    background-color: red;
+    padding: 0px;
+    border: none;
+    outline: none;
+    min-height: 0px;
+    min-width: 0px;
+    margin: 0px;
+}
+
+.MediaPlayer {
+    background-color: alpha(@color1, .4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.MediaPlayerImage {
+    border: 1px solid @foreground;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.MediaPlayerTitle {
+    color: @foreground;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.MediaPlayerArtist {
+    color: @foreground;
+    font-size: 12px;
+}
+
+.MediaPlayerSlider {
+    margin: 10px 0px;
+}
+
+.MediaPlayerSliderLabelTimeElapsed {
+    color: @foreground;
+    font-size: 16px;
+}
+
+.MediaPlayerSliderLabelTotalTime {
+    color: @foreground;
+    font-size: 16px;
+}
+
+.MediaPlayerIcon {
+    color: @foreground;
+    font-size: 20px;
+}
+
+.MediaPlayerPlayPauseButton,
+.MediaPlayerNextButton,
+.MediaPlayerPrevButton,
+.MediaPlayerLoopButton,
+.MediaPlayerShuffleButton {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0 4px;
+}
+
+
+.MediaPlayerShuffleButton.null,
+.MediaPlayerLoopButton.null {
+    color: alpha(@foreground, .5);
+}
+
+.MediaPlayerShuffleButton.active {
+    color: red;
+}
+
+.MediaPlayerLoopButton.none {
+    color: alpha(@foreground, .5);
+}
+
+.MediaPlayerLoopButton.track {
+    color: blue;
+}
+
+.MediaPlayerLoopButton.playlist {
+    color: green;
+}
+
+/* Trough refers to line in which the leverbar or slider flows
+
+UnderScore(_) is the box containing the leverbar or slider offically called the contents
+Hyphens (-) are the Trough  (the part in which the activer region called highlight slides)
+Greater Than(>) Refers to the highlight (the active region which shows the level)
+The NOB here refers to the button which you hold to change val offically referred as slider
+.....................
+_____________________
+---------------------
+>>>>>>>>>>NOB--------
+---------------------
+_____________________
+.....................
+
+In short: 
+...... is the scale
+_____ is the contents
+----- is the trough
+>>>>> is the highlight
+NOB   is the slider
+*/
+
+/*
+.MediaBox scale {
+    margin: 0 10px;
+}
+*/
+
+/*levelbar block,*/
+.MediaBox highlight {
+    min-height: 10px;
+    background: alpha(@foreground, .6);
+}
+
+.MediaBox trough {
+    background-color: alpha(@color1, .6);
+    border-radius: 2px;
+    padding: 2px 0;
+}
+
+.MediaBox slider {
+    background-color: @foreground;
+    border-radius: 4px;
+    min-height: 0px;
+    padding: 0 4px;
+}
+
+/*
+levelbar block.empty {
+    background-color: transparent;
+    background-color: red;
+}
+
+levelbar block.filled {
+    background-color: @primary;
+    border-radius: 2px;
+}
+*/

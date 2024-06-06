@@ -1,0 +1,98 @@
+.VolumeMainBox {
+    background-color: alpha(@color1, .4);
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.VolumeMainBox.Muted {
+    background-color: alpha(@color1, .2);
+}
+
+.VolumeRevealer {
+    padding-top: 20px;
+}
+
+.VolumeRevealerBox {
+    background-color: transparent;
+    color: @foreground;
+    border-radius: 4px;
+}
+
+.VolumeStreamBox {
+    background-color: alpha(@color1, .4);
+    color: @foreground;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+/* Trough refers to line in which the leverbar or slider flows
+
+UnderScore(_) is the box containing the leverbar or slider offically called the contents
+Hyphens (-) are the Trough  (the part in which the activer region called highlight slides)
+Greater Than(>) Refers to the highlight (the active region which shows the level)
+The NOB here refers to the button which you hold to change val offically referred as slider
+.....................
+_____________________
+---------------------
+>>>>>>>>>>NOB--------
+---------------------
+_____________________
+.....................
+
+In short: 
+...... is the scale
+_____ is the contents
+----- is the trough
+>>>>> is the highlight
+NOB   is the slider
+*/
+
+.VolumeMainBox scale {
+    margin: 0 10px;
+}
+
+/*levelbar block,*/
+.VolumeMainBox highlight {
+    min-height: 10px;
+    background: alpha(@foreground, .6);
+}
+
+.VolumeMainBox.Muted highlight {
+    background: alpha(@foreground, .4);
+}
+
+
+.VolumeMainBox trough {
+    background-color: alpha(@color1, .6);
+    border-radius: 2px;
+    padding: 2px 0;
+}
+
+.VolumeMainBox.Muted trough {
+    background-color: alpha(@color1, .4);
+}
+
+
+.VolumeMainBox slider {
+    background-color: @foreground;
+    border-radius: 4px;
+    min-height: 0px;
+    padding: 0 4px;
+}
+
+.VolumeMainBox.Muted slider {
+    background-color: @color1;
+}
+
+/*
+levelbar block.empty {
+    background-color: transparent;
+    background-color: red;
+}
+
+levelbar block.filled {
+    background-color: @primary;
+    border-radius: 2px;
+}
+*/

@@ -1,0 +1,52 @@
+.StatsWindow {
+    background-color: alpha(@background, 0.5);
+    border-radius: 5px;
+}
+
+.StatsBox {
+    background-color: alpha(@color1, 0.5);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.CpuStatsBox,
+.RamStatsBox,
+.TempStatsBox,
+.StorageStatsBox {
+    background-color: alpha(@color1, 0.4);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.StatsLabel {
+    color: @foreground;
+    font-weight: bold;
+}
+
+
+.CpuStatsLevelBar,
+.RamStatsLevelBar,
+.TempStatsLevelBar,
+.StorageStatsLevelBar {
+    border-radius: 5px;
+    background-color: red;
+}
+
+/* levelbar > trough > block + block */
+
+levelbar trough {
+    background-color: alpha(@color1, .6);
+    padding: 2px 0;
+}
+
+levelbar block {
+    min-height: 10px;
+    background-color: alpha(@color1, .6);
+}
+
+levelbar block.filled {
+    background-color: @foreground;
+    border-radius: 2px;
+}

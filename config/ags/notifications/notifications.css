@@ -1,0 +1,266 @@
+/*_______________________________________________________*/
+
+.NotificationMainBox {
+    background-color: alpha(@color1, .4);
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.NotificationMainBox button {
+    background-color: alpha(@color1, .4);
+    color: @foreground;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* NOTIFICATION HEADER */
+.NotificationHeaderBox {
+    background-color: alpha(@color1, .4);
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.NotificationHeaderLabel {
+    color: @foreground;
+    font-size: 1.4em;
+}
+
+.NotificationHeaderClearButton {
+    color: alpha(@foreground, .6);
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    font-size: 1.4em;
+}
+
+.NotificationHeaderClearButton:hover {
+    color: @foreground;
+    background-color: @foreground;
+}
+
+/* ------------------------------------------------------------- */
+
+/* NOTIFICATION LIST SCROLLABLE CONTAINER */
+
+.NotificationListContainerScrollable {
+    background-color: @background;
+    border: 1px solid @foreground;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.NotificationListContainerScrollable scrollbar trough {
+    background-color: @background;
+    border-radius: 5px;
+}
+
+.NotificationListContainerScrollable scrollbar trough slider {
+    background-color: @foreground;
+}
+
+/*-------------------------------------------------------------*/
+
+/* NOTIFICATION LIST CONTAINER */
+
+.NotificationListContainerBox {
+    background-color: alpha(@color1, .2);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.NoNotificationLabel {
+    color: @foreground;
+    background-color: alpha(@color1, .2);
+    padding: 10px;
+    font-size: 1.4em;
+}
+
+/*-------------------------------------------------------------*/
+
+
+/* NOTIFICATION GROUP CONTAINER Box*/
+
+.NotificationGroupBox {
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+    background-color: alpha(@color1, .6);
+}
+
+/* NOTIFICATION GROUP HEADER CONTAINER Box*/
+.NotificationGroupHeaderBox {
+    font-size: 1.4em;
+    color: @foreground;
+    margin: 10px;
+    border-bottom: 1px solid @foreground;
+}
+
+
+/* NOTIFICATION GROUP REVEALER */
+.NotificationGroupRevealer {}
+
+/*-------------------------------------------------------------*/
+
+
+/* NOTIFICATION GROUP LIST CONTAINER Box*/
+
+.NotificationGroupListContainerBox {
+    margin: 0 10px;
+}
+
+/*-------------------------------------------------------------*/
+
+/* NOTIFICATION  BOX*/
+
+.NotificationBox {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    background-color: alpha(@color1, .6);
+    border: 2px solid @foreground;
+}
+
+.NotificationBox.critical {
+    border: 3px solid @foreground;
+}
+
+.NotificationBox.low {
+    border: none;
+}
+
+.NotificationIconAndImageContainerBox {
+    border-radius: 5px;
+}
+
+.NotificationIconBox {
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.NotificationImageIconBox {
+    min-width: 58px;
+    min-height: 58px;
+    background-size: cover;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.NotificationTitleLabel {
+    color: @foreground;
+    font-size: 1.4em;
+}
+
+.NotificationTitleBox {
+    border-bottom: 1px solid @foreground;
+}
+
+.NotificationIconAndTitleBox {
+    margin-bottom: 12px;
+}
+
+.NotificationBodyBox {
+    color: @foreground;
+    border: 1px solid @foreground;
+    border-radius: 5px;
+}
+
+.NotificationBodyLabel {
+    padding: 10px;
+    border-bottom: 1px solid @foreground;
+}
+
+.NotificationImageBox {
+    padding: 5px;
+}
+
+.NotificationBodyImage {
+    min-width: 350px;
+    min-height: 150px;
+    background-size: cover;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.NotificationActionsBox {
+    margin: 12px 0 0 0;
+}
+
+.NotificationActionButton,
+.NotificationActionButton:active {
+    background-color: alpha(@color1, .6);
+    color: @foreground;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.NotificationActionButton:hover {
+    background-color: @color1;
+    color: @foreground;
+}
+
+.NotificationActionButton:first-child {
+    margin-left: 0;
+}
+
+.NotificationActionButton:first-child:last-child {
+    margin-right: 0;
+}
+
+.NotificationCloseIcon {
+    background-color: transparent;
+    margin: 0 5px;
+}
+
+/*-------------------------------------------------------------*/
+
+/* Do Not Disturb Box */
+
+.DndBox {
+    background-color: alpha(@color1, .4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.DndLabel {
+    color: @foreground;
+    font-size: 20px;
+}
+
+.DndSwitch {
+    background-color: alpha(@color1, .6);
+    color: @foreground;
+}
+
+/*-------------------------------------------------------------*/
+
+/* Notification Popups */
+
+window.NotificationPopupsWindow box.NotificationsPopupsBox {
+    transition: all 0.5s;
+}
+
+.NotificationPopupsWindow {
+    border-radius: 5px;
+}
+
+.NotificationPopupsBox {
+    background-color: @background;
+    border: 1px solid @foreground;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.NotificationPopupsWindow .NotificationBox {
+    margin: 0;
+}
+
+.NotificationPopupsBox .NotificationBox+.NotificationBox {
+    margin-top: 10px;
+    /* Adjust margin as needed */
+}
