@@ -146,6 +146,7 @@ LastUsedCustomAccentColor=104,107,111
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
+ShowDeleteCommand=true
 widgetStyle=qt5ct-style
 
 [KFileDialog Settings]
