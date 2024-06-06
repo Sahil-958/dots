@@ -21,6 +21,7 @@ dolphin
 dolphin-plugins
 efibootmgr
 fastfetch
+fd
 ffmpegthumbs
 firefox
 firewalld
