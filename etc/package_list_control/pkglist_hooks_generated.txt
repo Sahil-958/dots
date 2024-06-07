@@ -57,6 +57,7 @@ nodejs
 noto-fonts-emoji
 npm
 obs-studio
+openjdk8-src
 os-prober
 otf-comicshanns-nerd
 pavucontrol
