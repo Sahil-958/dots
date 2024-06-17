@@ -39,16 +39,16 @@ function Notification(n, isPopups = false) {
         child: NotificationIcon(n),
     });
 
-    const closeButton = Widget.EventBox({
+    const closeButton = Widget.Button({
         class_name: "NotificationCloseButton",
+        valign: Gtk.Align.CENTER,
+        halign: Gtk.Align.CENTER,
         child: Widget.Icon({
             class_name: "NotificationCloseIcon",
-            valign: Gtk.Align.START,
             icon: "window-close-symbolic",
             size: 16,
         }),
-
-        on_primary_click: () => {
+        onClicked: () => {
             isPopups ? n.dismiss() : n.close();
         },
     });
@@ -149,7 +149,7 @@ function Notification(n, isPopups = false) {
                 Widget.Box(
                     {
                         vertical: true,
-                        valign: Gtk.Align.END,
+                        valign: Gtk.Align.CENTER,
                         class_name: "NotificationTitleBox",
                     },
                     title,
@@ -164,7 +164,6 @@ function Notification(n, isPopups = false) {
 }
 
 function NotificationList() {
-
     const NotificationGroupHeaderBox = (group, revealer) => {
         return Widget.EventBox({
             on_primary_click: () => {
@@ -188,7 +187,8 @@ function NotificationList() {
                         class_name: "NotificationGroupClearButton",
                         attribute: { app_name: group },
                         child: Widget.Icon({
-                            icon: `${App.configDir}/assets/clear-list-alt.svg`,
+                            //icon: `${App.configDir}/assets/clear-list-alt.svg`,
+                            icon: "list-remove-all-symbolic",
                             size: 20,
                         }),
                         on_clicked: (self) => {
@@ -321,7 +321,8 @@ const NotificaitonHeader = function() {
         Widget.Button({
             class_name: "NotificationHeaderClearButton",
             child: Widget.Icon({
-                icon: `${App.configDir}/assets/clear-list-alt.svg`,
+                //icon: `${App.configDir}/assets/clear-list-alt.svg`,
+                icon: "list-remove-all-symbolic",
                 size: 20,
             }),
             on_clicked: () => {
@@ -373,7 +374,6 @@ function NotificationPopups(monitor = 0) {
     }
 
     function onDismissed(_, /** @type {number} */ id) {
-        console.log("dismissed");
         list.children.find(n => n.attribute.id === id)?.destroy();
     }
 
@@ -384,7 +384,7 @@ function NotificationPopups(monitor = 0) {
         monitor,
         name: `notifications${monitor}`,
         class_name: "NotificationPopupsWindow",
-        widthRequest: 400,
+        widthRequest: 350,
         layer: "overlay",
         margins: [15, 15, 0, 0],
         anchor: ["top", "right"],
