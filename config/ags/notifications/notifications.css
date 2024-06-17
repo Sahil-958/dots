@@ -27,16 +27,15 @@
 }
 
 .NotificationHeaderClearButton {
-    color: alpha(@foreground, .6);
+    color: alpha(@background, .8);
+    background-color: red;
     border: none;
-    background-color: transparent;
     padding: 5px;
     font-size: 1.4em;
 }
 
 .NotificationHeaderClearButton:hover {
-    color: @foreground;
-    background-color: @foreground;
+    background-color: @color1;
 }
 
 /* ------------------------------------------------------------- */
@@ -176,7 +175,7 @@
 }
 
 .NotificationBodyImage {
-    min-width: 350px;
+    min-width: 300px;
     min-height: 150px;
     background-size: cover;
     border-radius: 5px;
@@ -211,9 +210,20 @@
     margin-right: 0;
 }
 
+.NotificationCloseButton {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0;
+}
+
+.NotificationCloseButton:hover {
+    background-color: @color2;
+}
+
 .NotificationCloseIcon {
     background-color: transparent;
-    margin: 0 5px;
+    margin: 0;
 }
 
 /*-------------------------------------------------------------*/
