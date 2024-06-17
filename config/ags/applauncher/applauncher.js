@@ -81,7 +81,13 @@ const FileResult = result => Widget.Button({
     className: "FileResultButton",
     on_clicked: () => {
         Utils.notify("AGS", `Opening file: ${result}`);
-        Utils.execAsync(["bash", "-c", `xdg-open "${result}"`]);
+        Utils.execAsync(["bash", "-c", `xdg-open "${Utils.HOME}/${result}"`]).catch((err) => {
+            if (!err) return;
+            Utils.execAsync(["bash", "-c", `xdg-open "${result}"`]).catch((err) => {
+                if (!err) return;
+                Utils.notify("AGS", `Error: ${err}`);
+            });
+        });
         App.toggleWindow(WINDOW_NAME);
     },
     child: Widget.Box({
@@ -98,7 +104,7 @@ const FileResult = result => Widget.Button({
                 }
                 switch (result.split(".").pop()) {
                     case "png": case "jpg": case "jpeg": case "svg":
-                        self.icon = result;
+                        self.icon = `${Utils.HOME}/${result}`;
                         break;
                     case "gif": case "webp":
                         self.icon = "image-x-generic";
@@ -145,6 +151,44 @@ const FileResult = result => Widget.Button({
 });
 
 
+const CommandResult = result => Widget.Button({
+    attribute: {
+        "result": result,
+        "id": "CommandResultButton",
+    },
+    className: "CommandResultButton",
+    on_clicked: () => {
+        Utils.execAsync(["bash", "-c", `"${result}"`]).then((res) => {
+            if (!res && res === "") return;
+            Utils.notify(`${result}`, `${res}`);
+            Utils.execAsync(["bash", "-c", `echo "${res}"|wl-copy`]);
+        }).catch((err) => {
+            if (!err) return;
+            Utils.notify(`${result}`, `Error: ${err}`);
+        });
+        App.toggleWindow(WINDOW_NAME);
+    },
+    child: Widget.Box({
+        className: "CommandResultBox",
+        spacing: 10,
+        children: [
+            Widget.Icon({
+                className: "CommandResultIcon",
+                icon: "utilities-terminal",
+                size: 42,
+            }),
+            Widget.Label({
+                className: "CommandResultLabel",
+                label: result,
+                xalign: 0,
+                lines: 3,
+                //vpack: "center",
+                truncate: "end",
+            }),
+        ],
+    }),
+});
+
 
 const Applauncher = ({ width = 500, height = 500, spacing = 10 }) => {
     // list of application buttons
@@ -186,8 +230,8 @@ const Applauncher = ({ width = 500, height = 500, spacing = 10 }) => {
                     list.children = resWid;
                 }
             }).catch((err) => {
-                if (err)
-                    console.log(err);
+                if (!err) return;
+                console.log(err);
             });
         } else if (text.startsWith(">")) {
             text = text.replace(">", "");
@@ -222,11 +266,30 @@ const Applauncher = ({ width = 500, height = 500, spacing = 10 }) => {
                     list.children = resWid;
                 }
             }).catch((err) => {
+                if (!err) return;
                 print(err);
             });
 
-        }
-        else {
+        } else if (text.startsWith("!")) {
+            text = text.replace("!", "");
+            if (text === "") return;
+
+            let command = `compgen -abcegjkuv ${text}`;
+
+            if (text === "") return;
+            Utils.execAsync(["bash", "-c", command]).then((result) => {
+                if (result) {
+                    let resWid = result.split(/\r?\n/).map((item) => {
+                        return CommandResult(item);
+                    });
+                    list.children = resWid;
+                }
+            }).catch((err) => {
+                if (!err) return;
+                print(err);
+            });
+
+        } else {
             repopulate();
             applications.forEach(item => {
                 item.visible = item.attribute.app.match(text ?? "");
@@ -234,7 +297,19 @@ const Applauncher = ({ width = 500, height = 500, spacing = 10 }) => {
         }
     }
 
-    function onAccept() {
+    function onAccept({ text }) {
+        if (text.startsWith("!")) {
+            let command = text.replace("!", "");
+            Utils.execAsync(["bash", "-c", `${command}`]).then((res) => {
+                if (!res && res === "") return;
+                Utils.notify(`${command}`, `${res}`);
+            }).catch((err) => {
+                if (!err) return;
+                Utils.notify(`${command}`, `Error: ${err}`);
+            });
+            App.toggleWindow(WINDOW_NAME);
+            return;
+        }
         // make sure we only consider visible (searched for) applications
         if (list.children[0].attribute.id === "CalcResultButton") {
             let result = list.children[0].attribute.result;
@@ -242,10 +317,15 @@ const Applauncher = ({ width = 500, height = 500, spacing = 10 }) => {
             Utils.notify("AGS", `Result copied to clipboard: ${result}`);
             App.toggleWindow(WINDOW_NAME);
             return;
-        }
-        else if (list.children[0].attribute.id === "FileResultButton") {
+        } else if (list.children[0].attribute.id === "FileResultButton") {
             let result = list.children[0].attribute.result;
-            Utils.execAsync(["bash", "-c", `xdg-open "${result}"`]);
+            Utils.execAsync(["bash", "-c", `xdg-open "${result}"`]).catch((err) => {
+                if (!err) return;
+                Utils.execAsync(["bash", "-c", `xdg-open "${Utils.HOME}/${result}"`]).catch((err) => {
+                    if (!err) return;
+                    Utils.notify("AGS", `Error: ${err}`);
+                });
+            });
             Utils.notify("AGS", `Opening file: ${result}`);
             App.toggleWindow(WINDOW_NAME);
             return;
@@ -264,7 +344,7 @@ const Applauncher = ({ width = 500, height = 500, spacing = 10 }) => {
         capsLockWarning: true,
         hexpand: true,
         css: `margin-bottom: ${spacing}px;`,
-        on_accept: () => onAccept(),
+        on_accept: ({ text }) => onAccept({ text }),
         on_change: ({ text }) => onChange({ text }),
     });
 
@@ -323,6 +403,9 @@ export function applauncher() {
         margins: [0, 0, 0, 4],
         widthRequest: 450,
         heightRequest: 700,
+        keymode: "on-demand",
+        valign: Gtk.Align.START,
+        halign: Gtk.Align.CENTER,
         setup: self => {
             self.hook(App, (_, windowName, visible) => {
                 if (windowName !== "AppLauncherWindow")
@@ -339,9 +422,6 @@ export function applauncher() {
                 App.closeWindow("AppLauncherWindow");
             });
         },
-        keymode: "on-demand",
-        valign: Gtk.Align.START,
-        halign: Gtk.Align.CENTER,
         child: Widget.Box({
             className: "AppLauncherWindowBox",
             vertical: true,
