@@ -70,7 +70,21 @@ const Workspaces = () => Widget.EventBox({
 const appTray = Widget.Box({
     class_name: "BarAppTrayBox",
     children: hyprland.bind("clients").as(clients => clients.map(client => {
-        const matchingObject = apps.list.find(app => app["wm-class"] === client.class);
+        let matchingObject = apps.list.find(app => {
+            if (app["wm-class"] === client.class) return true;
+
+            if (client.initialTitle.toLowerCase().includes(app.name.toLowerCase()))
+                return true;
+
+            if (client.initialTitle.toLowerCase().includes(app.name.toLowerCase()))
+                return true;
+
+            if (app.desktop?.toLowerCase().includes(client.initialTitle.toLowerCase()))
+                return true;
+
+            if (app.desktop?.toLowerCase().includes(client.initialClass.toLowerCase()))
+                return true;
+        });
         let client_icon = matchingObject?.icon_name || "package-x-generic";
         return Widget.Button({
             class_name: "BarAppTrayButton",
@@ -216,21 +230,41 @@ function BatteryLabel() {
         spacing: 5,
         children: [
             Widget.Icon({
-                class_name: "BatteryIcon"
+                class_name: "BarBatteryIcon",
+                size: 20,
             }),
             Widget.Label({
-                class_name: "BatteryLabel"
+                class_name: "BarBatteryLabel"
             })
         ],
 
     }).hook(battery, self => {
-        self.children[0].icon = `battery-level-${Math.floor(battery.percent / 10) * 10}-symbolic`
+        const iconsCharging = {
+            0: "battery-empty-charging",
+            20: "battery-caution-charging",
+            40: "battery-low-charging",
+            60: "battery-good-charging",
+            100: "battery-full-charging",
+        };
+        const iconsDischarging = {
+            0: "battery-empty-symbolic",
+            20: "battery-caution-symbolic",
+            40: "battery-low-symbolic",
+            60: "battery-good-symbolic",
+            100: "battery-full-symbolic",
+        };
+        let icon = iconsCharging[[100, 60, 40, 20, 0].find(threshold => threshold <= battery.percent)];
+        let dischargingIcon = iconsDischarging[[100, 60, 40, 20, 0].find(threshold => threshold <= battery.percent)];
+        self.children[0].icon = battery.charging
+            ? `${icon}`
+            : `${dischargingIcon}`;
+
         self.children[1].label = `${battery.percent}%`;
         self.visible = battery.available;
-        self.toggleClassName("BarBatteryCritical", (battery.percent < 20 ? true : false));
+        self.toggleClassName("Critical", (battery.percent < 20 ? true : false));
         self.toggleClassName((battery.percent < 20
-            ? "BatteryCritical"
-            : (battery.percent >= 90 ? "BatteryFull" : "")
+            ? "Critical"
+            : (battery.percent >= 90 ? "Full" : "")
         ), true);
         self.tooltip_text = `Percentage: ${battery.percent}
 Energy: ${battery.energy}w
@@ -297,12 +331,37 @@ function contorlCenterRevealer() {
         onPrimaryClick: () => {
             App.toggleWindow("ControlCenterWindow");
         },
+        onHover: () => {
+            App.openWindow("ControlCenterWindow");
+        },
         child: Widget.Box({
             className: "BarControlCenterBox",
             children: [
                 Widget.Icon({
                     className: "BarControlCenterIcon",
-                    icon: "preferences-system-symbolic",
+                    icon: "applications-utilities",
+                }),
+            ]
+        }),
+    });
+}
+
+function appLauncherToggle() {
+    return Widget.EventBox({
+        onPrimaryClick: () => {
+            App.toggleWindow("AppLauncherWindow");
+        },
+        onHover: () => {
+            //App.toggleWindow("AppLauncherWindow");
+            App.openWindow("AppLauncherWindow");
+        },
+        child: Widget.Box({
+            className: "BarAppLauncherToggleBox",
+            children: [
+                Widget.Icon({
+                    className: "BarAppLauncherToggleIcon",
+                    icon: "archlinux",
+                    size: 20,
                 }),
             ]
         }),
@@ -316,6 +375,7 @@ function Left() {
         className: "BarBarLeftBox",
         spacing: 8,
         children: [
+            appLauncherToggle(),
             Media(),
             focusedTitle,
             appTray,
