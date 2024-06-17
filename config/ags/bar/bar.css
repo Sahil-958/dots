@@ -1,10 +1,17 @@
+/* define color variables */
+@define-color bg alpha(@background, 0.8);
+@define-color box_bg alpha(@color1, 0.4);
+@define-color text @foreground;
+@define-color text-invert @background;
+
+
 * {
     transition: all 0.2s ease-in-out;
 }
 
 window.BarWindow {
-    background-color: alpha(@background, 0.4);
-    color: @foreground;
+    background-color: @bg;
+    color: @text;
     border: 2px solid @foreground;
     border-radius: 0px;
 }
@@ -19,31 +26,31 @@ window.BarWindow {
 .BarRightBox {}
 
 .BarWorkspaces {
-    background-color: alpha(@color1, 0.6);
+    background-color: @box_bg;
     padding: 0 8px;
 }
 
 .BarWorkspaces button {
     border-radius: 4px;
-    margin: 4px 4px;
+    margin: 6px 4px;
     padding: 2px 4px;
-    color: alpha(@foreground, 0.4);
+    color: alpha(@text, 0.4);
     background-color: alpha(@background, 0.8);
 }
 
 .BarWorkspaces button.BarHasWindow {
-    color: alpha(@foreground, 0.8);
+    color: alpha(@text, 0.8);
     border-bottom: 1px solid @foreground;
 }
 
 .BarWorkspaces button.BarActiveWorkspace {
     background-color: @foreground;
-    color: @background;
+    color: @text-invert;
 }
 
 .BarWorkspaces button:hover {
     background-color: alpha(@foreground, 0.8);
-    color: @background;
+    color: @text-invert;
 }
 
 .BarMediaButton,
@@ -58,18 +65,16 @@ window.BarWindow {
 .BarBatteryCritical,
 .BarBatteryFull,
 .BarClockLabel,
-.BarControlCenterBox {
-    background-color: alpha(@color1, 0.4);
-    padding: 0px 10px;
+.BarControlCenterBox,
+.BarAppLauncherToggleBox {
+    background-color: @box_bg;
+    padding: 0 10px;
     border-radius: 4px;
 }
-
-
 
 .BarSysTrayBox {
     padding: 0 0px;
 }
-
 
 .BarAppTrayBox {
     padding: 2px 10px;
@@ -93,35 +98,35 @@ window.BarWindow {
     margin: 0 5px;
 }
 
-.BarBatteryFull {
-    background-color: @foreground;
-    color: @background;
+.BarBatteryNormal.Full {
+    background-color: alpha(@foreground, 0.8);
+    color: @text-invert;
 }
 
-.BarBatteryFull .BarBatteryIcon,
-.BarBatteryFull .BarBatteryLabel {
-    color: @background;
+.BarBatteryNormal.Full .BarBatteryIcon,
+.BarBatteryNormal.Full .BarBatteryLabel {
+    color: @text-invert;
 }
 
 @keyframes blink {
     to {
-        color: @foreground;
+        color: @text;
     }
 }
 
-.BarBatteryCritical .BarBatteryIcon,
-.BarBatteryCritical .BarBatteryLabel {
+.BarBatteryNormal .BarBatteryIcon,
+.BarBatteryNormal .BarBatteryLabel {
+    color: @text;
+}
+
+.BarBatteryNormal.Critical .BarBatteryIcon,
+.BarBatteryNormal.Critical .BarBatteryLabel {
     color: #f53c3c;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-.BarBatteryNormal .BarBatteryIcon,
-.BarBatteryNormal .BarBatteryLabel {
-    color: alpha(@color1, 0.4);
 }
 
 .BarClockLabel {
