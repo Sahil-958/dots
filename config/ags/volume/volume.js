@@ -130,6 +130,13 @@ function Volume() {
     });
 
     const expandIcon = Widget.EventBox({
+        on_hover: (self, _) => {
+            revealer.revealChild = true;
+            self.child.css = `
+                            -gtk-icon-transform: ${revealer.reveal_child ? "rotate(-0.5turn)" : "none"};
+                            transition: -gtk-icon-transform 0.5s;
+                            `;
+        },
         on_primary_click: (self) => {
             revealer.revealChild = !revealer.revealChild;
             //self.child.icon = revealer.revealChild ? "go-up-symbolic" : "go-down-symbolic";
