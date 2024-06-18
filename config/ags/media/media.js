@@ -159,48 +159,50 @@ function Player(player) {
         child: Widget.Icon(LOOP_ICON),
     });
 
-    return Widget.Box(
-        {
-            class_name: "MediaPlayer",
-            vexpand: false,
-            css: player.bind("cover_path").transform(p => {
-                if (p) {
-                    return ` 
+    return Widget.Box({
+        class_name: "MediaPlayerBackgroundBox",
+        vexpand: false,
+        css: player.bind("cover_path").transform(p => {
+            if (p) {
+                return ` 
                     background-image: url('${p}');
                     background-size: cover;
                     background-position: center;
                     `;
-                }
-                else return "";
-            }),
-        },
-        img,
-        Widget.Box(
-            {
-                vertical: true,
-                hexpand: true,
-            },
-            Widget.Box([
-                title,
-                icon,
-            ]),
-            artist,
-            positionSlider,
-            Widget.Box({ vexpand: true }),
-            Widget.CenterBox({
-                start_widget: TimeElapsedLabel,
-                center_widget: Widget.Box([
-                    shuffle,
-                    prev,
-                    playPause,
-                    next,
-                    loop,
-                ]),
-                end_widget: TotalTimeLabel,
-            }),
-
-        ),
-    );
+            }
+            else return "";
+        }),
+        child: Widget.Box({
+            class_name: "MediaPlayer",
+            children: [
+                img,
+                Widget.Box(
+                    {
+                        vertical: true,
+                        hexpand: true,
+                    },
+                    Widget.Box([
+                        title,
+                        icon,
+                    ]),
+                    artist,
+                    Widget.Box({ vexpand: true }),
+                    positionSlider,
+                    Widget.CenterBox({
+                        start_widget: TimeElapsedLabel,
+                        center_widget: Widget.Box([
+                            shuffle,
+                            prev,
+                            playPause,
+                            next,
+                            loop,
+                        ]),
+                        end_widget: TotalTimeLabel,
+                    }),
+                ),
+            ],
+        }),
+    });
 }
 
 function Media() {
