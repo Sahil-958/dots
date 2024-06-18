@@ -40,6 +40,9 @@
 
 .MediaPlayer {
     background-color: alpha(@background, .6);
+    background-image: linear-gradient(90deg,
+            alpha(@color1, .6) 0%,
+            alpha(@background, .4) 100%);
     border-radius: 5px;
     padding: 10px;
 }
