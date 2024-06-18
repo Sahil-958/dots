@@ -5,7 +5,6 @@ const mpris = await Service.import("mpris");
 const players = mpris.bind("players");
 /** @param {import('types/service/mpris').MprisPlayer} player */
 function Player(player) {
-
     const FALLBACK_ICON = "audio-x-generic-symbolic";
     const PLAY_ICON = "media-playback-start-symbolic";
     const PAUSE_ICON = "media-playback-pause-symbolic";
@@ -41,8 +40,7 @@ function Player(player) {
                 min-height: 100px;
                 `;
             }
-        },
-        ),
+        }),
     });
 
     const title = Widget.Label({
@@ -88,7 +86,6 @@ function Player(player) {
                 self.label = lengthStr(time || player.position);
                 self.visible = player.length > 0;
             };
-
             self.hook(player, update, "position");
             self.poll(1000, update);
         },
@@ -161,6 +158,7 @@ function Player(player) {
         visible: (player.bind("loop_status").emitter.loop_status) === null,
         child: Widget.Icon(LOOP_ICON),
     });
+
     return Widget.Box(
         {
             class_name: "MediaPlayer",
@@ -209,13 +207,16 @@ function Media() {
     return Widget.Box({
         class_name: "MediaBox",
         vertical: true,
+        spacing: 10,
         children: players.as(p => p.map(Player)),
-        visible: players.as(p => p.length > 0),
+        setup: self => {
+            self.hook(mpris, () => {
+                self.visible = mpris.players.length > 0;
+            });
+        },
     }).on("realize", self => {
-        self.visible = false;
+        self.visible = mpris.players.length > 0;
     });
-
 }
-
 
 export default Media;
