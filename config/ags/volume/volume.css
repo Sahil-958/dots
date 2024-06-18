@@ -1,18 +1,24 @@
 .VolumeMainBox {
+    background-color: alpha(@color1, .2);
+    border-radius: 4px;
+}
+
+.VolumeBox {
     background-color: alpha(@color1, .4);
     padding: 12px;
     border-radius: 4px;
 }
 
-.VolumeMainBox.Muted {
+.VolumeBox.Muted,
+.VolumeStreamBox.Muted {
     background-color: alpha(@color1, .2);
 }
 
-.VolumeRevealer {
-    padding-top: 20px;
-}
+/*.VolumeRevealer {}*/
 
 .VolumeRevealerBox {
+    padding: 12px;
+    background-color: alpha(@color1, .4);
     background-color: transparent;
     color: @foreground;
     border-radius: 4px;
@@ -58,7 +64,7 @@ NOB   is the slider
     background: alpha(@foreground, .6);
 }
 
-.VolumeMainBox.Muted highlight {
+.VolumeMainBox .Muted highlight {
     background: alpha(@foreground, .4);
 }
 
@@ -69,7 +75,7 @@ NOB   is the slider
     padding: 2px 0;
 }
 
-.VolumeMainBox.Muted trough {
+.VolumeMainBox .Muted trough {
     background-color: alpha(@color1, .4);
 }
 
@@ -81,7 +87,7 @@ NOB   is the slider
     padding: 0 4px;
 }
 
-.VolumeMainBox.Muted slider {
+.VolumeMainBox .Muted slider {
     background-color: @color1;
 }
 

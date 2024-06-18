@@ -1,18 +1,24 @@
 .MicroPhoneMainBox {
+    background-color: alpha(@color1, .2);
+    border-radius: 4px;
+}
+
+.MicroPhoneBox {
     background-color: alpha(@color1, .4);
     padding: 12px;
     border-radius: 4px;
 }
 
-.MicroPhoneMainBox.Muted {
+.MicroPhoneBox.Muted,
+.MicroPhoneStreamBox.Muted {
     background-color: alpha(@color1, .2);
 }
 
-.MicroPhoneRevealer {
-    padding-top: 20px;
-}
+/*.MicroPhoneRevealer {}*/
 
 .MicroPhoneRevealerBox {
+    padding: 12px;
+    background-color: alpha(@color1, .4);
     background-color: transparent;
     color: @foreground;
     border-radius: 4px;
