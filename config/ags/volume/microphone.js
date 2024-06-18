@@ -98,11 +98,17 @@ function MicroPhone() {
                             + stream.application_id
                         ,
                         class_name: "MicroPhoneStreamBox",
+                        setup: self => {
+                            self.hook(stream, () => {
+                                self.toggleClassName("Muted", !!stream.is_muted);
+                            });
+                        },
                         children: [
-                            Widget.Box({
+                            Widget.EventBox({
                                 hexpand: false,
                                 widthRequest: 100,
                                 child: labelWid,
+                                onPrimaryClick: () => stream.is_muted = !stream.is_muted,
                             }),
                             sliderWid,
                         ],
@@ -150,14 +156,14 @@ function MicroPhone() {
             Widget.Box({
                 class_name: "MicroPhoneBox",
                 children: [icon, slider, expandIcon],
+                setup: self => {
+                    self.hook(audio.microphone, () => {
+                        self.toggleClassName("Muted", !!audio.microphone.is_muted);
+                    });
+                }
             }),
             revealer,
         ],
-        setup: self => {
-            self.hook(audio.microphone, () => {
-                self.toggleClassName("Muted", !!audio.microphone.is_muted);
-            });
-        }
     });
 }
 

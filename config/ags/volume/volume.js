@@ -101,11 +101,17 @@ function Volume() {
                             + stream.application_id
                         ,
                         class_name: "VolumeStreamBox",
+                        setup: self => {
+                            self.hook(stream, () => {
+                                self.toggleClassName("Muted", !!stream.is_muted);
+                            });
+                        },
                         children: [
-                            Widget.Box({
+                            Widget.EventBox({
                                 hexpand: false,
                                 widthRequest: 100,
                                 child: labelWid,
+                                onPrimaryClick: () => stream.is_muted = !stream.is_muted,
                             }),
                             sliderWid,
                         ],
@@ -153,14 +159,14 @@ function Volume() {
             Widget.Box({
                 class_name: "VolumeBox",
                 children: [icon, slider, expandIcon],
+                setup: self => {
+                    self.hook(audio.speaker, () => {
+                        self.toggleClassName("Muted", !!audio.speaker.is_muted);
+                    });
+                }
             }),
             revealer,
         ],
-        setup: self => {
-            self.hook(audio.speaker, () => {
-                self.toggleClassName("Muted", !!audio.speaker.is_muted);
-            });
-        }
     });
 }
 
