@@ -1,8 +1,9 @@
-
+import Gtk from "gi://Gtk";
 const mpris = await Service.import("mpris");
 
 
 const players = mpris.bind("players");
+mpris.cacheCoverArt = false;
 /** @param {import('types/service/mpris').MprisPlayer} player */
 function Player(player) {
     const FALLBACK_ICON = "audio-x-generic-symbolic";
@@ -24,7 +25,7 @@ function Player(player) {
     const img = Widget.Box({
         class_name: "MediaPlayerImage",
         vpack: "start",
-        css: player.bind("cover_path").transform(p => {
+        css: player.bind("track_cover_url").transform(p => {
             if (!p) {
                 return `
                 min-width: 0px;
@@ -76,6 +77,8 @@ function Player(player) {
             self.hook(player, update, "position");
             self.poll(1000, update);
         },
+    }).on("realize", self => {
+        self.visible = player.length > 0;
     });
 
     const TimeElapsedLabel = Widget.Label({
@@ -96,6 +99,8 @@ function Player(player) {
         hpack: "end",
         visible: player.bind("length").transform(l => l > 0),
         label: player.bind("length").transform(lengthStr),
+    }).on("realize", self => {
+        self.visible = player.length > 0;
     });
 
     const icon = Widget.Icon({
@@ -161,8 +166,7 @@ function Player(player) {
 
     return Widget.Box({
         class_name: "MediaPlayerBackgroundBox",
-        vexpand: false,
-        css: player.bind("cover_path").transform(p => {
+        css: player.bind("track_cover_url").transform(p => {
             if (p) {
                 return ` 
                     background-image: url('${p}');
@@ -206,16 +210,80 @@ function Player(player) {
 }
 
 function Media() {
-    return Widget.Box({
-        class_name: "MediaBox",
-        vertical: true,
-        spacing: 10,
-        children: players.as(p => p.map(Player)),
+    const stack = Widget.Stack({
+        transition: "slide_left_right",
+        transitionDuration: 400,
+        setup: self => {
+            self.children = mpris.players.reduce((obj, player) => {
+                obj[`${player.bus_name}`] = Player(player);
+                return obj;
+            }, {});
+
+            self.hook(mpris, (_, busName) => {
+                let player = mpris.getPlayer(busName);
+                if (!player) return;
+                let prevObj = self.children;
+                let newObj = {};
+                for (let key in prevObj) {
+                    newObj[key] = prevObj[key];
+                }
+                newObj[`${player.bus_name}`] = Player(player);
+                self.children = newObj;
+                self.children[`${player.bus_name}`].show();
+                //self.show_all();
+                self.shown = `${player.bus_name}`;
+            }, "player-added");
+            self.hook(mpris, (_, busName) => {
+                if (!busName) return;
+                if (mpris.players.length < 0) stack.shown = `${mpris.players[0].bus_name}`;
+                self.children[`${busName}`].destroy();
+                delete self.children[`${busName}`];
+            }, "player-closed");
+        },
+    });
+
+    return Widget.EventBox({
+        on_primary_click: () => {
+            let index = mpris.players.findIndex(player => `${player.bus_name}` === stack.shown);
+            let nextIndex = (index + 1) % mpris.players.length;
+            stack.shown = `${mpris.players[nextIndex].bus_name}`;
+        },
+        child: Widget.Box({
+            class_name: "MediaBox",
+            vertical: true,
+            children: [
+                stack,
+                Widget.Box({
+                    class_name: "MediaBoxFooter",
+                    homogeneous: true,
+                    children: players.as(p => p.map(player => {
+                        return Widget.Button({
+                            class_name: "MediaBoxFooterButton",
+                            on_clicked: () => stack.shown = `${player.bus_name}`,
+                            child: Widget.Icon({
+                                class_name: "MediaBoxFooterIcon",
+                                icon: player.bind("entry").transform(entry => {
+                                    const name = `${entry}-symbolic`;
+                                    return Utils.lookUpIcon(name) ? name : "audio-x-generic-symbolic";
+                                }),
+                            }),
+                        });
+                    })),
+                    setup: self => {
+                        self.hook(mpris, () => {
+                            self.visible = mpris.players.length > 1;
+                        });
+                    }
+                }).on("realize", self => {
+                    self.visible = mpris.players.length > 1;
+                }),
+            ],
+        }),
         setup: self => {
             self.hook(mpris, () => {
                 self.visible = mpris.players.length > 0;
             });
-        },
+        }
     }).on("realize", self => {
         self.visible = mpris.players.length > 0;
     });
