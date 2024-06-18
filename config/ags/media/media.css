@@ -45,7 +45,7 @@
 }
 
 .MediaPlayerSlider {
-    margin: 10px 0px;
+    padding: 10px 0;
 }
 
 .MediaPlayerSliderLabelTimeElapsed {
@@ -74,25 +74,26 @@
     margin: 0 4px;
 }
 
+.MediaPlayerShuffleButton,
+.MediaPlayerLoopButton.None,
+.MediaPlayerLoopButton {
+    color: alpha(@foreground, .5);
+}
 
 .MediaPlayerShuffleButton.null,
 .MediaPlayerLoopButton.null {
-    color: alpha(@foreground, .5);
+    color: alpha(@foreground, .2);
 }
 
-.MediaPlayerShuffleButton.active {
-    color: red;
+.MediaPlayerShuffleButton.true {
+    color: @foreground;
 }
 
-.MediaPlayerLoopButton.none {
-    color: alpha(@foreground, .5);
+.MediaPlayerLoopButton.Track {
+    color: @foreground;
 }
 
-.MediaPlayerLoopButton.track {
-    color: blue;
-}
-
-.MediaPlayerLoopButton.playlist {
+.MediaPlayerLoopButton.Playlist {
     color: green;
 }
 
