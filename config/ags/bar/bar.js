@@ -2,7 +2,6 @@ import brightness from "../services/brightness.js";
 import { ControlCenter } from "../control_center/control_center.js";
 const hyprland = await Service.import("hyprland");
 const apps = await Service.import("applications");
-const mpris = await Service.import("mpris");
 const audio = await Service.import("audio");
 const battery = await Service.import("battery");
 const systemtray = await Service.import("systemtray");
@@ -117,36 +116,6 @@ function Clock() {
             })
     });
 }
-
-function Media() {
-    return Widget.Button({
-        class_name: "BarMediaButton",
-        on_primary_click: () => mpris.getPlayer("")?.playPause(),
-        on_scroll_up: () => mpris.getPlayer("")?.next(),
-        on_scroll_down: () => mpris.getPlayer("")?.previous(),
-        child: Widget.Label({
-            class_name: "BarMediaTitle",
-            justification: "left",
-            truncate: "end",
-            xalign: 0,
-            maxWidthChars: 30,
-            useMarkup: true,
-        })
-    }).hook(mpris, self => {
-        if (mpris.players.length > 0) {
-            const currently_playing = mpris.players.find(player => player.play_back_status == "Playing")
-            if (currently_playing) {
-                self.show();
-                self.child.label = `Playing ${currently_playing?.track_title} By ${currently_playing?.track_artists}`;
-                self.toggleClassName("BarMediaButtonEmpty", false);
-                return;
-            }
-        }
-        self.label = "";
-        self.hide();
-    }, "changed");
-}
-
 
 function Volume() {
     const icons = {
@@ -376,7 +345,6 @@ function Left() {
         spacing: 8,
         children: [
             appLauncherToggle(),
-            Media(),
             focusedTitle,
             appTray,
         ],
