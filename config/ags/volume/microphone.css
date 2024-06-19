@@ -57,7 +57,7 @@ _____________________ is the contents
     background: alpha(@foreground, .6);
 }
 
-.MicroPhoneMainBox.Muted highlight {
+.MicroPhoneMainBox .Muted highlight {
     background: alpha(@foreground, .4);
 }
 
@@ -67,7 +67,7 @@ _____________________ is the contents
     padding: 2px 0;
 }
 
-.MicroPhoneMainBox.Muted trough {
+.MicroPhoneMainBox .Muted trough {
     background-color: alpha(@color1, .4);
 }
 
@@ -78,7 +78,7 @@ _____________________ is the contents
     padding: 0 4px;
 }
 
-.MicroPhoneMainBox.Muted slider {
+.MicroPhoneMainBox .Muted slider {
     background-color: @color1;
 }
 
