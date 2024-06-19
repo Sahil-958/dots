@@ -126,14 +126,12 @@ function MicroPhone() {
         },
     });
 
-    const expandIcon = Widget.EventBox({
-        on_hover: (self, _) => {
-            revealer.revealChild = true;
-            self.child.css = `
-                            -gtk-icon-transform: ${revealer.reveal_child ? "rotate(-0.5turn)" : "none"};
-                            transition: -gtk-icon-transform 0.5s;
-                            `;
-        },
+    const expandIcon = Widget.Icon({
+        icon: "go-down-symbolic",
+        size: 20,
+    });
+
+    const expandIconBox = Widget.EventBox({
         on_primary_click: (self) => {
             revealer.revealChild = !revealer.revealChild;
             //self.child.icon = revealer.revealChild ? "go-up-symbolic" : "go-down-symbolic";
@@ -142,10 +140,7 @@ function MicroPhone() {
                             transition: -gtk-icon-transform 0.5s;
                             `;
         },
-        child: Widget.Icon({
-            icon: "go-down-symbolic",
-            size: 20,
-        }),
+        child: expandIcon,
         setup: self => {
             self.hook(audio, () => {
                 self.visible = audio.apps.length > 0 || audio.microphones.length > 1;
@@ -155,22 +150,38 @@ function MicroPhone() {
         self.visible = audio.apps.length > 0 || audio.microphones.length > 1;
     });
 
-    return Widget.Box({
-        class_name: "MicroPhoneMainBox",
-        css: "min-width: 180px",
-        vertical: true,
-        children: [
-            Widget.Box({
-                class_name: "MicroPhoneBox",
-                children: [icon, slider, expandIcon],
-                setup: self => {
-                    self.hook(audio.microphone, () => {
-                        self.toggleClassName("Muted", !!audio.microphone.is_muted);
-                    });
-                }
-            }),
-            revealer,
-        ],
+    return Widget.EventBox({
+        on_hover: (self, _) => {
+            revealer.revealChild = true;
+            expandIcon.css = `
+                            -gtk-icon-transform: ${revealer.reveal_child ? "rotate(-0.5turn)" : "none"};
+                            transition: -gtk-icon-transform 0.5s;
+                            `;
+        },
+        on_hover_lost: (self, _) => {
+            revealer.revealChild = false;
+            expandIcon.css = `
+                            -gtk-icon-transform: ${revealer.reveal_child ? "rotate(-0.5turn)" : "none"};
+                            transition: -gtk-icon-transform 0.5s;
+                            `;
+        },
+        child: Widget.Box({
+            class_name: "MicroPhoneMainBox",
+            css: "min-width: 180px",
+            vertical: true,
+            children: [
+                Widget.Box({
+                    class_name: "MicroPhoneBox",
+                    children: [icon, slider, expandIconBox],
+                    setup: self => {
+                        self.hook(audio.microphone, () => {
+                            self.toggleClassName("Muted", !!audio.microphone.is_muted);
+                        });
+                    }
+                }),
+                revealer,
+            ],
+        }),
     });
 }
 

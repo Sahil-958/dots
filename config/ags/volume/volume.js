@@ -129,14 +129,12 @@ function Volume() {
         },
     });
 
-    const expandIcon = Widget.EventBox({
-        on_hover: (self, _) => {
-            revealer.revealChild = true;
-            self.child.css = `
-                            -gtk-icon-transform: ${revealer.reveal_child ? "rotate(-0.5turn)" : "none"};
-                            transition: -gtk-icon-transform 0.5s;
-                            `;
-        },
+    const expandIcon = Widget.Icon({
+        icon: "go-down-symbolic",
+        size: 20,
+    });
+
+    const expandIconBox = Widget.EventBox({
         on_primary_click: (self) => {
             revealer.revealChild = !revealer.revealChild;
             //self.child.icon = revealer.revealChild ? "go-up-symbolic" : "go-down-symbolic";
@@ -145,10 +143,7 @@ function Volume() {
                             transition: -gtk-icon-transform 0.5s;
                             `;
         },
-        child: Widget.Icon({
-            icon: "go-down-symbolic",
-            size: 20,
-        }),
+        child: expandIcon,
         setup: self => {
             self.hook(audio, () => {
                 self.visible = audio.apps.length > 0 || audio.speakers.length > 1;
@@ -158,22 +153,38 @@ function Volume() {
         self.visible = audio.apps.length > 0 || audio.speakers.length > 1;
     });
 
-    return Widget.Box({
-        class_name: "VolumeMainBox",
-        css: "min-width: 180px",
-        vertical: true,
-        children: [
-            Widget.Box({
-                class_name: "VolumeBox",
-                children: [icon, slider, expandIcon],
-                setup: self => {
-                    self.hook(audio.speaker, () => {
-                        self.toggleClassName("Muted", !!audio.speaker.is_muted);
-                    });
-                }
-            }),
-            revealer,
-        ],
+    return Widget.EventBox({
+        on_hover: (self, _) => {
+            revealer.revealChild = true;
+            expandIcon.css = `
+                            -gtk-icon-transform: ${revealer.reveal_child ? "rotate(-0.5turn)" : "none"};
+                            transition: -gtk-icon-transform 0.5s;
+                            `;
+        },
+        on_hover_lost: (self, _) => {
+            revealer.revealChild = false;
+            expandIcon.css = `
+                            -gtk-icon-transform: ${revealer.reveal_child ? "rotate(-0.5turn)" : "none"};
+                            transition: -gtk-icon-transform 0.5s;
+                            `;
+        },
+        child: Widget.Box({
+            class_name: "VolumeMainBox",
+            css: "min-width: 180px",
+            vertical: true,
+            children: [
+                Widget.Box({
+                    class_name: "VolumeBox",
+                    children: [icon, slider, expandIconBox],
+                    setup: self => {
+                        self.hook(audio.speaker, () => {
+                            self.toggleClassName("Muted", !!audio.speaker.is_muted);
+                        });
+                    }
+                }),
+                revealer,
+            ],
+        }),
     });
 }
 
