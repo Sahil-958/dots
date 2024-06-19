@@ -35,7 +35,6 @@ grim
 grub
 grub-btrfs
 gtk3-demos
-gtop
 gwenview
 hypridle
 hyprland
