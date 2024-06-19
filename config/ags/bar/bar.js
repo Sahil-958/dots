@@ -1,5 +1,6 @@
 import brightness from "../services/brightness.js";
 import { ControlCenter } from "../control_center/control_center.js";
+import speeds from "./speed.js";
 const hyprland = await Service.import("hyprland");
 const apps = await Service.import("applications");
 const audio = await Service.import("audio");
@@ -11,14 +12,9 @@ const date = Variable("", {
     poll: [1000, "date '+%I:%M:%S%p'"],
 });
 
-const speed = Variable("", {
-    poll: [1000, "netspeed -b"]
-});
-
-
 const ntSpeed = Widget.Label({
     class_name: "BarNetworkSpeedLabel",
-    label: speed.bind(),
+    label: speeds.bind().as(speeds => `${speeds.down} ↓ ${speeds.up} ↑`),
 });
 
 const focusedTitle = Widget.Label({
