@@ -46,6 +46,7 @@ jq
 kdeconnect
 kitty
 konsole
+libgtop
 linux
 linux-firmware
 man-db
