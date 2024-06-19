@@ -3,7 +3,7 @@ import Gtk from "gi://Gtk";
 const notifications = await Service.import("notifications");
 
 /** @param {import('resource:///com/github/Aylur/ags/service/notifications.js').Notification} n */
-function Notification(n, isPopups = false) {
+function Notification(n) {
 
     /** @param {import('resource:///com/github/Aylur/ags/service/notifications.js').Notification} n */
     function NotificationIcon({ app_entry, app_icon, image }) {
@@ -49,7 +49,7 @@ function Notification(n, isPopups = false) {
             size: 16,
         }),
         onClicked: () => {
-            isPopups ? n.dismiss() : n.close();
+            n.popup ? n.dismiss() : n.close();
         },
     });
 
@@ -135,7 +135,7 @@ function Notification(n, isPopups = false) {
             },
             setup: self => {
                 self.hook(notifications, () => {
-                    if (!(n?.urgency === "low") && isPopups) {
+                    if (!(n?.urgency === "low") && n.popup) {
                         Utils.execAsync(['bash', '-c', '~/dots/scripts/playNotificationSound.sh']);
                     }
                 }, "notified");
@@ -236,7 +236,7 @@ function NotificationList() {
                                 let list = notifications.notifications;
                                 self.children = list
                                     .filter(n => n.app_name === app_name)
-                                    .map(n => Notification(n, false));
+                                    .map(n => Notification(n));
                             });
                         }
                     }),
@@ -363,14 +363,13 @@ const NotificationMainBox = function() {
 function NotificationPopups(monitor = 0) {
     const list = Widget.Box({
         vertical: true,
-        //children: notifications.popups.map(Notification),
-        children: notifications.popups.map(n => Notification(n, true)),
+        children: notifications.popups.map(Notification),
     });
 
     function onNotified(_, /** @type {number} */ id) {
         const n = notifications.getNotification(id);
         if (n)
-            list.children = [Notification(n, true), ...list.children];
+            list.children = [Notification(n), ...list.children];
     }
 
     function onDismissed(_, /** @type {number} */ id) {
