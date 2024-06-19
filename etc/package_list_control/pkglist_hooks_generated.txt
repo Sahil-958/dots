@@ -41,7 +41,6 @@ hyprland
 hyprlang
 imagemagick
 imlib2
-inotify-tools
 jdk8-openjdk
 jq
 kdeconnect
