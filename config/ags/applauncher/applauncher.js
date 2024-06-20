@@ -81,9 +81,9 @@ const FileResult = result => Widget.Button({
     className: "FileResultButton",
     on_clicked: () => {
         Utils.notify("AGS", `Opening file: ${result}`);
-        Utils.execAsync(["bash", "-c", `xdg-open "${Utils.HOME}/${result}"`]).catch((err) => {
+        Utils.execAsync(["bash", "-c", `xdg-open "${Utils.HOME}/${result}" & disown`]).catch((err) => {
             if (!err) return;
-            Utils.execAsync(["bash", "-c", `xdg-open "${result}"`]).catch((err) => {
+            Utils.execAsync(["bash", "-c", `xdg-open "${result}" & disown`]).catch((err) => {
                 if (!err) return;
                 Utils.notify("AGS", `Error: ${err}`);
             });
@@ -319,9 +319,9 @@ const Applauncher = ({ width = 500, height = 500, spacing = 10 }) => {
             return;
         } else if (list.children[0].attribute.id === "FileResultButton") {
             let result = list.children[0].attribute.result;
-            Utils.execAsync(["bash", "-c", `xdg-open "${result}"`]).catch((err) => {
+            Utils.execAsync(["bash", "-c", `xdg-open "${result}" & disown`]).catch((err) => {
                 if (!err) return;
-                Utils.execAsync(["bash", "-c", `xdg-open "${Utils.HOME}/${result}"`]).catch((err) => {
+                Utils.execAsync(["bash", "-c", `xdg-open "${Utils.HOME}/${result}" & disown`]).catch((err) => {
                     if (!err) return;
                     Utils.notify("AGS", `Error: ${err}`);
                 });
@@ -410,12 +410,7 @@ export function applauncher() {
             self.hook(App, (_, windowName, visible) => {
                 if (windowName !== "AppLauncherWindow")
                     return;
-                if (visible) {
-                    AppLauncherRevealer.reveal_child = true;
-                }
-                else {
-                    AppLauncherRevealer.reveal_child = false;
-                }
+                AppLauncherRevealer.reveal_child = visible ? true : false;
             });
             self.keybind("Escape", () => {
                 AppLauncherRevealer.reveal_child = false;
