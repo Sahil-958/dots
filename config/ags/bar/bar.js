@@ -103,13 +103,9 @@ const appTray = Widget.Box({
 });
 
 function Clock() {
-    return Widget.EventBox({
-        onPrimaryClick: () => { date.setValue('[1000, \'date "+%A %dth %B, %Y"\']'); },
-        child:
-            Widget.Label({
-                class_name: "BarClockLabel",
-                label: date.bind(),
-            })
+    return Widget.Label({
+        class_name: "BarClockLabel",
+        label: date.bind(),
     });
 }
 
