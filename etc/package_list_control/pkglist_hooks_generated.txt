@@ -57,7 +57,6 @@ nethogs
 network-manager-applet
 networkmanager
 nodejs
-noise-suppression-for-voice
 noto-fonts-emoji
 npm
 obs-studio
