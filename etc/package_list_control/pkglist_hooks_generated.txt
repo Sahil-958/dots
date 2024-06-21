@@ -29,6 +29,7 @@ firewalld
 fontforge
 fzf
 git
+glava
 gnome-bluetooth-3.0
 grim
 grub
@@ -62,6 +63,8 @@ obs-studio
 os-prober
 otf-comicshanns-nerd
 p7zip
+pavucontrol
+pipewire-pulse
 polkit-kde-agent
 powertop
 pv
