@@ -50,9 +50,15 @@ case $1 in
 
     # Randomly select wallpaper 
     *)
+        if [ "$1" != "" ] && [ -f "$1" ]; then
+            notify-send "Wallpaper.sh" "Setting Supplied Wallpaper"
+            wallpath="$1"
+            wal -q -i "$wallpath"
+        else
         notify-send "Wallpaper.sh" "selecting wallpaper randomly"
 	    wallpath=$(find ~/walls/ -type f -regex ".*\.\(jpg\|jpeg\|png\|gif\|bmp\)" | shuf -n 1)
             wal -q -i "$wallpath"
+        fi
     ;;
 
 esac
