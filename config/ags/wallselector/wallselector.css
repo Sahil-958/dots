@@ -1,0 +1,82 @@
+.WallSelectorWindow {
+    background-color: transparent;
+}
+
+/*.WallSelectorWindowBox {
+}
+*/
+
+.WallSelectorRevealerBox {
+    border: 1px solid @foreground;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+    background-color: alpha(@background, 0.8);
+}
+
+.WallSelectorBox {
+    background-color: alpha(@color1, 0.8);
+    border: 1px solid @foreground;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.WallSelectorScrollable {
+    background-color: alpha(@background, 0.6);
+    border-radius: 5px;
+}
+
+/* kinda same as the .WallSelectorScrollable as it is a child of it 
+*/
+.WallSelectorList {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.WallSelectorEntry {
+    padding: 10px;
+    background-color: alpha(@background, 0.6);
+    color: @foreground;
+    font-size: 1.2em;
+}
+
+
+.AppItemButton,
+.CalcResultButton,
+.WallResultButton,
+.CommandResultButton {
+    background-color: alpha(@background, 0.6);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* kinda same as the .AppItemButton as it is a child of it
+.AppItemBox,
+.CalcResultBox
+{}
+*/
+.WallResultBackground {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 250px;
+    border-radius: 15px;
+}
+
+.WallResultButton:focus .WallResultBackground,
+.WallResultButton:hover .WallResultBackground {
+    min-height: 250px;
+}
+
+.WallResultButton:focus,
+.WallResultButton:hover {
+    margin: -5px -5px -10px -5px;
+}
+
+.WallResultIcon {
+    border-radius: 5px;
+}
+
+.WallResultLabel {
+    color: @foreground;
+    font-weight: bold;
+}
