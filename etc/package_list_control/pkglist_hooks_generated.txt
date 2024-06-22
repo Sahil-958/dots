@@ -14,6 +14,7 @@ breeze-gtk
 breeze-icons
 brightnessctl
 btop
+cage
 calibre
 cliphist
 cmatrix
@@ -31,6 +32,7 @@ fzf
 git
 glava
 gnome-bluetooth-3.0
+greetd
 grim
 grub
 grub-btrfs
