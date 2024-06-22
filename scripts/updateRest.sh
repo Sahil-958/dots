@@ -26,7 +26,7 @@ pkill -USR2 waybar
 
 #NOT USING THEMEIX BASE 16 USING PYWAL TEMPLATES INSTEAD
 #killall dunst; dunst &
-swaync-client -rs
+pgrep swaync && swaync-client -rs & disown
 
 #SDDM THEME UPDATE
 
@@ -41,7 +41,7 @@ sed -i "s/BackgroundColor=.*$/BackgroundColor=\"$background\"/g" /usr/share/sddm
 sed -i "s/OverrideLoginButtonTextColor=.*$/OverrideLoginButtonTextColor=\"$background\"/g" /usr/share/sddm/themes/sugar_candy/theme.conf
 
 # Check if glava is running if running restart it 
-pgrep glava && killall glava && glava &
+pgrep glava && killall glava && glava & disown
 
 
 # Using direct symlink: ln -s ~/.cache/wal/swaylock ~/.config/swaylock/config
