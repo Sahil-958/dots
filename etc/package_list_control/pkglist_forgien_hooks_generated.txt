@@ -1,4 +1,5 @@
 aylurs-gtk-shell
+gtk-session-lock
 hyprlock-git
 hyprshade-git
 librewolf-bin
