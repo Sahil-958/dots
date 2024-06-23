@@ -14,7 +14,6 @@ breeze-icons
 brightnessctl
 btop
 cliphist
-cmatrix
 cmus
 dolphin
 dolphin-plugins
