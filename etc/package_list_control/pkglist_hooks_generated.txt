@@ -45,7 +45,6 @@ imlib2
 jdk8-openjdk
 jq
 kdeconnect
-kitty
 konsole
 libgtop
 linux
