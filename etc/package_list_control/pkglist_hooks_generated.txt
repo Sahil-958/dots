@@ -27,7 +27,6 @@ fd
 ffmpegthumbs
 firefox
 firewalld
-fontforge
 fzf
 git
 glava
@@ -42,7 +41,6 @@ hyprland
 hyprlang
 imagemagick
 imlib2
-jdk8-openjdk
 jq
 kdeconnect
 konsole
@@ -66,7 +64,6 @@ p7zip
 pavucontrol
 polkit-kde-agent
 powertop
-pv
 python-opencv
 python-pip
 python-pyqt5
@@ -89,9 +86,7 @@ sox
 sshfs
 starship
 swappy
-swaync
 termdown
-terminus-font
 tesseract
 tesseract-data-eng
 tldr
