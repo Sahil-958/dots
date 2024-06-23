@@ -14,6 +14,7 @@ breeze-icons
 brightnessctl
 btop
 cliphist
+cmus
 dolphin
 dolphin-plugins
 dust
