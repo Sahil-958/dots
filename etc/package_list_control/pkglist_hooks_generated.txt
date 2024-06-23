@@ -20,6 +20,7 @@ cmatrix
 cmus
 dolphin
 dolphin-plugins
+dust
 efibootmgr
 fastfetch
 fd
