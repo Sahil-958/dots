@@ -222,11 +222,8 @@ function BatteryLabel() {
 
         self.children[1].label = `${battery.percent}%`;
         self.visible = battery.available;
-        self.toggleClassName("Critical", (battery.percent < 20 ? true : false));
-        self.toggleClassName((battery.percent < 20
-            ? "Critical"
-            : (battery.percent >= 90 ? "Full" : "")
-        ), true);
+        self.toggleClassName("Critical", battery.percent < 20);
+        self.toggleClassName("Full", battery.percent >= 90);
         self.tooltip_text = `Percentage: ${battery.percent}
 Energy: ${battery.energy}w
 ${battery.charging ? "Charging" : "Discharging"} Rate: ${battery.energy_rate}w
