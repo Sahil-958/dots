@@ -1,9 +1,10 @@
 import Gtk from "gi://Gtk";
-const mpris = await Service.import("mpris");
 
+const mpris = await Service.import("mpris");
 
 const players = mpris.bind("players");
 mpris.cacheCoverArt = false;
+
 /** @param {import('types/service/mpris').MprisPlayer} player */
 function Player(player) {
     const FALLBACK_ICON = "audio-x-generic-symbolic";
@@ -24,7 +25,6 @@ function Player(player) {
 
     const img = Widget.Box({
         class_name: "MediaPlayerImage",
-        vpack: "start",
         css: player.bind("track_cover_url").transform(p => {
             if (!p) {
                 return `
@@ -164,6 +164,7 @@ function Player(player) {
         child: Widget.Icon(LOOP_ICON),
     });
 
+
     return Widget.Box({
         class_name: "MediaPlayerBackgroundBox",
         css: player.bind("track_cover_url").transform(p => {
@@ -235,9 +236,11 @@ function Media() {
             }, "player-added");
             self.hook(mpris, (_, busName) => {
                 if (!busName) return;
-                if (mpris.players.length < 0) stack.shown = `${mpris.players[0].bus_name}`;
-                self.children[`${busName}`].destroy();
-                delete self.children[`${busName}`];
+                if (mpris.players[0]) stack.shown = `${mpris.players[0].bus_name}`;
+                setTimeout(() => {
+                    self.children[`${busName}`].destroy();
+                    delete self.children[`${busName}`];
+                }, 400);
             }, "player-closed");
         },
     });
