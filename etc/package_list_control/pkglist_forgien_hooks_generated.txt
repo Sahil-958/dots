@@ -2,15 +2,12 @@ aylurs-gtk-shell
 gtk-session-lock
 hyprlock-git
 hyprshade-git
-libastal-auth-git
 librewolf-bin
 oomox-qt5-styleplugin-git
 pikaur
 rofi-calc-git
 rofi-emoji-git
 rofi-lbonn-wayland-git
-sioyek
-swaylock-effects-git
 swww
 themix-full-git
 vscodium-bin
