@@ -4,6 +4,21 @@ const notifications = await Service.import("notifications");
 
 /** @param {import('resource:///com/github/Aylur/ags/service/notifications.js').Notification} n */
 function Notification(n) {
+    let progressBar;
+    let type = n.hints.value?.get_type_string();
+    let value = n.hints?.value;
+    if (type && type === "i" && value) {
+        progressBar = Widget.Box({
+            homogeneous: true,
+            child: Widget.LevelBar({
+                widthRequest: 100,
+                class_name: "NotificationLevelBar",
+                maxValue: 100,
+                minValue: 0,
+                value: value.get_int32(),
+            }),
+        });
+    }
 
     /** @param {import('resource:///com/github/Aylur/ags/service/notifications.js').Notification} n */
     function NotificationIcon({ app_entry, app_icon, image }) {
@@ -125,41 +140,37 @@ function Notification(n) {
         }
     });
 
-    return Widget.Box(
-        {
-            class_name: `NotificationBox ${n.urgency}`,
-            vertical: true,
-            attribute: {
-                id: n.id,
-                app_name: n.app_name,
-            },
-            setup: self => {
-                self.hook(notifications, () => {
-                    if (!(n?.urgency === "low") && n.popup) {
-                        Utils.execAsync(['bash', '-c', '~/dots/scripts/playNotificationSound.sh']);
-                    }
-                }, "notified");
-            }
+    return Widget.Box({
+        class_name: `NotificationBox ${n.urgency}`,
+        vertical: true,
+        attribute: {
+            id: n.id,
+            app_name: n.app_name,
         },
-        Widget.Box({
-            class_name: "NotificationIconAndTitleBox",
-            spacing: 10,
-            children: [
-                icon,
-                Widget.Box(
-                    {
-                        vertical: true,
-                        valign: Gtk.Align.CENTER,
-                        class_name: "NotificationTitleBox",
-                    },
-                    title,
-                ),
-                closeButton,
-            ]
-        }),
-        body,
-        actions,
-    );
+        setup: self => {
+            if (progressBar) self.children = [...self.children, progressBar];
+        },
+        children: [
+            Widget.Box({
+                class_name: "NotificationIconAndTitleBox",
+                spacing: 10,
+                children: [
+                    icon,
+                    Widget.Box(
+                        {
+                            vertical: true,
+                            valign: Gtk.Align.CENTER,
+                            class_name: "NotificationTitleBox",
+                        },
+                        title,
+                    ),
+                    closeButton,
+                ]
+            }),
+            body,
+            actions,
+        ],
+    });
 
 }
 
@@ -368,8 +379,19 @@ function NotificationPopups(monitor = 0) {
 
     function onNotified(_, /** @type {number} */ id) {
         const n = notifications.getNotification(id);
-        if (n)
-            list.children = [Notification(n), ...list.children];
+        if (n) {
+            if (!(n?.urgency === "low") && n.popup) {
+                Utils.execAsync(["bash", "-c", "~/dots/scripts/playNotificationSound.sh"]);
+            }
+            let newN = Notification(n);
+            let prevNoti = list.children.findIndex(n => n.attribute.id === id);
+            if (prevNoti !== -1) {
+                list.children = list.children.map((child, index) => (index === prevNoti) ? newN : child);
+                //list.children[prevNoti] = newN;
+                return;
+            }
+            list.children = [newN, ...list.children];
+        }
     }
 
     function onDismissed(_, /** @type {number} */ id) {
