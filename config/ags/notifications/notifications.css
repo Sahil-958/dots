@@ -226,6 +226,23 @@
     margin: 0;
 }
 
+.NotificationLevelBar trough {
+    background-color: alpha(@background, .6);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+.NotificationLevelBar block {
+    background-color: alpha(@color1, .6);
+    border-radius: 2px;
+}
+
+.NotificationLevelBar block.filled {
+    background-color: alpha(@foreground, .6);
+    border-radius: 2px;
+}
+
 /*-------------------------------------------------------------*/
 
 /* Do Not Disturb Box */
