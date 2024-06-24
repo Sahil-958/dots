@@ -80,7 +80,6 @@ sddm
 slurp
 smartmontools
 snapper
-sox
 sshfs
 starship
 swappy
