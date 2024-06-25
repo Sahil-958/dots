@@ -3,6 +3,7 @@ gtk-session-lock
 hyprlock-git
 hyprshade-git
 librewolf-bin
+noisetorch
 oomox-qt5-styleplugin-git
 pikaur
 rofi-calc-git
