@@ -62,6 +62,7 @@ pacman-contrib
 pavucontrol
 polkit-kde-agent
 powertop
+python-aiohttp
 python-opencv
 python-pip
 python-pyqt5
@@ -83,6 +84,7 @@ snapper
 sshfs
 starship
 swappy
+swww
 termdown
 tesseract
 tesseract-data-eng

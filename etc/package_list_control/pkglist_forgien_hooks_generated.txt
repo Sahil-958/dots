@@ -9,7 +9,6 @@ pikaur
 rofi-calc-git
 rofi-emoji-git
 rofi-lbonn-wayland-git
-swww
 themix-full-git
 vscodium-bin
 wallust
