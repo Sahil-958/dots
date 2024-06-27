@@ -1,0 +1,34 @@
+@import '../../../../.cache/wal/colors-waybar.css';
+
+window {
+    background: transparent;
+}
+
+window {
+    background-image: linear-gradient(to bottom,
+            alpha(@foreground, 0.8) 5%,
+            @background 90%);
+}
+
+.LockWindowBackgroundBox {
+    padding: 20px 20px 0 20px;
+    margin: 20px 20px 0 20px;
+    border-radius: 20px 20px 0 0;
+}
+
+.LockWindowRevealerBox {
+    border-radius: 20px 20px 0 0;
+    background-color: alpha(@background, 0.5);
+}
+
+.LockWindowRevealerBoxChildren {
+    background-color: alpha(@background, 0.5);
+    padding: 20px;
+
+}
+
+.LoginBox {
+    background-color: alpha(@background, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+}
