@@ -4,24 +4,25 @@ window {
     background: transparent;
 }
 
-window {
+.LockWindowBackgroundGradientBox {
+    padding: 20px;
     background-image: linear-gradient(to bottom,
-            alpha(@foreground, 0.8) 5%,
-            @background 90%);
+            @foreground 5%,
+            @background 95%);
 }
 
 .LockWindowBackgroundBox {
-    padding: 20px 20px 0 20px;
-    margin: 20px 20px 0 20px;
-    border-radius: 20px 20px 0 0;
+    /*padding: 15px 0px 15px 0;*/
+    border-radius: 15px;
 }
 
-.LockWindowRevealerBox {
-    border-radius: 20px 20px 0 0;
+
+.OverlayRevealerBox {
+    border-radius: 0 15px 15px 0;
     background-color: alpha(@background, 0.5);
 }
 
-.LockWindowRevealerBoxChildren {
+.OverlayRevealerBoxChildren {
     background-color: alpha(@background, 0.5);
     padding: 20px;
 
