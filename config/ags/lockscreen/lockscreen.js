@@ -10,9 +10,12 @@ App.applyCss(`${App.configDir}/../media/media.css`);
 const lock = Lock.prepare_lock();
 const windows = [];
 function unlock() {
-    fromRevealer.reveal_child = false;
+    overlayChild.reveal_child = false;
+    Utils.timeout(1800, () => {
+        winRevealer.reveal_child = false;
+    });
     //winRevealer.reveal_child = false;
-    Utils.timeout(1500, () => {
+    Utils.timeout(3000, () => {
         lock.unlock_and_destroy();
         windows.forEach(w => w.window.destroy());
         Gdk.Display.get_default()?.sync();
@@ -20,6 +23,9 @@ function unlock() {
     });
 }
 
+Utils.timeout(3000, () => {
+    unlock();
+});
 
 //----------------------------------------------------------------------
 const Right = () => Widget.Box({
@@ -78,53 +84,57 @@ const LoginBox = () => Widget.Box({
     ]
 });
 
-
-const fromRevealer = Widget.Revealer({
-    class_name: "LockWindowRevealer",
+const overlayChild = Widget.Revealer({
     reveal_child: false,
-    valign: Gtk.Align.END,
-    transition: "slide_up",
-    transition_duration: 1500,
-    child: Widget.Overlay({
-        child: Widget.Box({
-            height_request: 1040,
-            class_name: "LockWindowRevealerBox",
-            homogeneous: true,
-            children: [
-                Widget.Box({}),
-                Widget.Box({
-                    vexpand: true,
-                    class_name: "LockWindowRevealerBoxChildren",
-                    children: [
-                        LoginBox(),
-                    ],
-                }),
-                Widget.Box({}),
-            ],
-        }),
-        overlays: [
-            //Media(valign= Gtk.Align.FILL, halign= Gtk.Align.FILL),
-            Media(Gtk.Align.END, Gtk.Align.END),
+    transition: "slide_right",
+    halign: Gtk.Align.START,
+    transition_duration: 800,
+    child: Widget.Box({
+        class_name: "OverlayRevealerBox",
+        homogeneous: true,
+        children: [
+            Widget.Box({}),
+            Widget.Box({
+                vexpand: true,
+                class_name: "OverlayRevealerBoxChildren",
+                children: [
+                    LoginBox(),
+                ],
+            }),
+            Widget.Box({}),
         ],
-    })
+    }),
 }).on("realize", self => Utils.idle(() => self.reveal_child = true));
 
-//const winRevealer = Widget.Revealer({
-//    child: winBox,
-//    reveal_child: true,
-//    transition: "crossfade",
-//    transition_duration: 1500,
-//}).on("realize", self => Utils.idle(() => self.reveal_child = true));
+
+const winDec = Widget.Box({
+    class_name: "LockWindowBackgroundGradientBox",
+    child: Widget.Box({
+        class_name: "LockWindowBackgroundBox",
+        child: Widget.Overlay({
+            child: overlayChild,
+            overlays: [
+                //Media(valign= Gtk.Align.FILL, halign= Gtk.Align.FILL),
+                //Media(Gtk.Align.END, Gtk.Align.END),
+            ],
+        }),
+    }),
+});
+
+
+const winRevealer = Widget.Revealer({
+    class_name: "LockWindowRevealer",
+    reveal_child: false,
+    transition: "crossfade",
+    transition_duration: 2500,
+    child: winDec,
+}).on("realize", self => Utils.idle(() => self.reveal_child = true));
 
 const LockWindow = () => {
     const window = new Gtk.Window({});
     window.child = Widget.Box({
-        width_request: 1900,
-        height_request: 1000,
-        class_name: "LockWindowBackgroundBox",
-        homogeneous: true,
         children: [
-            fromRevealer,
+            winRevealer,
         ]
     });
 
@@ -132,7 +142,7 @@ const LockWindow = () => {
         .then(res => {
             if (!res) return;
             console.log(res);
-            window.child.css = `
+            winRevealer.child.child.css = `
             background-image: url("${res}");
             background-size: cover;
             background-position: center;
