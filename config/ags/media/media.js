@@ -22,7 +22,6 @@ function Player(player) {
         const sec0 = sec < 10 ? "0" : "";
         return `${min}:${sec0}${sec}`;
     }
-
     const img = Widget.Box({
         class_name: "MediaPlayerImage",
         css: player.bind("track_cover_url").transform(p => {
@@ -210,7 +209,7 @@ function Player(player) {
     });
 }
 
-function Media() {
+function Media(valign = Gtk.Align.FILL, halign = Gtk.Align.FILL) {
     const stack = Widget.Stack({
         transition: "slide_left_right",
         transitionDuration: 400,
@@ -251,6 +250,8 @@ function Media() {
             let nextIndex = (index + 1) % mpris.players.length;
             stack.shown = `${mpris.players[nextIndex].bus_name}`;
         },
+        halign: halign,
+        valign: valign,
         child: Widget.Box({
             class_name: "MediaBox",
             vertical: true,

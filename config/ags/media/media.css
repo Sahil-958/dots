@@ -1,7 +1,6 @@
 .MediaBox {
     background-color: alpha(@color1, .4);
     border-radius: 5px;
-    padding: 12px;
 }
 
 .MediaBox.Hidden {
