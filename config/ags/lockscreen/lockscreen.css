@@ -5,31 +5,33 @@ window {
 }
 
 .LockWindowBackgroundGradientBox {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     background-image: linear-gradient(to bottom,
             @foreground 5%,
             @background 95%);
 }
 
-.LockWindowBackgroundBox {
-    /*padding: 15px 0px 15px 0;*/
-    border-radius: 15px;
+.corner {
+    background-color: @foreground;
 }
 
-
 .OverlayRevealerBox {
-    border-radius: 0 15px 15px 0;
     background-color: alpha(@background, 0.5);
+    padding: 20px;
 }
 
 .OverlayRevealerBoxChildren {
-    background-color: alpha(@background, 0.5);
+    /*    border: 1px solid @foreground;
+    border-bottom: none;
+    border-radius: 15px 15px 15px 0;
     padding: 20px;
-
+    */
 }
 
-.LoginBox {
+.LoginBox {}
+
+.LoginEntry {
+    padding: 15px;
     background-color: alpha(@background, 0.5);
-    border-radius: 5px;
-    padding: 20px;
+    border: 1px solid @foreground;
 }

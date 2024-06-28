@@ -3,6 +3,7 @@ import Gdk from "gi://Gdk?version=3.0";
 import Gtk from "gi://Gtk?version=3.0";
 
 import Media from "../media/media.js";
+import { RoundedAngleEnd, RoundedCorner } from "../roundedCorner/roundedCorner.js";
 
 App.applyCss(`${App.configDir}/lockscreen.css`);
 App.applyCss(`${App.configDir}/../media/media.css`);
@@ -15,7 +16,7 @@ function unlock() {
         winRevealer.reveal_child = false;
     });
     //winRevealer.reveal_child = false;
-    Utils.timeout(3000, () => {
+    Utils.timeout(2500, () => {
         lock.unlock_and_destroy();
         windows.forEach(w => w.window.destroy());
         Gdk.Display.get_default()?.sync();
@@ -23,46 +24,33 @@ function unlock() {
     });
 }
 
-Utils.timeout(3000, () => {
+Utils.timeout(9000, () => {
     unlock();
 });
 
-//----------------------------------------------------------------------
-const Right = () => Widget.Box({
-    hpack: "end",
-    children: [
-    ]
-});
-
-const Left = () => Widget.Box({
-    children: [
-    ]
-});
-
-const Bar = () => Widget.CenterBox({
-    start_widget: Left(),
-    end_widget: Right(),
-});
-//----------------------------------------------------------------------
 
 const LoginBox = () => Widget.Box({
-    vertical: true,
-    valign: Gtk.Align.CENTER,
-    spacing: 16,
     class_name: "LoginBox",
+    vertical: true,
+    spacing: 22,
     children: [
         Widget.Box({
-            hpack: "center",
             hexpand: true,
             class_name: "LoginAvatarBox",
-
+            height_request: 140,
+            css: `
+            border-radius: 5px;
+            background-image: url("${Utils.HOME}/octane_pfp.jpg");
+            background-size: cover;
+            background-position: center;
+            `,
         }),
         Widget.Box({
             class_name: "LoginEntryBox",
             hexpand: true,
             children: [
                 Widget.Entry({
-                    class_name: "LockEntry",
+                    class_name: "LoginEntry",
                     placeholderText: "Authentication Key",
                     primaryIconName: "system-lock-screen-symbolic",
                     xalign: 0.5,
@@ -80,7 +68,7 @@ const LoginBox = () => Widget.Box({
                     }
                 }).on("realize", (entry) => entry.grab_focus()),
             ]
-        })
+        }),
     ]
 });
 
@@ -91,31 +79,55 @@ const overlayChild = Widget.Revealer({
     transition_duration: 800,
     child: Widget.Box({
         class_name: "OverlayRevealerBox",
-        homogeneous: true,
+        width_request: Math.floor(Gdk.Screen.width() / 3),
         children: [
-            Widget.Box({}),
             Widget.Box({
-                vexpand: true,
                 class_name: "OverlayRevealerBoxChildren",
+                vertical: true,
+                spacing: 16,
                 children: [
                     LoginBox(),
+                    Widget.Box({ vexpand: true }),
+                    Widget.Box({
+                        //Signature of Media(valign= Gtk.Align.FILL, halign= Gtk.Align.FILL),
+                        child: Media(Gtk.Align.END),
+                        hexpand: true,
+                        vexpand: false,
+                    }),
+                    Widget.Box({
+                        //sleep and hibernate buttons
+                        halign: Gtk.Align.CENTER,
+                        spacing: 16,
+                        children: [
+                            Widget.Button({
+                                css: "all:unset;",
+                                child: Widget.Icon({ icon: "system-suspend-symbolic", size: 48 }),
+                                onClicked: () => Utils.execAsync(["systemctl", "suspend"]),
+                            }),
+                            Widget.Button({
+                                css: "all:unset;",
+                                child: Widget.Icon({ icon: "system-hibernate-symbolic", size: 48 }),
+                                onClicked: () => Utils.execAsync(["systemctl", "hibernate"]),
+                            }),
+
+                        ]
+                    }),
                 ],
             }),
-            Widget.Box({}),
         ],
     }),
 }).on("realize", self => Utils.idle(() => self.reveal_child = true));
 
 
-const winDec = Widget.Box({
+const revealerChild = Widget.Box({
     class_name: "LockWindowBackgroundGradientBox",
     child: Widget.Box({
         class_name: "LockWindowBackgroundBox",
         child: Widget.Overlay({
             child: overlayChild,
             overlays: [
-                //Media(valign= Gtk.Align.FILL, halign= Gtk.Align.FILL),
-                //Media(Gtk.Align.END, Gtk.Align.END),
+                RoundedCorner("topleft", { class_name: "corner" }),
+                RoundedCorner("topright", { class_name: "corner" }),
             ],
         }),
     }),
@@ -126,8 +138,8 @@ const winRevealer = Widget.Revealer({
     class_name: "LockWindowRevealer",
     reveal_child: false,
     transition: "crossfade",
-    transition_duration: 2500,
-    child: winDec,
+    transition_duration: 1000,
+    child: revealerChild,
 }).on("realize", self => Utils.idle(() => self.reveal_child = true));
 
 const LockWindow = () => {
@@ -142,7 +154,7 @@ const LockWindow = () => {
         .then(res => {
             if (!res) return;
             console.log(res);
-            winRevealer.child.child.css = `
+            revealerChild.child.css = `
             background-image: url("${res}");
             background-size: cover;
             background-position: center;
