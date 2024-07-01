@@ -24,53 +24,82 @@ function unlock() {
     });
 }
 
-Utils.timeout(9000, () => {
+Utils.timeout(15000, () => {
     unlock();
 });
 
 
-const LoginBox = () => Widget.Box({
-    class_name: "LoginBox",
-    vertical: true,
-    spacing: 22,
-    children: [
-        Widget.Box({
-            hexpand: true,
-            class_name: "LoginAvatarBox",
-            height_request: 140,
-            css: `
-            border-radius: 5px;
-            background-image: url("${Utils.HOME}/octane_pfp.jpg");
-            background-size: cover;
-            background-position: center;
-            `,
+const LoginBox = () => {
+    const loginStatusRevealer = Widget.Revealer({
+        class_name: "LoginStatusRevealer",
+        reveal_child: false,
+        transition: "slide_down",
+        transition_duration: 400,
+        child: Widget.Label({
+            class_name: "LoginStatusLabel",
+            label: "Invalid Authentication Key",
         }),
-        Widget.Box({
-            class_name: "LoginEntryBox",
-            hexpand: true,
-            children: [
-                Widget.Entry({
-                    class_name: "LoginEntry",
-                    placeholderText: "Authentication Key",
-                    primaryIconName: "system-lock-screen-symbolic",
-                    xalign: 0.5,
-                    hexpand: true,
-                    visibility: false,
-                    on_accept: self => {
-                        self.sensitive = false;
-                        Utils.authenticate(self.text ?? "")
-                            .then(() => unlock())
-                            .catch(e => {
-                                self.text = "";
-                                self.placeholder_text = e.message;
-                                self.sensitive = true;
+    });
+
+    return Widget.Box({
+        class_name: "LoginBox",
+        vertical: true,
+        spacing: 22,
+        children: [
+            Widget.Box({
+                hexpand: true,
+                class_name: "LoginAvatarBox",
+                height_request: 140,
+                css: `
+                background-image: url("${Utils.HOME}/octane_pfp.jpg");
+                `,
+            }),
+            Widget.Box({
+                class_name: "LoginEntryBox",
+                hexpand: true,
+                vertical: true,
+                children: [
+                    Widget.Entry({
+                        class_name: "LoginEntry",
+                        placeholderText: "Authentication Key",
+                        primaryIconName: "system-lock-screen-symbolic",
+                        xalign: 0.5,
+                        hexpand: true,
+                        visibility: false,
+                        on_change: self => {
+                            if (!self.text) return;
+                            loginStatusRevealer.reveal_child = false;
+                        },
+                        on_accept: self => {
+                            self.parent.toggleClassName("Failed", false);
+                            self.sensitive = false;
+                            loginStatusRevealer.reveal_child = true;
+                            loginStatusRevealer.child.label = "Verifying Credentials...";
+                            Utils.timeout(500, () => {
+                                loginStatusRevealer.reveal_child = false;
                             });
-                    }
-                }).on("realize", (entry) => entry.grab_focus()),
-            ]
-        }),
-    ]
-});
+                            Utils.authenticate(self.text ?? "")
+                                .then(() => {
+                                    Utils.timeout(500, () => {
+                                        return unlock();
+                                    });
+                                }).catch(e => {
+                                    self.parent.toggleClassName("Failed", true);
+                                    loginStatusRevealer.reveal_child = true;
+                                    loginStatusRevealer.child.label = e.message;
+                                    self.text = "";
+                                    self.placeholder_text = e.message;
+                                    self.sensitive = true;
+                                    self.grab_focus();
+                                });
+                        }
+                    }).on("realize", (entry) => entry.grab_focus()),
+                    loginStatusRevealer,
+                ]
+            }),
+        ]
+    });
+};
 
 const overlayChild = Widget.Revealer({
     reveal_child: false,
@@ -153,13 +182,9 @@ const LockWindow = () => {
     Utils.execAsync(["bash", "-c", "cat ~/.cache/current_wall_path.txt"])
         .then(res => {
             if (!res) return;
-            console.log(res);
             revealerChild.child.css = `
             background-image: url("${res}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            `;
+                       `;
         }).catch(e => console.error(e));
 
     return window;
