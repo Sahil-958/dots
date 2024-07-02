@@ -17,7 +17,7 @@ window {
     }
 
     to {
-        background-size: 100%;
+        background-size: 102%;
     }
 }
 
@@ -27,7 +27,7 @@ window {
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-direction: normal;
-    background-size: 100%;
+    background-size: 102%;
     background-repeat: no-repeat;
     background-position: center;
 }
