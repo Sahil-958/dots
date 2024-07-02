@@ -2,6 +2,7 @@ aylurs-gtk-shell
 gtk-session-lock
 hyprlock-git
 hyprshade-git
+libastal-auth-git
 librewolf-bin
 noisetorch
 oomox-qt5-styleplugin-git
