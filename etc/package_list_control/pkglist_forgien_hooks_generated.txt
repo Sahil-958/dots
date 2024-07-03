@@ -14,5 +14,4 @@ rofi-lbonn-wayland-git
 themix-full-git
 vscodium-bin
 wallust
-waydroid
 youtube-music
