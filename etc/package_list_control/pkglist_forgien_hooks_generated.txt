@@ -13,5 +13,4 @@ rofi-emoji-git
 rofi-lbonn-wayland-git
 themix-full-git
 vscodium-bin
-wallust
 youtube-music
