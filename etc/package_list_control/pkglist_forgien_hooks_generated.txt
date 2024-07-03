@@ -12,7 +12,6 @@ rofi-calc-git
 rofi-emoji-git
 rofi-lbonn-wayland-git
 themix-full-git
-vesktop
 vscodium-bin
 wallust
 youtube-music
