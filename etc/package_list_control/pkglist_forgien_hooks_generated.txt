@@ -13,7 +13,6 @@ pikaur
 rofi-calc-git
 rofi-emoji-git
 rofi-lbonn-wayland-git
-themix-full-git
 vscodium-bin
 wallust-git
 youtube-music
