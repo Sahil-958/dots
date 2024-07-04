@@ -1,0 +1,22 @@
+
+.session-button {
+  min-width: 4.5rem;
+  min-height: 4.5rem;
+  background-color: $surface;
+  color: $primary;
+  font-size: 3rem;
+}
+
+.session-button-focused {
+  background-color: $surface;
+  color: $primary;
+}
+
+.session-button-desc {
+  background-color: $surface_container_low;
+  color: $on_surface;
+  border-radius: 1rem;
+  padding: 0.205rem 0.341rem;
+  font-weight: 700;
+  font-size: 11px;
+}

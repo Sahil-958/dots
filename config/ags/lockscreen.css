@@ -1,0 +1,121 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+window {
+    background: transparent;
+}
+
+@keyframes smoothPadding {
+    0% {
+        padding: 0px 0px 0 0px;
+    }
+
+    100% {
+        padding: 20px 20px 0 20px;
+    }
+}
+
+.LockWindowBackgroundGradientBox {
+    padding: 20px 20px 0 20px;
+    animation-name: smoothPadding;
+    animation-duration: 1.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    background-image: linear-gradient(to bottom,
+            @foreground 5%,
+            @background 95%);
+}
+
+@keyframes zoomout {
+    from {
+        background-size: 110%;
+    }
+
+    to {
+        background-size: 102%;
+    }
+}
+
+.LockWindowBackgroundBox {
+    animation-name: zoomout;
+    animation-duration: 4.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    background-size: 102%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.corner {
+    background-color: @foreground;
+}
+
+.OverlayRevealerBox {
+    background-color: alpha(@background, 0.5);
+    padding: 20px;
+}
+
+.OverlayRevealerBoxChildren {
+    /*    border: 1px solid @foreground;
+    border-bottom: none;
+    border-radius: 15px 15px 15px 0;
+    padding: 20px;
+    */
+}
+
+.LoginBox {}
+
+@keyframes glide {
+    from {
+        background-position: 50% 45%;
+    }
+
+    to {
+        background-position: 50% 50%;
+    }
+}
+
+.LoginAvatarBox {
+    animation-name: glide;
+    animation-duration: 2.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.LoginEntry {
+    padding: 15px;
+    background-color: alpha(@background, 0.5);
+    border: 2px solid @foreground;
+    border-radius: 5px;
+}
+
+@keyframes shake {
+    from {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    to {
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+}
+
+.Failed {
+    animation-name: shake;
+    animation-duration: 0.05s;
+    animation-timing-function: linear;
+    animation-iteration-count: 8;
+    animation-direction: alternate;
+}
+
+.LoginStatusLabel {
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    background-color: alpha(@background, 0.9);
+}

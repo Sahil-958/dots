@@ -1,0 +1,74 @@
+.notification-indicator {
+  font-size: 1.3rem;
+}
+
+.notification-indicator-container {
+  background-color: $surface;
+  padding: 0 0.341rem;
+}
+
+.notifications-popup-list {
+  min-width: 1rem;
+  .notification {
+      margin-right: 5px;
+      background-color: $surface;
+  }
+}
+
+.notification {
+
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 1rem;
+  min-width: 25.8rem;
+  background-color: $surface;
+
+  .notification-icon {
+    font-size: 5rem;
+    min-width: 5rem;
+    min-height: 5rem;
+    margin-right: 5px;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+  }
+
+  .notification-title {
+    font-weight: bold;
+  }
+
+  .notification-body {
+
+  }
+
+  .notification-time {
+  }
+
+  .notification-close {
+    min-width: 1.5rem;
+  }
+
+  .notification-action-button {
+    background-color: $primary;
+    color: $on_primary;
+    border-right: 1px solid $surface;
+    margin: 5px 0px;
+
+    &:first-child {
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    &:last-child {
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-right: none;
+    }
+  }
+}
+
+
+
+
+

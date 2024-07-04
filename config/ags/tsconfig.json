@@ -11,8 +11,10 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "typeRoots": [
+      "./node_modules/@girs",
       "./types"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   }
 }

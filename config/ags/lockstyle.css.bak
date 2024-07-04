@@ -1,0 +1,292 @@
+* {
+  all: unset;
+  font-family: "CaskaydiaCove Nerd Font";
+}
+
+window, combobox, textview, textview > text, entry {
+  all: unset;
+}
+
+flowbox, button, spinbutton, scrollbar, switch, scale {
+  all: unset;
+}
+flowbox *, button *, spinbutton *, scrollbar *, switch *, scale * {
+  all: unset;
+}
+
+.spacing-5.vertical > *:not(:last-child) {
+  margin-bottom: 0.341rem;
+}
+.spacing-5:not(.vertical) > *:not(:last-child) {
+  margin-right: 0.341rem;
+}
+
+.spacing-10.vertical > *:not(:last-child) {
+  margin-bottom: 0.682rem;
+}
+.spacing-10:not(.vertical) > *:not(:last-child) {
+  margin-right: 0.682rem;
+}
+
+textview text selection {
+  color: rgba(5, 48, 95, 0.87);
+  background-color: #a8c8ff;
+}
+
+entry {
+  border-radius: 1rem;
+  margin-bottom: 5px;
+  padding: 8px;
+  border: 1px solid #8e9199;
+}
+entry:focus {
+  border: 1px solid #a8c8ff;
+}
+entry image.left {
+  margin-right: 0.5rem;
+}
+entry selection {
+  color: rgba(5, 48, 95, 0.87);
+  background-color: #a8c8ff;
+}
+
+switch {
+  outline-offset: -4px;
+  padding: 3px;
+  border-radius: 14px;
+  color: #e1e2e9;
+  background-color: #43474e;
+}
+switch:checked {
+  color: #a8c8ff;
+  background-color: rgba(168, 200, 255, 0.85);
+}
+switch:hover {
+  background-color: rgba(168, 200, 255, 0.7);
+}
+switch slider {
+  min-width: 1.2rem;
+  min-height: 1.2rem;
+  background-color: #e1e2e9;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -gtk-outline-radius: 20px;
+}
+switch image {
+  color: transparent;
+}
+
+scale {
+  min-height: 1rem;
+  min-width: 1rem;
+  padding: 0 1rem;
+}
+scale slider {
+  min-height: 1rem;
+  min-width: 1rem;
+  margin: -0.5rem;
+  background-color: #43474e;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  border-radius: 100%;
+}
+scale highlight {
+  border-radius: 1rem;
+  background-color: #a8c8ff;
+}
+scale:disabled highlight {
+  background-color: #2f3746;
+}
+
+combobox arrow {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+  min-height: 1rem;
+  min-width: 1rem;
+}
+combobox button.combo {
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  background-color: #191c20;
+  color: #e1e2e9;
+}
+combobox button.combo:hover {
+  background-color: #23262a;
+}
+
+spinbutton {
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  color: #e1e2e9;
+  background-color: #191c20;
+}
+spinbutton entry {
+  all: unset;
+}
+spinbutton entry * {
+  all: unset;
+}
+spinbutton entry:focus {
+  all: unset;
+}
+spinbutton entry:focus * {
+  all: unset;
+}
+spinbutton button {
+  border: solid 6px transparent;
+}
+spinbutton button.up {
+  margin-left: -3px;
+}
+spinbutton button.down {
+  margin-right: -3px;
+}
+
+.lock-container {
+  background-image: url("/home/sawhill/walls/unnamed_catgory/creepy_cabin_guy.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.avatar {
+  background-image: url("/etc/greetd/ags/avatar.jpeg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 999px;
+  min-height: 10rem;
+  min-width: 10rem;
+}
+
+.entry-box {
+  background: rgba(17, 19, 24, 0.95);
+  border-radius: 1rem;
+  min-width: 350px;
+  padding: 8px;
+  transition: opacity 200ms;
+}
+.entry-box.hidden {
+  opacity: 0.5;
+}
+.entry-box entry {
+  all: unset;
+  min-width: 350px;
+}
+.entry-box entry * {
+  all: unset;
+}
+
+.tooltip {
+  background-color: #111318;
+  color: #e1e2e9;
+  padding: 0 0 8px 8px;
+}
+
+separator {
+  margin: 3px;
+  min-width: 1px;
+  min-height: 1px;
+  background-color: #43474e;
+}
+
+.clock-container {
+  background-color: #111318;
+  padding-right: 8px;
+}
+
+.clock-container .clock-date {
+  font-size: 0.6rem;
+  color: #a8c8ff;
+}
+
+.clock-container .clock-time {
+  font-size: 0.7rem;
+}
+
+.session-button {
+  background-color: #111318;
+  color: #a8c8ff;
+  padding: 0px 8px;
+}
+
+.corner {
+  background-color: #111318;
+  font-size: 1rem;
+}
+
+.angle {
+  background-color: #111318;
+}
+
+.corner-container {
+  background-color: #111318;
+  border-top-right-radius: 1rem;
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.music-player-icon {
+  font-size: 1.8rem;
+  margin: 0.5rem;
+}
+
+.mpris-list-container {
+  min-width: 25rem;
+  padding: 0.5rem;
+}
+
+.music-container {
+  background-color: #111318;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 5px;
+  min-height: 10rem;
+}
+.music-container .music-player-icon {
+  font-size: 1.6rem;
+  padding-right: 8px;
+}
+.music-container .music-player-name {
+  text-shadow: 0.1rem 0.1rem #111318;
+}
+.music-container .music-artist {
+  text-shadow: 0.1rem 0.1rem #111318;
+  padding-top: 5px;
+}
+.music-container .music-title {
+  font-weight: bold;
+  text-shadow: 0.1rem 0.1rem #111318;
+  padding-top: 5px;
+}
+.music-container .music-control-box {
+  padding-top: 1.5rem;
+}
+.music-container .music-control-box .music-button {
+  font-size: 1.6rem;
+  -gtk-icon-shadow: 0.1rem 0.1rem #111318;
+}
+.music-container .music-control-box .music-progress {
+  font-size: 3px;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.auth-notif {
+  background-color: #111318;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-bottom: 0.25rem;
+  min-width: 20rem;
+  border-radius: 1rem;
+}
+.auth-notif.error {
+  border-left: 0.3rem solid #93000a;
+}
+.auth-notif.fail {
+  border-left: 0.3rem solid #93000a;
+}
+.auth-notif.info {
+  border-left: 0.3rem solid #254777;
+}
+
+/*# sourceMappingURL=lockstyle.css.map */
