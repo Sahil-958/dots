@@ -92,6 +92,7 @@ tesseract-data-eng
 tldr
 tlp
 tree
+ttf-cascadia-code-nerd
 ttf-fira-sans
 unzip
 vi
