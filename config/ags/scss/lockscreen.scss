@@ -1,4 +1,6 @@
 @import '../../.cache/wal/colors-waybar.css';
+@import 'colors.scss';
+
 window {
   background: transparent;
 }
@@ -7,36 +9,50 @@ window {
   0% {
     padding: 0px 0px 0 0px;
   }
+
   100% {
     padding: 20px 20px 0 20px;
   }
 }
+
 .LockWindowBackgroundGradientBox {
   padding: 20px 20px 0 20px;
-  background-image: linear-gradient(to bottom, #bac9d2 5%, #131314 95%);
+  // animation-name: smoothPadding;
+  // animation-duration: 1.0s;
+  // animation-timing-function: linear;
+  // animation-iteration-count: 1;
+  // animation-direction: normal;
+  background-image: linear-gradient(to bottom, $primary 5%, $background 95%);
 }
 
 @keyframes zoomout {
   from {
     background-size: 110%;
   }
+
   to {
     background-size: 102%;
   }
 }
+
 .LockWindowBackgroundBox {
-  background-image: url("/home/sawhill/walls/dharmx_walls/flowers/a_group_of_pink_flowers_on_a_tree.jpg");
+  //animation-name: zoomout;
+  //animation-duration: 4.0s;
+  //animation-timing-function: linear;
+  //animation-iteration-count: 1;
+  //animation-direction: normal;
+  background-image: $image;
   background-size: 102%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .corner {
-  background-color: #bac9d2;
+  background-color: $primary;
 }
 
 .OverlayRevealerBox {
-  background-color: rgba(19, 19, 20, 0.5);
+  background-color: rgba($background, 0.5);
   padding: 20px;
 }
 
@@ -48,17 +64,21 @@ window {
     */
 }
 
+.LoginBox {}
+
 @keyframes glide {
   from {
     background-position: 50% 45%;
   }
+
   to {
     background-position: 50% 50%;
   }
 }
+
 .LoginAvatarBox {
   animation-name: glide;
-  animation-duration: 2s;
+  animation-duration: 2.0s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -69,8 +89,8 @@ window {
 
 .LoginEntry {
   padding: 15px;
-  background-color: rgba(19, 19, 20, 0.5);
-  border: 2px solid #bac9d2;
+  background-color: rgba($background, 0.5);
+  border: 2px solid $primary;
   border-radius: 5px;
 }
 
@@ -79,11 +99,13 @@ window {
     margin-left: 0;
     margin-right: 10px;
   }
+
   to {
     margin-left: 10px;
     margin-right: 0px;
   }
 }
+
 .Failed {
   animation-name: shake;
   animation-duration: 0.05s;
@@ -95,7 +117,5 @@ window {
 .LoginStatusLabel {
   padding: 10px;
   border-radius: 0 0 5px 5px;
-  background-color: rgba(19, 19, 20, 0.9);
+  background-color: rgba($background, 0.9);
 }
-
-/*# sourceMappingURL=lockscreen.css.map */

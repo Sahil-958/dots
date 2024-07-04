@@ -8,6 +8,7 @@ import Clock from "./modules/clock/index.js";
 import SessionBox, { SessionBoxTooltip } from "./modules/powermenu/sessionbox.js";
 import { MprisCorner } from "./modules/mpris/index.js";
 
+Utils.exec(`sass ${App.configDir}/scss/lockscreen.scss ${App.configDir}/lockscreen.css`);
 App.applyCss(`${App.configDir}/lockscreen.css`);
 
 const auth = new AstalAuth.Pam();
@@ -212,15 +213,6 @@ const LockWindow = () => {
             winRevealer,
         ]
     });
-
-    Utils.execAsync(["bash", "-c", "cat ~/.cache/current_wall_path.txt"])
-        .then(res => {
-            if (!res) return;
-            revealerChild.child.css = `
-            background-image: url("${res}");
-                       `;
-        }).catch(e => console.error(e));
-
     return window;
 };
 
