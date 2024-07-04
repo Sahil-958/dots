@@ -1,0 +1,62 @@
+.ai-container {
+  .settings-container {
+    background: $surface;
+    border-radius: 1rem;
+    padding: 0.5rem;
+
+    .system-message {
+      background: $surface_container_low;
+      border-radius: 1rem;
+      padding: 0.5rem;
+    }
+  }
+
+  .ai-message-list {
+    margin-bottom: 3px;
+
+    .ai-message {
+      font-size: 0.9rem;
+      font-weight: bold;
+      .ai-role {
+        &.user {
+          color: $primary
+        }
+
+        &.assistant {
+          color: $tertiary;
+        }
+      }
+      .ai-msg-content {
+        background-color: $surface;
+      }
+    }
+  }
+  .ai-entry-box {
+    border: 1px solid $primary;
+    border-radius: 1rem;
+    padding: 0.5rem;
+
+    .file-container {
+      background: $surface;
+      margin: 0rem -0.5rem;
+      padding-right: 0.5rem;
+
+      .ai-image {
+        margin: 0.5rem;
+        font-size: 5rem;
+      }
+
+      &:first-child {
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        margin-top: -0.5rem;
+      }
+    }
+
+    .ai-send-button {
+      min-width: 2rem;
+      border-radius: 5px;
+      background-color: $surface_container_low;
+    }
+  }
+}

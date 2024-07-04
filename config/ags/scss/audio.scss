@@ -1,0 +1,26 @@
+.audio-volume-box {
+  .audio-volume-label {
+    min-width: 3rem;
+  }
+}
+
+.mixer-item {
+  margin: 0.5rem 0px;
+
+  .mixer-item-volume {
+    margin: 0px 0.5rem;
+  }
+
+  .mixer-item-title {
+    margin: 0px 0.5rem;
+  }
+
+  .mixer-item-slider {
+    margin-top: 0.5rem;
+  }
+
+  image {
+    font-size: 3rem;
+  }
+}
+

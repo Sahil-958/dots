@@ -1,0 +1,96 @@
+.launcher-switcher {
+  background-color: $surface;
+  .launcher-switcher-button {
+    background-color: $surface_container_low;
+    margin-left: 10px;
+    &.focused {
+      background-color: $surface;
+      image {
+        background-color: $surface_container_low;
+        border-bottom-left-radius: 1rem;
+        border-top-left-radius: 1rem;
+      }
+    }
+    &.before-focused {
+      image { border-bottom-right-radius: 1rem; }
+    }
+    &.after-focused {
+      image { border-top-right-radius: 1rem; }
+    }
+    image {
+      padding: 10px;
+      background-color: $surface;
+      color: $primary;
+      font-size: 2rem;
+    }
+  }
+}
+
+.launcher {
+  background-color: $surface_container_low;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  min-width: 25rem;
+
+  .launcher-search {
+    margin: 1rem;
+    background-color: $surface_container_low;
+
+
+    .search-scroll {
+
+      .search-results {
+        //color for letter highlighting
+        color: $primary;
+
+        .app-button {
+          color: $on_surface;
+          padding: 5px;
+          border-radius: 1rem;
+
+          .app-icon {
+            font-size: 3rem;
+            margin-right: 5px;
+          }
+
+          .app-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+          }
+
+          .app-description {
+            font-size: 0.8rem;
+          }
+
+          &.focused {
+            background-color: $surface;
+          }
+        }
+      }
+    }
+  }
+
+  .launcher-category {
+    margin: 1rem;
+    background-color: $surface_container_low;
+    .app-button {
+      padding: 8px;
+      border-radius: 1rem;
+
+      &.focused {
+        background-color: $surface;
+      }
+
+      .app-icon {
+        font-size: 4rem;
+      }
+      .app-name {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+
+
+

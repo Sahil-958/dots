@@ -1,0 +1,159 @@
+* {
+  all: unset;
+  font-family: "CaskaydiaCove Nerd Font";
+}
+
+@import "colors";
+@import "common";
+
+.lock-container {
+  background-image: $image;
+  background-position: center;
+  background-size: cover;
+}
+
+.avatar {
+  background-image: url('/etc/greetd/ags/avatar.jpeg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 999px;
+  min-height: 10rem;
+  min-width: 10rem;
+}
+
+.entry-box {
+  background: transparentize($surface, 0.05);
+  border-radius: 1rem;
+  min-width: 350px;
+  padding: 8px;
+  transition: opacity 200ms;
+
+  &.hidden {
+    opacity: 0.5;
+  }
+
+  entry {
+    @include unset(true);
+    min-width: 350px;
+  }
+}
+
+.tooltip {
+  background-color: $surface;
+  color: $on_surface;
+  padding: 0 0 8px 8px;
+}
+
+separator {
+  margin: 3px;
+  min-width: 1px;
+  min-height: 1px;
+  background-color: $surface_variant;
+}
+.clock-container {
+  background-color: $surface;
+  padding-right: 8px;
+}
+.clock-container .clock-date {
+  font-size: 0.6rem;
+  color: $primary;
+}
+.clock-container .clock-time {
+  font-size: 0.7rem;
+}
+
+.session-button {
+  background-color: $surface;
+  color: $primary;
+  padding: 0px 8px;
+}
+
+.corner {
+  background-color: $surface;
+  font-size: 1rem;
+}
+
+.angle {
+  background-color: $surface;
+}
+
+.corner-container {
+  background-color: $surface;
+  border-top-right-radius: 1rem;
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.music-player-icon {
+  font-size: 1.8rem;
+  margin: 0.5rem;
+}
+
+.mpris-list-container {
+  min-width: 25rem;
+  padding: 0.5rem;
+}
+
+.music-container {
+
+  background-color: $surface;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 5px;
+  min-height: 10rem;
+
+  .music-player-icon {
+    font-size: 1.6rem;
+    padding-right: 8px
+  }
+
+  .music-player-name {
+    text-shadow: 0.1rem 0.1rem $surface;
+  }
+
+  .music-artist {
+    text-shadow: 0.1rem 0.1rem $surface;
+    padding-top: 5px;
+  }
+
+  .music-title {
+    font-weight: bold;
+    text-shadow: 0.1rem 0.1rem $surface;
+    padding-top: 5px;
+  }
+
+  .music-control-box {
+    padding-top: 1.5rem;
+    .music-button {
+      font-size: 1.6rem;
+      -gtk-icon-shadow: 0.1rem 0.1rem $surface;
+    }
+
+    .music-progress {
+      font-size: 3px;
+      min-width: 40px;
+      min-height: 40px;
+    }
+  }
+}
+
+.auth-notif {
+  background-color: $surface;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-bottom: 0.25rem;
+  min-width: 20rem;
+  border-radius: 1rem;
+
+  &.error {
+    border-left: 0.3rem solid $error_container;
+  }
+  &.fail {
+    border-left: 0.3rem solid $error_container;
+  }
+  &.info {
+    border-left: 0.3rem solid $primary_container;
+  }
+}
+
+

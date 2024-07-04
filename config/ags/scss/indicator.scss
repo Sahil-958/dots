@@ -1,0 +1,36 @@
+.indicator-container {
+  min-width: 10rem;
+  background-color: $surface;
+}
+
+.osd-indicator {
+  padding: 1rem 0rem 1rem 1.5rem;
+
+  .osd-icon {
+    color: $primary;
+    font-size: 2rem;
+    min-width: 2rem;
+  }
+
+  .osd-value-txt {
+    font-weight: 500;
+    color: $primary;
+    font-size: 1.2rem;
+    min-width: 2.5rem;
+  }
+
+  .osd-progress {
+    border-radius: 10rem;
+
+    trough {
+      border-radius: 10rem;
+      background-color: $surface_variant;
+    }
+
+    progress {
+      border-radius: 10rem;
+      background-color: $primary;
+    }
+  }
+
+}

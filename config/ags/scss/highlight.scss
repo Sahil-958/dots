@@ -1,0 +1,211 @@
+@import "colors";
+
+* {
+  color: $on_surface;
+  font-family: "CaskaydiaCove Nerd Font";
+  font-size: 0.9rem;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: $surface_container_low;
+}
+
+img {
+  width:100%;
+  max-width:28rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.code {
+  background: $surface_container_lowest;
+  border-radius: 0.5rem;
+
+  .code-header {
+    background: $surface_container_lowest;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom: 1px solid $primary;
+    padding: 5px;
+
+    > button {
+      color: $primary;
+      background: transparent;
+      float: right;
+      border: none;
+
+      &:before {
+        content: '󰆏';
+        display: inline-block;
+        padding-right: 0.5rem;
+      }
+    }
+  }
+}
+
+$languages-map: (
+  arduino: "",
+  armasm: "",
+  asm: "",
+  avrasm: "",
+  bash: "",
+  c: "",
+  clojure: "",
+  coffeescript: "",
+  cpp: "",
+  csharp: "󰌛",
+  css: "",
+  dockerfile: "󰡨",
+  go: "",
+  gradle: "",
+  haskell: "",
+  html: "",
+  java: "",
+  javascript: "󰌞",
+  json: "",
+  latex: "",
+  lua: "󰢱",
+  makefile: "",
+  markdown: "",
+  mipsasm: "",
+  nginx: "",
+  nix: "󱄅",
+  php: "",
+  prolog: "",
+  python: "",
+  r: "󰟔",
+  ruby: "",
+  rust: "",
+  scss: "",
+  shell: "",
+  sh: "",
+  typescript: "󰛦",
+  wasm: "",
+  x86asm: "",
+  xml: "󰗀",
+);
+
+@each $lang, $content in $languages-map {
+  [data-language="#{$lang}"]:before {
+    content: $content;
+    font-size: 1.1rem;
+    color: $primary;
+    padding-right: 0.5rem;
+  }
+}
+
+pre {
+  padding: 5px;
+  overflow-x: scroll;
+
+  code.hljs {
+    color: $on_surface;
+    background: transparent;
+  }
+}
+
+$hue-step: 20deg;
+
+code {
+  & .hljs-keyword {
+    color: $primary;
+  }
+
+  & .hljs-type,
+  & .hljs-built_in {
+    color: adjust-hue($primary, $hue-step);
+  }
+
+  & .hljs-literal,
+  & .hljs-number {
+    color: adjust-hue($primary, -4*$hue-step);
+  }
+
+  & .hljs-operator,
+  & .hljs-punctuation,
+  & .hljs-property,
+  & .hljs-variable.language_,
+  & .hljs-symbol {
+    color: adjust-hue($primary, 2*$hue-step);
+  }
+
+  & .hljs-regexp,
+  & .hljs-string,
+  & .hljs-char.escape_,
+  & .hljs-subst {
+    color: adjust-hue($primary, -2*$hue-step);
+  }
+
+  & .hljs-comment {
+    color: mix($surface_container_low, $on_surface, 80%);
+  }
+
+  & .hljs-doctag {
+    color: mix($surface_container_low, $on_surface, 60%);
+  }
+
+  & .hljs-meta,
+  & .hljs-title.function_,
+  & .hljs-section {
+    color: adjust-hue($primary, 3*$hue-step);
+  }
+
+  & .hljs-tag,
+  & .hljs-attribute,
+  & .hljs-name,
+  & .hljs-selector-attr {
+    color: adjust-hue($primary, -3*$hue-step);
+  }
+
+  & .hljs-params,
+  & .hljs-selector-class,
+  & .hljs-template-variable {
+    color: adjust-hue($primary, 4*$hue-step);
+  }
+
+  & .hljs-selector-tag,
+  & .hljs-selector-id {
+    color: adjust-hue($primary, -$hue-step);
+  }
+
+  & .hljs-bullet,
+  & .hljs-code,
+  & .hljs-formula {
+    color: green;
+  }
+
+  & .hljs-emphasis {
+    color: $secondary;
+    font-style: italic;
+  }
+
+  & .hljs-strong {
+    color: $secondary;
+    font-weight: bold;
+  }
+
+  & .hljs-link {
+    color: $tertiary;
+    font-style: italic;
+  }
+
+  & .hljs-quote {
+    color: $tertiary;
+    font-style: italic;
+  }
+
+  & .hljs-deletion {
+    color: adjust-hue($primary, 5*$hue-step);
+  }
+
+  & .hljs-addition {
+    color: adjust-hue($primary, -5*$hue-step);
+  }
+
+}
+
+

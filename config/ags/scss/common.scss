@@ -1,0 +1,164 @@
+@mixin unset($rec: false) {
+    all: unset;
+
+    @if $rec {
+        * {
+            all: unset
+        }
+    }
+}
+
+window, combobox, textview, textview > text, entry {
+  @include unset;
+}
+
+flowbox, button, spinbutton, scrollbar, switch, scale {
+  @include unset(true);
+}
+
+@each $spacing in (5, 10) {
+  .spacing-#{$spacing} {
+    &.vertical > *:not(:last-child) {
+      margin-bottom: calc(0.341rem/5*$spacing);
+    }
+    // should be .horizontal, but setting classnames resets it
+    &:not(.vertical) > *:not(:last-child) {
+      margin-right: calc(0.341rem/5*$spacing);
+    }
+  }
+}
+
+textview {
+  text {
+    selection {
+      color: transparentize($on_primary, 0.13);
+      background-color: $primary;
+    }
+  }
+}
+
+entry {
+  border-radius: 1rem;
+  margin-bottom: 5px;
+  padding: 8px;
+  border: 1px solid $outline;
+
+  &:focus {
+    border: 1px solid $primary;
+  }
+
+  image.left {
+    margin-right: 0.5rem;
+  }
+
+  selection {
+    color: transparentize($on_primary, 0.13);
+    background-color: $primary;
+  }
+}
+
+switch {
+	outline-offset: -4px;
+	padding: 3px;
+	border-radius: 14px;
+	color: $on_surface;
+	background-color: $surface_variant;
+
+
+  &:checked {
+  	color: $primary;
+  	background-color: transparentize($primary, 0.15);
+  }
+
+  &:hover {
+	  background-color: transparentize($primary, 0.3);
+  }
+
+
+  slider {
+    min-width: 1.2rem;
+    min-height: 1.2rem;
+    background-color: $on_surface;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -gtk-outline-radius: 20px;
+  }
+
+  image {
+	  color: transparent;
+  }
+}
+
+
+scale {
+	min-height: 1rem;
+	min-width: 1rem;
+	padding: 0 1rem;
+
+  slider {
+    min-height: 1rem;
+    min-width: 1rem;
+    margin: -0.5rem;
+    background-color: $surface_variant;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 100%;
+  }
+
+  highlight {
+	  border-radius: 1rem;
+    background-color: $primary;
+  }
+
+  &:disabled highlight {
+    background-color: mix($primary, $surface, 20%);
+  }
+
+}
+
+combobox {
+  arrow {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    min-height: 1rem;
+    min-width: 1rem;
+  }
+
+  button.combo {
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    background-color: $surface_container_low;
+    color: $on_surface;
+
+    &:hover {
+      background-color: mix($on_surface, $surface_container_low, 5%);
+    }
+  }
+}
+
+spinbutton {
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  color: $on_surface;
+  background-color: $surface_container_low;
+
+  entry {
+    @include unset(true);
+    &:focus {
+      @include unset(true);
+    }
+  }
+
+  button {
+    border: solid 6px transparent;
+
+    &.up {
+      margin-left: -3px;
+    }
+
+    &.down {
+      margin-right: -3px;
+    }
+  }
+}

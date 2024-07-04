@@ -1,62 +1,97 @@
-//import Gdk from "gi://Gdk";
-//import Gtk from "gi://Gtk";
-//const hyprland = await Service.import("hyprland");
-//const battery = await Service.import("battery");
-//const systemtray = await Service.import("systemtray");
-//const network = await Service.import("network");
-//const notifications = await Service.import("notifications");
+#!/usr/bin/ags -c
+import GLib from "gi://GLib";
+import { exec, idle, monitorFile } from "resource:///com/github/Aylur/ags/utils.js";
+import "./utils.js";
+import Bar from "./modules/bar/index.js";
+import {
+    CornerTopleft,
+    CornerTopright,
+    CornerBottomright,
+    CornerBottomleft
+} from "./modules/roundedCorner/index.js";
+import { IndicatorWidget } from "./modules/indicator/index.js";
+import Quicksettings from "./modules/quicksettings/index.js";
+import Launcher from "./modules/applauncher/index.js";
+import PowerMenu from "./modules/powermenu/index.js";
+import { PopupNotifications } from "./modules/notifications/index.js";
+import App from "resource:///com/github/Aylur/ags/app.js";
+import Gio from "gi://Gio";
+import Gdk from "gi://Gdk";
+import Notifications from "resource:///com/github/Aylur/ags/service/notifications.js";
+import ConfigService from "./modules/config/index.js";
 
-import { NotificationPopups } from "./notifications/notifications.js";
-//import stats from "./stats/stats.js";
-import { applauncher } from "./applauncher/applauncher.js";
-import { WallSelectorWindow } from "./wallselector/wallselector.js";
-//import { wallpicker } from "./wallpicker/wallpikcer.js";
-import { ControlCenter } from "./control_center/control_center.js";
-import { Bar } from "./bar/bar.js";
+/**
+ * @param {import('types/@girs/gtk-3.0/gtk-3.0').Gtk.Window[]} windows
+  */
+function addWindows(windows) {
+    windows.forEach(win => App.addWindow(win));
+}
 
-Utils.monitorFile(
-    // directory that contains the scss files
-    `${App.configDir}`,
-    // reload function
-    function() {
-        // main scss file
-        //const css = `${App.configDir}/control_center/style.css`;
-        const css = `${App.configDir}/style.css`;
+globalThis.monitorCounter = 0;
 
-        App.resetCss();
-        App.applyCss(css);
-    },
-);
+globalThis.toggleBars = () => {
+    App.windows.forEach(win => {
+        if (win.name?.startsWith("bar")) {
+            App.toggleWindow(win.name);
+        }
+    });
+};
 
-Utils.monitorFile(
-    `${Utils.HOME}/.cache/wal/colors-waybar.css`,
-    function() {
-        const css = `${App.configDir}/style.css`;
-        App.resetCss();
-        App.applyCss(css);
-    },
-);
+function addMonitorWindows(monitor) {
+    addWindows([
+        Bar(monitor),
+        CornerTopleft(monitor),
+        CornerTopright(monitor),
+        CornerBottomleft(monitor),
+        CornerBottomright(monitor),
+    ]);
+    monitorCounter++;
+}
+
+idle(async () => {
+    addWindows([
+        IndicatorWidget(),
+        Quicksettings(),
+        await Launcher(),
+        PowerMenu(),
+        PopupNotifications(),
+    ]);
+
+    const display = Gdk.Display.get_default();
+    for (let m = 0; m < display?.get_n_monitors(); m++) {
+        const monitor = display?.get_monitor(m);
+        addMonitorWindows(monitor);
+    }
+
+    display?.connect("monitor-added", (disp, monitor) => {
+        addMonitorWindows(monitor);
+    });
+
+    display?.connect("monitor-removed", (disp, monitor) => {
+        App.windows.forEach(win => {
+            if (win.gdkmonitor === monitor) App.removeWindow(win);
+        });
+    });
+
+
+});
+
+
+//config
+Notifications.popupTimeout = 5000;
+Notifications.forceTimeout = true;
+
 
 App.config({
     style: "./style.css",
+    icons: "./modules/icons",
     closeWindowDelay: {
-        "ControlCenterWindow": 500,
-        "AppLauncherWindow": 300,
-        "WallSelectorWindow": 300,
-        "NotificationPopupsBox": 500,
+        sideright: 350,
+        quicksettings: 500,
+        launcher: 500,
+        session: 350,
+        indicator: 200,
+        popupNotifications: 200,
     },
-
-    windows: [
-        Bar(0),
-        ControlCenter(0),
-        NotificationPopups(),
-        applauncher(),
-        WallSelectorWindow(),
-        //wallpicker(),
-        //stats(0),
-        // you can call it, for each monitor
-        // Bar(0),
-        // Bar(1)
-    ],
 });
 
