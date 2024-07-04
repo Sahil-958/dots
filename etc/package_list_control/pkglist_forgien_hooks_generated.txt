@@ -1,5 +1,6 @@
 aylurs-gtk-shell
 binder_linux-dkms
+cava
 gtk-session-lock
 hyprlock-git
 hyprshade-git
