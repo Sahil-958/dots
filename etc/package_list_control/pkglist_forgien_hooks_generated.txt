@@ -8,6 +8,7 @@ hyprshade-git
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
+matugen-bin
 noisetorch
 oomox-qt5-styleplugin-git
 pikaur
