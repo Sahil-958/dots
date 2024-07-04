@@ -1,0 +1,5 @@
+#               FG              BTN_BG bright less brdark        less da     txt fg               br text              btn fg           txt bg     bg     shadow   sel bg     sel fg     link       visited           alt bg default          tooltip bg  tooltip_fg	placeholder_fg
+[ColorScheme]
+active_colors=#cfd5db,          #0C1314, #0C1314, #0C1314, #0C1314, #0C1314, #cfd5db,           #cfd5db,           #cfd5db,           #0C1314, #0C1314, #0C1314, #535E64, #0C1314, #535E64, #cfd5db,            #0C1314, #cfd5db,           0C1314,  #cfd5db, #9ea4a9
+disabled_colors=#9ea4a9, #0C1314, #0C1314, #0C1314, #0C1314, #0C1314, #9ea4a9,  #9ea4a9,  #9ea4a9,  #0C1314, #0C1314, #0C1314, #535E64, #0C1314, #535E64, #9ea4a9,   #0C1314, #9ea4a9,  #0C1314, #9ea4a9,  #9ea4a9
+inactive_colors=#cfd5db,          #0C1314, #0C1314, #0C1314, #0C1314, #0C1314, #cfd5db,           #cfd5db,           #cfd5db,           #0C1314, #0C1314, #0C1314, #535E64, #0C1314, #535E64, #cfd5db,            #0C1314, #cfd5db,           #0C1314, #cfd5db, #9ea4a9
