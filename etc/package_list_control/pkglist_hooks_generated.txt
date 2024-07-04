@@ -79,6 +79,7 @@ qt6ct
 reflector
 ripgrep
 rust
+sddm
 slurp
 smartmontools
 snapper
