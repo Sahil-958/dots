@@ -2,6 +2,8 @@ keys.js
 style.css
 highlight.css
 lockstyle.css
+lockscreen.css
+scss/colors.scss
 node_modules
 types
 .idea
