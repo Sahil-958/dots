@@ -4,6 +4,7 @@ gtk-session-lock
 hyprlock-git
 hyprshade-git
 libastal-auth-git
+libastal-tray-git
 librewolf-bin
 noisetorch
 oomox-qt5-styleplugin-git
