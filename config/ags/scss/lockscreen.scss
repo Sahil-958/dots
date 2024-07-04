@@ -88,6 +88,7 @@ window {
 }
 
 .LoginEntry {
+  all: unset;
   padding: 15px;
   background-color: rgba($background, 0.5);
   border: 2px solid $primary;
