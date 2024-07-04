@@ -1,36 +1,44 @@
+[templates.ags]
+input_path = '~/.config/matugen/templates/ags.scss'
+output_path = '~/.config/ags/scss/colors.scss'
+mode = "Dark"
+
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+mode = "Dark"
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+mode = "Dark"
+
+[templates.hypr]
+input_path = '~/.config/matugen/templates/hypr.conf'
+output_path = '~/.config/hypr/colors.conf'
+mode = "Dark"
+
+[templates.river]
+input_path = '~/.config/matugen/templates/river.sh'
+output_path = '~/.config/river/colors.sh'
+mode = "Dark"
+
+[templates.wezterm]
+input_path = '~/.config/matugen/templates/wezterm.toml'
+output_path = '~/.config/wezterm/colors/matugen.toml'
+mode = "Dark"
+
+
+
 [config]
 reload_apps = false
-set_wallpaper = false
+set_wallpaper = true
 wallpaper_tool = 'Swww'
 swww_options = [
-    "--transition-type",
-    "center",
-]
-run_after = [
-    [ "echo", "'hello'" ],
-    [ "echo", "'hello again'" ],
+	"--transition-step",
+	"10",
+	"--transition-fps",
+	"90"
 ]
 
-[config.reload_apps_list]
-waybar = true
-librewolf = true
-kitty = true
-gtk_theme = true
-dunst = true
-swaync = true
-
-# config_directory/config.toml
-
-#[templates.hyprlock] # First way of adding template
-#input_path = '~/.config/matugen/templates/hyprlock.conf'
-#output_path = '~/.cache/matugen/hyprlock.conf'
-
-[templates]
-ags = { input_path = '~/.config/matugen/templates/ags', output_path = '~/.cache/matugen/ags' }
-
-hyprlock = { input_path = '~/.config/matugen/templates/hyprlock.conf', output_path = '~/.cache/matugen/hyprlock.conf' }
-hyprland = { input_path = '~/.config/matugen/templates/colors-hyprland.conf', output_path = '~/.cache/matugen/colors-hyprland.conf' }
-glava_graph = { input_path = '~/.config/matugen/templates/graph.glsl', output_path = '~/.cache/matugen/graph.glsl' }
-glava_bars = { input_path = '~/.config/matugen/templates/bars.glsl', output_path = '~/.cache/matugen/bars.glsl' }
-glava_circle = { input_path = '~/.config/matugen/templates/circle.glsl', output_path = '~/.cache/matugen/circle.glsl' }
-glava_radial = { input_path = '~/.config/matugen/templates/radial.glsl', output_path = '~/.cache/matugen/radial.glsl' }
