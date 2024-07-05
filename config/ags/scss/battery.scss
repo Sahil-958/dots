@@ -1,0 +1,65 @@
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animate($animation, $duration, $method, $times, $direction) {
+  animation: $animation $duration $method $times, $direction;
+}
+
+.Battery {
+  background: $surface;
+}
+
+.Battery.Critical {
+  .BatteryLabel {
+
+    @include keyframes(blink) {
+
+      0% {
+        color: $primary;
+      }
+
+      50% {
+        color: $error;
+      }
+
+      100% {
+        color: $primary;
+      }
+    }
+
+    @include animate(blink, 1s, linear, infinite, normal);
+  }
+
+  .BatteryIcon {
+
+    @include keyframes(blink) {
+
+      0% {
+        color: $primary;
+      }
+
+      50% {
+        color: $error;
+      }
+
+      100% {
+        color: $primary;
+      }
+    }
+
+    @include animate(blink, 1s, linear, infinite, normal);
+  }
+
+}
+
+.Battery.Full {
+  color: $on_primary;
+}
+
+.BatteryLabel {
+  font-size: 0.9rem;
+  color: $primary;
+}
