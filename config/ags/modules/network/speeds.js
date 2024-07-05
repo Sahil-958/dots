@@ -1,4 +1,3 @@
-
 import GTop from "gi://GTop";
 
 const path = "/sys/class/net/";
@@ -6,7 +5,7 @@ const path = "/sys/class/net/";
 const siPrefixes = ["", "k", "M", "G"];
 const toSIUnits = (number) => {
   if (number === 0) return number.toString();
-  const siBase = Math.floor(Math.log10(Math.abs(number))/3);
+  const siBase = Math.floor(Math.log10(Math.abs(number)) / 3);
   const prefix = siPrefixes[siBase];
   if (siBase === 0) return number.toString();
   const baseNumber = parseFloat((number / Math.pow(10, siBase * 3)).toFixed(2));
@@ -17,7 +16,6 @@ let prevBytesIn = 0;
 let prevBytesOut = 0;
 
 function getNetworkLoad() {
-
   let currentBytesIn = 0;
   let currentBytesOut = 0;
 
@@ -30,22 +28,23 @@ function getNetworkLoad() {
     currentBytesOut += netload.bytes_out;
   }
 
-  const speedIn = currentBytesIn - prevBytesIn;
-  const speedOut = currentBytesOut - prevBytesOut;
+  const speedIn = (currentBytesIn - prevBytesIn) * 8;
+  const speedOut = (currentBytesOut - prevBytesOut) * 8;
 
   prevBytesIn = currentBytesIn;
   prevBytesOut = currentBytesOut;
 
   return {
-    up: `${toSIUnits(speedOut)}B/s`,
-    down: `${toSIUnits(speedIn)}B/s`,
+    up: `↑ ${toSIUnits(speedOut)}b/s`,
+    down: `↓ ${toSIUnits(speedIn)}b/s`,
   };
 }
 
-export const speeds = Variable({up: "0B/s", down: "0B/s"}, {
-  poll: [1000, getNetworkLoad]
-});
-
+export const speeds = Variable(
+  { up: "0b/s", down: "0b/s" },
+  {
+    poll: [1000, getNetworkLoad],
+  },
+);
 
 export default speeds;
-

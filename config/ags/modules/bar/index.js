@@ -11,11 +11,13 @@ import { NotificationIndicator } from "../notifications/index.js";
 import BatteryLabel from "../battery/index.js";
 import { MusicBarContainer } from "../mpris/index.js";
 import Cairo from "cairo";
+import NetworkSpeeds from "../network/speeds.js";
 
 const Right = () =>
   Widget.EventBox({
     hpack: "end",
     child: Widget.Box({
+      className: "right-box",
       children: [
         Tray(),
         Widget.EventBox({
@@ -30,7 +32,25 @@ const Right = () =>
             Audio.speaker.volume -= 0.03;
           },
           child: Widget.Box({
-            children: [BatteryLabel(), NotificationIndicator(), Clock()],
+            children: [
+              Widget.Box({
+                className: "speed-box",
+                vertical: true,
+                children: [
+                  Widget.Label({
+                    class_name: "speed-label",
+                    label: NetworkSpeeds.bind().as((s) => s.up),
+                  }),
+                  Widget.Label({
+                    class_name: "speed-label",
+                    label: NetworkSpeeds.bind().as((s) => s.down),
+                  }),
+                ],
+              }),
+              BatteryLabel(),
+              NotificationIndicator(),
+              Clock(),
+            ],
           }),
         }),
       ],
