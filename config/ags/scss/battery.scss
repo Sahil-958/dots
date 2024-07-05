@@ -5,7 +5,11 @@
 }
 
 @mixin animate($animation, $duration, $method, $times, $direction) {
-  animation: $animation $duration $method $times, $direction;
+  animation-name: $animation;
+  animation-duration: $duration;
+  animation-timing-function: $method;
+  animation-iteration-count: $times;
+  animation-direction: $direction;
 }
 
 .Battery {
@@ -16,41 +20,23 @@
   .BatteryLabel {
 
     @include keyframes(blink) {
-
-      0% {
-        color: $primary;
-      }
-
-      50% {
+      to {
         color: $error;
-      }
-
-      100% {
-        color: $primary;
       }
     }
 
-    @include animate(blink, 1s, linear, infinite, normal);
+    @include animate(blink, 1s, linear, infinite, alternate);
   }
 
   .BatteryIcon {
 
     @include keyframes(blink) {
-
-      0% {
-        color: $primary;
-      }
-
-      50% {
+      to {
         color: $error;
-      }
-
-      100% {
-        color: $primary;
       }
     }
 
-    @include animate(blink, 1s, linear, infinite, normal);
+    @include animate(blink, 1s, linear, infinite, alternate);
   }
 
 }
