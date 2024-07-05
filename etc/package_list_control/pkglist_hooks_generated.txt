@@ -5,6 +5,7 @@ ark
 base
 base-devel
 bash-completion
+bc
 bind
 blueman
 bluez-utils
