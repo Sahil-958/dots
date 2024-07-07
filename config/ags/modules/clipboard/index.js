@@ -6,19 +6,46 @@ function fileExists(filename) {
   return file.query_exists(null);
 }
 
-const clips = Variable("");
+const clips = Variable([]);
 
-function fetchClips() {
-  Utils.execAsync(["bash", "-c", "cliphist list"])
-    .then((result) => {
-      if (result) {
-        clips.setValue(result);
-      }
-    })
-    .catch((err) => {
-      if (!err) return;
-      console.log(err);
-    });
+async function fetchClips() {
+  try {
+    const clipData = [];
+    const result = await Utils.execAsync(["bash", "-c", "cliphist list"]);
+
+    if (result) {
+      const items = result.split(/\r?\n/);
+      const decodePromises = items.map(async (listItem) => {
+        let id = listItem.match(/^([0-9]+)\s+/i)[1];
+        const isImage = getImgInfo(listItem);
+        if (!isImage) {
+          try {
+            const decodedlistItem = await Utils.execAsync([
+              "bash",
+              "-c",
+              `cliphist decode ${id}`,
+            ]);
+            clipData.push({
+              id: id,
+              listItem: listItem,
+              data: decodedlistItem,
+            });
+          } catch (err) {
+            console.error(err);
+          }
+        } else {
+          clipData.push({ id: id, listItem: listItem, data: listItem });
+        }
+      });
+
+      await Promise.all(decodePromises);
+      //sort clipData by id
+      clipData.sort((a, b) => b.id - a.id);
+      clips.setValue(clipData);
+    }
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 function clearUnusedImages() {
@@ -36,18 +63,17 @@ function clearUnusedImages() {
     let childFile = enumerator.get_child(fileInfo);
     files.push(childFile);
   }
-  clips.value.split(/\r?\n/).forEach((clip) => {
-    let m = isImage(clip);
+  clips.value.forEach((clip) => {
+    let m = getImgInfo(clip.listItem);
     files.forEach((file) => {
       let filePath = file.get_path();
-      if (filePath.endsWith("db")) return;
-      if (m && filePath.includes(m.id)) return;
+      if (filePath.endsWith("db") || (m && filePath.includes(m.id))) return;
       fileExists(filePath) && file.delete(null);
     });
   });
 }
 
-function isImage(clip) {
+function getImgInfo(clip) {
   const regexPattern =
     /^([0-9]+)\s+(\[\[\s)?binary.*?\s([0-9]+.*)(png|jpeg|jpg|bmp)\s([0-9]+)x([0-9]+)/i;
   const match = clip.match(regexPattern);
@@ -67,28 +93,29 @@ Utils.monitorFile(`${Utils.HOME}/.cache/cliphist/db`, (_, __) => {
   clearUnusedImages();
 });
 
-const CliphistResult = (result) => {
+const CliphistResult = (clip) => {
   const btn = Widget.Button({
     attribute: {
-      result: result,
-      id: "CliphistResultButton",
+      clip: clip,
+      id: clip.id,
+      widgetID: "CliphistResultButton",
     },
     className: "CliphistResultButton",
     on_clicked: () => {
-      Utils.notify("AGS", `Copied: ${result}`);
-      let id = result.split(" ")[0];
-      Utils.execAsync(["bash", "-c", `cliphist decode ${id} | wl-copy`]).catch(
-        (err) => {
-          if (!err) return;
-          Utils.notify("AGS", `Error Copying: ${err}`);
-          console.log(err);
-        },
-      );
+      Utils.notify("AGS", `Copied: ${clip.listItem}`);
+      Utils.execAsync([
+        "bash",
+        "-c",
+        `cliphist decode ${clip.id} | wl-copy`,
+      ]).catch((err) => {
+        if (!err) return;
+        Utils.notify("AGS", `Error Copying: ${err}`);
+        console.log(err);
+      });
     },
     onSecondaryClick: () => {
-      Utils.notify("AGS", `Removed: ${result}`);
-      let id = result.match(/^([0-9]+)\s+/i)[1];
-      Utils.execAsync(["bash", "-c", `cliphist delete <<< ${id}`]).catch(
+      Utils.notify("AGS", `Removed: ${clip.listItem}`);
+      Utils.execAsync(["bash", "-c", `cliphist delete <<< ${clip.id}`]).catch(
         (err) => {
           if (!err) return;
           Utils.notify("AGS", `Error Removing: ${err}`);
@@ -96,18 +123,19 @@ const CliphistResult = (result) => {
         },
       );
     },
+    tooltipText: clip.id,
     child: Widget.Label({
       className: "CliphistResultLabel",
-      label: result,
-      lines: 3,
-      wrap: true,
+      label: clip.data,
+      tooltipText: clip.id,
       xalign: 0,
+      wrap: true,
+      maxWidthChars: 100,
       vpack: "center",
-      maxWidthChars: 40,
       truncate: "end",
     }),
   });
-  const m = isImage(result);
+  const m = getImgInfo(clip.listItem);
   if (m) {
     btn.child.label = `${m.id}.${m.extension} ${m.width}x${m.height} ${m.size}`;
     btn.child.vpack = "end";
@@ -128,36 +156,31 @@ const CliphistResult = (result) => {
       ]);
     }
   }
-
   return btn;
 };
 
 const ClipBoard = () => {
-  fetchClips();
   const list = Widget.Box({
     className: "ClipBoardList",
     vertical: true,
     spacing: 10,
-    children: clips.bind().as((c) => c.split(/\r?\n/).map(CliphistResult)),
+    children: clips.bind().as((c) => c.map(CliphistResult)),
   });
 
   function onChange({ text }) {
     if (!clips) return;
-    const filtered = clips.value
-      .split(/\r?\n/)
-      .filter((clip) => clip.includes(text));
+    const filtered = clips.value.filter((clip) => clip.data.includes(text));
     list.children = filtered.map(CliphistResult);
   }
 
   function onAccept() {
-    if (list.children[0].attribute.id === "CliphistResultButton") {
-      let result = list.children[0].attribute.result;
-      Utils.notify("AGS", `Copied: ${result}`);
-      result = result.split(" ")[0];
+    if (list.children[0].attribute.widgetID === "CliphistResultButton") {
+      let clip = list.children[0].attribute.clip;
+      Utils.notify("AGS", `Copied: ${clip.listItem}`);
       Utils.execAsync([
         "bash",
         "-c",
-        `cliphist decode ${result} | wl-copy`,
+        `cliphist decode ${clip.id} | wl-copy`,
       ]).catch((err) => {
         if (!err) return;
         Utils.notify("AGS", `Error Copying: ${err}`);
@@ -190,6 +213,8 @@ const ClipBoard = () => {
     vexpand: true,
     className: "spacing-5 ClipBoardBox",
     children: [entry, Scrollable],
+  }).on("realize", () => {
+    fetchClips();
   });
 };
 

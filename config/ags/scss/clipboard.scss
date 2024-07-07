@@ -28,6 +28,7 @@
   border-radius: 5px;
   transition: background 0.6s ease;
 
+  &:focus,
   &:hover {
     color: $primary;
     background-color: lighten($background, 5%);
@@ -40,8 +41,4 @@
     background-color: lighten($background, 0%);
   }
 
-  &:focus {
-    color: $primary;
-    background-color: lighten($background, 5%);
-  }
 }
