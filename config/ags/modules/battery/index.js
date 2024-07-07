@@ -1,10 +1,10 @@
 import battery from "resource:///com/github/Aylur/ags/service/battery.js";
 const iconsCharging = {
-  0: "battery-empty-charging",
-  20: "battery-caution-charging",
-  40: "battery-low-charging",
-  60: "battery-good-charging",
-  100: "battery-full-charging",
+  0: "battery-empty-charging-symbolic",
+  20: "battery-caution-charging-symbolic",
+  40: "battery-low-charging-symbolic",
+  60: "battery-good-charging-symbolic",
+  100: "battery-full-charging-symbolic",
 };
 const iconsDischarging = {
   0: "battery-empty-symbolic",
