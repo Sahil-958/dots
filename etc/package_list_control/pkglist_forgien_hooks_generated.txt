@@ -10,5 +10,6 @@ matugen-bin
 noisetorch
 pikaur
 rofi-lbonn-wayland-git
+vesktop-bin
 vscodium-bin
 youtube-music
