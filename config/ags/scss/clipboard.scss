@@ -1,0 +1,47 @@
+.ClipBoardWindowBox {
+  border-radius: 20px 0 0 0;
+  background-color: $background;
+  padding: 1rem;
+}
+
+
+.ClipBoardEntry {
+  all: unset;
+  padding: 0.5rem;
+  border-bottom: 1px solid $primary;
+  border-radius: 5px;
+  background-color: lighten($background, 10%);
+
+  &:focus {
+    border: none;
+    border-bottom: 1px solid $primary;
+    background-color: lighten($background, 5%);
+  }
+}
+
+.CliphistResultButton {
+  padding: 1rem;
+  background-color: lighten($background, 10%);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  transition: background 0.6s ease;
+
+  &:hover {
+    color: $primary;
+    background-color: lighten($background, 5%);
+    background-size: 105%;
+    background-position: top;
+  }
+
+  &:active {
+    color: $primary;
+    background-color: lighten($background, 0%);
+  }
+
+  &:focus {
+    color: $primary;
+    background-color: lighten($background, 5%);
+  }
+}
