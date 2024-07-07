@@ -49,6 +49,7 @@ linux
 linux-firmware
 man-db
 mesa-utils
+mpv
 neofetch
 neovim
 nethogs
