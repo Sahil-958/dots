@@ -44,6 +44,7 @@ jq
 kdeconnect
 konsole
 libgtop
+libqalculate
 linux
 linux-firmware
 man-db
