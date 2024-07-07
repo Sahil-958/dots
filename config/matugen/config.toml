@@ -3,6 +3,15 @@ input_path = '~/.config/matugen/templates/ags.scss'
 output_path = '~/.config/ags/scss/colors.scss'
 mode = "Dark"
 
+[templates.legacy]
+input_path = '~/.config/matugen/templates/legacy'
+output_path = '~/.cache/current_wall_path.txt'
+mode = "Dark"
+
+[templates.legacy1]
+input_path = '~/.config/matugen/templates/colors.sh'
+output_path = '~/.cache/matugen/colors.sh'
+mode = "Dark"
 
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/gtk.css'
