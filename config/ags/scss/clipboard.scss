@@ -21,7 +21,7 @@
 
 .CliphistResultButton {
   padding: 1rem;
-  background-color: lighten($background, 10%);
+  background-color: lighten($background, 15%);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -29,7 +29,8 @@
   transition: background 0.6s ease;
 
   &:focus,
-  &:hover {
+  &:hover,
+  &.hover {
     color: $primary;
     background-color: lighten($background, 5%);
     background-size: 105%;
