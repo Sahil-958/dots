@@ -139,6 +139,25 @@ export function notifyAndRemove(clip) {
   );
 }
 
+export function filterClips(clips, text) {
+  let filtered;
+  const patternRegex = /^r\/(.*?)(?:\/(.*))?$/;
+  const match = text.match(patternRegex);
+  if (match) {
+    try {
+      if (match[2] === undefined) match[2] = "";
+      const regx = new RegExp(match[1], match[2]);
+      filtered = clips.value.filter((clip) => regx.test(clip.data));
+    } catch (error) {
+      console.error("Your Regx Sucks Here's Why:", error.message);
+      filtered = clips.value.filter((clip) => clip.data.includes(text));
+    }
+  } else {
+    filtered = clips.value.filter((clip) => clip.data.includes(text));
+  }
+  return filtered;
+}
+
 Utils.monitorFile(`${Utils.HOME}/.cache/cliphist/db`, (_, __) => {
   fetchClips();
   clearUnusedImages();

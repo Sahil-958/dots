@@ -5,6 +5,7 @@ import {
   notifyAndCopy,
   notifyAndRemove,
   clips,
+  filterClips,
 } from "./clipboardService.js";
 
 const CliphistResult = (clip) => {
@@ -66,7 +67,7 @@ const ClipBoard = () => {
 
   function onChange({ text }) {
     if (!clips) return;
-    const filtered = clips.value.filter((clip) => clip.data.includes(text));
+    let filtered = filterClips(clips, text);
     list.children = filtered.map(CliphistResult);
   }
 
