@@ -1,10 +1,10 @@
 import Gtk from "gi://Gtk";
 import {
   fetchClips,
-  getImgInfo,
   notifyAndCopy,
   notifyAndRemove,
   clips,
+  debounce,
   filterClips,
 } from "./clipboardService.js";
 
@@ -12,8 +12,8 @@ const CliphistResult = (clip) => {
   const labelWid = Widget.Label({
     className: "CliphistResultLabel",
     label: clip.data,
-    tooltipText: `id:${clip.id}`,
     vexpand: true,
+    tooltipText: `id:${clip.id}`,
     xalign: 0,
   });
 
@@ -29,6 +29,16 @@ const CliphistResult = (clip) => {
       child: labelWid,
     }),
   });
+  const destroyWithAnims = () => {
+    secondRevealer.reveal_child = false;
+    Utils.timeout(200, () => {
+      firstRevealer.reveal_child = false;
+      Utils.timeout(200, () => {
+        notifyAndRemove(clip);
+        box.destroy();
+      });
+    });
+  };
 
   const eventBox = Widget.EventBox({
     attribute: {
@@ -36,41 +46,123 @@ const CliphistResult = (clip) => {
       id: clip.id,
       widgetID: "CliphistResultButton",
     },
+    width_request: 380,
     child: clipBox,
     on_hover: (self) => self.child.toggleClassName("hover", true),
     on_hover_lost: (self) => self.child.toggleClassName("hover", false),
     onPrimaryClick: () => notifyAndCopy(clip),
-    onSecondaryClick: () => notifyAndRemove(clip),
+    onSecondaryClick: () => {
+      destroyWithAnims();
+    },
   });
 
-  const m = getImgInfo(clip.listItem);
-  if (m) {
-    labelWid.label = `${m.id}.${m.extension} ${m.width}x${m.height} ${m.size}`;
+  if (clip.isImage) {
+    labelWid.label = `${clip.imgInfo.id}.${clip.imgInfo.extension} ${clip.imgInfo.width}x${clip.imgInfo.height} ${clip.imgInfo.size}`;
     clipBox.child.hscroll = "never";
     labelWid.vpack = labelWid.hpack = "end";
     labelWid.css = "background-color: rgba(0,0,0,0.5);";
     clipBox.css = `
-          background-image: url('file://${m.filePath}');
-          min-height: ${Math.min(m.height, 150)}px;
+          background-image: url('file://${clip.imgInfo.filePath}');
+          min-height: ${Math.min(clip.imgInfo.height, 150)}px;
           `;
   }
-  return eventBox;
+  const secondRevealer = Widget.Revealer({
+    child: eventBox,
+    reveal_child: false,
+    transition: "slide_left",
+    transition_duration: 200,
+    setup: (self) => {
+      Utils.timeout(1, () => {
+        self.reveal_child = true;
+      });
+    },
+  });
+
+  const firstRevealer = Widget.Revealer({
+    child: secondRevealer,
+    reveal_child: true,
+    transition: "slide_down",
+    transition_duration: 200,
+  });
+
+  const toggleWithAnims = (state) => {
+    if (state) {
+      box.show();
+      box.attribute.hiddenByAnim = false;
+    }
+    secondRevealer.reveal_child = state;
+    Utils.timeout(200, () => {
+      firstRevealer.reveal_child = state;
+      if (!state) {
+        Utils.timeout(200, () => {
+          box.hide();
+          box.attribute.hiddenByAnim = true;
+        });
+      }
+    });
+  };
+
+  let box;
+  box = Widget.Box({
+    vpack: "start",
+    hpack: "end",
+    hexpand: true,
+    attribute: {
+      clip: clip,
+      id: clip.id,
+      widgetID: "CliphistResultButton",
+      toggleWithAnims: toggleWithAnims,
+      hiddenByAnim: false,
+    },
+    children: [firstRevealer],
+  });
+
+  return box;
 };
 
 const ClipBoard = () => {
   const list = Widget.Box({
     className: "ClipBoardList",
     vertical: true,
+    hpack: "center",
     spacing: 10,
-    children: clips.bind().as((c) => c.map(CliphistResult)),
+    //children: clips.bind().as((c) => c.map(CliphistResult)),
+    setup: (self) => {
+      self.hook(clips, (self) => {
+        let newClips = clips.value.filter((c) => {
+          let isPresent = self.children.some((child) => {
+            return child.attribute.clip.id === c.id;
+          });
+          return !isPresent;
+        });
+        newClips.forEach((c) => {
+          self.pack_start(CliphistResult(c), false, false, 0);
+          //self.pack_end(CliphistResult(c), false, false, 0);
+        });
+      });
+    },
   });
 
   function onChange({ text }) {
     if (!clips) return;
     let filtered = filterClips(clips, text);
-    list.children = filtered.map(CliphistResult);
+    filtered.nonMatched.forEach((c) => {
+      list.children.forEach((child) => {
+        if (!child.attribute.hiddenByAnim && child.attribute.clip.id === c.id) {
+          child.attribute.toggleWithAnims(false);
+        }
+      });
+    });
+    filtered.matched.forEach((c) => {
+      list.children.forEach((child) => {
+        if (child.attribute.hiddenByAnim && child.attribute.clip.id === c.id) {
+          child.attribute.toggleWithAnims(true);
+        }
+      });
+    });
   }
 
+  const debouncedOnChange = debounce(onChange, 400);
   function onAccept() {
     if (list.children[0].attribute.widgetID === "CliphistResultButton") {
       let clip = list.children[0].attribute.clip;
@@ -83,10 +175,9 @@ const ClipBoard = () => {
     className: "ClipBoardEntry",
     placeholderText: "Enter Search term...",
     capsLockWarning: true,
-    hexpand: true,
     css: "margin-bottom: 10px;",
     on_accept: () => onAccept(),
-    on_change: ({ text }) => onChange({ text }),
+    on_change: ({ text }) => debouncedOnChange({ text }),
   });
 
   const Scrollable = Widget.Scrollable({
@@ -98,7 +189,6 @@ const ClipBoard = () => {
 
   return Widget.Box({
     vertical: true,
-    vexpand: true,
     className: "spacing-5 ClipBoardBox",
     children: [entry, Scrollable],
   }).on("realize", () => {
