@@ -1,15 +1,7 @@
-.ClipBoardWindowBox {
-  border-radius: 20px 0 0 0;
-  background-color: $background;
-  padding: 1rem;
-}
-
-
 .ClipBoardEntry {
   all: unset;
   padding: 0.5rem;
   border-bottom: 1px solid $primary;
-  border-radius: 5px;
   background-color: lighten($background, 10%);
 
   &:focus {
@@ -41,5 +33,4 @@
     color: $primary;
     background-color: lighten($background, 0%);
   }
-
 }

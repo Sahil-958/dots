@@ -71,7 +71,7 @@ export async function fetchClips() {
           listItem: listItem,
           data: listItem,
           isImage: true,
-          imgInfo: m,
+          img: m,
         };
       }
       clipData.push(newClip);

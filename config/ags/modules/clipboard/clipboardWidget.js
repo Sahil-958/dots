@@ -17,55 +17,52 @@ const CliphistResult = (clip) => {
     xalign: 0,
   });
 
-  const clipBox = Widget.Box({
-    className: "CliphistResultButton",
-    tooltipText: `id:${clip.id}`,
-    vertical: true,
-    vexpand: false,
-    can_focus: true,
-    child: Widget.Scrollable({
-      hscroll: "always",
-      vscroll: "never",
-      child: labelWid,
-    }),
-  });
   const destroyWithAnims = () => {
     secondRevealer.reveal_child = false;
     Utils.timeout(200, () => {
       firstRevealer.reveal_child = false;
       Utils.timeout(200, () => {
         notifyAndRemove(clip);
-        box.destroy();
+        revealerBox.destroy();
       });
     });
   };
 
   const eventBox = Widget.EventBox({
-    attribute: {
-      clip: clip,
-      id: clip.id,
-      widgetID: "CliphistResultButton",
-    },
-    width_request: 380,
-    child: clipBox,
+    width_request: ClipBoardContent.get_allocated_width(),
+    can_focus: true,
     on_hover: (self) => self.child.toggleClassName("hover", true),
     on_hover_lost: (self) => self.child.toggleClassName("hover", false),
     onPrimaryClick: () => notifyAndCopy(clip),
     onSecondaryClick: () => {
       destroyWithAnims();
     },
+    child: Widget.Box({
+      className: "CliphistResultButton",
+      tooltipText: `id:${clip.id}`,
+      vertical: true,
+      vexpand: false,
+      can_focus: true,
+      child: Widget.Scrollable({
+        hscroll: "always",
+        vscroll: "never",
+        child: labelWid,
+      }),
+      setup: (self) => {
+        if (clip.isImage) {
+          labelWid.label = `${clip.img.id}.${clip.img.extension} ${clip.img.width}x${clip.img.height} ${clip.img.size}`;
+          self.child.hscroll = "never";
+          labelWid.vpack = labelWid.hpack = "end";
+          labelWid.css = "background-color: rgba(0,0,0,0.5);";
+          self.css = `
+          background-image: url('file://${clip.img.filePath}');
+          min-height: ${Math.min(clip.img.height, 150)}px;
+          `;
+        }
+      },
+    }),
   });
 
-  if (clip.isImage) {
-    labelWid.label = `${clip.imgInfo.id}.${clip.imgInfo.extension} ${clip.imgInfo.width}x${clip.imgInfo.height} ${clip.imgInfo.size}`;
-    clipBox.child.hscroll = "never";
-    labelWid.vpack = labelWid.hpack = "end";
-    labelWid.css = "background-color: rgba(0,0,0,0.5);";
-    clipBox.css = `
-          background-image: url('file://${clip.imgInfo.filePath}');
-          min-height: ${Math.min(clip.imgInfo.height, 150)}px;
-          `;
-  }
   const secondRevealer = Widget.Revealer({
     child: eventBox,
     reveal_child: false,
@@ -87,8 +84,8 @@ const CliphistResult = (clip) => {
 
   const toggleWithAnims = (state) => {
     if (state) {
-      box.show();
-      box.attribute.hiddenByAnim = false;
+      revealerBox.show();
+      revealerBox.attribute.hiddenByAnim = false;
       firstRevealer.reveal_child = state;
     } else {
       secondRevealer.reveal_child = state;
@@ -97,8 +94,8 @@ const CliphistResult = (clip) => {
     Utils.timeout(200, () => {
       if (!state) {
         Utils.timeout(200, () => {
-          box.hide();
-          box.attribute.hiddenByAnim = true;
+          revealerBox.hide();
+          revealerBox.attribute.hiddenByAnim = true;
         });
         firstRevealer.reveal_child = state;
       } else {
@@ -107,8 +104,8 @@ const CliphistResult = (clip) => {
     });
   };
 
-  let box;
-  box = Widget.Box({
+  let revealerBox;
+  revealerBox = Widget.Box({
     vpack: "start",
     hpack: "end",
     hexpand: true,
@@ -122,14 +119,13 @@ const CliphistResult = (clip) => {
     children: [firstRevealer],
   });
 
-  return box;
+  return revealerBox;
 };
 
 const ClipBoard = () => {
   const list = Widget.Box({
     className: "ClipBoardList",
     vertical: true,
-    hpack: "center",
     spacing: 10,
     //children: clips.bind().as((c) => c.map(CliphistResult)),
     setup: (self) => {
@@ -184,7 +180,6 @@ const ClipBoard = () => {
     className: "ClipBoardEntry",
     placeholderText: "Enter Search term...",
     capsLockWarning: true,
-    css: "margin-bottom: 10px;",
     on_accept: () => onAccept(),
     on_change: ({ text }) => debouncedOnChange({ text }),
   });
@@ -198,7 +193,8 @@ const ClipBoard = () => {
 
   return Widget.Box({
     vertical: true,
-    className: "spacing-5 ClipBoardBox",
+    className: "ClipBoardBox",
+    spacing: 10,
     children: [entry, Scrollable],
   }).on("realize", () => {
     fetchClips();
