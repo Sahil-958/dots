@@ -1,36 +1,41 @@
 import Gio from "gi://Gio";
 
+export const clips = Variable([]);
 const path = `${Utils.HOME}/.cache/cliphist/`;
+let isFetching = false;
+
+Utils.monitorFile(`${Utils.HOME}/.cache/cliphist/db`, (file, event) => {
+  if (event !== Gio.FileMonitorEvent.CHANGES_DONE_HINT) return;
+  fetchClips();
+  clearUnusedImages();
+});
 
 export function fileExists(filename) {
   let file = Gio.File.new_for_path(filename);
   return file.query_exists(null);
 }
 
-export const clips = Variable([]);
-
 export async function fetchClips() {
+  if (isFetching) return;
+  isFetching = true;
   try {
     let clipData = clips.value;
     const result = await Utils.execAsync(["bash", "-c", "cliphist list"]);
     if (!result) return;
     const items = result.split(/\r?\n/);
-    clipData = clipData.filter((c) => items.some((i) => i.includes(c.id)));
 
     const newItems = items.filter((item) => {
-      const idMatch = item.match(/^([0-9]+)\s+/i);
-      if (!idMatch) return false;
-      const id = idMatch[1];
+      const id = item.match(/^([0-9]+)\s+/i)[1];
+      if (!id) return false;
       return !clipData.some((clip) => clip.id === id);
     });
-
     if (newItems.length === 0) return;
 
     const decodePromises = newItems.map(async (listItem) => {
       const idMatch = listItem.match(/^([0-9]+)\s+/i);
       if (!idMatch) return; // Skip items without a valid id
       const id = idMatch[1];
-
+      let newClip;
       const m = getImgInfo(listItem);
       if (!m) {
         try {
@@ -39,11 +44,12 @@ export async function fetchClips() {
             "-c",
             `cliphist decode ${id}`,
           ]);
-          clipData.push({
+          newClip = {
             id: id,
             listItem: listItem,
             data: decodedlistItem,
-          });
+            isImage: false,
+          };
         } catch (err) {
           console.error(`Error decoding clip ${id}:`, err);
         }
@@ -51,7 +57,7 @@ export async function fetchClips() {
         const filePath = `${path}/${m.id}.${m.extension}`;
         if (!fileExists(filePath)) {
           try {
-            await Utils.execAsync([
+            Utils.execAsync([
               "bash",
               "-c",
               `cliphist decode ${m.id} > "${filePath}"`,
@@ -60,14 +66,26 @@ export async function fetchClips() {
             console.error(`Error decoding and saving image ${m.id}:`, err);
           }
         }
-        clipData.push({ id: id, listItem: listItem, data: listItem });
+        newClip = {
+          id: id,
+          listItem: listItem,
+          data: listItem,
+          isImage: true,
+          imgInfo: m,
+        };
       }
+      clipData.push(newClip);
     });
     await Promise.all(decodePromises);
+    clipData = clipData.filter((c) => {
+      return items.some((i) => i.includes(c.id));
+    });
     clipData.sort((a, b) => b.id - a.id);
     clips.setValue(clipData);
   } catch (err) {
     console.error("Error fetching clips:", err);
+  } finally {
+    isFetching = false;
   }
 }
 
@@ -128,7 +146,6 @@ export function notifyAndCopy(clip) {
 }
 
 export function notifyAndRemove(clip) {
-  clips.value = clips.value.filter((c) => c.id !== clip.id);
   Utils.notify("AGS", `Removed: ${clip.listItem}`);
   Utils.execAsync(["bash", "-c", `cliphist delete <<< ${clip.id}`]).catch(
     (err) => {
@@ -139,26 +156,52 @@ export function notifyAndRemove(clip) {
   );
 }
 
+export const debounce = (fn, ms = 300) => {
+  let timeoutId;
+  return function (...args) {
+    const context = this;
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn.apply(context, args), ms);
+  };
+};
+
 export function filterClips(clips, text) {
-  let filtered;
   const patternRegex = /^r\/(.*?)(?:\/(.*))?$/;
   const match = text.match(patternRegex);
+
+  let matched = [];
+  let nonMatched = [];
+
   if (match) {
     try {
       if (match[2] === undefined) match[2] = "";
       const regx = new RegExp(match[1], match[2]);
-      filtered = clips.value.filter((clip) => regx.test(clip.data));
+      clips.value.forEach((clip) => {
+        if (regx.test(clip.data)) {
+          matched.push(clip);
+        } else {
+          nonMatched.push(clip);
+        }
+      });
     } catch (error) {
       console.error("Your Regx Sucks Here's Why:", error.message);
-      filtered = clips.value.filter((clip) => clip.data.includes(text));
+      clips.value.forEach((clip) => {
+        if (clip.data.includes(text)) {
+          matched.push(clip);
+        } else {
+          nonMatched.push(clip);
+        }
+      });
     }
   } else {
-    filtered = clips.value.filter((clip) => clip.data.includes(text));
+    clips.value.forEach((clip) => {
+      if (clip.data.toLowerCase().includes(text.toLowerCase())) {
+        matched.push(clip);
+      } else {
+        nonMatched.push(clip);
+      }
+    });
   }
-  return filtered;
-}
 
-Utils.monitorFile(`${Utils.HOME}/.cache/cliphist/db`, (_, __) => {
-  fetchClips();
-  clearUnusedImages();
-});
+  return { matched, nonMatched };
+}
