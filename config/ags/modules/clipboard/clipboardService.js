@@ -177,7 +177,10 @@ export function filterClips(clips, text) {
       if (match[2] === undefined) match[2] = "";
       const regx = new RegExp(match[1], match[2]);
       clips.value.forEach((clip) => {
-        if (regx.test(clip.data)) {
+        if (
+          regx.test(clip.data) ||
+          (clip.isImage && regx.test(clip.listItem))
+        ) {
           matched.push(clip);
         } else {
           nonMatched.push(clip);
@@ -186,7 +189,10 @@ export function filterClips(clips, text) {
     } catch (error) {
       console.error("Your Regx Sucks Here's Why:", error.message);
       clips.value.forEach((clip) => {
-        if (clip.data.includes(text)) {
+        if (
+          clip.data.includes(text) ||
+          (clip.isImage && clip.listItem.includes(text))
+        ) {
           matched.push(clip);
         } else {
           nonMatched.push(clip);

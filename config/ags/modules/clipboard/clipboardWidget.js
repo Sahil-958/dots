@@ -89,15 +89,20 @@ const CliphistResult = (clip) => {
     if (state) {
       box.show();
       box.attribute.hiddenByAnim = false;
-    }
-    secondRevealer.reveal_child = state;
-    Utils.timeout(200, () => {
       firstRevealer.reveal_child = state;
+    } else {
+      secondRevealer.reveal_child = state;
+    }
+
+    Utils.timeout(200, () => {
       if (!state) {
         Utils.timeout(200, () => {
           box.hide();
           box.attribute.hiddenByAnim = true;
         });
+        firstRevealer.reveal_child = state;
+      } else {
+        secondRevealer.reveal_child = state;
       }
     });
   };
@@ -147,16 +152,20 @@ const ClipBoard = () => {
     if (!clips) return;
     let filtered = filterClips(clips, text);
     filtered.nonMatched.forEach((c) => {
-      list.children.forEach((child) => {
+      list.children.forEach((child, idx) => {
         if (!child.attribute.hiddenByAnim && child.attribute.clip.id === c.id) {
-          child.attribute.toggleWithAnims(false);
+          Utils.timeout(100 * idx, () => {
+            child.attribute.toggleWithAnims(false);
+          });
         }
       });
     });
     filtered.matched.forEach((c) => {
-      list.children.forEach((child) => {
+      list.children.forEach((child, idx) => {
         if (child.attribute.hiddenByAnim && child.attribute.clip.id === c.id) {
-          child.attribute.toggleWithAnims(true);
+          Utils.timeout(100 * idx, () => {
+            child.attribute.toggleWithAnims(true);
+          });
         }
       });
     });
