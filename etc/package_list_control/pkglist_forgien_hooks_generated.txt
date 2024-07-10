@@ -11,4 +11,3 @@ noisetorch
 pikaur
 rofi-lbonn-wayland-git
 vscodium-bin
-youtube-music
