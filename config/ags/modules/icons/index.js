@@ -48,6 +48,7 @@ export default {
     mpris: "audio-x-generic-symbolic",
     chatgpt: "chatgpt-symbolic",
     clipboard: "edit-paste-symbolic",
+    wallselector: "wallSelector-symbolic",
   },
   bluetooth: {
     enabled: "bluetooth-active-symbolic",

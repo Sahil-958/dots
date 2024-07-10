@@ -3,6 +3,7 @@ import icons from "../icons/index.js";
 import MprisPlayerList from "../mpris/index.js";
 import AudioContent from "../audio/index.js";
 import ClipBoardContent from "../clipboard/index.js";
+import wallSelectorContent from "../wallSelector/wallSelectorWidget.js";
 import { QSChatGPT } from "../chatGPT/index.js";
 import Menu from "./menu.js";
 import Notifications from "resource:///com/github/Aylur/ags/service/notifications.js";
@@ -156,6 +157,18 @@ const QSClipboard = () =>
 /**
  * @returns {import('types/@girs/gtk-3.0/gtk-3.0').Gtk.Widget}
  */
+const QSWallSelector = () =>
+  QuickSettingsPage(
+    Menu({
+      title: "Wall Selector",
+      icon: icons.quicksettings.wallselector,
+      content: wallSelectorContent,
+    }),
+  );
+
+/**
+ * @returns {import('types/@girs/gtk-3.0/gtk-3.0').Gtk.Widget}
+ */
 const QSMpris = () => {
   return QuickSettingsPage(
     Widget.Box({
@@ -193,6 +206,7 @@ export const Quicksettings = () => {
     Mpris: QSMpris(),
     ChatGPT: QSChatGPT(),
     Clipboard: QSClipboard(),
+    WallSelector: QSWallSelector(),
   };
   return items;
 };

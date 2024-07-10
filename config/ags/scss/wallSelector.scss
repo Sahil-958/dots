@@ -1,0 +1,54 @@
+.wallSelectorEntry {
+  all: unset;
+  padding: 0.5rem;
+  border-bottom: 1px solid $primary;
+  background-color: lighten($background, 10%);
+
+  &:focus {
+    border: none;
+    border-bottom: 1px solid $primary;
+    background-color: lighten($background, 5%);
+  }
+}
+
+.wallSelectorResultLabel {
+  color: $primary;
+  padding: 0.5rem 0;
+  background-color: rgba($surface, 0.5);
+  border-radius: 15px 15px 0 0;
+  transition: background 0.6s ease;
+}
+
+.wallSelectorResultBox {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  transition: background 0.6s ease;
+}
+
+.wallSelectorResultButton {
+  background-color: lighten($background, 15%);
+
+  &:focus,
+  &:hover {
+    .wallSelectorResultBox {
+      color: $primary;
+      background-color: lighten($background, 5%);
+      background-size: 105%;
+      background-position: top;
+    }
+
+    .wallSelectorResultLabel {
+      background-color: rgba($surface, 0.9);
+    }
+  }
+
+  &:active {
+    .wallSelectorResultBox {
+      color: $primary;
+      background-color: lighten($background, 0%);
+    }
+  }
+
+}
