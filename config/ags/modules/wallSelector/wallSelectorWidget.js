@@ -13,8 +13,7 @@ const wallSelectorResult = (wall) => {
     className: "wallSelectorResultLabel",
     label: wall.fullResPath.split("/").pop(),
     vpack: "end",
-    hpack: "fill",
-    hexpand: true,
+    hpack: "center",
     vexpand: true,
     tooltipText: `${wall.fullResPath}`,
     xalign: 0.5,
@@ -29,11 +28,10 @@ const wallSelectorResult = (wall) => {
       });
     });
   };
-  let containerWidth = wallSelectorContent.get_allocated_width();
   const btn = Widget.Button({
     className: "wallSelectorResultButton",
     can_focus: true,
-    width_request: containerWidth,
+    width_request: 395,
     onPrimaryClick: () => updateWallpaper(wall),
     onSecondaryClick: () => copyWallPath(wall),
     child: Widget.Box({
@@ -44,7 +42,7 @@ const wallSelectorResult = (wall) => {
       child: labelWid,
       css: `
           background-image: url("file://${wall.cachedPath}");
-          min-height: ${Math.min((wall.dimensions.height * containerWidth) / wall.dimensions.width, 200)}px;
+          min-height: ${Math.min((wall.dimensions.height * 395) / wall.dimensions.width, 200)}px;
           `,
     }),
   });
