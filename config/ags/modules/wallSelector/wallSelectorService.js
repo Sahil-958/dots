@@ -99,7 +99,7 @@ export function filterwalls(text) {
 export function updateWallpaper(wall) {
   let wallName = wall.fullResPath.split("/").pop();
   Utils.notify("AGS", "Updating Wallpaper to: " + wallName);
-  let command = `matugen image ${wall.fullResPath} --show-colors -t scheme-content`;
+  let command = `matugenWall.sh  "${wall.fullResPath}" `;
 
   Utils.execAsync(["bash", "-c", command]).catch((err) => {
     console.error("Error updating wallpaper:", err);
