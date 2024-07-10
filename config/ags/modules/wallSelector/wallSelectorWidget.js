@@ -12,6 +12,9 @@ const wallSelectorResult = (wall) => {
   const labelWid = Widget.Label({
     className: "wallSelectorResultLabel",
     label: wall.fullResPath.split("/").pop(),
+    wrap: true,
+    maxWidthChars: 40,
+    truncate: "end",
     vpack: "end",
     hpack: "center",
     vexpand: true,
