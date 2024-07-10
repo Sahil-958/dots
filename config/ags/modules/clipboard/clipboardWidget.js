@@ -144,9 +144,11 @@ const ClipBoard = () => {
           });
           return !isPresent;
         });
-        newClips.forEach((c) => {
-          self.pack_start(CliphistResult(c), false, false, 0);
-          //self.pack_end(CliphistResult(c), false, false, 0);
+        newClips.forEach((c, idx) => {
+          Utils.timeout(100 * idx, () => {
+            self.pack_start(CliphistResult(c), false, false, 0);
+            //self.pack_end(CliphistResult(c), false, false, 0);
+          });
         });
       });
     },
