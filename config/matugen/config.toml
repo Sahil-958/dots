@@ -45,9 +45,13 @@ reload_apps = false
 set_wallpaper = true
 wallpaper_tool = 'Swww'
 swww_options = [
-	"--transition-step",
-	"10",
-	"--transition-fps",
-	"90"
+    "--transition-step",
+    "10",
+    "--transition-fps",
+    "90",
+    "--transition-type",
+    "random",
+    "--transition-duration",
+    "1.0",
 ]
 
