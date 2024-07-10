@@ -26,6 +26,7 @@ fd
 ffmpegthumbs
 firefox
 firewalld
+flatpak
 fzf
 git
 glava
