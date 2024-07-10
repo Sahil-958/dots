@@ -11,26 +11,33 @@
   }
 }
 
-.CliphistResultButton {
+.CliphistResultBox {
   padding: 1rem;
-  background-color: lighten($background, 15%);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 5px;
   transition: background 0.6s ease;
+}
+
+.CliphistResultEventBox {
+  background-color: lighten($background, 15%);
 
   &:focus,
-  &:hover,
-  &.hover {
-    color: $primary;
-    background-color: lighten($background, 5%);
-    background-size: 105%;
-    background-position: top;
+  &:hover {
+    .CliphistResultBox {
+      color: $primary;
+      background-color: lighten($background, 5%);
+      background-size: 105%;
+      background-position: top;
+    }
   }
 
   &:active {
-    color: $primary;
-    background-color: lighten($background, 0%);
+    .CliphistResultBox {
+      color: $primary;
+      background-color: lighten($background, 0%);
+    }
   }
+
 }

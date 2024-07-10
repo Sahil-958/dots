@@ -29,20 +29,18 @@ const CliphistResult = (clip) => {
   };
 
   const eventBox = Widget.EventBox({
+    className: "CliphistResultEventBox",
     width_request: ClipBoardContent.get_allocated_width(),
     can_focus: true,
-    on_hover: (self) => self.child.toggleClassName("hover", true),
-    on_hover_lost: (self) => self.child.toggleClassName("hover", false),
     onPrimaryClick: () => notifyAndCopy(clip),
     onSecondaryClick: () => {
       destroyWithAnims();
     },
     child: Widget.Box({
-      className: "CliphistResultButton",
+      className: "CliphistResultBox",
       tooltipText: `id:${clip.id}`,
       vertical: true,
       vexpand: false,
-      can_focus: true,
       child: Widget.Scrollable({
         hscroll: "always",
         vscroll: "never",
@@ -61,6 +59,16 @@ const CliphistResult = (clip) => {
         }
       },
     }),
+    setup: (self) => {
+      self.keybind("Return", () => notifyAndCopy(clip));
+      self.keybind("d", () => destroyWithAnims());
+      self.keybind("h", () => {
+        self.child.child.hadjustment.value -= 30;
+      });
+      self.keybind("l", () => {
+        self.child.child.hadjustment.value += 30;
+      });
+    },
   });
 
   const secondRevealer = Widget.Revealer({
