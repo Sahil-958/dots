@@ -4,6 +4,7 @@ import {
   notifyAndCopy,
   notifyAndRemove,
   clips,
+  removedClips,
   debounce,
   filterClips,
 } from "./clipboardService.js";
@@ -17,12 +18,12 @@ const CliphistResult = (clip) => {
     xalign: 0,
   });
 
-  const destroyWithAnims = () => {
+  const destroyWithAnims = (onlyUi = false) => {
     secondRevealer.reveal_child = false;
     Utils.timeout(200, () => {
       firstRevealer.reveal_child = false;
       Utils.timeout(200, () => {
-        notifyAndRemove(clip);
+        if (!onlyUi) notifyAndRemove(clip);
         revealerBox.destroy();
       });
     });
@@ -122,6 +123,7 @@ const CliphistResult = (clip) => {
       id: clip.id,
       widgetID: "CliphistResultButton",
       toggleWithAnims: toggleWithAnims,
+      destroyWithAnims: destroyWithAnims,
       hiddenByAnim: false,
     },
     children: [firstRevealer],
@@ -137,6 +139,18 @@ const ClipBoard = () => {
     spacing: 10,
     //children: clips.bind().as((c) => c.map(CliphistResult)),
     setup: (self) => {
+      self.hook(removedClips, (self) => {
+        let removed = removedClips.value;
+        removed.forEach((c) => {
+          self.children.forEach((child, idx) => {
+            if (child.attribute.clip.id === c.id) {
+              Utils.timeout(100 * idx, () => {
+                child.attribute.destroyWithAnims(true);
+              });
+            }
+          });
+        });
+      });
       self.hook(clips, (self) => {
         let newClips = clips.value.filter((c) => {
           let isPresent = self.children.some((child) => {

@@ -1,6 +1,7 @@
 import Gio from "gi://Gio";
 
 export const clips = Variable([]);
+export const removedClips = Variable([]);
 const path = `${Utils.HOME}/.cache/cliphist/`;
 let isFetching = false;
 
@@ -21,8 +22,17 @@ export async function fetchClips() {
   try {
     let clipData = clips.value;
     const result = await Utils.execAsync(["bash", "-c", "cliphist list"]);
-    if (!result) return;
+    if (!result) {
+      removedClips.setValue(clipData);
+      clips.setValue([]);
+      return;
+    }
     const items = result.split(/\r?\n/);
+    removedClips.setValue(
+      clipData.filter((clip) => {
+        return !items.some((item) => item.includes(clip.id));
+      }),
+    );
 
     const newItems = items.filter((item) => {
       const id = item.match(/^([0-9]+)\s+/i)[1];
@@ -146,7 +156,7 @@ export function notifyAndCopy(clip) {
 }
 
 export function notifyAndRemove(clip) {
-  Utils.notify("AGS", `Removed: ${clip.listItem}`);
+  Utils.notify("AGS", `Removing: ${clip.listItem}`);
   Utils.execAsync(["bash", "-c", `cliphist delete <<< ${clip.id}`]).catch(
     (err) => {
       if (!err) return;
