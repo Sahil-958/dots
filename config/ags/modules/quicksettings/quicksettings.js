@@ -151,6 +151,18 @@ const QSClipboard = () =>
       title: "Clipboard",
       icon: icons.quicksettings.clipboard,
       content: ClipBoardContent,
+      headerChild: Widget.Box({
+        class_name: "spacing-5",
+        child: Widget.Button({
+          on_clicked: () =>
+            Utils.execAsync(["bash", "-c", "cliphist wipe"]).catch(
+              console.error,
+            ),
+          child: Widget.Box({
+            children: [Widget.Label("Clear "), Widget.Icon(icons.trash.empty)],
+          }),
+        }),
+      }),
     }),
   );
 
