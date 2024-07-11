@@ -97,7 +97,6 @@ tlp
 tree
 ttf-cascadia-code-nerd
 ttf-fira-sans
-typst
 unzip
 vi
 vim
