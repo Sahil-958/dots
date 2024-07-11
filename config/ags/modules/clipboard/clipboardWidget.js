@@ -31,7 +31,7 @@ const CliphistResult = (clip) => {
 
   const eventBox = Widget.EventBox({
     className: "CliphistResultEventBox",
-    width_request: ClipBoardContent.get_allocated_width(),
+    width_request: 395,
     can_focus: true,
     onPrimaryClick: () => notifyAndCopy(clip),
     onSecondaryClick: () => {
