@@ -54,10 +54,20 @@ export async function fetchClips() {
             "-c",
             `cliphist decode ${id}`,
           ]);
+          let decodedDataItems = decodedlistItem.split(/\r?\n/);
+          let processedLabel =
+            decodedDataItems.length > 60
+              ? decodedDataItems.slice(0, 20).join("\n") +
+                "\n\n\n<...TEXT TO LARGE TO DISPLAY...>" +
+                "\n<...SEARCH & COPY OPERATIONS ARE " +
+                "\nSTILL DONE WITH ORIGINAL TEXT...>\n\n\n" +
+                decodedDataItems.slice(-20).join("\n")
+              : decodedlistItem;
           newClip = {
             id: id,
             listItem: listItem,
             data: decodedlistItem,
+            label: processedLabel,
             isImage: false,
           };
         } catch (err) {
