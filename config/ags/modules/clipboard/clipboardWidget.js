@@ -12,8 +12,7 @@ import {
 const CliphistResult = (clip) => {
   const labelWid = Widget.Label({
     className: "CliphistResultLabel",
-    label: clip.data,
-    vexpand: true,
+    label: clip.label,
     tooltipText: `id:${clip.id}`,
     xalign: 0,
   });
