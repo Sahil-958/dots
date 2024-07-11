@@ -12,6 +12,7 @@ import BatteryLabel from "../battery/index.js";
 import { MusicBarContainer } from "../mpris/index.js";
 import Cairo from "cairo";
 import NetworkSpeeds from "../network/speeds.js";
+import { Taskbar } from "../taskbar/index.js";
 
 const Right = () =>
   Widget.EventBox({
@@ -73,7 +74,7 @@ const Left = () =>
     on_secondary_click_release: () =>
       (hideEmptyWorkspaces.value = !hideEmptyWorkspaces.value),
     child: Widget.Box({
-      children: [Workspaces(), FocusedTitle()],
+      children: [Workspaces(), Taskbar(), FocusedTitle()],
     }),
   });
 
