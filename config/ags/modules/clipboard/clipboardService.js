@@ -16,6 +16,39 @@ export function fileExists(filename) {
   return file.query_exists(null);
 }
 
+function processLabel(text, threshold = 60, slCount = 20, elCount = 20) {
+  let lines = text.split(/\r?\n/);
+  //I have sat the text limit to 60 lines, you can change it to any number you want under 500 or so
+  //as generting that large widget will make ags unperformant
+  //I'm keeping at 60 is because i want this box to not take all the
+  //height of scroll1able container i want other box to be visible a
+  //little
+  let warningText = `<span foreground="#FF0000" weight="bold" size="larger">Warning</span> 
+<span foreground="#FF0000">This clip is <span weight="bold">${lines.length}</span> lines long.</span>
+<span foreground="#FF0000">Initial ${slCount} and Last ${elCount} lines are shown.</span>
+<span foreground="#FF0000">You can still copy and search the full text.</span>
+<span foreground="#FF0000">Starting of Initail ${slCount} lines</span>
+<span foreground="#FF0000">----------------------------------</span>
+`;
+
+  let middleInfo = `
+<span foreground="#FF0000">----------------------------------</span>
+<span foreground="#FF0000">Ending of Initail ${slCount} lines</span>
+<span foreground="#FF0000">.
+.
+.</span>
+<span foreground="#FF0000">Starting of Last ${elCount} lines</span>
+<span foreground="#FF0000">----------------------------------</span>
+`;
+
+  return lines.length > threshold
+    ? warningText +
+        lines.slice(0, slCount).join("\n") +
+        middleInfo +
+        lines.slice(-elCount).join("\n")
+    : text;
+}
+
 export async function fetchClips() {
   if (isFetching) return;
   isFetching = true;
@@ -54,20 +87,11 @@ export async function fetchClips() {
             "-c",
             `cliphist decode ${id}`,
           ]);
-          let decodedDataItems = decodedlistItem.split(/\r?\n/);
-          let processedLabel =
-            decodedDataItems.length > 60
-              ? decodedDataItems.slice(0, 20).join("\n") +
-                "\n\n\n<...TEXT TO LARGE TO DISPLAY...>" +
-                "\n<...SEARCH & COPY OPERATIONS ARE " +
-                "\nSTILL DONE WITH ORIGINAL TEXT...>\n\n\n" +
-                decodedDataItems.slice(-20).join("\n")
-              : decodedlistItem;
           newClip = {
             id: id,
             listItem: listItem,
             data: decodedlistItem,
-            label: processedLabel,
+            label: processLabel(decodedlistItem),
             isImage: false,
           };
         } catch (err) {
