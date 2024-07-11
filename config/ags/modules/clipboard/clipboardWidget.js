@@ -10,13 +10,6 @@ import {
 } from "./clipboardService.js";
 
 const CliphistResult = (clip) => {
-  const labelWid = Widget.Label({
-    className: "CliphistResultLabel",
-    label: clip.label,
-    tooltipText: `id:${clip.id}`,
-    xalign: 0,
-  });
-
   const destroyWithAnims = (onlyUi = false) => {
     secondRevealer.reveal_child = false;
     Utils.timeout(200, () => {
@@ -27,6 +20,14 @@ const CliphistResult = (clip) => {
       });
     });
   };
+
+  const labelWid = Widget.Label({
+    className: "CliphistResultLabel",
+    useMarkup: true,
+    label: clip.label,
+    tooltipText: `id:${clip.id}`,
+    xalign: 0,
+  });
 
   const eventBox = Widget.EventBox({
     className: "CliphistResultEventBox",
