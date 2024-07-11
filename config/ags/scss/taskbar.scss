@@ -1,0 +1,23 @@
+.taskbarContainer {
+  background-color: $background;
+  padding: 3px;
+
+  .taskbar {
+    border: 1px solid $primary;
+    border-radius: 2rem;
+    padding: 0 5px;
+
+    .taskbarButton {
+      padding: 2px;
+    }
+
+    .taskbarIcon {
+      font-size: 1.5rem;
+    }
+
+    .Active {
+      border-bottom: 2px solid $primary;
+      padding: 0 5px;
+    }
+  }
+}
