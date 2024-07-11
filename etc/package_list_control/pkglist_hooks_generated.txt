@@ -118,5 +118,4 @@ xorg-xkill
 xorg-xprop
 xorg-xsetroot
 yt-dlp
-zathura
 zip
