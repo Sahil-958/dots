@@ -91,6 +91,7 @@ swappy
 swww
 tesseract
 tesseract-data-eng
+texlive-binextra
 tldr
 tlp
 tree
