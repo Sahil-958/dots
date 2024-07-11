@@ -91,7 +91,6 @@ swappy
 swww
 tesseract
 tesseract-data-eng
-texlive-binextra
 tldr
 tlp
 tree
@@ -118,6 +117,4 @@ xorg-xkill
 xorg-xprop
 xorg-xsetroot
 yt-dlp
-zathura
-zathura-pdf-mupdf
 zip
