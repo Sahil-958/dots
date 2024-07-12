@@ -8,6 +8,7 @@ export const Taskbar = () => {
 
   return Widget.Box({
     class_name: "taskbarContainer",
+    visible: Hyprland.bind("clients").as((clients) => clients.length > 0),
     child: Widget.Box({
       class_name: "taskbar",
       children: Hyprland.bind("clients").as((clients) => {
