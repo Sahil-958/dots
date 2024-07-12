@@ -66,10 +66,10 @@ const Center = () =>
 const Left = () =>
   Widget.EventBox({
     on_scroll_up: () => {
-      Brightness.screen_value += 0.03;
+      Brightness.screen_value += 0.01;
     },
     on_scroll_down: () => {
-      Brightness.screen_value -= 0.03;
+      Brightness.screen_value -= 0.01;
     },
     on_secondary_click_release: () =>
       (hideEmptyWorkspaces.value = !hideEmptyWorkspaces.value),
