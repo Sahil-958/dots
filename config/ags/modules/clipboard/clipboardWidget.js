@@ -1,8 +1,8 @@
 import Gtk from "gi://Gtk";
 import {
   fetchClips,
-  notifyAndCopy,
-  notifyAndRemove,
+  Copy,
+  Remove,
   clips,
   removedClips,
   debounce,
@@ -12,10 +12,10 @@ import {
 const CliphistResult = (clip) => {
   const destroyWithAnims = (onlyUi = false) => {
     secondRevealer.reveal_child = false;
-    Utils.timeout(200, () => {
+    Utils.timeout(100, () => {
       firstRevealer.reveal_child = false;
-      Utils.timeout(200, () => {
-        if (!onlyUi) notifyAndRemove(clip);
+      Utils.timeout(100, () => {
+        if (!onlyUi) Remove(clip);
         revealerBox.destroy();
       });
     });
@@ -33,7 +33,7 @@ const CliphistResult = (clip) => {
     className: "CliphistResultEventBox",
     width_request: 395,
     can_focus: true,
-    onPrimaryClick: () => notifyAndCopy(clip),
+    onPrimaryClick: () => Copy(clip),
     onSecondaryClick: () => {
       destroyWithAnims();
     },
@@ -61,7 +61,7 @@ const CliphistResult = (clip) => {
       },
     }),
     setup: (self) => {
-      self.keybind("Return", () => notifyAndCopy(clip));
+      self.keybind("Return", () => Copy(clip));
       self.keybind("d", () => destroyWithAnims());
       self.keybind("h", () => {
         self.child.child.hadjustment.value -= 30;
@@ -100,9 +100,9 @@ const CliphistResult = (clip) => {
       secondRevealer.reveal_child = state;
     }
 
-    Utils.timeout(200, () => {
+    Utils.timeout(100, () => {
       if (!state) {
-        Utils.timeout(200, () => {
+        Utils.timeout(100, () => {
           revealerBox.hide();
           revealerBox.attribute.hiddenByAnim = true;
         });
@@ -195,7 +195,7 @@ const ClipBoard = () => {
   function onAccept() {
     if (list.children[0].attribute.widgetID === "CliphistResultButton") {
       let clip = list.children[0].attribute.clip;
-      notifyAndCopy(clip);
+      Copy(clip);
     }
   }
 
