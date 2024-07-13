@@ -1,4 +1,5 @@
 adw-gtk3-git
+adwaita-qt5-git
 aylurs-gtk-shell
 cava
 gtk-session-lock
