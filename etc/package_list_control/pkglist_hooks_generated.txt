@@ -9,8 +9,6 @@ bc
 bind
 blueman
 bluez-utils
-breeze
-breeze-gtk
 breeze-icons
 brightnessctl
 btop
