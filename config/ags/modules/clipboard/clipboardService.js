@@ -178,8 +178,7 @@ export function getImgInfo(clip) {
     : null;
 }
 
-export function notifyAndCopy(clip) {
-  Utils.notify("AGS", `Copied: ${clip.listItem}`);
+export function Copy(clip) {
   Utils.execAsync(["bash", "-c", `cliphist decode ${clip.id} | wl-copy`]).catch(
     (err) => {
       if (!err) return;
@@ -189,8 +188,7 @@ export function notifyAndCopy(clip) {
   );
 }
 
-export function notifyAndRemove(clip) {
-  Utils.notify("AGS", `Removing: ${clip.listItem}`);
+export function Remove(clip) {
   Utils.execAsync(["bash", "-c", `cliphist delete <<< ${clip.id}`]).catch(
     (err) => {
       if (!err) return;
