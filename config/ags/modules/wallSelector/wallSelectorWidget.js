@@ -8,9 +8,9 @@ import {
   debounce,
 } from "./wallSelectorService.js";
 
-const wallSelectorResult = (wall) => {
+const Wall = (wall, frState = true, srState = true) => {
   const labelWid = Widget.Label({
-    className: "wallSelectorResultLabel",
+    className: "WallLabel",
     label: wall.fullResPath.split("/").pop(),
     wrap: true,
     maxWidthChars: 40,
@@ -32,21 +32,24 @@ const wallSelectorResult = (wall) => {
     });
   };
   const btn = Widget.Button({
-    className: "wallSelectorResultButton",
+    className: "WallButton",
     can_focus: true,
     width_request: 395,
     onPrimaryClick: () => updateWallpaper(wall),
     onSecondaryClick: () => copyWallPath(wall),
     child: Widget.Box({
-      className: "wallSelectorResultBox",
+      className: "WallBox",
       tooltipText: `${wall.fullResPath}`,
       vertical: true,
       vexpand: false,
       child: labelWid,
-      css: `
+      setup: (self) => {
+        let dimensions = wall.dimensions(wall.cachedPath);
+        self.css = `
           background-image: url("file://${wall.cachedPath}");
-          min-height: ${Math.min((wall.dimensions.height * 395) / wall.dimensions.width, 200)}px;
-          `,
+          min-height: ${Math.min((dimensions.height * 395) / dimensions.width, 200)}px;
+          `;
+      },
     }),
   });
 
@@ -57,14 +60,14 @@ const wallSelectorResult = (wall) => {
     transition_duration: 200,
     setup: (self) => {
       Utils.timeout(1, () => {
-        self.reveal_child = true;
+        self.reveal_child = srState;
       });
     },
   });
 
   const firstRevealer = Widget.Revealer({
     child: secondRevealer,
-    reveal_child: true,
+    reveal_child: frState,
     transition: "slide_down",
     transition_duration: 200,
   });
@@ -98,7 +101,7 @@ const wallSelectorResult = (wall) => {
     hexpand: true,
     attribute: {
       cachedPath: wall.cachedPath,
-      widgetID: "wallSelectorResultButton",
+      widgetID: "WallButton",
       toggleWithAnims: toggleWithAnims,
       destroyWithAnims: destroyWithAnims,
       hiddenByAnim: false,
@@ -110,6 +113,65 @@ const wallSelectorResult = (wall) => {
 };
 
 const wallSelector = () => {
+  let currentLimit = 0;
+  let isRunning = false; // Flag to indicate if the function is running
+
+  function addToList(isPrev = false) {
+    console.log("addToList");
+    const INC = 6;
+    currentLimit += isPrev ? -INC : INC;
+
+    if (isRunning || currentLimit > walls.value.length || currentLimit <= 0) {
+      currentLimit += isPrev ? INC : -INC;
+      return;
+    }
+    isRunning = true; // Set the flag to indicate the function is running
+    list.children.forEach((child, idx) => {
+      let cond = isPrev ? idx >= 0 : idx <= INC - 1;
+      let delay = isPrev ? 40 * (INC - idx) : 70 * idx;
+      if (cond) {
+        Utils.timeout(delay, () => {
+          child.attribute.destroyWithAnims();
+          isRunning = true;
+          let resetLoading = isPrev ? idx === 0 : idx === 1;
+          if (resetLoading) {
+            isRunning = false;
+          }
+        });
+      }
+    });
+    let toLoad = walls.value
+      .slice(currentLimit - INC, currentLimit)
+      .filter((c) => {
+        return !list.children.some((child) => {
+          return child.attribute.cachedPath === c.cachedPath;
+        });
+      });
+    toLoad.forEach((c, idx) => {
+      let delay = isPrev ? 40 * idx : 70 * idx;
+      Utils.timeout(delay, () => {
+        if (isPrev) {
+          let wall = Wall(c, false, false);
+          list.pack_start(wall, false, false, 0);
+          list.reorder_child(wall, 0);
+          wall.attribute.toggleWithAnims(true);
+        } else {
+          let wall = Wall(c);
+          list.pack_start(wall, false, false, 0);
+        }
+        if (idx === toLoad.length - 1) {
+          isRunning = false;
+        }
+      });
+    });
+
+    if (toLoad.length === 0) {
+      isRunning = false;
+    }
+  }
+
+  const debouncedAddToList = debounce(addToList, 200);
+
   const list = Widget.Box({
     className: "wallSelectorList",
     vertical: true,
@@ -118,18 +180,7 @@ const wallSelector = () => {
     spacing: 10,
     setup: (self) => {
       self.hook(walls, (self) => {
-        let newwalls = walls.value.filter((w) => {
-          let isPresent = self.children.some((child) => {
-            return child.attribute.cachedPath === w.cachedPath;
-          });
-          return !isPresent;
-        });
-        newwalls.forEach((c, idx) => {
-          Utils.timeout(170 * idx, () => {
-            self.pack_start(wallSelectorResult(c), false, false, 0);
-            //self.pack_end(CliphistResult(c), false, false, 0);
-          });
-        });
+        debouncedAddToList(false);
       });
     },
   });
@@ -148,35 +199,12 @@ const wallSelector = () => {
       return;
     }
     let filtered = filterwalls(text);
-    filtered.nonMatched.forEach((c) => {
-      list.children.forEach((child, idx) => {
-        if (
-          !child.attribute.hiddenByAnim &&
-          child.attribute.cachedPath === c.cachedPath
-        ) {
-          Utils.timeout(70 * idx, () => {
-            child.attribute.toggleWithAnims(false);
-          });
-        }
-      });
-    });
-    filtered.matched.forEach((c) => {
-      list.children.forEach((child, idx) => {
-        if (
-          child.attribute.hiddenByAnim &&
-          child.attribute.cachedPath === c.cachedPath
-        ) {
-          Utils.timeout(70 * idx, () => {
-            child.attribute.toggleWithAnims(true);
-          });
-        }
-      });
-    });
+    addToList(true);
   }
 
   const debouncedOnChange = debounce(onChange, 600);
   function onAccept() {
-    if (list.children[0].attribute.widgetID === "CliphistResultButton") {
+    if (list.children[0].attribute.widgetID === "WallButton") {
       let clip = list.children[0].attribute.fullResPath;
       //notifyAndCopy(clip);
     }
@@ -196,6 +224,12 @@ const wallSelector = () => {
     hscroll: "never",
     expand: true,
     child: list,
+  }).on("edge-overshot", (self, pos) => {
+    if (pos === Gtk.PositionType.BOTTOM) {
+      debouncedAddToList(false);
+    } else if (pos === Gtk.PositionType.TOP) {
+      debouncedAddToList(true);
+    }
   });
 
   return Widget.Box({

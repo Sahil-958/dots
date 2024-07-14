@@ -3,9 +3,10 @@ import GdkPixbuf from "gi://GdkPixbuf";
 
 function getDimensions(imagePath) {
   let pixbuf = GdkPixbuf.Pixbuf.new_from_file(imagePath);
-  let width = pixbuf.get_width();
-  let height = pixbuf.get_height();
-  return { width, height, aspectRatio: width / height };
+  return {
+    width: pixbuf.get_width(),
+    height: pixbuf.get_height(),
+  };
 }
 
 export const walls = Variable([]);
@@ -15,7 +16,6 @@ function genCommand(text = ".") {
                 "${text}" \\
                 --base-directory ${Utils.HOME} \\
                 --search-path ${wallDirPath} \\
-                --max-results 14 \\
                 --extension jpg --extension jpeg --extension png --extension gif --extension bmp`;
 }
 
@@ -36,7 +36,7 @@ export async function fetchWalls(text) {
       return {
         cachedPath: item,
         fullResPath: item.replace("cached/", ""),
-        dimensions: getDimensions(item),
+        dimensions: getDimensions,
       };
     });
     walls.setValue(wallData);

@@ -11,7 +11,7 @@
   }
 }
 
-.wallSelectorResultLabel {
+.WallLabel {
   color: $primary;
   padding: 0.5rem;
   background-color: rgba($surface, 0.5);
@@ -19,7 +19,7 @@
   transition: background 0.6s ease;
 }
 
-.wallSelectorResultBox {
+.WallBox {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,25 +27,25 @@
   transition: background 0.6s ease;
 }
 
-.wallSelectorResultButton {
+.WallButton {
   background-color: lighten($background, 15%);
 
   &:focus,
   &:hover {
-    .wallSelectorResultBox {
+    .WallBox {
       color: $primary;
       background-color: lighten($background, 5%);
       background-size: 105%;
       background-position: top;
     }
 
-    .wallSelectorResultLabel {
+    .WallLabel {
       background-color: rgba($surface, 0.9);
     }
   }
 
   &:active {
-    .wallSelectorResultBox {
+    .WallBox {
       color: $primary;
       background-color: lighten($background, 0%);
     }
