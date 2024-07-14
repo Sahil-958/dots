@@ -72,6 +72,7 @@ python-aiohttp
 python-opencv
 python-pip
 python-pyqt5
+python-pyscreenshot
 python-pywal
 python-qrencode
 qt5-graphicaleffects
