@@ -109,7 +109,6 @@ webkit2gtk-4.1
 wireplumber
 wl-clipboard
 xclip
-xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xf86-video-amdgpu
 xf86-video-nouveau
