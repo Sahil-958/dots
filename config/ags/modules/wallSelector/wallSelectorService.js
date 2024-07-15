@@ -20,7 +20,7 @@ function genCommand(text = ".") {
                 "${text}" \\
                 --base-directory ${Utils.HOME} \\
                 --search-path ${wallDirPath} \\
-                --extension jpg --extension jpeg --extension png --extension gif --extension bmp`;
+                --extension jpg --extension jpeg --extension png --extension gif --extension bmp | shuf`;
   //--max-results 8 \\
 }
 
