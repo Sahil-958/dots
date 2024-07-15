@@ -21,6 +21,7 @@ function genCommand(text = ".") {
                 --base-directory ${Utils.HOME} \\
                 --search-path ${wallDirPath} \\
                 --extension jpg --extension jpeg --extension png --extension gif --extension bmp`;
+              //--max-results 8 \\
 }
 
 let isFetching = false;
