@@ -9,7 +9,7 @@ import {
   filterClips,
 } from "./clipboardService.js";
 
-const CliphistResult = (clip) => {
+const CliphistResult = (clip, frState = true, srState = true) => {
   const destroyWithAnims = (onlyUi = false) => {
     secondRevealer.reveal_child = false;
     Utils.timeout(100, () => {
@@ -55,8 +55,9 @@ const CliphistResult = (clip) => {
           labelWid.css = "background-color: rgba(0,0,0,0.5);";
           self.css = `
           background-image: url('file://${clip.img.filePath}');
-          min-height: ${Math.min(clip.img.height, 150)}px;
+          min-height: ${Math.min((clip.img.height * 395) / clip.img.width, 400)}px;
           `;
+          //min-height: ${Math.min(clip.img.height, 400)}px;
         }
       },
     }),
@@ -79,14 +80,14 @@ const CliphistResult = (clip) => {
     transition_duration: 200,
     setup: (self) => {
       Utils.timeout(1, () => {
-        self.reveal_child = true;
+        self.reveal_child = srState;
       });
     },
   });
 
   const firstRevealer = Widget.Revealer({
     child: secondRevealer,
-    reveal_child: true,
+    reveal_child: frState,
     transition: "slide_down",
     transition_duration: 200,
   });
@@ -159,8 +160,11 @@ const ClipBoard = () => {
           return !isPresent;
         });
         newClips.forEach((c, idx) => {
-          Utils.timeout(100 * idx, () => {
-            self.pack_start(CliphistResult(c), false, false, 0);
+          Utils.timeout(150 * idx, () => {
+            let newClip = CliphistResult(c, false, false);
+            self.pack_start(newClip, false, false, 0);
+            self.reorder_child(newClip, 0);
+            newClip.attribute.toggleWithAnims(true);
             //self.pack_end(CliphistResult(c), false, false, 0);
           });
         });
