@@ -1,6 +1,5 @@
 amd-ucode
 android-tools
-arc-gtk-theme
 arch-install-scripts
 archlinux-xdg-menu
 ark
