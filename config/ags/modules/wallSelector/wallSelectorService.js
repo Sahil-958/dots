@@ -21,7 +21,7 @@ function genCommand(text = ".") {
                 --base-directory ${Utils.HOME} \\
                 --search-path ${wallDirPath} \\
                 --extension jpg --extension jpeg --extension png --extension gif --extension bmp`;
-              //--max-results 8 \\
+  //--max-results 8 \\
 }
 
 let isFetching = false;
@@ -63,6 +63,11 @@ export const debounce = (fn, ms = 300) => {
 };
 
 export function filterwalls(text) {
+  let searchWithPath = false;
+  if (text.startsWith(">")) {
+    searchWithPath = true;
+    text = text.replace(">", "");
+  }
   const patternRegex = /^r\/(.*?)(?:\/(.*))?$/;
   const match = text.match(patternRegex);
   let matched = [];
@@ -73,7 +78,8 @@ export function filterwalls(text) {
       if (match[2] === undefined) match[2] = "";
       const regx = new RegExp(match[1], match[2]);
       walls.value.forEach((wall) => {
-        if (regx.test(wall.name)) {
+        let wallStr = searchWithPath ? wall.fullResPath : wall.name;
+        if (regx.test(wallStr)) {
           matched.push(wall);
         } else {
           nonMatched.push(wall);
@@ -82,7 +88,8 @@ export function filterwalls(text) {
     } catch (error) {
       console.error("Your Regx Sucks Here's Why:", error.message);
       walls.value.forEach((wall) => {
-        if (wall.name.includes(text)) {
+        let wallStr = searchWithPath ? wall.fullResPath : wall.name;
+        if (wallStr.includes(text)) {
           matched.push(wall);
         } else {
           nonMatched.push(wall);
@@ -91,7 +98,8 @@ export function filterwalls(text) {
     }
   } else {
     walls.value.forEach((wall) => {
-      if (wall.name.toLowerCase().includes(text.toLowerCase())) {
+      let wallStr = searchWithPath ? wall.fullResPath : wall.name;
+      if (wallStr.toLowerCase().includes(text.toLowerCase())) {
         matched.push(wall);
       } else {
         nonMatched.push(wall);
