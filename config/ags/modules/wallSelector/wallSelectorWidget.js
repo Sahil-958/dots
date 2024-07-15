@@ -121,7 +121,6 @@ const wallSelector = () => {
   let isRunning = false; // Flag to indicate if the function is running
 
   function emptyList(isPrev, INC) {
-    console.log("emptying list", isPrev, INC);
     list.children.forEach((child, idx) => {
       let cond = isPrev ? idx >= 0 : idx <= INC - 1;
       let delay = isPrev ? 40 * (INC - idx) : 70 * idx;
@@ -135,7 +134,6 @@ const wallSelector = () => {
 
   function addToList(isPrev = false) {
     let matched = filtered.value.matched;
-    console.log("matched", matched.length);
     let wallsToLoad = matched.length > 0 ? matched : walls.value;
     isPrev ? (page -= 1) : (page += 1);
     if (page < 1) {
