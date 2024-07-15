@@ -5,13 +5,14 @@ import {
   copyWallPath,
   updateWallpaper,
   walls,
+  filtered,
   debounce,
 } from "./wallSelectorService.js";
 
 const Wall = (wall, frState = true, srState = true) => {
   const labelWid = Widget.Label({
     className: "WallLabel",
-    label: wall.fullResPath.split("/").pop(),
+    label: wall.name,
     wrap: true,
     maxWidthChars: 40,
     truncate: "end",
@@ -116,16 +117,7 @@ const wallSelector = () => {
   let currentLimit = 0;
   let isRunning = false; // Flag to indicate if the function is running
 
-  function addToList(isPrev = false) {
-    console.log("addToList");
-    const INC = 6;
-    currentLimit += isPrev ? -INC : INC;
-
-    if (isRunning || currentLimit > walls.value.length || currentLimit <= 0) {
-      currentLimit += isPrev ? INC : -INC;
-      return;
-    }
-    isRunning = true; // Set the flag to indicate the function is running
+  function emptyList(isPrev, INC) {
     list.children.forEach((child, idx) => {
       let cond = isPrev ? idx >= 0 : idx <= INC - 1;
       let delay = isPrev ? 40 * (INC - idx) : 70 * idx;
@@ -140,13 +132,30 @@ const wallSelector = () => {
         });
       }
     });
-    let toLoad = walls.value
-      .slice(currentLimit - INC, currentLimit)
-      .filter((c) => {
-        return !list.children.some((child) => {
-          return child.attribute.cachedPath === c.cachedPath;
-        });
-      });
+  }
+
+  function addToList(isPrev = false) {
+    let matched = filtered.value.matched;
+    let wallsToLoad = matched.length > 0 ? matched : walls.value;
+    const INC = 6;
+    currentLimit += isPrev ? -INC : INC;
+
+    console.log("run", matched.length);
+    if (isRunning || currentLimit <= 0) {
+      console.log("isRunning", isRunning);
+      currentLimit += isPrev ? INC : -INC;
+      return;
+    }
+
+    if (currentLimit > wallsToLoad.length) {
+      currentLimit = wallsToLoad.length;
+    }
+
+    isRunning = true; // Set the flag to indicate the function is running
+    emptyList(isPrev, INC);
+    let start = currentLimit - INC;
+
+    let toLoad = wallsToLoad.slice(start, currentLimit);
     toLoad.forEach((c, idx) => {
       let delay = isPrev ? 40 * idx : 70 * idx;
       Utils.timeout(delay, () => {
@@ -186,20 +195,11 @@ const wallSelector = () => {
   });
 
   function onChange({ text }) {
-    if (!walls) return;
-    if (text.startsWith(">")) {
-      text = text.replace(">", "").trim();
-      if (text === "") return;
-      fetchWalls(text);
-      list.children.forEach((child, idx) => {
-        Utils.timeout(60 * idx, () => {
-          child.attribute.destroyWithAnims();
-        });
-      });
+    if (!walls || !text) {
       return;
     }
-    let filtered = filterwalls(text);
-    addToList(true);
+    filterwalls(text);
+    debouncedAddToList();
   }
 
   const debouncedOnChange = debounce(onChange, 600);

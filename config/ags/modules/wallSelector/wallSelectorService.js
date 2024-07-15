@@ -10,6 +10,10 @@ function getDimensions(imagePath) {
 }
 
 export const walls = Variable([]);
+export const filtered = Variable({
+  matched: [],
+  unMatched: [],
+});
 const wallDirPath = `${Utils.HOME}/walls/cached/`;
 function genCommand(text = ".") {
   return `fd -i -p \\
@@ -34,6 +38,7 @@ export async function fetchWalls(text) {
     const items = result.split(/\r?\n/);
     const wallData = items.map((item) => {
       return {
+        name: item.replace("cached/", "").split("/").pop(),
         cachedPath: item,
         fullResPath: item.replace("cached/", ""),
         dimensions: getDimensions,
@@ -67,7 +72,7 @@ export function filterwalls(text) {
       if (match[2] === undefined) match[2] = "";
       const regx = new RegExp(match[1], match[2]);
       walls.value.forEach((wall) => {
-        if (regx.test(wall.cachedPath)) {
+        if (regx.test(wall.name)) {
           matched.push(wall);
         } else {
           nonMatched.push(wall);
@@ -76,7 +81,7 @@ export function filterwalls(text) {
     } catch (error) {
       console.error("Your Regx Sucks Here's Why:", error.message);
       walls.value.forEach((wall) => {
-        if (wall.cachedPath.includes(text)) {
+        if (wall.name.includes(text)) {
           matched.push(wall);
         } else {
           nonMatched.push(wall);
@@ -85,14 +90,14 @@ export function filterwalls(text) {
     }
   } else {
     walls.value.forEach((wall) => {
-      if (wall.cachedPath.toLowerCase().includes(text.toLowerCase())) {
+      if (wall.name.toLowerCase().includes(text.toLowerCase())) {
         matched.push(wall);
       } else {
         nonMatched.push(wall);
       }
     });
   }
-
+  filtered.setValue({ matched, nonMatched });
   return { matched, nonMatched };
 }
 
