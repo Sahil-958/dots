@@ -114,21 +114,20 @@ const Wall = (wall, frState = true, srState = true) => {
 };
 
 const wallSelector = () => {
-  let currentLimit = 0;
+  let page = 0;
+  let totalPages = 0;
+  let pageStateLabel = Variable("");
+  const wallPerPage = 6;
   let isRunning = false; // Flag to indicate if the function is running
 
   function emptyList(isPrev, INC) {
+    console.log("emptying list", isPrev, INC);
     list.children.forEach((child, idx) => {
       let cond = isPrev ? idx >= 0 : idx <= INC - 1;
       let delay = isPrev ? 40 * (INC - idx) : 70 * idx;
       if (cond) {
         Utils.timeout(delay, () => {
           child.attribute.destroyWithAnims();
-          isRunning = true;
-          let resetLoading = isPrev ? idx === 0 : idx === 1;
-          if (resetLoading) {
-            isRunning = false;
-          }
         });
       }
     });
@@ -136,26 +135,35 @@ const wallSelector = () => {
 
   function addToList(isPrev = false) {
     let matched = filtered.value.matched;
+    console.log("matched", matched.length);
     let wallsToLoad = matched.length > 0 ? matched : walls.value;
-    const INC = 6;
-    currentLimit += isPrev ? -INC : INC;
+    isPrev ? (page -= 1) : (page += 1);
+    if (page < 1) {
+      page = 1;
+      return;
+    }
+    totalPages = Math.ceil(wallsToLoad.length / wallPerPage);
 
-    console.log("run", matched.length);
-    if (isRunning || currentLimit <= 0) {
+    if (wallsToLoad.length < wallPerPage) {
+      page = 1 * page;
+    }
+
+    if (page > totalPages) {
+      page = totalPages;
+      return;
+    }
+    let offset = page * wallPerPage;
+
+    if (isRunning) {
       console.log("isRunning", isRunning);
-      currentLimit += isPrev ? INC : -INC;
       return;
     }
 
-    if (currentLimit > wallsToLoad.length) {
-      currentLimit = wallsToLoad.length;
-    }
-
+    pageStateLabel.value = `Page ${page} of ${totalPages}`;
     isRunning = true; // Set the flag to indicate the function is running
-    emptyList(isPrev, INC);
-    let start = currentLimit - INC;
+    emptyList(isPrev, wallPerPage);
 
-    let toLoad = wallsToLoad.slice(start, currentLimit);
+    let toLoad = wallsToLoad.slice(offset - wallPerPage, offset);
     toLoad.forEach((c, idx) => {
       let delay = isPrev ? 40 * idx : 70 * idx;
       Utils.timeout(delay, () => {
@@ -198,6 +206,7 @@ const wallSelector = () => {
     if (!walls || !text) {
       return;
     }
+    page = 0;
     filterwalls(text);
     debouncedAddToList();
   }
@@ -219,6 +228,15 @@ const wallSelector = () => {
     on_change: ({ text }) => debouncedOnChange({ text }),
   });
 
+  const statsBox = Widget.Box({
+    className: "wallSelectorStatsBox",
+    children: [
+      Widget.Label({
+        label: pageStateLabel.bind().as((c) => c),
+      }),
+    ],
+  });
+
   const Scrollable = Widget.Scrollable({
     className: "wallSelectorScrollable",
     hscroll: "never",
@@ -236,7 +254,7 @@ const wallSelector = () => {
     vertical: true,
     className: "wallSelectorBox",
     spacing: 10,
-    children: [entry, Scrollable],
+    children: [entry, Scrollable, statsBox],
   }).on("realize", () => {
     fetchWalls();
   });
