@@ -11,6 +11,7 @@ bind
 blueman
 blueprint-compiler
 bluez-utils
+breeze
 breeze-icons
 brightnessctl
 btop
