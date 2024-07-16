@@ -33,6 +33,7 @@ fzf
 git
 glava
 gnome-bluetooth-3.0
+gobject-introspection
 grim
 grub
 grub-btrfs
