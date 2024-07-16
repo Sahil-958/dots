@@ -123,7 +123,7 @@ const wallSelector = () => {
   function emptyList(isPrev, INC) {
     list.children.forEach((child, idx) => {
       let cond = isPrev ? idx >= 0 : idx <= INC - 1;
-      let delay = isPrev ? 40 * (INC - idx) : 70 * idx;
+      let delay = isPrev ? 70 * (INC - idx) : 40 * idx;
       if (cond) {
         Utils.timeout(delay, () => {
           child.attribute.destroyWithAnims();
