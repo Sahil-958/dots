@@ -4,6 +4,8 @@ highlight.css
 lockstyle.css
 lockscreen.css
 scss/colors.scss
+slurp/primary
+slurp/slurp.css
 node_modules
 types
 .idea

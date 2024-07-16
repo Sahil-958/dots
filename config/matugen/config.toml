@@ -33,6 +33,11 @@ input_path = '~/.config/matugen/templates/kdeglobals.conf'
 output_path = '~/.config/kdeglobals'
 mode = "Dark"
 
+[templates.slurpAGS]
+input_path = '~/.config/matugen/templates/primary'
+output_path = '~/.config/ags/slurp/primary'
+mode = "Dark"
+
 [templates.hypr]
 input_path = '~/.config/matugen/templates/hypr.conf'
 output_path = '~/.cache/matugen/hyprland-colors.conf'
