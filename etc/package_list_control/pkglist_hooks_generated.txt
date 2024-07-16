@@ -9,6 +9,7 @@ bash-completion
 bc
 bind
 blueman
+blueprint-compiler
 bluez-utils
 breeze
 breeze-gtk
