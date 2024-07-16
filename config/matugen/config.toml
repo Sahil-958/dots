@@ -28,6 +28,11 @@ input_path = '~/.config/matugen/templates/qt-oomox-styleplugin'
 output_path = '~/.config/oomox-qtstyleplugin/themes/matugen.css'
 mode = "Dark"
 
+[templates.kdeglobals]
+input_path = '~/.config/matugen/templates/kdeglobals.conf'
+output_path = '~/.config/kdeglobals'
+mode = "Dark"
+
 [templates.hypr]
 input_path = '~/.config/matugen/templates/hypr.conf'
 output_path = '~/.cache/matugen/hyprland-colors.conf'
