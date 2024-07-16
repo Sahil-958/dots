@@ -66,7 +66,6 @@ otf-comicshanns-nerd
 p7zip
 pacman-contrib
 pavucontrol
-plasma-systemmonitor
 polkit-kde-agent
 powertop
 python-aiohttp
