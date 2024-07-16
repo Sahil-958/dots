@@ -12,7 +12,6 @@ blueman
 blueprint-compiler
 bluez-utils
 breeze
-breeze-gtk
 breeze-icons
 brightnessctl
 btop
