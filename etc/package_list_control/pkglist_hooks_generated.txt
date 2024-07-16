@@ -112,6 +112,7 @@ wireplumber
 wl-clipboard
 xclip
 xdg-desktop-portal-hyprland
+xdp-tools
 xf86-video-amdgpu
 xf86-video-nouveau
 xorg-server
