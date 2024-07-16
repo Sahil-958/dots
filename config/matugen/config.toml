@@ -23,6 +23,11 @@ input_path = '~/.config/matugen/templates/gtk.css'
 output_path = '~/.config/gtk-3.0/colors.css'
 mode = "Dark"
 
+[templates.qt_oomox]
+input_path = '~/.config/matugen/templates/qt-oomox-styleplugin'
+output_path = '~/.config/oomox-qtstyleplugin/themes/matugen.css'
+mode = "Dark"
+
 [templates.hypr]
 input_path = '~/.config/matugen/templates/hypr.conf'
 output_path = '~/.cache/matugen/hyprland-colors.conf'
