@@ -1,0 +1,188 @@
+@define-color base_color #16130a;
+@define-color text_color #eae2d1;
+@define-color bg_color #16130a;
+@define-color fg_color #ffd651;
+@define-color selected_bg_color #55450e;
+@define-color selected_fg_color #e1c985;
+@define-color selected_borders_color rgba(255, 214, 81, 255);
+@define-color borders_color rgba(234, 226, 209, 255);
+@define-color alt_borders_color rgba(228, 186, 26, 255);
+@define-color borders_edge rgba(255, 180, 171, 255);
+@define-color link_color #fae19b;
+@define-color link_visited_color #dcc582;
+@define-color top_hilight rgba(255, 214, 81, 255);
+@define-color top_highlight rgba(255, 214, 81, 255);
+@define-color dark_fill rgba(22, 19, 10, 255);
+@define-color headerbar_bg_color #e4ba1a;
+@define-color menu_color #3c2f00;
+@define-color menu_selected_color #55450e;
+@define-color scrollbar_bg_color #16130a;
+@define-color scrollbar_slider_color rgba(234, 226, 209, 255);
+@define-color scrollbar_slider_hover_color rgba(85, 69, 14, 255);
+@define-color scrollbar_slider_active_color #e4ba1a;
+@define-color warning_color #ffb4ab;
+@define-color error_color #ffb4ab;
+@define-color success_color #ffd651;
+@define-color destructive_color #93000a;
+@define-color osd_fg_color #e1c985;
+@define-color osd_text_color #e1c985;
+@define-color osd_bg_color rgba(85, 69, 14, 255);
+@define-color osd_insensitive_bg_color rgba(22, 19, 10, 255);
+@define-color osd_insensitive_fg_color rgba(234, 226, 209, 255);
+@define-color osd_borders_color rgba(234, 226, 209, 255);
+@define-color sidebar_bg_color #55450e;
+@define-color tooltip_borders_color rgba(234, 226, 209, 255);
+@define-color shadow_color rgba(22, 19, 10, 255);
+@define-color drop_target_color #e4ba1a;
+@define-color insensitive_fg_color #edc225;
+@define-color insensitive_bg_color #1f1b11;
+@define-color insensitive_borders_color rgba(31, 27, 17, 255);
+@define-color backdrop_base_color #16130a;
+@define-color backdrop_text_color #eae2d1;
+@define-color backdrop_bg_color #16130a;
+@define-color backdrop_fg_color #ffd651;
+@define-color window_bg_color #16130a;
+@define-color window_fg_color #eae2d1;
+@define-color backdrop_insensitive_color #d4cfca;
+@define-color backdrop_selected_fg_color #fcfcfc;
+@define-color backdrop_borders_color #d5d0cc;
+@define-color backdrop_dark_fill #eae8e6;
+@define-color suggested_bg_color #e4ba1a;
+@define-color suggested_border_color rgba(228, 186, 26, 255);
+@define-color progress_bg_color #e4ba1a;
+@define-color progress_border_color rgba(228, 186, 26, 255);
+@define-color checkradio_bg_color #dcc582;
+@define-color checkradio_fg_color #3c2f00;
+@define-color checkradio_borders_color rgba(220, 197, 130, 255);
+@define-color switch_bg_color #dcc582;
+@define-color switch_borders_color rgba(60, 47, 0, 255);
+@define-color focus_border_color rgba(255, 214, 81, 255);
+@define-color alt_focus_border_color rgba(228, 186, 26, 255);
+@define-color dim_label_opacity 0.55;
+
+
+button {
+    color: #3c2f00;
+    outline-color: #ffd651;
+    border-color: rgba(220, 197, 130, 255);
+    background-image: image(#dcc582);
+    box-shadow: none;
+    text-shadow: none;
+}
+
+button:hover {
+    color: #3c2f00;
+    border-color: rgba(85, 69, 14, 255);
+    background-image: image(#55450e);
+    box-shadow: 0 1px 2px rgba(220, 197, 130, 255);
+}
+
+button:checked {
+    color: #3c2f00;
+    border-color: rgba(85, 69, 14, 255);
+    background-image: image(#55450e);
+    box-shadow: none;
+}
+
+button:checked:hover {
+    color: #3c2f00;
+    border-color: rgba(85, 69, 14, 255);
+    background-image: image(#55450e);
+    box-shadow: 0 1px 2px rgba(220, 197, 130, 255);
+}
+
+button:checked:active {
+    color: #3c2f00;
+    border-color: rgba(85, 69, 14, 255);
+    background-image: image(#55450e);
+    box-shadow: none;
+}
+
+button:backdrop {
+    color: #eae2d1;
+    border-color: rgba(22, 19, 10, 255);
+    background-image: image(#16130a);
+    box-shadow: none;
+}
+
+button:backdrop:active {
+    color: #eae2d1;
+    border-color: rgba(22, 19, 10, 255);
+    background-image: image(#16130a);
+    box-shadow: none;
+}
+
+button:backdrop:insensitive {
+    color: #eae2d1;
+    border-color: rgba(22, 19, 10, 255);
+    background-image: image(#16130a);
+    box-shadow: none;
+}
+
+button:backdrop:insensitive:active {
+    color: #eae2d1;
+    border-color: rgba(22, 19, 10, 255);
+    background-image: image(#16130a);
+    box-shadow: none;
+}
+
+button:disabled {
+    color: rgba(234, 226, 209, 255);
+    border-color: rgba(22, 19, 10, 255);
+    background-image: image(#16130a);
+}
+
+button:disabled:active {
+    color: rgba(234, 226, 209, 255);
+    border-color: rgba(22, 19, 10, 255);
+    background-image: image(#16130a);
+    box-shadow: none;
+}
+
+
+checkradio {
+    background-clip: padding-box;
+    background-image: image(#dcc582);
+    border-color: rgba(60, 47, 0, 255);
+    box-shadow: none;
+    color: #3c2f00;
+}
+
+checkradio:hover {
+    background-image: image(#55450e);
+}
+
+checkradio:active {
+    box-shadow: inset 0 1px rgba(220, 197, 130, 255);
+    background-image: image(#dcc582);
+}
+
+checkradio:disabled {
+    box-shadow: none;
+    color: rgba(60, 47, 0, 255);
+    background-image: image(#ff0000);
+}
+
+checkradio:checked {
+    background-clip: border-box;
+    background-image: image(#55450e);
+    border-color: rgba(60, 47, 0, 255);
+    box-shadow: none;
+    color: #3c2f00
+}
+
+checkradio:checked:hover {
+    background-image: image(#55450e);
+}
+
+checkradio:checked:active {
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.2);
+    background-image: image(#55450e);
+}
+
+checkradio:checked:disabled {
+    box-shadow: none;
+    color: rgba(60, 47, 0, 255);
+}
+
+/* vim: set ft=css:*/
