@@ -14,7 +14,6 @@ import BluetoothList from "../bluetooth/index.js";
 import Bluetooth from "resource:///com/github/Aylur/ags/service/bluetooth.js";
 import Network from "resource:///com/github/Aylur/ags/service/network.js";
 import { Switch } from "../widgets/widgets.js";
-import { Cava } from "../cava/index.js";
 // import { LyricsTerminal } from "../vte/index.js";
 import GObject from "gi://GObject";
 import NetworkSpeeds from "../network/speeds.js";
@@ -198,11 +197,6 @@ const QSMpris = () => {
               Widget.Box({ vexpand: true }),
             ],
           }),
-        }),
-        Cava({
-          bars: 30,
-          barHeight: 150,
-          smooth: true,
         }),
       ],
     }),
