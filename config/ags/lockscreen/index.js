@@ -56,9 +56,6 @@ auth.connect("fail", (p) => {
   entry.parent.toggleClassName("Failed", true);
   loginStatusRevealer.reveal_child = true;
   loginStatusRevealer.child.label = `Authentication Failed: ${p.username}`;
-  Utils.timeout(2000, () => {
-    loginStatusRevealer.reveal_child = false;
-  });
   auth.start_authenticate();
 });
 
@@ -93,13 +90,12 @@ const entry = Widget.Entry({
   sensitive: inputNeeded.bind(),
   on_change: (self) => {
     if (!self.text) return;
+    self.parent.toggleClassName("Failed", false);
     loginStatusRevealer.reveal_child = false;
   },
   on_accept: (self) => {
-    self.parent.toggleClassName("Failed", false);
     inputNeeded.setValue(false);
     auth.supply_secret(self.text);
-    self.text = "******";
   },
 }).on("realize", (entry) => entry.grab_focus());
 
@@ -124,9 +120,7 @@ const LoginBox = () => {
         hexpand: true,
         class_name: "LoginAvatarBox",
         height_request: 140,
-        css: `
-                background-image: url("${Utils.HOME}/octane_pfp.jpg");
-                `,
+        css: ` background-image: url("${Utils.HOME}/octane_pfp.jpg");`,
       }),
       Widget.Box({
         class_name: "LoginEntryBox",
@@ -140,49 +134,24 @@ const LoginBox = () => {
 
 const overlayChild = Widget.Revealer({
   reveal_child: false,
-  transition: "slide_right",
-  halign: Gtk.Align.START,
+  transition: "slide_up",
+  halign: Gtk.Align.CENTER,
+  valign: Gtk.Align.END,
   transition_duration: 800,
   child: Widget.Box({
     class_name: "OverlayRevealerBox",
-    width_request: Math.floor(Gdk.Screen.width() / 3),
+    width_request: Math.floor(Gdk.Screen.width() / 2.5),
+    height_request: Math.floor(Gdk.Screen.height() / 1.5),
+    vertical: true,
     children: [
       Widget.Box({
+        vexpand: false,
         class_name: "OverlayRevealerBoxChildren",
         vertical: true,
         spacing: 16,
-        children: [
-          LoginBox(),
-          Widget.Box({ vexpand: true }),
-          Widget.Box({
-            hexpand: true,
-            vexpand: false,
-          }),
-          Widget.Box({
-            //sleep and hibernate buttons
-            halign: Gtk.Align.CENTER,
-            spacing: 16,
-            children: [
-              Widget.Button({
-                css: "all:unset;",
-                child: Widget.Icon({
-                  icon: "system-suspend-symbolic",
-                  size: 48,
-                }),
-                onClicked: () => Utils.execAsync(["systemctl", "suspend"]),
-              }),
-              Widget.Button({
-                css: "all:unset;",
-                child: Widget.Icon({
-                  icon: "system-hibernate-symbolic",
-                  size: 48,
-                }),
-                onClicked: () => Utils.execAsync(["systemctl", "hibernate"]),
-              }),
-            ],
-          }),
-        ],
+        child: LoginBox(),
       }),
+      Widget.Box({ vexpand: true }),
     ],
   }),
 }).on("realize", (self) =>
@@ -191,18 +160,44 @@ const overlayChild = Widget.Revealer({
   }),
 );
 
+const Right = () =>
+  Widget.Box({
+    hpack: "end",
+    children: [
+      RoundedAngleEnd("topleft", { class_name: "angle", hexpand: true }),
+      Clock(),
+    ],
+  });
+
+const Left = () =>
+  Widget.Box({
+    children: [
+      SessionBox(),
+      RoundedAngleEnd("topright", { class_name: "angle" }),
+    ],
+  });
+
+const Bar = () =>
+  Widget.CenterBox({
+    start_widget: Left(),
+    end_widget: Right(),
+  });
+
 const revealerChild = Widget.Box({
-  class_name: "LockWindowBackgroundGradientBox",
-  child: Widget.Box({
-    class_name: "LockWindowBackgroundBox",
-    child: Widget.Overlay({
+  class_name: "LockWindowBackgroundBox",
+  vertical: true,
+  children: [
+    Bar(),
+    Widget.Overlay({
       child: overlayChild,
       overlays: [
+        SessionBoxTooltip(),
+        MprisCorner(),
         RoundedCorner("topleft", { class_name: "corner" }),
         RoundedCorner("topright", { class_name: "corner" }),
       ],
     }),
-  }),
+  ],
 });
 
 const winRevealer = Widget.Revealer({
