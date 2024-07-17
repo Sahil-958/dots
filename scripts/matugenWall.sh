@@ -13,7 +13,7 @@ if [ "$3" = "" ]; then
     theme="dark"
 fi
 
-matugen image "$image" -t "$scheme" -mode "$theme"
+matugen image "$image" -t "$scheme" --mode "$theme"
 # using pywal for konsole and other 
 wal -i "$image"
 ~/dots/scripts/matugenUpdateRest.sh &
