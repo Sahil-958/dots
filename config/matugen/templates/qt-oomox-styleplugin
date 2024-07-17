@@ -63,7 +63,7 @@
 
 button {
     color: {{colors.on_secondary.default.hex}};
-    outline-color: {{colors.primary.default.hex}};
+    outline-color: {{colors.outline.default.hex}};
     border-color: {{colors.secondary.default.rgba}};
     background-image: image({{colors.secondary.default.hex}});
     box-shadow: none;
