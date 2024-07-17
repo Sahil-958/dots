@@ -29,7 +29,8 @@ case $choice in
     ~/dots/scripts/layer_screenshot.sh 
     ;;
     $option3)
-        grim -g "$(slurp -b "${background}90" -c "$foreground")" - | swappy -f -
+        #grim -g "$(slurp -b "${background}90" -c "$foreground")" - | swappy -f -
+        grim -g "$(ags -b agsSlurp -c ~/.config/ags/slurp/index.js)" - | swappy -f -
         notify-send -i "/home/sawhill/.icons/testing_cli/actions/16/zoom-fit-selection.svg" "Screenshot created" "Mode: Selected area"
     ;;
     $option4)
