@@ -6,17 +6,16 @@ import AstalAuth from "gi://AstalAuth";
 import {
   RoundedAngleEnd,
   RoundedCorner,
-} from "./modules/roundedCorner/index.js";
-import Clock from "./modules/clock/index.js";
+} from "../modules/roundedCorner/index.js";
+import Clock from "../modules/clock/index.js";
 import SessionBox, {
   SessionBoxTooltip,
-} from "./modules/powermenu/sessionbox.js";
-import { MprisCorner } from "./modules/mpris/index.js";
+} from "../modules/powermenu/sessionbox.js";
+import { MprisCorner } from "../modules/mpris/index.js";
 
-Utils.exec(
-  `sass ${App.configDir}/scss/lockscreen.scss ${App.configDir}/lockscreen.css`,
-);
-App.applyCss(`${App.configDir}/lockscreen.css`);
+Utils.exec(`sass ${App.configDir}/style.scss ${App.configDir}/style.css`);
+console.log(`sass ${App.configDir}/style.scss ${App.configDir}/style.css`);
+App.applyCss(`${App.configDir}/style.css`);
 
 const auth = new AstalAuth.Pam();
 const info = Variable("");
