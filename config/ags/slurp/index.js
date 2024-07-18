@@ -153,7 +153,7 @@ const NierGeom = ({
   anchor_y2 = Variable(-2, {}),
   DESTRUCTION = false,
 
-  cell_width = 200,
+  cell_width = 160,
   cell_height = round(
     sqrt(cell_width * cell_width - (cell_width / 2) * (cell_width / 2)),
   ),
@@ -338,7 +338,7 @@ const NierGeom = ({
               inited,
               s_override,
             ] = cells[i];
-            if (s_override == true) {
+            if (s_override) {
               continue;
             }
             if (abs(c_opacity - t_opacity) > 0.01) {
@@ -406,8 +406,8 @@ const NierGeom = ({
 
               draw_t = start;
               final_draw = false;
-              vertex_step = 3;
-              opacity_step = 2;
+              vertex_step = 8;
+              opacity_step = 8;
 
               let [real_x, real_y] = await get_cursor();
               let [center_x, center_y] = pos_mapper(
@@ -520,7 +520,7 @@ const NierGeom = ({
             Utils.timeout(1, async () => {
               try {
                 let start = Date.now();
-                draw_duration = 3000;
+                draw_duration = 2000;
                 let fps = 15;
 
                 draw_t = start;
