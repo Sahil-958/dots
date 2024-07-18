@@ -17,7 +17,6 @@ brightnessctl
 btop
 cliphist
 cmus
-dart-sass
 dolphin
 dolphin-plugins
 dust
