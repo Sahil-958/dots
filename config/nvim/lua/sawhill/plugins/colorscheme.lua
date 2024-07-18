@@ -1,7 +1,7 @@
 return {
     {
         "folke/tokyonight.nvim",
-        enabled = false,
+        enabled = true,
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
@@ -14,7 +14,7 @@ return {
     {
         "oncomouse/lushwal.nvim",
         lazy = false,
-        enabled = true,
+        enabled = false,
         cmd = { "LushwalCompile" },
         dependencies = {
             { "rktjmp/lush.nvim" },
