@@ -10,5 +10,4 @@ noisetorch
 oomox-qt5-styleplugin-git
 oomox-qt6-styleplugin-git
 pikaur
-rofi-lbonn-wayland-git
 vscodium-bin
