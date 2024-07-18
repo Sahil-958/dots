@@ -1,4 +1,5 @@
 import Gtk from "gi://Gtk";
+import Gdk from "gi://Gdk";
 import {
   fetchWalls,
   filterwalls,
@@ -240,13 +241,21 @@ const wallSelector = () => {
     hscroll: "never",
     expand: true,
     child: list,
-  }).on("edge-overshot", (self, pos) => {
-    if (pos === Gtk.PositionType.BOTTOM) {
-      debouncedAddToList(false);
-    } else if (pos === Gtk.PositionType.TOP) {
-      debouncedAddToList(true);
-    }
-  });
+  })
+    .on("edge-overshot", (self, pos) => {
+      if (pos === Gtk.PositionType.BOTTOM) {
+        debouncedAddToList(false);
+      } else if (pos === Gtk.PositionType.TOP) {
+        debouncedAddToList(true);
+      }
+    })
+    .on("key-press-event", (self, event) => {
+      if (event.get_keyval()[1] === Gdk.KEY_n) debouncedAddToList(false);
+      if (event.get_keyval()[1] === Gdk.KEY_p) debouncedAddToList(true);
+      if (event.get_keyval()[1] === Gdk.KEY_j) self.vadjustment.value += 50;
+      if (event.get_keyval()[1] === Gdk.KEY_k) self.vadjustment.value -= 50;
+      self.grab_focus();
+    });
 
   return Widget.Box({
     vertical: true,
