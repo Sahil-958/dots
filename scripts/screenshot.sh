@@ -19,14 +19,14 @@ option4="Fullscreen (delay 3 sec)"
 
 options="$option1\n$option2\n$option3\n$option4"
 
-choice=$(echo -e "$options" | rofi -dmenu -replace -config ~/dots/config/rofi/config-dmenu.rasi -i -p "Take Screenshot")
+choice=$(echo -e "$options" | fzf)
 
 case $choice in
     $option1)
-    ~/dots/scripts/window_screenshot.sh
+    ~/dots/scripts/window_screenshot.sh term
     ;;
     $option2)
-    ~/dots/scripts/layer_screenshot.sh 
+    ~/dots/scripts/layer_screenshot.sh  term
     ;;
     $option3)
         #grim -g "$(slurp -b "${background}90" -c "$foreground")" - | swappy -f -
