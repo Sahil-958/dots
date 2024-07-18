@@ -7,7 +7,8 @@ source ~/.cache/wal/colors.sh
 #selection="$(slurp -b "${background}90" -c "$foreground")" && grim -t png -g "$selection" - | tesseract stdin stdout | wl-copy && notify-send "Selection Copied into the clipboard"
 #
 #
-selection="$(slurp -b "${background}90" -c "$foreground")" 
+#selection="$(slurp -b "${background}90" -c "$foreground")" 
+selection="$(ags -b ocr -c ~/.config/ags/slurp/index.js)"
 text=$(grim -t png -g "$selection" - | tesseract stdin stdout)
 if [ "$text" = "" ]; then
     notify-send "No text detected" "Please select a valid text"
