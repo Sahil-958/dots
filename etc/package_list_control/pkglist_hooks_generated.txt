@@ -120,5 +120,6 @@ xorg-xinit
 xorg-xkill
 xorg-xprop
 xorg-xsetroot
+ydotool
 yt-dlp
 zip
