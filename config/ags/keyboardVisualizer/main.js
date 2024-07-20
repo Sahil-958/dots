@@ -1,4 +1,4 @@
-import KeyboardWindow from "./onscreenkeyboard.js";
+import KeyboardWindow from "./keyboard.js";
 import Gio from "gi://Gio";
 
 applyScss();
