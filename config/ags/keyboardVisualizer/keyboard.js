@@ -21,9 +21,25 @@ let keyButtons = (row) =>
       attribute: { key: key },
       setup: (button) => {
         button.connect("pressed", () => {
+          if (key.key_code == 42 || key.key_code == 54) {
+            keyBox.forEach((row) => {
+              row.children.forEach((button) => {
+                if (button.attribute.key.labelShift)
+                  button.label = button.attribute.key.labelShift;
+              });
+            });
+          }
           button.toggleClassName("osk-key-active", true);
         });
         button.connect("released", () => {
+          if (key.key_code == 42 || key.key_code == 54) {
+            keyBox.forEach((row) => {
+              row.children.forEach((button) => {
+                if (button.attribute.key.labelShift)
+                  button.label = button.attribute.key.label;
+              });
+            });
+          }
           button.toggleClassName("osk-key-active", false);
         });
       },
@@ -154,6 +170,7 @@ Utils.subprocess(
   ["bash", "-c", `sudo ${App.configDir}/showmethekey-cli`],
   (output) => {
     let { key_code, state_code } = JSON.parse(output);
+    if (key_code == 58) console.log(output);
     let btn =
       keyBtn.find((key) => key.attribute.key.key_code == key_code) ||
       mouseBtn.find((btn) => btn.attribute.key.key_code == key_code);
