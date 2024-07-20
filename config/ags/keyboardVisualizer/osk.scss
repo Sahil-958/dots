@@ -1,0 +1,155 @@
+@import '../scss/colors';
+
+$osk_key_height: 2.5rem;
+$osk_key_width: 2.5rem;
+$osk_key_padding: 0.188rem;
+$osk_padding : 1.023rem;
+$osk_key_margin: 0.188rem;
+$osk_key_rounding: 0.345rem;
+$osk_key_fontsize: 1.091rem;
+
+.osk-window {
+  background-color: $surface;
+  padding: $osk_padding;
+}
+
+//.osk-body {}
+
+.osk-mouse {
+  border-radius: $osk_key_rounding;
+  padding: $osk_padding;
+  color: $secondary;
+}
+
+.osk-mouse-left {
+  min-height: 80px;
+  border-radius: 10px 0 0 0;
+  color: $secondary;
+  background-color: $surface_container;
+}
+
+.osk-mouse-middle {
+  min-width: 20px;
+  border-radius: 0;
+  color: $secondary;
+  background-color: $surface_container;
+}
+
+.osk-mouse-right {
+  min-height: 80px;
+  border-radius: 0 10px 0 0;
+  color: $secondary;
+  background-color: $surface_container;
+}
+
+.osk-mouse-extra1 {
+  border-radius: 0;
+  color: $secondary;
+  background-color: $surface_container;
+}
+
+.osk-mouse-extra2 {
+  border-radius: 0 0 0 10px;
+  color: $secondary;
+  background-color: $surface_container;
+}
+
+.osk-mouse-body {
+  border-radius: 0 0 10px 0;
+  background-color: $surface_container;
+}
+
+.osk-mouse-left:hover,
+.osk-mouse-middle:hover,
+.osk-mouse-right:hover,
+.osk-mouse-extra1:hover,
+.osk-mouse-extra2:hover {
+  background-color: $primary_container;
+}
+
+.osk-mouse-left:active,
+.osk-mouse-middle:active,
+.osk-mouse-right:active,
+.osk-mouse-extra1:active,
+.osk-mouse-extra2:active {
+  background-color: $primary_container;
+}
+
+.osk-key {
+  border-radius: $osk_key_rounding;
+  background-color: $background;
+  color: $secondary;
+  padding: $osk_key_padding;
+  //border: 1px solid $secondary_container;
+  margin: $osk_key_margin;
+  font-weight: 500;
+  font-size: $osk_key_fontsize;
+}
+
+.osk-key:hover,
+.osk-key:focus {
+  background-color: $primary_container;
+}
+
+.osk-key:active,
+.osk-key-active {
+  background-color: $secondary_container;
+}
+
+.osk-key-normal {
+  min-width: $osk_key_width;
+  min-height: $osk_key_height;
+}
+
+.osk-key-fn {
+  min-width: $osk_key_width * 1.005;
+  min-height: calc($osk_key_height / 2); // dart-sass
+  // min-height: $osk_key_height / 2; // sassc
+}
+
+.osk-key-tab {
+  min-width: $osk_key_width * 1.6;
+  min-height: $osk_key_height;
+}
+
+.osk-key-caps {
+  min-width: $osk_key_width * 1.9;
+  min-height: $osk_key_height;
+}
+
+.osk-key-shift {
+  min-width: $osk_key_width * 2.5;
+  min-height: $osk_key_height;
+}
+
+.osk-key-control {
+  min-width: $osk_key_width * 1.3;
+  min-height: $osk_key_height;
+}
+
+.osk-control-button {
+  border-radius: $osk_key_rounding;
+  background-color: $background;
+  color: $secondary;
+  font-weight: 500;
+  font-size: $osk_key_fontsize;
+  padding: 0.682rem;
+}
+
+.osk-control-button:hover,
+.osk-control-button:focus {
+  background-color: $primary_container;
+}
+
+.osk-control-button:active {
+  background-color: $secondary_container;
+  font-size: $osk_key_fontsize;
+}
+
+.osk-key-empty,
+.osk-key-empty:hover,
+.osk-key-empty:focus {
+  min-width: $osk_key_width;
+  min-height: $osk_key_height;
+  background-color: transparent;
+}
