@@ -120,7 +120,7 @@ const LoginBox = () => {
         hexpand: true,
         class_name: "LoginAvatarBox",
         height_request: 140,
-        css: ` background-image: url("${Utils.HOME}/octane_pfp.jpg");`,
+        css: ` background-image: url("${App.configDir}/octane_pfp.jpg");`,
       }),
       Widget.Box({
         class_name: "LoginEntryBox",
