@@ -167,10 +167,10 @@ KeyboardWindow.connect("delete-event", () => {
 });
 
 Utils.subprocess(
-  ["bash", "-c", `sudo ${App.configDir}/showmethekey-cli`],
+//  ["bash", "-c", `sudo ${App.configDir}/showmethekey-cli`],
+  ["bash", "-c", `pkexec ${App.configDir}/showmethekey-cli`],
   (output) => {
     let { key_code, state_code } = JSON.parse(output);
-    if (key_code == 58) console.log(output);
     let btn =
       keyBtn.find((key) => key.attribute.key.key_code == key_code) ||
       mouseBtn.find((btn) => btn.attribute.key.key_code == key_code);
