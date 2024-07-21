@@ -55,7 +55,7 @@ const CliphistResult = (clip, frState = true, srState = true) => {
           labelWid.css = "background-color: rgba(0,0,0,0.5);";
           self.css = `
           background-image: url('file://${clip.img.filePath}');
-          min-height: ${Math.min((clip.img.height * 395) / clip.img.width, 400)}px;
+          min-height: ${Math.min((clip.img.height * 300) / clip.img.width, 400)}px;
           `;
           //min-height: ${Math.min(clip.img.height, 400)}px;
         }
