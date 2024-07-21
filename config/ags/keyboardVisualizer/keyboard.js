@@ -5,7 +5,10 @@ const { Box, Button, Separator } = Widget;
 import { DEFAULT_OSK_LAYOUT, oskLayouts } from "./data_keyboardlayouts.js";
 import { DEFAULT_OSK_MOUSE_LAYOUT, mouseLayouts } from "./data_mouse.js";
 
-const keyboardJson = oskLayouts[DEFAULT_OSK_LAYOUT];
+const keyboardLayout = DEFAULT_OSK_LAYOUT;
+//const keyboardLayout = "external_keyboard";
+const keyboardJson = oskLayouts[keyboardLayout];
+
 const mouseJson = mouseLayouts[DEFAULT_OSK_MOUSE_LAYOUT];
 
 let keyBtn = [];
@@ -15,7 +18,7 @@ let keyButtons = (row) =>
   row.map((key) => {
     return Button({
       className: `osk-key osk-key-${key.shape}`,
-      hexpand: ["space", "expand"].includes(key.shape),
+      hexpand: ["space", "expand"].some((e) => key.shape.includes(e)),
       label: key.label,
       canFocus: false,
       attribute: { key: key },
@@ -141,8 +144,6 @@ let KeyboardWindow = new Gtk.Window({
   title: "KeyboardVisualizer",
   name: "KeyboardVisualizer",
   child: keyboard,
-  default_width: 450,
-  default_height: 250,
 });
 KeyboardWindow.show_all();
 
@@ -167,7 +168,7 @@ KeyboardWindow.connect("delete-event", () => {
 });
 
 Utils.subprocess(
-//  ["bash", "-c", `sudo ${App.configDir}/showmethekey-cli`],
+  //  ["bash", "-c", `sudo ${App.configDir}/showmethekey-cli`],
   ["bash", "-c", `pkexec ${App.configDir}/showmethekey-cli`],
   (output) => {
     let { key_code, state_code } = JSON.parse(output);
