@@ -22,6 +22,7 @@
 
 .CliphistResultEventBox {
   background-color: lighten($background, 15%);
+  border-radius: 5px;
 
   &:focus,
   &:hover {
