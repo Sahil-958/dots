@@ -9,9 +9,10 @@
 
 .notifications-popup-list {
   min-width: 1rem;
+
   .notification {
-      margin-right: 5px;
-      background-color: $surface;
+    margin-right: 5px;
+    background-color: $surface;
   }
 }
 
@@ -38,12 +39,9 @@
     font-weight: bold;
   }
 
-  .notification-body {
+  .notification-body {}
 
-  }
-
-  .notification-time {
-  }
+  .notification-time {}
 
   .notification-close {
     min-width: 1.5rem;
@@ -66,9 +64,14 @@
       border-right: none;
     }
   }
+
+  .notification-progress {
+    trough {
+      background-color: $surface_container;
+    }
+
+    progress {
+      background-color: $primary;
+    }
+  }
 }
-
-
-
-
-
