@@ -1,0 +1,187 @@
+#0 Black - Default text
+#1 Red - Error messages, broken links
+#2 Green - Executable files
+#3 Yellow - Device files
+#4 Blue - Directories
+
+#5 Magenta - Sockets
+#6 Cyan - Sockets, pipes
+#7 White - Regular files
+#8 Bright Black - Default text
+#9 Bright Red - High-priority error messages
+# For me the below ones works better
+#10 Bright Green - Executable files
+#11 Bright Yellow - Device files, warnings
+#12 Bright Blue - Directories
+#13 Bright Magenta - Symbolic links
+#14 Bright Cyan - Sockets, pipes
+#15 Bright White - Regular files, high visibility
+
+
+#0 Black - Default text
+[Color0]
+# Default color for black
+Color=#1c2024
+
+[Color0Faint]
+# Faint color for black
+Color=#262a2e
+
+[Color0Intense]
+# Intense color for black
+Color=#353a3d
+
+#-----------------------------------------------------------------
+
+#1 Red - Error messages, broken links
+[Color1]
+# Default color for red
+Color=#ffb4ab
+
+[Color1Faint]
+# Faint color for red
+Color=#93000a
+
+[Color1Intense]
+# Intense color for red
+Color=#690005
+
+
+#-----------------------------------------------------------------
+
+#2 Green - Executable files
+[Color2]
+# Default color for green
+Color=#92cef5
+
+[Color2Faint]
+# Faint color for green
+Color=#004c6c
+
+[Color2Intense]
+# Intense color for green
+Color=#92cef5
+
+#-----------------------------------------------------------------
+
+#3 Yellow - Device files, Warnings, fifopipes
+# keeping it as it is for warnings 
+[Color3]
+# Default color for yellow
+Color= 255, 255, 0
+
+[Color3Faint]
+# Faint color for yellow
+Color= 255, 255, 0
+
+[Color3Intense]
+# Intense color for yellow
+Color= 255, 255, 0
+
+#-----------------------------------------------------------------
+
+#4 Blue - Directories
+[Color4]
+# Default color for blue
+Color=#d2e5f4
+
+[Color4Faint]
+# Faint color for blue
+Color=#4a4263
+
+[Color4Intense]
+# Intense color for blue
+Color=#3a4b58
+
+
+#-----------------------------------------------------------------
+
+#5 Magenta - Sockets
+[Color5]
+# Default color for magenta
+Color=#004c6c
+
+[Color5Faint]
+# Faint color for magenta
+Color=#00344b
+
+[Color5Intense]
+# Intense color for magenta
+Color=#92cef5
+
+#-----------------------------------------------------------------
+
+
+#6 Cyan - Sockets, pipes, Symlinks
+[Color6]
+# Default color for cyan
+Color=#4a4263
+
+[Color6Faint]
+# Faint color for cyan
+Color=#332b4b
+
+[Color6Intense]
+# Intense color for cyan
+Color=#e8ddff
+
+#-----------------------------------------------------------------
+
+
+#7 White - Regular files
+[Color7]
+# Default color for white
+Color=#c1c7ce
+
+[Color7Faint]
+# Faint color for white
+Color=#8b9198
+
+[Color7Intense]
+# Intense color for white
+Color=#41484d
+
+#-----------------------------------------------------------------
+
+
+#8 Bright Black - Default text
+[Background]
+# Main background color
+Color=#101417
+
+[BackgroundFaint]
+# Faint background color
+Color=#101417
+
+[BackgroundIntense]
+# Intense background color
+Color=#101417
+
+#-----------------------------------------------------------------
+
+[Foreground]
+# Main foreground color
+Color=#dfe3e7
+
+[ForegroundFaint]
+# Faint foreground color
+Color=#dfe3e7
+
+[ForegroundIntense]
+# Intense foreground color
+Color=#2d3135
+
+#-----------------------------------------------------------------
+
+
+[General]
+Description=Matugen
+Anchor=0.5,0.5
+Blur=true
+ColorRandomization=false
+FillStyle=Tile
+Opacity=0.70
+Wallpaper=
+WallpaperFlipType=NoFlip
+WallpaperOpacity=1
+
