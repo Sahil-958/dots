@@ -17,6 +17,7 @@ brightnessctl
 btop
 cliphist
 cmus
+cpio
 dart-sass
 dolphin
 dolphin-plugins
