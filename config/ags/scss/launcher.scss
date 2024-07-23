@@ -1,12 +1,12 @@
 .launcher-switcher {
   background-color: $surface;
   .launcher-switcher-button {
-    background-color: $surface_container_low;
+    background-color: $surface_container;
     margin-left: 10px;
     &.focused {
       background-color: $surface;
       image {
-        background-color: $surface_container_low;
+        background-color: $surface_container;
         border-bottom-left-radius: 1rem;
         border-top-left-radius: 1rem;
       }
@@ -27,14 +27,14 @@
 }
 
 .launcher {
-  background-color: $surface_container_low;
+  background-color: $surface_container;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   min-width: 25rem;
 
   .launcher-search {
     margin: 1rem;
-    background-color: $surface_container_low;
+    background-color: $surface_container;
 
 
     .search-scroll {
@@ -72,7 +72,7 @@
 
   .launcher-category {
     margin: 1rem;
-    background-color: $surface_container_low;
+    background-color: $surface_container;
     .app-button {
       padding: 8px;
       border-radius: 1rem;

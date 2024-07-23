@@ -1,13 +1,13 @@
 .ClipBoardEntry {
   all: unset;
   padding: 0.5rem;
-  border-bottom: 1px solid $primary;
-  background-color: lighten($background, 10%);
+  border-bottom: 1px solid $secondary;
+  background-color: $surface_container;
 
   &:focus {
     border: none;
     border-bottom: 1px solid $primary;
-    background-color: lighten($background, 5%);
+    color: $primary;
   }
 }
 
@@ -21,23 +21,17 @@
 }
 
 .CliphistResultEventBox {
-  background-color: lighten($background, 15%);
+  background-color: $surface_container_high;
   border-radius: 5px;
 
   &:focus,
   &:hover {
     .CliphistResultBox {
-      color: $primary;
-      background-color: lighten($background, 5%);
+      label {
+        color: $on_secondary_container;
+      }
       background-size: 105%;
       background-position: top;
-    }
-  }
-
-  &:active {
-    .CliphistResultBox {
-      color: $primary;
-      background-color: lighten($background, 0%);
     }
   }
 
