@@ -1,1 +1,0 @@
-/home/sawhill/.cache/wal/wave.glsl
