@@ -61,7 +61,6 @@ networkmanager
 nodejs
 noto-fonts-emoji
 npm
-nvtop
 obs-studio
 os-prober
 otf-comicshanns-nerd
