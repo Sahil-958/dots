@@ -48,6 +48,7 @@ kdeconnect
 konsole
 libgtop
 libqalculate
+libva-utils
 linux
 linux-firmware
 man-db
