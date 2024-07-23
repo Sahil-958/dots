@@ -8,24 +8,6 @@ import { Quicksettings } from "./quicksettings.js";
 
 export const QSState = new StackState("Audio");
 
-const ModuleSettingsIcon = (props = {}) =>
-  Widget.Button({
-    ...props,
-    class_name: "qs-switcher-button",
-    tooltip_text: "Open Settings",
-    on_clicked: () => {
-      execAsync([
-        "bash",
-        "-c",
-        'XDG_CURRENT_DESKTOP="gnome" gnome-control-center',
-      ]);
-      App.toggleWindow("quicksettings");
-    },
-    child: Widget.Icon({
-      icon: icons.header.settings,
-    }),
-  });
-
 const ModulePowerIcon = (props = {}) =>
   Widget.Button({
     ...props,
@@ -43,7 +25,7 @@ const ModulePowerIcon = (props = {}) =>
 const SettingsButtons = () =>
   Widget.Box({
     vertical: true,
-    children: [ModuleSettingsIcon(), ModulePowerIcon()],
+    children: [ ModulePowerIcon()],
   });
 
 /**
