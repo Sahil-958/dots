@@ -60,7 +60,7 @@ networkmanager
 nodejs
 noto-fonts-emoji
 npm
-nvidia-open-dkms
+nvidia-open
 nvidia-settings
 obs-studio
 os-prober
