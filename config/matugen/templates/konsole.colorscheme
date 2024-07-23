@@ -1,0 +1,187 @@
+#0 Black - Default text
+#1 Red - Error messages, broken links
+#2 Green - Executable files
+#3 Yellow - Device files
+#4 Blue - Directories
+
+#5 Magenta - Sockets
+#6 Cyan - Sockets, pipes
+#7 White - Regular files
+#8 Bright Black - Default text
+#9 Bright Red - High-priority error messages
+# For me the below ones works better
+#10 Bright Green - Executable files
+#11 Bright Yellow - Device files, warnings
+#12 Bright Blue - Directories
+#13 Bright Magenta - Symbolic links
+#14 Bright Cyan - Sockets, pipes
+#15 Bright White - Regular files, high visibility
+
+
+#0 Black - Default text
+[Color0]
+# Default color for black
+Color={{colors.surface_container.default.hex}}
+
+[Color0Faint]
+# Faint color for black
+Color={{colors.surface_container_high.default.hex}}
+
+[Color0Intense]
+# Intense color for black
+Color={{colors.surface_bright.default.hex}}
+
+#-----------------------------------------------------------------
+
+#1 Red - Error messages, broken links
+[Color1]
+# Default color for red
+Color={{colors.error.default.hex}}
+
+[Color1Faint]
+# Faint color for red
+Color={{colors.error_container.default.hex}}
+
+[Color1Intense]
+# Intense color for red
+Color={{colors.on_error.default.hex}}
+
+
+#-----------------------------------------------------------------
+
+#2 Green - Executable files
+[Color2]
+# Default color for green
+Color={{colors.primary.default.hex}}
+
+[Color2Faint]
+# Faint color for green
+Color={{colors.primary_container.default.hex}}
+
+[Color2Intense]
+# Intense color for green
+Color={{colors.primary.default.hex}}
+
+#-----------------------------------------------------------------
+
+#3 Yellow - Device files, Warnings, fifopipes
+# keeping it as it is for warnings 
+[Color3]
+# Default color for yellow
+Color= 255, 255, 0
+
+[Color3Faint]
+# Faint color for yellow
+Color= 255, 255, 0
+
+[Color3Intense]
+# Intense color for yellow
+Color= 255, 255, 0
+
+#-----------------------------------------------------------------
+
+#4 Blue - Directories
+[Color4]
+# Default color for blue
+Color={{colors.on_secondary_container.default.hex}}
+
+[Color4Faint]
+# Faint color for blue
+Color={{colors.tertiary_container.default.hex}}
+
+[Color4Intense]
+# Intense color for blue
+Color={{colors.secondary_container.default.hex}}
+
+
+#-----------------------------------------------------------------
+
+#5 Magenta - Sockets
+[Color5]
+# Default color for magenta
+Color={{colors.primary_container.default.hex}}
+
+[Color5Faint]
+# Faint color for magenta
+Color={{colors.on_primary.default.hex}}
+
+[Color5Intense]
+# Intense color for magenta
+Color={{colors.primary.default.hex}}
+
+#-----------------------------------------------------------------
+
+
+#6 Cyan - Sockets, pipes, Symlinks
+[Color6]
+# Default color for cyan
+Color={{colors.tertiary_container.default.hex}}
+
+[Color6Faint]
+# Faint color for cyan
+Color={{colors.on_tertiary.default.hex}}
+
+[Color6Intense]
+# Intense color for cyan
+Color={{colors.on_tertiary_container.default.hex}}
+
+#-----------------------------------------------------------------
+
+
+#7 White - Regular files
+[Color7]
+# Default color for white
+Color={{colors.on_surface_variant.default.hex}}
+
+[Color7Faint]
+# Faint color for white
+Color={{colors.outline.default.hex}}
+
+[Color7Intense]
+# Intense color for white
+Color={{colors.outline_variant.default.hex}}
+
+#-----------------------------------------------------------------
+
+
+#8 Bright Black - Default text
+[Background]
+# Main background color
+Color={{colors.background.default.hex}}
+
+[BackgroundFaint]
+# Faint background color
+Color={{colors.surface_dim.default.hex}}
+
+[BackgroundIntense]
+# Intense background color
+Color={{colors.surface.default.hex}}
+
+#-----------------------------------------------------------------
+
+[Foreground]
+# Main foreground color
+Color={{colors.on_background.default.hex}}
+
+[ForegroundFaint]
+# Faint foreground color
+Color={{colors.on_surface.default.hex}}
+
+[ForegroundIntense]
+# Intense foreground color
+Color={{colors.inverse_on_surface.default.hex}}
+
+#-----------------------------------------------------------------
+
+
+[General]
+Description=Matugen
+Anchor=0.5,0.5
+Blur=true
+ColorRandomization=false
+FillStyle=Tile
+Opacity=0.70
+Wallpaper=
+WallpaperFlipType=NoFlip
+WallpaperOpacity=1
+

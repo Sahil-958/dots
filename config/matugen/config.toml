@@ -73,6 +73,13 @@ input_path = '~/.config/matugen/templates/wave.glsl'
 output_path = '~/.config/glava/wave.glsl'
 mode = "Dark"
 
+[templates.konsole]
+input_path = '~/.config/matugen/templates/konsole.colorscheme'
+output_path = '~/.local/share/konsole/matugen.colorscheme'
+mode = "Dark"
+
+
+
 [config]
 reload_apps = false
 set_wallpaper = true
