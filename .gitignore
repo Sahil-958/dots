@@ -3,4 +3,10 @@
 **/gtk-4.0/colors.css
 **/konsole/bookmarks.xml
 **/konsole/bookmarks.xml.tbcache
+**/glava/bars.glsl
+**/glava/circle.glsl
+**/glava/graph.glsl
+**/glava/radial.glsl
+**/glava/wave.glsl
+**/konsole/matugen.colorscheme
 
