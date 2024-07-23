@@ -112,7 +112,6 @@ xclip
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xf86-video-amdgpu
-xf86-video-nouveau
 xorg-server
 xorg-xbacklight
 xorg-xev
