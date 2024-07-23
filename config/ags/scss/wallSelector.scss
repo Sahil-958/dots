@@ -2,14 +2,15 @@
   .wallSelectorEntry {
     all: unset;
     padding: 0.5rem;
-    border-bottom: 1px solid $primary;
-    background-color: lighten($background, 10%);
+    border-bottom: 1px solid $secondary;
+    background-color: $surface_container;
 
     &:focus {
       border: none;
       border-bottom: 1px solid $primary;
-      background-color: lighten($background, 5%);
+      color: $primary;
     }
+
   }
 
   .wallSelectorStatsBox {
@@ -21,46 +22,36 @@
 
 
 
-
-
-.WallBox {
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 5px;
-  transition: background 0.6s ease;
-
-  .WallLabel {
-    color: $primary;
-    padding: 0.5rem;
-    background-color: rgba($surface, 0.5);
-    border-radius: 15px 15px 0 0;
+.WallButton {
+  .WallBox {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
     transition: background 0.6s ease;
+
+    .WallLabel {
+      color: $on_surface;
+      padding: 0.5rem;
+      background-color: $surface_container;
+      border-radius: 15px 15px 0 0;
+      transition: all 0.6s ease;
+    }
+
   }
 
-}
-
-.WallButton {
-  background-color: lighten($background, 15%);
+  background-color: $surface_container;
 
   &:focus,
   &:hover {
     .WallBox {
-      color: $primary;
       background-color: lighten($background, 5%);
       background-size: 105%;
       background-position: top;
     }
 
     .WallLabel {
-      background-color: rgba($surface, 0.9);
-    }
-  }
-
-  &:active {
-    .WallBox {
       color: $primary;
-      background-color: lighten($background, 0%);
     }
   }
 

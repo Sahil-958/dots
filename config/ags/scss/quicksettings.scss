@@ -1,12 +1,12 @@
 .qs-switcher {
   background-color: $surface;
   .qs-switcher-button {
-    background-color: $surface_container_low;
+    background-color: $surface_container;
     margin-right: 10px;
     &.focused {
       background-color: $surface;
       image {
-        background-color: $surface_container_low;
+        background-color: $surface_container;
         border-bottom-right-radius: 1rem;
         border-top-right-radius: 1rem;
       }
@@ -33,7 +33,7 @@
   min-width: 28.8rem;
   .qs-page {
     min-height: 10rem;
-    background-color: $surface_container_low;
+    background-color: $surface_container;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     scale {
@@ -63,8 +63,8 @@
         &:active {
           color: $primary;
         }
-        color: mix($primary, $surface_container_low, 50%);
-        background-color: $surface_container_low;
+        color: mix($primary, $surface_container, 50%);
+        background-color: $surface_container;
       }
     }
   }
