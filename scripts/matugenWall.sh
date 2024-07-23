@@ -15,5 +15,5 @@ fi
 
 matugen image "$image" -t "$scheme" --mode "$theme"
 # using pywal for konsole and other 
-wal -i "$image"
+#wal -i "$image"
 ~/dots/scripts/matugenUpdateRest.sh &
