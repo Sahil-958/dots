@@ -62,6 +62,7 @@ noto-fonts-emoji
 npm
 nvidia-open
 nvidia-settings
+nvtop
 obs-studio
 os-prober
 otf-comicshanns-nerd
