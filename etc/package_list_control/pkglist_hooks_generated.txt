@@ -1,4 +1,3 @@
-amd-ucode
 android-tools
 arch-install-scripts
 archlinux-xdg-menu
