@@ -91,7 +91,7 @@ Color={{colors.tertiary_container.default.hex}}
 
 [Color4Intense]
 # Intense color for blue
-Color={{colors.secondary_container.default.hex}}
+Color={{colors.on_secondary_container.default.hex}}
 
 
 #-----------------------------------------------------------------
@@ -151,11 +151,11 @@ Color={{colors.background.default.hex}}
 
 [BackgroundFaint]
 # Faint background color
-Color={{colors.surface_dim.default.hex}}
+Color={{colors.background.default.hex}}
 
 [BackgroundIntense]
 # Intense background color
-Color={{colors.surface.default.hex}}
+Color={{colors.scrim.default.hex}}
 
 #-----------------------------------------------------------------
 
@@ -169,7 +169,7 @@ Color={{colors.on_surface.default.hex}}
 
 [ForegroundIntense]
 # Intense foreground color
-Color={{colors.inverse_on_surface.default.hex}}
+Color={{colors.on_background.default.hex}}
 
 #-----------------------------------------------------------------
 
