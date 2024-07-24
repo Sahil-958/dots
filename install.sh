@@ -1,3 +1,6 @@
+echo "OUTDATED"
+exit
+
 # == MY ARCH SETUP INSTALLER == #
 set -x 
 set -e
