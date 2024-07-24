@@ -1,6 +1,5 @@
 adw-gtk3-git
 aylurs-gtk-shell
-binder_linux-dkms
 gtk-session-lock
 hyprshade-git
 libastal-auth-git
