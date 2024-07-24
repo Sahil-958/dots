@@ -51,8 +51,6 @@ libqalculate
 libva-utils
 linux
 linux-firmware
-linux-zen
-linux-zen-headers
 man-db
 mesa-utils
 neofetch
