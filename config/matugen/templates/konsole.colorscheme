@@ -147,15 +147,18 @@ Color={{colors.outline_variant.default.hex}}
 #8 Bright Black - Default text
 [Background]
 # Main background color
-Color={{colors.background.default.hex}}
+#Color={{colors.background.default.hex}}
+Color={{colors.background.default.rgb | replace: "rgb(", "" | replace: ")", "" }},180
 
 [BackgroundFaint]
 # Faint background color
-Color={{colors.background.default.hex}}
+#Color={{colors.background.default.hex}}
+Color={{colors.background.default.rgb | replace: "rgb(", "" | replace: ")", "" }},180
 
 [BackgroundIntense]
 # Intense background color
-Color={{colors.scrim.default.hex}}
+#Color={{colors.scrim.default.hex}}
+Color={{colors.background.default.rgb | replace: "rgb(", "" | replace: ")", "" }},180
 
 #-----------------------------------------------------------------
 
@@ -180,7 +183,7 @@ Anchor=0.5,0.5
 Blur=true
 ColorRandomization=false
 FillStyle=Tile
-Opacity=0.70
+#Opacity=0.70
 Wallpaper=
 WallpaperFlipType=NoFlip
 WallpaperOpacity=1
