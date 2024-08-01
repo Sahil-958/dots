@@ -1,0 +1,221 @@
+* {
+  all: unset;
+  font-family: "CaskaydiaCove Nerd Font";
+}
+
+window {
+  background: transparent;
+}
+
+.LockWindowBackgroundBox {
+  background-size: cover;
+  background-image: url("/home/sawhill/walls/dharmx_walls/flowers/a_close_up_of_a_tree_branch_with_white_flowers.jpg");
+  background-image: url("./background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*.OverlayRevealerBox { }*/
+.OverlayRevealerBoxChildren {
+  background-color: rgba(19, 19, 19, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/*.LoginBox {}*/
+.LoginAvatarBox {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.LoginEntry {
+  all: unset;
+  padding: 15px;
+  background-color: rgba(19, 19, 19, 0.5);
+  border: 2px solid #c3c7c9;
+  border-radius: 5px;
+}
+
+.Failed .LoginEntry {
+  border: 2px solid #ffb4ab;
+  border-radius: 5px 5px 0 0;
+}
+.Failed .LoginStatusLabel {
+  background-color: #ffb4ab;
+  color: #690005;
+}
+
+.LoginStatusLabel {
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  background-color: rgba(19, 19, 19, 0.9);
+}
+
+.tooltip {
+  background-color: #131313;
+  color: #e5e2e1;
+  padding: 0 0 8px 8px;
+}
+
+.clock-container {
+  background-color: #131313;
+  padding-right: 8px;
+}
+
+.clock-container .clock-date {
+  font-size: 0.6rem;
+  color: #c3c7c9;
+}
+
+.clock-container .clock-time {
+  font-size: 0.7rem;
+}
+
+.session-button {
+  background-color: #131313;
+  color: #c3c7c9;
+  padding: 0px 8px;
+}
+
+.corner {
+  background-color: #131313;
+  font-size: 1rem;
+}
+
+.angle {
+  background-color: #131313;
+}
+
+tooltip {
+  box-shadow: none;
+}
+
+tooltip.background {
+  background-color: #131313;
+  color: #e5e2e1;
+  border-radius: 6px;
+}
+
+.clock-container {
+  background-color: #131313;
+  padding-right: 8px;
+}
+
+.clock-container .clock-date {
+  font-size: 0.6rem;
+  color: #c3c7c9;
+}
+
+.clock-container .clock-time {
+  font-size: 0.7rem;
+}
+
+.session-button {
+  background-color: #131313;
+  color: #e5e2e1;
+  padding: 0px 8px;
+}
+
+.session-button-focused {
+  background-color: #131313;
+  color: #e5e2e1;
+}
+
+.session-button-desc {
+  background-color: #131313;
+  color: #e5e2e1;
+  border-radius: 1rem;
+  padding: 0.205rem 0.341rem;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.corner {
+  background-color: #131313;
+  border-radius: 1rem;
+}
+
+.angle {
+  background-color: #131313;
+}
+
+check,
+radio {
+  min-height: 15px;
+  min-width: 15px;
+  margin: 4px;
+  padding: 0;
+  color: transparent;
+  background-color: #131313;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 150ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+radio {
+  border-radius: 9999px;
+}
+
+check {
+  border-radius: 4px;
+}
+
+check:hover,
+radio:hover {
+  box-shadow: 0 0 0 4px rgba(19, 19, 19, 0.2);
+  background-color: #131313;
+}
+
+check:active,
+radio:active {
+  box-shadow: 0 0 0 4px rgba(19, 19, 19, 0.2);
+  background-color: #131313;
+}
+
+check:checked,
+check:indeterminate,
+radio:checked,
+radio:indeterminate {
+  color: #131313;
+  background-color: #454748;
+}
+
+check:checked:hover,
+check:indeterminate:hover,
+radio:checked:hover,
+radio:indeterminate:hover {
+  box-shadow: 0 0 0 4px rgba(69, 71, 72, 0.2);
+  background-color: #454748;
+}
+
+check:checked:active,
+check:indeterminate:active,
+radio:checked:active,
+radio:indeterminate:active {
+  box-shadow: 0 0 0 4px rgba(69, 71, 72, 0.2);
+  background-color: #454748;
+}
+
+popover {
+  background-color: #131313;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.de-entry {
+  min-height: 20px;
+  padding: 0 8px;
+  border-radius: 1rem;
+  caret-color: currentColor;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: inset 0 0 0 2px transparent;
+  background-color: #131313;
+  color: #e5e2e1;
+}
+
+.de-entry:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 2px #c3c7c9;
+}
+
+/*# sourceMappingURL=style.css.map */
