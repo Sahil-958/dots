@@ -73,7 +73,6 @@ pavucontrol
 polkit-gnome
 powertop
 python-aiohttp
-python-jsonschema
 python-opencv
 python-pip
 python-pyqt5
