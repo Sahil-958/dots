@@ -55,7 +55,6 @@ libva-utils
 linux
 linux-firmware
 man-db
-mercurial
 mesa-utils
 neofetch
 neovim
