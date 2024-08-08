@@ -109,7 +109,6 @@ viu
 vlc
 waybar
 webkit2gtk-4.1
-wget
 wireplumber
 wl-clipboard
 xclip
