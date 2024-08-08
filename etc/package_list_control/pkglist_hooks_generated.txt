@@ -96,7 +96,6 @@ snapper
 sshfs
 starship
 swappy
-sway
 swww
 tesseract
 tesseract-data-eng
