@@ -21,6 +21,7 @@ cliphist
 cmus
 cpio
 dart-sass
+dnsmasq
 dolphin
 dolphin-plugins
 efibootmgr
