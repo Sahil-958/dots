@@ -3,6 +3,7 @@ amd-ucode
 android-tools
 arch-install-scripts
 archlinux-xdg-menu
+aria2
 ark
 base
 base-devel
