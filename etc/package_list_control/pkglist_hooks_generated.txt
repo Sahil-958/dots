@@ -26,7 +26,6 @@ dnsmasq
 dolphin
 dolphin-plugins
 efibootmgr
-egl-wayland
 fastfetch
 fd
 ffmpegthumbs
