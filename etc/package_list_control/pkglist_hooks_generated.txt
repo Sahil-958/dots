@@ -114,6 +114,7 @@ vi
 vim
 viu
 vlc
+vulkan-mesa-layers
 vulkan-nouveau
 vulkan-tools
 waybar
