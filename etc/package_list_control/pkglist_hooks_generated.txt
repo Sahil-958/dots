@@ -109,6 +109,7 @@ tree
 ttf-cascadia-code-nerd
 ttf-fira-sans
 unzip
+vdpauinfo
 vi
 vim
 viu
