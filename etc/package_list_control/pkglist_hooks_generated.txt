@@ -54,13 +54,11 @@ kdeconnect
 konsole
 libgtop
 libqalculate
-libva-mesa-driver
 libva-utils
 linux
 linux-firmware
 man-db
 mesa-utils
-mesa-vdpau
 neofetch
 neovim
 nethogs
