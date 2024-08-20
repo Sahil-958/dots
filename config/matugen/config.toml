@@ -1,83 +1,76 @@
+[config.custom_colors]
+success = { color = "#B5CCBA", blend = true }
+onSuccess = { color = "#213528", blend = true }
+successContainer = { color = "#374B3E", blend = true }
+onSuccessContainer = { color = "#D1E9D6", blend = true }
+warning = { color = "#FFDDAA", blend = true }
+onWarning = { color = "#4B2900", blend = true }
+warningContainer = { color = "#693C00", blend = true }
+onWarningContainer = { color = "#FFDCBB", blend = true }
+
 [templates.ags]
 input_path = '~/.config/matugen/templates/ags.scss'
 output_path = '~/.config/ags/scss/colors.scss'
-mode = "Dark"
 
 [templates.legacy]
 input_path = '~/.config/matugen/templates/legacy'
 output_path = '~/.cache/current_wall_path.txt'
-mode = "Dark"
 
 [templates.legacy1]
 input_path = '~/.config/matugen/templates/colors.sh'
 output_path = '~/.cache/matugen/colors.sh'
-mode = "Dark"
 
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/gtk.css'
 output_path = '~/.config/gtk-4.0/colors.css'
-mode = "Dark"
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk.css'
 output_path = '~/.config/gtk-3.0/colors.css'
-mode = "Dark"
 
 [templates.qt_oomox]
 input_path = '~/.config/matugen/templates/qt-oomox-styleplugin'
 output_path = '~/.config/oomox-qtstyleplugin/themes/matugen.css'
-mode = "Dark"
 
 [templates.kdeglobals]
 input_path = '~/.config/matugen/templates/kdeglobals.conf'
 output_path = '~/.config/kdeglobals'
-mode = "Dark"
 
 [templates.slurpAGS]
 input_path = '~/.config/matugen/templates/primary'
 output_path = '~/.config/ags/slurp/primary'
-mode = "Dark"
 
 [templates.hypr]
 input_path = '~/.config/matugen/templates/hypr.conf'
 output_path = '~/.cache/matugen/hyprland-colors.conf'
-mode = "Dark"
 
 [templates.wezterm]
 input_path = '~/.config/matugen/templates/wezterm.toml'
 output_path = '~/.config/wezterm/colors/matugen.toml'
-mode = "Dark"
 
 [templates.Glava_bars]
 input_path = '~/.config/matugen/templates/bars.glsl'
 output_path = '~/.config/glava/bars.glsl'
-mode = "Dark"
 
 [templates.Glava_graph]
 input_path = '~/.config/matugen/templates/graph.glsl'
 output_path = '~/.config/glava/graph.glsl'
-mode = "Dark"
 
 [templates.Glava_radial]
 input_path = '~/.config/matugen/templates/radial.glsl'
 output_path = '~/.config/glava/radial.glsl'
-mode = "Dark"
 
 [templates.Glava_circle]
 input_path = '~/.config/matugen/templates/circle.glsl'
 output_path = '~/.config/glava/circle.glsl'
-mode = "Dark"
 
 [templates.Glava_wave]
 input_path = '~/.config/matugen/templates/wave.glsl'
 output_path = '~/.config/glava/wave.glsl'
-mode = "Dark"
 
 [templates.konsole]
 input_path = '~/.config/matugen/templates/konsole.colorscheme'
 output_path = '~/.local/share/konsole/matugen.colorscheme'
-mode = "Dark"
-
 
 
 [config]
@@ -94,4 +87,3 @@ swww_options = [
     "--transition-duration",
     "1.0",
 ]
-
