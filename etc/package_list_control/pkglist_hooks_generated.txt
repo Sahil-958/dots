@@ -114,7 +114,6 @@ vi
 vim
 viu
 vlc
-waybar
 webkit2gtk-4.1
 wireplumber
 wl-clipboard
