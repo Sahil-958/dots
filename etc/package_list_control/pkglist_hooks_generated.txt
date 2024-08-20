@@ -75,6 +75,7 @@ p7zip
 pacman-contrib
 pavucontrol
 persepolis
+playerctl
 polkit-gnome
 powertop
 python-aiohttp
