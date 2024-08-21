@@ -2,7 +2,6 @@ adw-gtk3-git
 aylurs-gtk-shell
 gtk-session-lock
 hyprshade-git
-ianny
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
