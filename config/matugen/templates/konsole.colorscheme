@@ -68,15 +68,15 @@ Color={{colors.primary.default.hex}}
 # keeping it as it is for warnings 
 [Color3]
 # Default color for yellow
-Color= 255, 255, 0
+Color={{colors.warning.default.hex}}
 
 [Color3Faint]
 # Faint color for yellow
-Color= 255, 255, 0
+Color={{colors.warning_container.default.hex}}
 
 [Color3Intense]
 # Intense color for yellow
-Color= 255, 255, 0
+Color={{colors.warning.default.hex}}
 
 #-----------------------------------------------------------------
 
@@ -183,7 +183,7 @@ Anchor=0.5,0.5
 Blur=true
 ColorRandomization=false
 FillStyle=Tile
-#Opacity=0.70
+Opacity=0.70
 Wallpaper=
 WallpaperFlipType=NoFlip
 WallpaperOpacity=1
