@@ -115,6 +115,7 @@ vlc
 webkit2gtk-4.1
 wireplumber
 wl-clipboard
+workrave
 xclip
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
