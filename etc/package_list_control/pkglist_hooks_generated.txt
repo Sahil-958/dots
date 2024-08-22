@@ -5,6 +5,7 @@ arch-install-scripts
 archlinux-xdg-menu
 aria2
 ark
+atop
 base
 base-devel
 bash-completion
@@ -40,6 +41,7 @@ greetd
 grim
 grub
 grub-btrfs
+gtk-session-lock
 gtk3-demos
 gtk4-demos
 gwenview
