@@ -52,6 +52,7 @@ imagemagick
 imlib2
 jq
 kdeconnect
+kitty
 konsole
 libgtop
 libqalculate
