@@ -5,7 +5,6 @@ arch-install-scripts
 archlinux-xdg-menu
 aria2
 ark
-atop
 base
 base-devel
 bash-completion
