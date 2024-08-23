@@ -1,5 +1,6 @@
 adw-gtk3-git
 aylurs-gtk-shell
+hyprpicker
 hyprshade-git
 libastal-auth-git
 libastal-tray-git
