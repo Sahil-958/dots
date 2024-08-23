@@ -11,4 +11,3 @@ oomox-qt6-styleplugin-git
 pikaur
 safeeyes
 vscodium-bin
-wlrctl
