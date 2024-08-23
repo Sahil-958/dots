@@ -52,15 +52,15 @@ Color={{colors.error.default.hex}}
 #2 Green - Executable files
 [Color2]
 # Default color for green
-Color={{colors.primary.default.hex}}
+Color={{colors.success_container.default.hex}}
 
 [Color2Faint]
 # Faint color for green
-Color={{colors.primary_container.default.hex}}
+Color={{colors.success.default.hex}}
 
 [Color2Intense]
 # Intense color for green
-Color={{colors.primary.default.hex}}
+Color={{colors.success_container.default.hex}}
 
 #-----------------------------------------------------------------
 
