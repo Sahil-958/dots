@@ -121,6 +121,5 @@ xorg-xev
 xorg-xinit
 xorg-xkill
 xorg-xprop
-xorg-xsetroot
 yt-dlp
 zip
