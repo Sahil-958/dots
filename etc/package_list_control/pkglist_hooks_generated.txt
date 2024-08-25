@@ -17,7 +17,6 @@ breeze
 breeze-icons
 brightnessctl
 btop
-cage
 cliphist
 cmus
 cpio
