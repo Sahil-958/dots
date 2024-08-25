@@ -38,8 +38,6 @@ grim
 grub
 grub-btrfs
 gtk-session-lock
-gtk3-demos
-gtk4-demos
 gwenview
 hyprcursor
 hypridle
