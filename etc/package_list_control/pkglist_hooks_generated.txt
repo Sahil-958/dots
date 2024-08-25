@@ -36,7 +36,6 @@ fzf
 git
 glava
 gnome-bluetooth-3.0
-greetd
 grim
 grub
 grub-btrfs
