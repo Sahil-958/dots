@@ -118,7 +118,6 @@ xdg-desktop-portal-hyprland
 xf86-video-amdgpu
 xorg-server
 xorg-xev
-xorg-xinit
 xorg-xkill
 xorg-xprop
 yt-dlp
