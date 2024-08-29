@@ -48,6 +48,7 @@ imlib2
 jq
 kdeconnect
 konsole
+ldns
 libgtop
 libqalculate
 libva-utils
