@@ -56,7 +56,6 @@ linux
 linux-firmware
 man-db
 mesa-utils
-neofetch
 neovim
 nethogs
 network-manager-applet
