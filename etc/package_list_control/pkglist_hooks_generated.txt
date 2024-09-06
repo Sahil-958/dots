@@ -17,7 +17,6 @@ breeze-icons
 brightnessctl
 btop
 cliphist
-cmatrix
 cmus
 cpio
 dart-sass
