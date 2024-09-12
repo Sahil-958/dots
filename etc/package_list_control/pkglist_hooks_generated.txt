@@ -89,7 +89,6 @@ reflector
 ripgrep
 rsync
 rust
-shotwell
 slurp
 smartmontools
 snapper
