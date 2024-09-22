@@ -17,7 +17,6 @@ breeze-icons
 btop
 cmus
 cpio
-ddcutil
 dnsmasq
 dolphin
 dolphin-plugins
