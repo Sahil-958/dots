@@ -1,3 +1,4 @@
+adw-gtk-theme-git
 aylurs-gtk-shell
 hyprpicker
 hyprshade-git
@@ -11,6 +12,10 @@ matugen-bin
 oomox-qt5-styleplugin-git
 oomox-qt6-styleplugin-git
 pikaur
+ttf-gabarito-git
+ttf-material-symbols-variable-git
+ttf-readex-pro
+ttf-rubik-vf
 vscodium-bin
 yay-bin
 yay-bin-debug
