@@ -1,9 +1,9 @@
 acpilight
+adw-gtk-theme
 amd-ucode
 android-tools
 archlinux-xdg-menu
 aria2
-ark
 base
 base-devel
 bash-completion
