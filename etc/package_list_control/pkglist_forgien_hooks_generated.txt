@@ -8,6 +8,7 @@ illogical-impulse-fonts-themes
 illogical-impulse-gnome
 illogical-impulse-gtk
 illogical-impulse-portal
+illogical-impulse-python
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
