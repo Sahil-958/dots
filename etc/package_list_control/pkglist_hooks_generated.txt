@@ -8,7 +8,6 @@ base
 base-devel
 bash-completion
 bind
-blueberry
 blueman
 blueprint-compiler
 bluez-utils
@@ -28,11 +27,8 @@ firefox
 firewalld
 flatpak
 fzf
-gammastep
 git
 glava
-gnome-control-center
-gnome-keyring
 grub
 grub-btrfs
 gtk-session-lock
@@ -56,7 +52,6 @@ mesa-utils
 neovim
 nethogs
 network-manager-applet
-networkmanager
 nodejs
 noto-fonts-emoji
 ntfs-3g
