@@ -2,6 +2,7 @@ aylurs-gtk-shell
 hyprpicker
 hyprshade-git
 illogical-impulse-audio
+illogical-impulse-backlight
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
