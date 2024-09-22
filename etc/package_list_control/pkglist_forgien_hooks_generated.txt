@@ -6,6 +6,7 @@ illogical-impulse-backlight
 illogical-impulse-basic
 illogical-impulse-fonts-themes
 illogical-impulse-gnome
+illogical-impulse-gtk
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
