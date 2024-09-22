@@ -14,6 +14,7 @@ bluez-utils
 breeze
 breeze-icons
 btop
+cairomm
 cmus
 cpio
 dnsmasq
@@ -32,6 +33,8 @@ glava
 grub
 grub-btrfs
 gtk-session-lock
+gtkmm3
+gtksourceviewmm
 gwenview
 hyprcursor
 hyprland
@@ -75,6 +78,7 @@ rust
 smartmontools
 snapper
 sshfs
+tinyxml2
 tldr
 tree
 ttf-cascadia-code-nerd
