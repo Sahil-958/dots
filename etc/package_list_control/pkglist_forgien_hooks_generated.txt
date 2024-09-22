@@ -17,5 +17,7 @@ oomox-qt5-styleplugin-git
 oomox-qt6-styleplugin-git
 pikaur
 vscodium-bin
+wlogout
+wlogout-debug
 yay-bin
 yay-bin-debug
