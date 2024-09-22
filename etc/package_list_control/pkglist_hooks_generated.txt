@@ -26,7 +26,9 @@ fd
 ffmpegthumbs
 firefox
 firewalld
+fish
 flatpak
+foot
 fzf
 git
 glava
@@ -72,11 +74,11 @@ python-qrencode
 qt5-graphicaleffects
 qt5-quickcontrols
 qt5-quickcontrols2
+qt5-wayland
 qt6-wayland
 qt6ct
 reflector
 rust
-sassc
 smartmontools
 snapper
 sshfs
@@ -84,6 +86,8 @@ tldr
 tree
 ttf-cascadia-code-nerd
 ttf-fira-sans
+ttf-jetbrains-mono-nerd
+ttf-space-mono-nerd
 unzip
 vi
 vim
