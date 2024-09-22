@@ -8,6 +8,7 @@ base
 base-devel
 bash-completion
 bind
+blueberry
 blueman
 blueprint-compiler
 bluez-utils
@@ -27,8 +28,11 @@ firefox
 firewalld
 flatpak
 fzf
+gammastep
 git
 glava
+gnome-control-center
+gnome-keyring
 grub
 grub-btrfs
 gtk-session-lock
