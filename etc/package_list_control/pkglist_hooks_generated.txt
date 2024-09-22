@@ -40,6 +40,7 @@ grim
 grub
 grub-btrfs
 gtk-session-lock
+gvfs
 gwenview
 hyprcursor
 hypridle
