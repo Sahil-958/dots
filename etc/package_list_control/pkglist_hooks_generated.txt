@@ -29,11 +29,9 @@ flatpak
 fzf
 git
 glava
-gobject-introspection
 grub
 grub-btrfs
 gtk-session-lock
-gtksourceview3
 gwenview
 hyprcursor
 hypridle
@@ -89,14 +87,10 @@ vim
 viu
 vlc
 webkit2gtk-4.1
-webp-pixbuf-loader
 xdg-desktop-portal-hyprland
-xdg-user-dirs-gtk
 xf86-video-amdgpu
 xorg-server
 xorg-xev
 xorg-xprop
-yad
-ydotool
 yt-dlp
 zip
