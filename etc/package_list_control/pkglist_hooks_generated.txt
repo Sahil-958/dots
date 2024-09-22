@@ -86,7 +86,6 @@ vim
 viu
 vlc
 webkit2gtk-4.1
-xdg-desktop-portal-hyprland
 xf86-video-amdgpu
 xorg-server
 xorg-xev
