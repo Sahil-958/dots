@@ -34,7 +34,6 @@ grub-btrfs
 gtk-session-lock
 gwenview
 hyprcursor
-hypridle
 hyprland
 imagemagick
 imlib2
@@ -65,7 +64,6 @@ python-opencv
 python-pip
 python-pyqt5
 python-pyscreenshot
-python-pywayland
 python-qrencode
 qt5-graphicaleffects
 qt5-quickcontrols
