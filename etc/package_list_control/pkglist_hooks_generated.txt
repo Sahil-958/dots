@@ -76,6 +76,7 @@ qt6-wayland
 qt6ct
 reflector
 rust
+sassc
 smartmontools
 snapper
 sshfs
