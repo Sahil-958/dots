@@ -27,7 +27,6 @@ firefox
 firewalld
 flatpak
 fzf
-gdb
 git
 glava
 grub
@@ -66,6 +65,7 @@ python-opencv
 python-pip
 python-pyqt5
 python-pyscreenshot
+python-pywayland
 python-qrencode
 qt5-graphicaleffects
 qt5-quickcontrols
@@ -74,7 +74,6 @@ qt6-wayland
 qt6ct
 reflector
 rust
-scdoc
 smartmontools
 snapper
 sshfs
@@ -88,7 +87,6 @@ vim
 viu
 vlc
 webkit2gtk-4.1
-wlroots
 xf86-video-amdgpu
 xorg-server
 xorg-xev
