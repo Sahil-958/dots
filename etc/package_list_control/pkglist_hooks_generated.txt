@@ -27,6 +27,7 @@ firefox
 firewalld
 flatpak
 fzf
+gdb
 git
 glava
 grub
@@ -73,6 +74,7 @@ qt6-wayland
 qt6ct
 reflector
 rust
+scdoc
 smartmontools
 snapper
 sshfs
@@ -86,6 +88,7 @@ vim
 viu
 vlc
 webkit2gtk-4.1
+wlroots
 xf86-video-amdgpu
 xorg-server
 xorg-xev
