@@ -1,5 +1,12 @@
+anyrun-git
+anyrun-git-debug
 aylurs-gtk-shell
-hyprpicker
+hypridle-git
+hypridle-git-debug
+hyprlock-git
+hyprlock-git-debug
+hyprpicker-git
+hyprpicker-git-debug
 hyprshade-git
 illogical-impulse-audio
 illogical-impulse-backlight
