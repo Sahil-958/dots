@@ -15,7 +15,5 @@ oomox-qt5-styleplugin-git
 oomox-qt6-styleplugin-git
 pikaur
 vscodium-bin
-xdg-desktop-portal-hyprland-git
-xdg-desktop-portal-hyprland-git-debug
 yay-bin
 yay-bin-debug
