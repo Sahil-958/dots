@@ -4,6 +4,7 @@ hyprshade-git
 illogical-impulse-audio
 illogical-impulse-backlight
 illogical-impulse-basic
+illogical-impulse-fonts-themes
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
