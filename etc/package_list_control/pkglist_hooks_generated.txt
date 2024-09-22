@@ -36,7 +36,6 @@ gwenview
 hyprcursor
 hypridle
 hyprland
-hyprlang
 imagemagick
 imlib2
 kdeconnect
@@ -74,7 +73,6 @@ qt6-wayland
 qt6ct
 reflector
 rust
-scdoc
 smartmontools
 snapper
 sshfs

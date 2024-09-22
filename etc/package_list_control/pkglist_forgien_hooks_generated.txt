@@ -1,6 +1,10 @@
 aylurs-gtk-shell
+hyprlang-git
+hyprlang-git-debug
 hyprpicker
 hyprshade-git
+hyprwayland-scanner-git
+hyprwayland-scanner-git-debug
 illogical-impulse-audio
 illogical-impulse-backlight
 illogical-impulse-basic
