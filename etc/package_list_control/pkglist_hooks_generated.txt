@@ -5,7 +5,6 @@ android-tools
 archlinux-xdg-menu
 aria2
 ark
-axel
 base
 base-devel
 bash-completion
@@ -28,7 +27,6 @@ ffmpegthumbs
 firefox
 firewalld
 flatpak
-fuzzel
 fzf
 git
 glava
@@ -42,7 +40,6 @@ hyprland
 hyprlang
 imagemagick
 imlib2
-jq
 kdeconnect
 konsole
 ldns
@@ -53,7 +50,6 @@ linux
 linux-firmware
 man-db
 mesa-utils
-meson
 neovim
 nethogs
 network-manager-applet
@@ -87,16 +83,13 @@ tldr
 tree
 ttf-cascadia-code-nerd
 ttf-fira-sans
-typescript
 unzip
 vi
 vim
 viu
 vlc
 webkit2gtk-4.1
-wget
 xdg-desktop-portal-hyprland
-xdg-user-dirs
 xf86-video-amdgpu
 xorg-server
 xorg-xev
