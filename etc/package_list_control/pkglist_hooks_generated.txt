@@ -33,6 +33,7 @@ firefox
 firewalld
 flatpak
 fzf
+ghostscript
 git
 glava
 gnome-bluetooth-3.0
