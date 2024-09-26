@@ -55,6 +55,7 @@ konsole
 ldns
 libgtop
 libqalculate
+libreoffice-fresh
 libva-utils
 linux
 linux-firmware
