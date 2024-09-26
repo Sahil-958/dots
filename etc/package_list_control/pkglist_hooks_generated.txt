@@ -1,4 +1,3 @@
-abiword
 acpilight
 adw-gtk-theme
 amd-ucode
