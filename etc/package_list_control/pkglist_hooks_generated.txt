@@ -114,6 +114,7 @@ ttf-fira-sans
 unzip
 vi
 vim
+virt-manager
 viu
 vlc
 webkit2gtk-4.1
