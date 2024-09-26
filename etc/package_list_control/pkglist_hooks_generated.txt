@@ -85,6 +85,7 @@ python-pip
 python-pyqt5
 python-pyscreenshot
 python-qrencode
+qemu-full
 qpdf
 qt5-graphicaleffects
 qt5-quickcontrols
