@@ -4,7 +4,7 @@ import Keys from "../../keys.js";
 import {QSState} from "../quicksettings/index.js";
 import App from "resource:///com/github/Aylur/ags/app.js";
 import Gtk from "gi://Gtk?version=3.0";
-import { TextView } from "..//widgets/widgets.js";
+//import { TextView } from "..//widgets/widgets.js";
 import Gdk from "gi://Gdk";
 import {readFile} from "resource:///com/github/Aylur/ags/utils.js";
 import {Marked} from "../../node_modules/marked/lib/marked.esm.js";
@@ -23,6 +23,8 @@ import GdkPixbuf from "gi://GdkPixbuf";
 import ConfigService from "../config/index.js";
 
 const ComboBox = Widget.subclass(Gtk.ComboBoxText);
+const TextView =  Widget.subclass(Gtk.TextView, "AgsTextView");
+
 
 let AIContainer;
 const SettingsVisible = Variable(false);
