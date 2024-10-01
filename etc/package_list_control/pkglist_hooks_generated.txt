@@ -33,6 +33,7 @@ firefox
 firewalld
 flatpak
 fzf
+gdb
 ghostscript
 git
 glava
@@ -48,6 +49,7 @@ hyprcursor
 hypridle
 hyprland
 hyprlang
+hyprpicker
 imagemagick
 imlib2
 jq
