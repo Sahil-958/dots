@@ -88,6 +88,7 @@ python-pip
 python-pyqt5
 python-pyscreenshot
 python-qrencode
+qbittorrent
 qemu-full
 qpdf
 qt5-graphicaleffects
