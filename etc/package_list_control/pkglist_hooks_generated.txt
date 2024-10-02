@@ -38,7 +38,6 @@ ghostscript
 git
 glava
 gnome-bluetooth-3.0
-gnome-boxes
 grim
 grub
 grub-btrfs
