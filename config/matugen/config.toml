@@ -72,6 +72,11 @@ output_path = '~/.config/glava/wave.glsl'
 input_path = '~/.config/matugen/templates/konsole.colorscheme'
 output_path = '~/.local/share/konsole/matugen.colorscheme'
 
+[templates.vimium]
+input_path = '~/.config/matugen/templates/vimium.css'
+output_path = '~/.cache/vimium.css'
+
+
 
 [config]
 reload_apps = false
