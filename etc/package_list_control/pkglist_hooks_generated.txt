@@ -110,6 +110,7 @@ swww
 tesseract
 tesseract-data-eng
 tldr
+tmate
 tree
 ttf-cascadia-code-nerd
 ttf-fira-sans
