@@ -81,6 +81,7 @@ pavucontrol
 persepolis
 playerctl
 polkit-gnome
+pv
 python-aiohttp
 python-opencv
 python-pip
