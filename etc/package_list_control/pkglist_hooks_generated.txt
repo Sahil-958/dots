@@ -114,7 +114,6 @@ tmate
 tree
 ttf-cascadia-code-nerd
 ttf-fira-sans
-unrar
 unzip
 vi
 vim
