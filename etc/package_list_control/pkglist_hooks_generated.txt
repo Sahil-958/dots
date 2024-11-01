@@ -38,6 +38,7 @@ ghostscript
 git
 glava
 gnome-bluetooth-3.0
+gnome-keyring
 grim
 grub
 grub-btrfs
