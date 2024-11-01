@@ -101,6 +101,7 @@ reflector
 ripgrep
 rsync
 rust
+seahorse
 slurp
 smartmontools
 snapper
