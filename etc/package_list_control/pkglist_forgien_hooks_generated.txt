@@ -3,6 +3,7 @@ hyprshade-git
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
+materialgram-bin
 matugen-bin
 oomox-qt5-styleplugin-git
 oomox-qt6-styleplugin-git
