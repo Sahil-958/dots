@@ -109,7 +109,6 @@ sshfs
 starship
 swappy
 swww
-telegram-desktop
 tesseract
 tesseract-data-eng
 tldr
