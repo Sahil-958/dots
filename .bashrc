@@ -7,7 +7,8 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
+# neovim with custom lazyvim config alias
+alias lvim='XDG_CONFIG_HOME=$HOME/lvim/ nvim'
 
 #To avoid duplicate commands in History
 export HISTCONTROL=ignoredups
