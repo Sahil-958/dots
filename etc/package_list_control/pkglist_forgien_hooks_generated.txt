@@ -1,5 +1,4 @@
 aylurs-gtk-shell
-hyprshade-git
 hyprsunset
 libastal-auth-git
 libastal-tray-git
