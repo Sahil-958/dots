@@ -117,6 +117,7 @@ tree
 ttf-cascadia-code-nerd
 ttf-fira-sans
 unzip
+usbutils
 vi
 vim
 virt-manager
