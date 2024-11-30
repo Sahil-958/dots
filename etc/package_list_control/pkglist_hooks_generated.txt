@@ -123,7 +123,6 @@ vim
 virt-manager
 viu
 vlc
-vsftpd
 webkit2gtk-4.1
 wireplumber
 wl-clipboard
