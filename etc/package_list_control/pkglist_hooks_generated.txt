@@ -63,6 +63,7 @@ libgtop
 libqalculate
 libreoffice-fresh
 libva-utils
+libvoikko
 linux
 linux-firmware
 man-db
