@@ -26,6 +26,7 @@ dnsmasq
 dolphin
 dolphin-plugins
 efibootmgr
+epiphany
 fastfetch
 fd
 ffmpegthumbs
