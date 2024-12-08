@@ -5,6 +5,7 @@ android-tools
 archlinux-xdg-menu
 aria2
 ark
+aspell
 base
 base-devel
 bash-completion
@@ -74,6 +75,7 @@ nodejs
 noto-fonts-emoji
 npm
 ntfs-3g
+nuspell
 obs-studio
 os-prober
 otf-comicshanns-nerd
