@@ -47,6 +47,7 @@ grub-btrfs
 gtk-session-lock
 gvfs
 gwenview
+hspell
 hyprcursor
 hypridle
 hyprland
