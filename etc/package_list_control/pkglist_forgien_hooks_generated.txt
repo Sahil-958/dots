@@ -8,4 +8,5 @@ matugen-bin
 oomox-qt5-styleplugin-git
 oomox-qt6-styleplugin-git
 pikaur
+ungoogled-chromium-bin
 vscodium-bin
