@@ -6,6 +6,7 @@ archlinux-xdg-menu
 aria2
 ark
 aspell
+at
 base
 base-devel
 bash-completion
