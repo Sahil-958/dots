@@ -20,7 +20,6 @@ breeze
 breeze-icons
 brightnessctl
 btop
-chrpath
 cliphist
 cmake
 cmus
