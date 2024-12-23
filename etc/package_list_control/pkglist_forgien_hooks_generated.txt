@@ -1,7 +1,13 @@
+appmenu-glib-translator-git
+appmenu-glib-translator-git-debug
 aylurs-gtk-shell
 hyprsunset
 libastal-auth-git
+libastal-io-git
+libastal-io-git-debug
 libastal-tray-git
+libcava
+libcava-debug
 librewolf-bin
 materialgram-bin
 matugen-bin

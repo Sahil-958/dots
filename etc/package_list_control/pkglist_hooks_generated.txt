@@ -47,7 +47,6 @@ grim
 grub
 grub-btrfs
 gtk-session-lock
-gtk4-layer-shell
 gvfs
 gwenview
 hspell
