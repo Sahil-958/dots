@@ -1,4 +1,6 @@
 aylurs-gtk-shell
+hyprland-qtutils
+hyprland-qtutils-debug
 hyprsunset
 libastal-auth-git
 libastal-tray-git
