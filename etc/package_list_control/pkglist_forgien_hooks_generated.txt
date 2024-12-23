@@ -1,6 +1,8 @@
 aylurs-gtk-shell
 hyprsunset
 libastal-auth-git
+libastal-gjs-git
+libastal-meta
 libastal-tray-git
 librewolf-bin
 materialgram-bin
