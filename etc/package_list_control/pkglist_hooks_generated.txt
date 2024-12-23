@@ -1,3 +1,4 @@
+7zip
 acpilight
 adw-gtk-theme
 amd-ucode
@@ -82,7 +83,6 @@ nuspell
 obs-studio
 os-prober
 otf-comicshanns-nerd
-p7zip
 pacman-contrib
 pavucontrol
 persepolis
