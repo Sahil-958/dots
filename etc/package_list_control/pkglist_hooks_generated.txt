@@ -75,7 +75,6 @@ neovim
 nethogs
 network-manager-applet
 networkmanager
-ninja
 nodejs
 noto-fonts-emoji
 npm
