@@ -1,16 +1,12 @@
 aylurs-gtk-shell
-aylurs-gtk-shell-debug
 hyprsunset
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
-librewolf-bin-debug
 materialgram-bin
 matugen-bin
-matugen-bin-debug
 oomox-qt5-styleplugin-git
 oomox-qt6-styleplugin-git
 vscodium-bin
-vscodium-bin-debug
 yay
 yay-debug
