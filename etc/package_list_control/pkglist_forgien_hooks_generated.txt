@@ -1,8 +1,6 @@
 hyprsunset
 libastal-auth-git
-libastal-io-git
 libastal-tray-git
-libcava
 librewolf-bin
 materialgram-bin
 matugen-bin
