@@ -40,7 +40,6 @@ fzf
 gdb
 ghostscript
 git
-gjs
 glava
 gnome-bluetooth-3.0
 gnome-keyring
