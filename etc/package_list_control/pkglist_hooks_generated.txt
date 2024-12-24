@@ -107,6 +107,7 @@ qt6ct
 reflector
 ripgrep
 rsync
+ruby-rouge
 rust
 seahorse
 slurp
