@@ -46,9 +46,7 @@ gnome-keyring
 grim
 grub
 grub-btrfs
-gtk-layer-shell
 gtk-session-lock
-gtk4-layer-shell
 gvfs
 gwenview
 hspell
