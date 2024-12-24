@@ -1,3 +1,4 @@
+aylurs-gtk-shell
 hyprsunset
 libastal-auth-git
 libastal-tray-git
