@@ -1,4 +1,3 @@
-hyprland-qtutils
 hyprsunset
 libastal-auth-git
 libastal-tray-git
