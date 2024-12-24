@@ -1,4 +1,3 @@
-aylurs-gtk-shell
 hyprland-qtutils
 hyprsunset
 libastal-auth-git
