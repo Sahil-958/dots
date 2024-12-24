@@ -8,7 +8,6 @@ aria2
 ark
 aspell
 at
-autoconf-archive
 base
 base-devel
 bash-completion
@@ -44,11 +43,12 @@ git
 glava
 gnome-bluetooth-3.0
 gnome-keyring
-gobject-introspection
 grim
 grub
 grub-btrfs
+gtk-layer-shell
 gtk-session-lock
+gtk4-layer-shell
 gvfs
 gwenview
 hspell
@@ -73,7 +73,6 @@ linux
 linux-firmware
 man-db
 mesa-utils
-meson
 nano
 neovim
 nethogs
@@ -115,7 +114,6 @@ seahorse
 slurp
 smartmontools
 snapper
-sndio
 sshfs
 starship
 swappy
@@ -129,7 +127,6 @@ ttf-cascadia-code-nerd
 ttf-fira-sans
 unzip
 usbutils
-vala
 vi
 vim
 virt-manager
