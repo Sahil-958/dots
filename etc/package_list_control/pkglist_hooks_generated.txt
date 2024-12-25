@@ -71,7 +71,6 @@ linux
 linux-firmware
 man-db
 mesa-utils
-meson
 nano
 neovim
 nethogs
@@ -124,7 +123,6 @@ tmate
 tree
 ttf-cascadia-code-nerd
 ttf-fira-sans
-typescript
 unzip
 usbutils
 vi
