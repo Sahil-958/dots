@@ -1,3 +1,4 @@
+agsv1
 aylurs-gtk-shell
 hyprsunset
 libastal-auth-git
