@@ -38,6 +38,7 @@ firewalld
 flatpak
 fzf
 gdb
+geckodriver
 ghostscript
 git
 glava
