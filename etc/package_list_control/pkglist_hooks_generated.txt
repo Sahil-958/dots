@@ -92,6 +92,7 @@ polkit-gnome
 python-aiohttp
 python-opencv
 python-pip
+python-pyaudio
 python-pyqt5
 python-pyscreenshot
 python-qrencode
