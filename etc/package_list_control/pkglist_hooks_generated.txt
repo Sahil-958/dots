@@ -63,6 +63,7 @@ jq
 kdeconnect
 konsole
 ldns
+lib32-glibc
 libgtop
 libqalculate
 libreoffice-fresh
