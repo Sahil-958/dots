@@ -71,6 +71,7 @@ libva-utils
 libvoikko
 linux
 linux-firmware
+linux-lts
 man-db
 mesa-utils
 nano
