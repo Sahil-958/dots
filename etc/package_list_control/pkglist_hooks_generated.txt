@@ -84,6 +84,7 @@ ksshaskpass
 ksystemstats
 kwallet-pam
 kwayland
+kwayland5
 kwin
 kwrited
 layer-shell-qt
