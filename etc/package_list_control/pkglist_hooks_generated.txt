@@ -91,7 +91,6 @@ pacman-contrib
 pavucontrol
 persepolis
 plasma-desktop
-plasma-meta
 playerctl
 polkit-gnome
 python-aiohttp
