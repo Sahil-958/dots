@@ -90,7 +90,6 @@ otf-comicshanns-nerd
 pacman-contrib
 pavucontrol
 persepolis
-plasma-desktop
 playerctl
 polkit-gnome
 python-aiohttp
