@@ -84,6 +84,7 @@ ksshaskpass
 ksystemstats
 kwallet-pam
 kwayland
+kwayland-integration
 kwayland5
 kwin
 kwrited
