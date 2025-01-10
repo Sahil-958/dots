@@ -159,9 +159,7 @@ qqc2-breeze-style
 qt5-graphicaleffects
 qt5-quickcontrols
 qt5-quickcontrols2
-qt5ct
 qt6-wayland
-qt6ct
 reflector
 ripgrep
 rsync
