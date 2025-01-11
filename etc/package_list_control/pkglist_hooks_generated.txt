@@ -6,7 +6,6 @@ android-tools
 archlinux-xdg-menu
 aria2
 ark
-artikulate
 aspell
 at
 base
