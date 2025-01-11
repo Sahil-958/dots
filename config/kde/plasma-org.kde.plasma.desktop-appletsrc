@@ -67,17 +67,20 @@ launchers=applications:systemsettings.desktop,applications:org.kde.discover.desk
 immutability=1
 plugin=org.kde.plasma.marginsseparator
 
-[Containments][2][Applets][65]
+[Containments][2][Applets][66]
 immutability=1
 plugin=org.kde.netspeedWidget
 
-[Containments][2][Applets][65][Configuration][ConfigDialog]
-DialogHeight=606
-DialogWidth=914
+[Containments][2][Applets][67]
+immutability=1
+plugin=org.kde.netspeedWidget
 
-[Containments][2][Applets][65][Configuration][General]
-showLowSpeeds=true
-speedLayout=rows
+[Containments][2][Applets][67][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][67][Configuration][General]
+speedUnits=bits
 swapDownUp=true
 
 [Containments][2][Applets][7]
@@ -93,7 +96,7 @@ DialogHeight=84
 DialogWidth=1920
 
 [Containments][2][General]
-AppletOrder=3;4;5;65;6;7;18;19
+AppletOrder=3;4;5;67;6;7;18;19;66
 
 [Containments][27]
 ItemGeometries-1536x864=
@@ -127,7 +130,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][10][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][8][Applets][11]
 immutability=1
@@ -138,7 +141,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][12][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][8][Applets][13]
 immutability=1
@@ -185,14 +188,14 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=61
+PreloadWeight=50
 
 [Containments][8][Applets][23]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=19
 
 [Containments][8][Applets][24]
 immutability=1
@@ -221,7 +224,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][29][Configuration]
-PreloadWeight=36
+PreloadWeight=20
 
 [Containments][8][Applets][9]
 immutability=1
