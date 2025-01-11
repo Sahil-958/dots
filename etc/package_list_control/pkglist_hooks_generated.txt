@@ -208,5 +208,6 @@ xorg-xev
 xorg-xinit
 xorg-xprop
 xorg-xrandr
+yakuake
 yt-dlp
 zip
