@@ -67,6 +67,7 @@ imagemagick
 imlib2
 jq
 kactivitymanagerd
+kconfig5
 kde-cli-tools
 kde-gtk-config
 kdeconnect
