@@ -1,3 +1,4 @@
+#!/bin/bash
 # Make sure you have tesseract and tesseract-data-your_lang packages installed
 
 # Check if KDE is running by looking for the environment variable `KDE_FULL_SESSION`
