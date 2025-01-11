@@ -67,11 +67,6 @@ launchers=applications:systemsettings.desktop,applications:org.kde.discover.desk
 immutability=1
 plugin=org.kde.plasma.marginsseparator
 
-[Containments][2][Applets][66]
-immutability=1
-plugin=org.kde.netspeedWidget
-transient=true
-
 [Containments][2][Applets][67]
 immutability=1
 plugin=org.kde.netspeedWidget
