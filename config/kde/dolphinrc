@@ -1,0 +1,46 @@
+MenuBar=Disabled
+
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+
+[DetailsMode]
+PreviewSize=256
+
+[ExtractDialog]
+1920x1080 screen: Window-Maximized=true
+DirHistory[$e]=$HOME/help/,$HOME/stock/
+
+[General]
+AutoExpandFolders=true
+BrowseThroughArchives=true
+ShowFullPath=true
+ShowToolTips=true
+Version=202
+ViewPropsTimestamp=2023,11,10,22,7,13.695
+
+[IconsMode]
+PreviewSize=208
+
+[InformationPanel]
+dateFormat=ShortFormat
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[KPropertiesDialog]
+1920x1080 screen: Height=532
+1920x1080 screen: Width=438
+1920x1080 screen: Window-Maximized=true
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,textthumbnail,ffmpegthumbs
+
+[kuick-move]
+Paths[$e]=/run/media/sawhill/HOME/sawhill/btrfs_home_backup,$HOME/Desktop/
