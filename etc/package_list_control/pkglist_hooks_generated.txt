@@ -145,6 +145,7 @@ playerctl
 plymouth-kcm
 polkit-gnome
 polkit-kde-agent
+power-profiles-daemon
 powerdevil
 print-manager
 python-aiohttp
