@@ -1,0 +1,5 @@
+[AC][Display]
+DisplayBrightness=1
+
+[LowBattery][Display]
+DisplayBrightness=1

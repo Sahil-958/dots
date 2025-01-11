@@ -1,0 +1,15 @@
+[ExtractDialog]
+1920x1080 screen: Window-Maximized=true
+DirHistory[$e]=$HOME/extracted/,/run/media/sawhill/HOME/sawhill/harkirat_course/,$HOME/Downloads/zips/,$HOME/Downloads/
+
+[General]
+LockSidebar=true
+ShowSidebar=true
+
+[MainWindow]
+1920x1080 screen: Window-Maximized=true
+StatusBar=Disabled
+ToolBarsMovable=Disabled
+
+[Viewer]
+ToolBarsMovable=Disabled

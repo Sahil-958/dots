@@ -1,0 +1,12 @@
+[Appearance]
+BackgroundColorOpacity=75
+HideSkinBorders=true
+Translucency=true
+
+[Dialogs]
+FirstRun=false
+
+[Window]
+Position=51
+ShowTitleBar=false
+Width=80

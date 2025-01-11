@@ -1,0 +1,5 @@
+[General]
+historyBehavior=ImmediateCompletion
+
+[Plugins]
+baloosearchEnabled=true

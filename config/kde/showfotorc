@@ -1,0 +1,103 @@
+[ExifToolSearchBar Search Text Tool]
+CaseSensitive=0
+
+[FavoritesSearchBar Search Text Tool]
+CaseSensitive=0
+
+[ImageViewer Settings]
+AutoZoom=false
+Last Opened Directory=/home/sawhill/Pictures
+OverExposureIndicator=false
+PreviewMode=128
+Show Thumbbar=true
+SplitterState=AAAA/wAAAAEAAAADAAABFAAACtwAAAF/Af////8AAAAAAQE=
+Theme=Default
+ToolBarsMovable=Disabled
+UnderExposureIndicator=false
+
+[ImageViewer Thumbbar]
+ToolBarsMovable=Disabled
+
+[SearchBar Search Text Tool]
+CaseSensitive=0
+
+[ShowFoto Sidebar Left]
+ActiveTab=0
+Minimized=false
+RestoreSize=-1
+
+[ShowFoto Sidebar Right]
+ActiveTab=0
+DigikamProperties Expanded=true
+FileProperties Expanded=true
+ItemProperties Expanded=true
+LocationProperties Expanded=true
+Minimized=false
+PhotographProperties Expanded=true
+RestoreSize=-1
+RightsProperties Expanded=true
+TagsProperties Expanded=true
+VideoProperties Expanded=true
+
+[ShowFoto Sidebar Right][Color Properties Tab]
+Current ICC Item=
+Histogram Channel=0
+Histogram Scale=1
+ICC Level=2
+ImagePropertiesColors Tab=0
+
+[ShowFoto Sidebar Right][GPS Properties Tab]
+Sort Order=0
+Web GPS Locator=0
+
+[ShowFoto Sidebar Right][GPS Properties Tab][Map Widget]
+Backend=marble
+Center=geo:52,6
+GoogleMaps Map Type=ROADMAP
+GoogleMaps Show Map Type Control=true
+GoogleMaps Show Navigation Control=true
+GoogleMaps Show Scale Control=true
+Marble Map Theme=earth/openstreetmap/openstreetmap.dgml
+Marble Projection=spherical
+Marble Show Compass=false
+Marble Show Navigation=true
+Marble Show Overview Map=false
+Marble Show Scale Bar=false
+Marker Grouping Radius=1
+Mouse Mode=0
+Preview Grouped Items=true
+Preview Single Items=true
+Show Thumbnails=true
+Show numbers on items=true
+Sticky Mode State=false
+Thumbnail Grouping Radius=30
+Thumbnail Size=60
+Zoom=marble:900
+
+[ShowFoto Sidebar Right][Metadata Properties Tab]
+Current EXIF Item=
+Current ExifTool Item=
+Current IPTC Item=
+Current MAKERNOTE Item=
+Current XMP Item=
+EXIF Level=0
+EXIFTOOL Level=0
+IPTC Level=0
+ImagePropertiesMetaData Tab=0
+MAKERNOTE Level=0
+XMP Level=0
+
+[ShowfotoFolderView Sidebar]
+BookmarkItems=0
+BookmarkTopItemExpanded=true
+BookmarkTopUsualExpanded=true
+Bookmarks Visible=false
+Folder View Mode=0
+Folder View Type Mime=11
+Icon Size=32
+Last Folder=/
+Splitter State=AAAA/wAAAAEAAAACAAAHgP////8B/////wEAAAACAA==
+
+[ShowfotoStackView Sidebar]
+Icon Size=32
+Splitter State=AAAA/wAAAAEAAAAC//////////8B/////wEAAAACAA==
