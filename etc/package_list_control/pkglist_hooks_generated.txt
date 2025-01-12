@@ -193,7 +193,6 @@ vim
 virt-manager
 viu
 vlc
-wacomtablet
 webkit2gtk-4.1
 wireplumber
 wl-clipboard
