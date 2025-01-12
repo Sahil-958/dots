@@ -20,7 +20,6 @@ bluez-utils
 breeze
 breeze-gtk
 breeze-icons
-breeze-plymouth
 brightnessctl
 btop
 cliphist
@@ -142,7 +141,6 @@ plasma-workspace
 plasma-workspace-wallpapers
 plasma5support
 playerctl
-plymouth-kcm
 polkit-gnome
 polkit-kde-agent
 power-profiles-daemon
