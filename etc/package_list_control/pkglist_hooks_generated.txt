@@ -28,7 +28,6 @@ cmake
 cmus
 cpio
 dart-sass
-discover
 dnsmasq
 dolphin
 dolphin-plugins
