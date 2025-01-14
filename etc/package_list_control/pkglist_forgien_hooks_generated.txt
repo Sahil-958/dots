@@ -1,6 +1,5 @@
 agsv1
 aylurs-gtk-shell
-hyprsunset
 kwin-scripts-krohnkite-git
 libastal-auth-git
 libastal-tray-git
