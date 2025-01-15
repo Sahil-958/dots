@@ -1,2 +1,9 @@
+[Libinput][1267][12541][ELAN0718:00 04F3:30FD Touchpad]
+NaturalScroll=true
+PointerAcceleration=0.600
+
+[Libinput][6392][3993][USB OPTICAL MOUSE ]
+PointerAcceleration=0.800
+
 [Mouse]
 X11LibInputXAccelProfileFlat=true

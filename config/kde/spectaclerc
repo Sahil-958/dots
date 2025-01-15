@@ -2,17 +2,20 @@
 update_info=spectacle_clipboard.upd:clipboard-settings-change,spectacle_rememberregion.upd:spectacle-migrate-rememberregion
 
 [Annotations]
-annotationToolType=10
+annotationToolType=11
 
 [General]
 rememberSelectionRect=2
 
 [GuiConfig]
+captureMode=0
 captureOnClick=true
 
 [ImageSave]
 imageCompressionQuality=100
 imageFilenameTemplate=<title>_Screenshot_<yyyy><MM><dd>_<HH><mm><ss>
+lastImageSaveAsLocation=file:///home/sawhill/Documents/comp_material/numeri_sylb.png
+lastImageSaveLocation=file:///home/sawhill/Documents/comp_material/numeri_sylb.png
 translatedScreenshotsFolder=Screenshots
 
 [VideoSave]

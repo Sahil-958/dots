@@ -24,6 +24,7 @@ DayTemperature=6200
 LatitudeFixed=27.374420549001997
 LongitudeFixed=78.05861054080412
 Mode=Times
+NightTemperature=5600
 TransitionTime=6
 
 [Plugins]
@@ -39,6 +40,7 @@ enableBTreeLayout=true
 enableFloatingLayout=true
 enableQuarterLayout=true
 enableStackedLayout=true
+enableStairLayout=false
 limitTileWidthRatio=0.6
 noTileBorder=true
 screenGapBottom=18

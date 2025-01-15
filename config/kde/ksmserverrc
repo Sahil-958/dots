@@ -2,4 +2,9 @@
 count=0
 
 [Session: saved at previous logout]
-count=0
+clientId1=10da726368000173684863100000009970002
+count=1
+program1=firefox
+restartCommand1=/usr/lib/librewolf/librewolf,--sm-client-id,10da726368000173684863100000009970002
+restartStyleHint1=0
+userId1=sawhill
