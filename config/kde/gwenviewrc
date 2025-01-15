@@ -21,26 +21,26 @@ MenuBar=Disabled
 ToolBarsMovable=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/jai/1734424137038.jpg
-File10[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/doc/sahil/1687190284293.jpg
-File2[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/vik_new_pan.jpg
-File3[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/vk_no_flash.jpg
-File4[$e]=$HOME/vikfin2.png
-File5[$e]=$HOME/Documents/cdat/fam.png
-File6[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/doc/sahil/5x7-6_200x230.jpg
-File7[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/doc/sahil/5x7-6.jpg
-File8[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/doc/sahil/signature.jpg
-File9[$e]=$HOME/The-Odin-Project-Learnings/shopping_cart/card.png
-Name1[$e]=1734424137038.jpg
-Name10[$e]=1687190284293.jpg
-Name2[$e]=vik_new_pan.jpg
-Name3[$e]=vk_no_flash.jpg
-Name4[$e]=vikfin2.png
-Name5[$e]=fam.png
-Name6[$e]=5x7-6_200x230.jpg
-Name7[$e]=5x7-6.jpg
-Name8[$e]=signature.jpg
-Name9[$e]=card.png
+File1[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/vik_new_pan.jpg
+File10[$e]=$HOME/Documents/cdat/frd.png
+File2[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/vk_no_flash.jpg
+File3[$e]=$HOME/vikfin2.png
+File4[$e]=$HOME/Documents/cdat/fam.png
+File5[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/doc/sahil/5x7-6_200x230.jpg
+File6[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/doc/sahil/5x7-6.jpg
+File7[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/doc/sahil/signature.jpg
+File8[$e]=$HOME/The-Odin-Project-Learnings/shopping_cart/card.png
+File9[$e]=/run/media/sawhill/DAC4C0FFC4C0DEBF/Users/sahil/Desktop/doc/sahil/1687190284293.jpg
+Name1[$e]=vik_new_pan.jpg
+Name10[$e]=frd.png
+Name2[$e]=vk_no_flash.jpg
+Name3[$e]=vikfin2.png
+Name4[$e]=fam.png
+Name5[$e]=5x7-6_200x230.jpg
+Name6[$e]=5x7-6.jpg
+Name7[$e]=signature.jpg
+Name8[$e]=card.png
+Name9[$e]=1687190284293.jpg
 
 [RedEyeReduction]
 RedEyeReductionDiameter=99
@@ -52,7 +52,7 @@ RedEyeReductionDiameter=99
 InformationSplitterSizes=216,259
 IsVisible ViewMode=true
 PreferredMetaInfoKeyList=General.Name,General.Size,General.Created,General.Modified,General.Accessed,General.LocalPath,General.ImageSize,General.Comment,General.MimeType
-SideBarSplitterSizes=336,613
+SideBarSplitterSizes=210,610
 
 [ThumbnailView]
 ThumbnailSize=1024

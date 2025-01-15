@@ -47,7 +47,7 @@ Cycle Overview Opposite=none,none,Cycle through Grid View and Overview
 Decrease Opacity=none,,Decrease Opacity of Active Window by 5%
 Edit Tiles=Meta+T,Meta+T,Toggle Tiles Editor
 Expose=Ctrl+F9,Ctrl+F9,Toggle Present Windows (Current desktop)
-ExposeAll=Ctrl+F10\tLaunch (C),Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
+ExposeAll=Launch (C)\tMeta+Alt\tCtrl+F10,Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
 ExposeClass=Ctrl+F7,Ctrl+F7,Toggle Present Windows (Window class)
 ExposeClassCurrentDesktop=none,none,Toggle Present Windows (Window class on current desktop)
 Grid View=Meta+G,Meta+G,Toggle Grid View
@@ -228,7 +228,7 @@ Window to Screen 5=none,,Move Window to Screen 5
 Window to Screen 6=none,,Move Window to Screen 6
 Window to Screen 7=none,,Move Window to Screen 7
 _k_friendly_name=KWin
-view_actual_size=none,Meta+0,Zoom to Actual Size
+view_actual_size=Meta+0,Meta+0,Zoom to Actual Size
 view_zoom_in=Meta+=,Meta++\tMeta+=,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
 
