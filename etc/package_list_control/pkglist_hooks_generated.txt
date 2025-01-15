@@ -45,6 +45,7 @@ fzf
 gdb
 geckodriver
 ghostscript
+gimp
 git
 glava
 gnome-bluetooth-3.0
