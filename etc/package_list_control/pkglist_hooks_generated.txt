@@ -156,6 +156,7 @@ python-pyaudio
 python-pyqt5
 python-pyscreenshot
 python-qrencode
+python-setuptools-rust
 qbittorrent
 qemu-full
 qpdf
