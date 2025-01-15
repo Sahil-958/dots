@@ -151,12 +151,10 @@ print-manager
 python-aiohttp
 python-opencv
 python-pip
-python-pipx
 python-pyaudio
 python-pyqt5
 python-pyscreenshot
 python-qrencode
-python-setuptools-rust
 qbittorrent
 qemu-full
 qpdf
