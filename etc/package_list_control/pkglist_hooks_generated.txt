@@ -120,7 +120,6 @@ nuspell
 obs-studio
 ocean-sound-theme
 os-prober
-otf-cascadia-code
 otf-comicshanns-nerd
 oxygen
 oxygen-sounds
