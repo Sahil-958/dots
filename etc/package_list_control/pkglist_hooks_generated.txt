@@ -121,7 +121,6 @@ obs-studio
 ocean-sound-theme
 os-prober
 otf-comicshanns-nerd
-otf-firamono-nerd
 oxygen
 oxygen-sounds
 pacman-contrib
