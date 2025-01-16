@@ -6,5 +6,7 @@ libastal-tray-git
 librewolf-bin
 materialgram-bin
 matugen-bin
+vscodium-bin
+vscodium-bin-debug
 yay
 yay-debug
