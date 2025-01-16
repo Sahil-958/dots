@@ -187,7 +187,6 @@ tldr
 tmate
 tree
 ttf-cascadia-code
-ttf-cascadia-code-nerd
 ttf-firacode-nerd
 unzip
 usbutils
