@@ -186,7 +186,6 @@ tesseract-data-eng
 tldr
 tmate
 tree
-ttf-cascadia-code-nerd
 ttf-firacode-nerd
 unzip
 usbutils
