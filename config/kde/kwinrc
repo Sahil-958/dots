@@ -18,6 +18,9 @@ Rows=3
 DimKeepAbove=true
 Strength=12
 
+[Effect-slide]
+HorizontalGap=20
+
 [NightColor]
 Active=true
 DayTemperature=6200
