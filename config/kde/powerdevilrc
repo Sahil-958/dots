@@ -6,8 +6,15 @@ AutoSuspendAction=2
 AutoSuspendIdleTimeoutSec=1800
 LidAction=2
 
+[BatteryManagement]
+BatteryCriticalLevel=10
+BatteryLowLevel=20
+
 [LowBattery][Display]
 DisplayBrightness=1
+
+[LowBattery][Performance]
+PowerProfile=power-saver
 
 [LowBattery][SuspendAndShutdown]
 AutoSuspendAction=2
