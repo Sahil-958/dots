@@ -109,8 +109,7 @@ DialogWidth=1920
 [Containments][2][General]
 AppletOrder=3;4;71;67;6;7;18;19
 
-[Containments][27]
-ItemGeometries-1536x864=
+[Containments][74]
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
 activityId=dabcb6b6-e2f3-4a22-a479-6bbc837bee62
@@ -121,9 +120,14 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
-[Containments][27][ConfigDialog]
+[Containments][74][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
+
+[Containments][74][Wallpaper][org.kde.image][General]
+Image=/usr/share/wallpapers/Next/
+PreviewImage=/usr/share/wallpapers/Next/
+SlidePaths=/home/sawhill/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [Containments][8]
 activityId=
