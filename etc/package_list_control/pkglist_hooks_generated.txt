@@ -183,6 +183,7 @@ swww
 systemsettings
 tesseract
 tesseract-data-eng
+tk
 tldr
 tmate
 tree
