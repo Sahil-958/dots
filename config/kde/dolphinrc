@@ -42,5 +42,8 @@ ToolBarsMovable=Disabled
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,textthumbnail,ffmpegthumbs
 
+[kuick-copy]
+Paths[$e]=$HOME/
+
 [kuick-move]
 Paths[$e]=/run/media/sawhill/HOME/sawhill/btrfs_home_backup,$HOME/Desktop/
