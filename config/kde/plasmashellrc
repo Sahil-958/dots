@@ -3,9 +3,6 @@ Recent Files[$e]=abstract_moutain_sunrise.jpg,file:$HOME/walls/cyber-girl-dark.p
 Recent URLs[$e]=file:$HOME/walls/
 detailViewIconSize=16
 
-[PlasmaTransientsConfig]
-PreloadWeight=34
-
 [PlasmaViews][Panel 2]
 floating=1
 panelLengthMode=0

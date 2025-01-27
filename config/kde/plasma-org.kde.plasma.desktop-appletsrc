@@ -19,7 +19,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][18][Configuration]
-PreloadWeight=65
+PreloadWeight=75
 popupHeight=450
 popupWidth=396
 
@@ -121,12 +121,11 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][74][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+DialogHeight=730
+DialogWidth=1095
 
 [Containments][74][Wallpaper][org.kde.image][General]
 Image=/usr/share/wallpapers/Next/
-PreviewImage=/usr/share/wallpapers/Next/
 SlidePaths=/home/sawhill/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [Containments][8]
@@ -160,7 +159,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][12][Configuration]
-PreloadWeight=80
+PreloadWeight=100
 
 [Containments][8][Applets][13]
 immutability=1
@@ -179,7 +178,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][16][Configuration]
-PreloadWeight=70
+PreloadWeight=75
 
 [Containments][8][Applets][16][Configuration][General]
 migrated=true
@@ -217,7 +216,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=10
 
 [Containments][8][Applets][24]
 immutability=1
@@ -247,6 +246,10 @@ plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][29][Configuration]
 PreloadWeight=0
+
+[Containments][8][Applets][29][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][8][Applets][68]
 immutability=1
