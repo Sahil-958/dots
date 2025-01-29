@@ -7,7 +7,6 @@ librewolf-bin
 materialgram-bin
 matugen-bin
 python39
-python39-debug
 vscodium-bin
 yay
 yay-debug
