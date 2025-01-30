@@ -53,7 +53,6 @@ gnome-keyring
 grim
 grub
 grub-btrfs
-gst-plugin-pipewire
 gtk-session-lock
 gvfs
 gwenview
@@ -109,12 +108,10 @@ man-db
 mesa-utils
 milou
 nano
-nasm
 neovim
 nethogs
 network-manager-applet
 networkmanager
-ninja
 nodejs
 noto-fonts-emoji
 npm
@@ -150,6 +147,7 @@ plasma5support
 playerctl
 polkit-gnome
 polkit-kde-agent
+postgresql
 power-profiles-daemon
 powerdevil
 print-manager
@@ -160,8 +158,6 @@ python-pyaudio
 python-pyqt5
 python-pyscreenshot
 python-qrencode
-python-toml
-python-yaml
 qbittorrent
 qemu-full
 qpdf
@@ -201,13 +197,11 @@ virt-manager
 viu
 vlc
 webkit2gtk-4.1
-wget
 wireplumber
 wl-clipboard
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
-xdotool
 xf86-video-amdgpu
 xorg-server
 xorg-xev
@@ -215,6 +209,5 @@ xorg-xinit
 xorg-xprop
 xorg-xrandr
 yakuake
-yasm
 yt-dlp
 zip
