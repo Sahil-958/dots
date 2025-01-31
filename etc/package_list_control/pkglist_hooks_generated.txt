@@ -28,7 +28,6 @@ cmus
 cpio
 dart-sass
 dnsmasq
-docker
 dolphin
 dolphin-plugins
 drkonqi
