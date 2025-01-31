@@ -178,7 +178,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][16][Configuration]
-PreloadWeight=75
+PreloadWeight=80
 
 [Containments][8][Applets][16][Configuration][General]
 migrated=true
@@ -206,7 +206,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][22][Configuration][General]
 showPercentage=true
@@ -216,7 +216,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][8][Applets][24]
 immutability=1
@@ -245,7 +245,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][29][Configuration]
-PreloadWeight=0
+PreloadWeight=7
 
 [Containments][8][Applets][29][Configuration][ConfigDialog]
 DialogHeight=540
