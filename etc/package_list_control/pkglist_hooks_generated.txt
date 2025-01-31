@@ -147,7 +147,6 @@ plasma5support
 playerctl
 polkit-gnome
 polkit-kde-agent
-postgresql
 power-profiles-daemon
 powerdevil
 print-manager
