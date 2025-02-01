@@ -34,6 +34,7 @@ drkonqi
 easyeffects
 efibootmgr
 epiphany
+espeak-ng
 fastfetch
 fd
 ffmpegthumbs
