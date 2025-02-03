@@ -130,6 +130,8 @@ pavucontrol
 perl-image-exiftool
 persepolis
 php
+php-apache
+php-pgsql
 phpmyadmin
 plasma-activities-stats
 plasma-browser-integration
