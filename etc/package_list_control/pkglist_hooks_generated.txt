@@ -66,6 +66,7 @@ hyprpicker
 hyprsunset
 imagemagick
 imlib2
+inetutils
 jq
 kactivitymanagerd
 kconfig5
