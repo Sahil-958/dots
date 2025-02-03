@@ -92,7 +92,6 @@ kwin
 kwrited
 layer-shell-qt
 ldns
-lftp
 lib32-glibc
 libgtop
 libkscreen
