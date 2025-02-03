@@ -3,6 +3,7 @@ acpilight
 adw-gtk-theme
 amd-ucode
 android-tools
+apache
 archlinux-xdg-menu
 aria2
 ark
