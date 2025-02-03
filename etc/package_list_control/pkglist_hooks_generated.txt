@@ -107,6 +107,7 @@ linux
 linux-firmware
 linux-lts
 man-db
+mariadb
 mesa-utils
 milou
 nano
