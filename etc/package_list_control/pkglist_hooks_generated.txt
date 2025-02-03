@@ -128,6 +128,7 @@ pacman-contrib
 pavucontrol
 perl-image-exiftool
 persepolis
+php
 plasma-activities-stats
 plasma-browser-integration
 plasma-desktop
