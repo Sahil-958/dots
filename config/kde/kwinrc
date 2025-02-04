@@ -55,6 +55,9 @@ tileLayoutGap=5
 [Tiling]
 padding=4
 
+[Tiling][0d0d44f8-6095-5c53-9ac1-fd4b77b7226c]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][138ab91e-6ef2-5ea1-8adf-daca88972f84]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 

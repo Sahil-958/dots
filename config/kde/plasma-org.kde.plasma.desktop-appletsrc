@@ -110,6 +110,7 @@ DialogWidth=1920
 AppletOrder=3;4;71;67;6;7;18;19
 
 [Containments][74]
+ItemGeometries-1536x864=
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
 activityId=dabcb6b6-e2f3-4a22-a479-6bbc837bee62
@@ -119,6 +120,11 @@ lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
+
+[Containments][74][Applets][75]
+immutability=1
+plugin=org.kde.milou
+transient=true
 
 [Containments][74][ConfigDialog]
 DialogHeight=730
@@ -178,7 +184,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][16][Configuration]
-PreloadWeight=80
+PreloadWeight=85
 
 [Containments][8][Applets][16][Configuration][General]
 migrated=true
@@ -206,7 +212,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][8][Applets][22][Configuration][General]
 showPercentage=true
@@ -245,7 +251,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][29][Configuration]
-PreloadWeight=7
+PreloadWeight=0
 
 [Containments][8][Applets][29][Configuration][ConfigDialog]
 DialogHeight=540
