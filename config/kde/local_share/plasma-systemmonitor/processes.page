@@ -1,6 +1,4 @@
 [Face-94051759765872][org.kde.ksysguard.processtable][General]
 columnDisplay={"ioCharactersActuallyReadRate":"text","ioCharactersActuallyWrittenRate":"text","netInbound":"text","netOutbound":"text","startTime":"text","usage":"lineScaled","vmPSS":"text"}
-sortColumn=usage
-sortDirection=0
 sortedColumns=name,usage,vmPSS,netInbound,netOutbound,ioCharactersActuallyReadRate,ioCharactersActuallyWrittenRate,vmSize,ioCharactersRead,egid,startTime,ioWriteSyscalls,ioCharactersReadRate,sgid,ioReadSyscallsRate,uid,scheduler,canUserLogin,command,numThreads,status,ioCharactersWritten,fsuid,ioniceLevel,ioCharactersActuallyRead,niceLevel,ioCharactersWrittenRate,fsgid,ioReadSyscalls,gid,pid,vmShared,suid,vmRSS,euid,totalTime,userUsage,totalSysUsage,tracerpid,parentPid,sysUsage,userTime,totalUsage,vmURSS,tty,sysTime,login,ioPriorityClass,totalUserUsage,username,name
 userFilterMode=3
