@@ -3,7 +3,6 @@ acpilight
 adw-gtk-theme
 amd-ucode
 android-tools
-apache
 archlinux-xdg-menu
 aria2
 ark
@@ -67,7 +66,6 @@ hyprpicker
 hyprsunset
 imagemagick
 imlib2
-inetutils
 jq
 kactivitymanagerd
 kconfig5
@@ -131,9 +129,6 @@ pavucontrol
 perl-image-exiftool
 persepolis
 php
-php-apache
-php-pgsql
-phpmyadmin
 plasma-activities-stats
 plasma-browser-integration
 plasma-desktop
