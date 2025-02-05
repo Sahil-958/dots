@@ -1,9 +1,11 @@
 agsv1
 aylurs-gtk-shell
+aylurs-gtk-shell-debug
 kwin-scripts-krohnkite-git
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
+librewolf-bin-debug
 materialgram-bin
 matugen-bin
 vscodium-bin
