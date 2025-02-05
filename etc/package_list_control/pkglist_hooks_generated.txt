@@ -22,6 +22,7 @@ breeze-gtk
 breeze-icons
 brightnessctl
 btop
+chrpath
 cliphist
 cmake
 cmus
@@ -50,6 +51,7 @@ git
 glava
 gnome-bluetooth-3.0
 gnome-keyring
+go
 grim
 grub
 grub-btrfs
