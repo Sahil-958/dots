@@ -1,13 +1,13 @@
 agsv1
 aylurs-gtk-shell
-aylurs-gtk-shell-debug
 kwin-scripts-krohnkite-git
 libastal-auth-git
 libastal-tray-git
 librewolf-bin
-librewolf-bin-debug
 materialgram-bin
 matugen-bin
+ungoogled-chromium-bin
+ungoogled-chromium-bin-debug
 vscodium-bin
 yay
 yay-debug
