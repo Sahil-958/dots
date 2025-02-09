@@ -7,7 +7,6 @@ librewolf-bin
 materialgram-bin
 matugen-bin
 ungoogled-chromium-bin
-ungoogled-chromium-bin-debug
 vscodium-bin
 yay
 yay-debug
