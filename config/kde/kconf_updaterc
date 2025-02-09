@@ -6,9 +6,9 @@ done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_op
 mtime=1735809875
 
 [kwin.upd]
-ctime=1736515488
+ctime=1738727557
 done=remove_deprecated_gtk4_option,kwin-6.0-reset-active-mouse-screen,kwin-6.0-delete-desktop-switching-shortcuts,kwin-6.0-remove-breeze-tabbox-default,kwin-6.1-remove-gridview-expose-shortcuts
-mtime=1735808461
+mtime=1738318608
 
 [migrate-calendar-to-plugin-id.upd]
 ctime=1736515488
@@ -36,6 +36,6 @@ done=plasmashell-6.0-keep-custom-position-of-panels,plasmashell-6.0-keep-default
 mtime=1735809071
 
 [spectacle.upd]
-ctime=1736585063
+ctime=1739107433
 done=24.02.0-video_format,24.02.0-keep_old_save_location,24.02.0-rename_settings,24.02.0-keep_old_filename_templates,24.05.2-change_placeholder_format
-mtime=1736451415
+mtime=1738693737

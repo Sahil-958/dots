@@ -5,6 +5,9 @@ memory/physical/used=61,174,233
 network/wlo1/ipv4address=61,174,233
 network/wlo1/ipv6address=233,120,61
 
+[Face-94410254040128][org.kde.ksysguard.applicationstable][General]
+sortColumn=netOutbound
+
 [Face-94410261307168][SensorColors]
 disk/all/used=61,174,233
 
