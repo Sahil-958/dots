@@ -87,6 +87,7 @@ kscreenlocker
 ksshaskpass
 ksystemstats
 kwallet-pam
+kwalletmanager
 kwayland
 kwayland-integration
 kwayland5
