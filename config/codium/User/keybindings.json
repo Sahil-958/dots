@@ -1,9 +1,24 @@
 // Place your key bindings in this file to override the defaults
 [
   {
+    "key": "space e f",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus && !terminalInInteractiveMode"
+  },
+  {
     "key": "escape escape",
     "command": "workbench.action.focusLastEditorGroup",
-    "when": "!editorFocus"
+    "when": "!editorFocus&&!inputFocus"
+  },
+  {
+    "key": "shift+; shift+;",
+    "command": "workbench.action.showCommands",
+    "when": "!editorFocus&&!inputFocus"
+  },
+  {
+    "key": "; ;",
+    "command": "workbench.action.quickOpen",
+    "when": "!editorFocus&&!inputFocus"
   },
 
   //Font Zoom keybinds
