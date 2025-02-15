@@ -55,11 +55,11 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": [":", "t", "n"],
+      "before": ["<leader>", "t", "n"],
       "commands": ["workbench.action.terminal.new"]
     },
     {
-      "before": [":", "t", "e"],
+      "before": ["<leader>", "t", "e"],
       "commands": ["workbench.action.terminal.focus"]
     },
     {
