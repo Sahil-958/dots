@@ -214,5 +214,8 @@
     "<C-p>": false,
     "<C-d>": true
   },
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
