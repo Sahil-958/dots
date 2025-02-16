@@ -26,28 +26,32 @@
     "command": "workbench.action.replaceInFiles"
   },
   {
+    "key": "shift+space f d",
+    "command": "editor.action.formatDocument"
+  },
+  {
     "key": "shift+space f k",
     "command": "workbench.action.openGlobalKeybindings"
   },
   {
-    "key": "shift+space c",
+    "key": "shift+space c e t",
     "command": "workbench.action.closeActiveEditor"
-  },
-  {
-    "key": "shift+space c e b l",
-    "command": "workbench.action.closeEditorsToTheLeft"
-  },
-  {
-    "key": "shift+space c e b r",
-    "command": "workbench.action.closeEditorsToTheRight"
   },
   {
     "key": "shift+space c e a",
     "command": "workbench.action.closeAllEditors"
   },
   {
-    "key": "shift+space c e e t",
+    "key": "shift+space c e o",
     "command": "workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "shift+space c e l",
+    "command": "workbench.action.closeEditorsToTheLeft"
+  },
+  {
+    "key": "shift+space c e r",
+    "command": "workbench.action.closeEditorsToTheRight"
   },
   {
     "key": "shift+space r f",
@@ -64,6 +68,36 @@
   {
     "key": "shift+space p e",
     "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "shift+space s a",
+    "command": "saveAll"
+  },
+  {
+    "key": "shift+space t s",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "shift+space q f",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+space v p",
+    "command": "workbench.actions.view.problems"
+  },
+  {
+    "key": "shift+space space",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "shift+space t n",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "shift+space t e",
+    "command": "workbench.action.terminal.focus"
   },
   {
     "key": "shift+space 1",
@@ -109,28 +143,7 @@
     "key": "shift+space shift+4",
     "command": "workbench.action.lastEditorInGroup"
   },
-  {
-    "key": "shift+space s a",
-    "command": "saveAll"
-  },
-  {
-    "key": "shift+space t s",
-    "command": "editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
-    "key": "shift+space q f",
-    "command": "editor.action.quickFix",
-    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+space p v",
-    "command": "workbench.actions.view.problems"
-  },
-  {
-    "key": "shift+space space",
-    "command": "workbench.action."
-  },
+
   {
     "key": "shift+space ;",
     "command": "workbench.action.quickOpen"
@@ -150,14 +163,6 @@
   {
     "key": "shift+space k",
     "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "shift+space t n",
-    "command": "workbench.action.terminal.new"
-  },
-  {
-    "key": "shift+space t e",
-    "command": "workbench.action.terminal.focus"
   },
 
   //file explorer
