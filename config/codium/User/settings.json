@@ -16,7 +16,6 @@
   "window.customTitleBarVisibility": "auto",
   // if you opt for tabs :)
   "window.density.editorTabHeight": "default",
-  "window.menuBarVisibility": "toggle",
   "window.restoreWindows": "all",
   "editor.cursorSurroundingLines": 10,
 
@@ -49,24 +48,7 @@
   "vim.highlightedyank.duration": 250,
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [":", ":"],
-      "commands": ["workbench.action.showCommands"]
-    },
-    {
-      "before": ["<leader>", "t", "n"],
-      "commands": ["workbench.action.terminal.new"]
-    },
-    {
-      "before": ["<leader>", "t", "e"],
-      "commands": ["workbench.action.terminal.focus"]
-    },
-    {
-      "before": [";"],
-      "commands": ["workbench.action.quickOpen"]
-    }
-  ],
+  "vim.normalModeKeyBindings": [],
   "vim.insertModeKeyBindings": [
     {
       "before": ["<c-j>"],
@@ -98,58 +80,7 @@
       "before": ["<c-k>"],
       "after": ["<c-w>", "k"]
     },
-    {
-      "before": ["leader", "f", "w"],
-      "commands": ["workbench.action.findInFiles"]
-    },
-    {
-      "before": ["leader", "f", "r"],
-      "commands": ["workbench.action.replaceInFiles"]
-    },
-    {
-      "before": ["leader", "f", "k"],
-      "commands": ["workbench.action.openGlobalKeybindings"]
-    },
-    {
-      "before": ["leader", "c"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      "before": ["leader", "b", "l"],
-      "commands": ["workbench.action.closeEditorsToTheLeft"]
-    },
-    {
-      "before": ["leader", "b", "r"],
-      "commands": ["workbench.action.closeEditorsToTheRight"]
-    },
-    {
-      "before": ["leader", "b", "C"],
-      "commands": ["workbench.action.closeAllEditors"]
-    },
-    {
-      "before": ["leader", "b", "c"],
-      "commands": ["workbench.action.closeOtherEditors"]
-    },
-    {
-      "before": ["leader", "r", "e"],
-      "commands": ["editor.action.rename"]
-    },
-    {
-      "before": ["leader", "r", "f"],
-      "commands": ["renameFile"]
-    },
-    {
-      "before": ["leader", "w"],
-      "commands": [":w"]
-    },
-    {
-      "before": ["leader", "W"],
-      "commands": ["saveAll"]
-    },
-    {
-      "before": ["leader", "q"],
-      "commands": [":wq"]
-    },
+
     {
       "before": ["<c-u>"],
       "after": ["<c-u>", "z", "z"]
@@ -162,14 +93,7 @@
       "before": ["leader", "s", "c"],
       "commands": [":nohl"]
     },
-    {
-      "before": ["leader", "l"],
-      "commands": ["workbench.action.nextEditor"]
-    },
-    {
-      "before": ["leader", "h"],
-      "commands": ["workbench.action.previousEditor"]
-    },
+
     {
       "before": ["f"],
       "after": ["<leader>", "<leader>", "s"]
@@ -185,6 +109,10 @@
     {
       "before": ["<leader>", "a"],
       "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["editor.action.triggerSuggest"]
     },
     {
       "before": ["H"],
@@ -285,5 +213,6 @@
     "<C-k>": false,
     "<C-p>": false,
     "<C-d>": true
-  }
+  },
+  "window.menuBarVisibility": "toggle"
 }

@@ -1,24 +1,215 @@
 // Place your key bindings in this file to override the defaults
 [
   {
-    "key": "space e f",
+    "key": "shift+space v",
+    "command": "workbench.action.openView"
+  },
+  {
+    "key": "shift+space e f",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus && !terminalInInteractiveMode"
+    "when": "!editorFocus"
   },
   {
-    "key": "escape escape",
-    "command": "workbench.action.focusLastEditorGroup",
-    "when": "!editorFocus&&!inputFocus"
+    "key": "shift+space s f",
+    "command": "workbench.action.focusSideBar"
   },
   {
-    "key": "shift+; shift+;",
-    "command": "workbench.action.showCommands",
-    "when": "!editorFocus&&!inputFocus"
+    "key": "shift+space f f",
+    "command": "workbench.files.action.focusFilesExplorer"
   },
   {
-    "key": "; ;",
-    "command": "workbench.action.quickOpen",
-    "when": "!editorFocus&&!inputFocus"
+    "key": "shift+space f w",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "shift+space f r",
+    "command": "workbench.action.replaceInFiles"
+  },
+  {
+    "key": "shift+space f k",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "shift+space c",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "shift+space c e b l",
+    "command": "workbench.action.closeEditorsToTheLeft"
+  },
+  {
+    "key": "shift+space c e b r",
+    "command": "workbench.action.closeEditorsToTheRight"
+  },
+  {
+    "key": "shift+space c e a",
+    "command": "workbench.action.closeAllEditors"
+  },
+  {
+    "key": "shift+space c e e t",
+    "command": "workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "shift+space r f",
+    "command": "renameFile"
+  },
+  {
+    "key": "shift+space r e",
+    "command": "editor.action.rename"
+  },
+  {
+    "key": "shift+space n e",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "shift+space p e",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "shift+space 1",
+    "command": "workbench.action.openEditorAtIndex1"
+  },
+  {
+    "key": "shift+space 2",
+    "command": "workbench.action.openEditorAtIndex2"
+  },
+  {
+    "key": "shift+space 3",
+    "command": "workbench.action.openEditorAtIndex3"
+  },
+  {
+    "key": "shift+space 4",
+    "command": "workbench.action.openEditorAtIndex4"
+  },
+  {
+    "key": "shift+space 5",
+    "command": "workbench.action.openEditorAtIndex5"
+  },
+  {
+    "key": "shift+space 6",
+    "command": "workbench.action.openEditorAtIndex6"
+  },
+  {
+    "key": "shift+space 7",
+    "command": "workbench.action.openEditorAtIndex7"
+  },
+  {
+    "key": "shift+space 8",
+    "command": "workbench.action.openEditorAtIndex8"
+  },
+  {
+    "key": "shift+space 9",
+    "command": "workbench.action.openEditorAtIndex9"
+  },
+  {
+    "key": "shift+space shift+6",
+    "command": "workbench.action.firstEditorInGroup"
+  },
+  {
+    "key": "shift+space shift+4",
+    "command": "workbench.action.lastEditorInGroup"
+  },
+  {
+    "key": "shift+space s a",
+    "command": "saveAll"
+  },
+  {
+    "key": "shift+space t s",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "shift+space q f",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+space p v",
+    "command": "workbench.actions.view.problems"
+  },
+  {
+    "key": "shift+space space",
+    "command": "workbench.action."
+  },
+  {
+    "key": "shift+space ;",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "shift+space h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "shift+space l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "shift+space j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "shift+space k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "shift+space t n",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "shift+space t e",
+    "command": "workbench.action.terminal.focus"
+  },
+
+  //file explorer
+  {
+    "command": "explorer.newFile",
+    "key": "a",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "command": "filesExplorer.copy",
+    "key": "y",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "command": "filesExplorer.paste",
+    "key": "p",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "s",
+    "command": "explorer.openToSide",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "explorer.openAndPassFocus",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.toggleExpand",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
   },
 
   //Font Zoom keybinds
@@ -67,90 +258,9 @@
     "command": "workbench.action.zoomOut",
     "when": "!editorFocus"
   },
-  {
-    "key": "ctrl-h",
-    "command": "workbench.action.navigateLeft",
-    "when": "vim.mode == 'Normal' && !inputFocus"
-  },
-  {
-    "key": "ctrl-l",
-    "command": "workbench.action.navigateRight",
-    "when": "vim.mode == 'Normal' && !inputFocus"
-  },
-  {
-    "key": "ctrl-k",
-    "command": "workbench.action.navigateUp",
-    "when": "vim.mode == 'Normal' && !inputFocus"
-  },
-  {
-    "key": "ctrl-j",
-    "command": "workbench.action.navigateDown",
-    "when": "vim.mode == 'Normal' && !inputFocus"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "command": "workbench.files.action.focusFilesExplorer",
-    "key": "ctrl+n",
-    "when": "editorTextFocus"
-  },
-  {
-    "command": "explorer.newFile",
-    "key": "a",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "shift+a",
-    "command": "explorer.newFolder",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "command": "renameFile",
-    "key": "r",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.copy",
-    "key": "y",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.paste",
-    "key": "p",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "command": "deleteFile",
-    "key": "d",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "s",
-    "command": "explorer.openToSide",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "x",
-    "command": "filesExplorer.cut",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "shift-s",
-    "command": "workbench.action.splitEditorDown",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "enter",
-    "command": "explorer.openAndPassFocus",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
-  },
-  {
-    "key": "enter",
-    "command": "list.toggleExpand",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
-  },
+
+  //Vim and LSP Related
+
   {
     "key": "shift-j",
     "command": "editor.action.moveLinesDownAction",
@@ -354,15 +464,5 @@
     "key": "o",
     "command": "revealReference",
     "when": "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand"
-  },
-  {
-    "key": "ctrl+'",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+c",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "vim.mode != 'Insert'"
   }
 ]
