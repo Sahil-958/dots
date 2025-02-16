@@ -1,6 +1,9 @@
 [AC][Display]
 DisplayBrightness=1
 
+[Battery][Performance]
+PowerProfile=balanced
+
 [Battery][SuspendAndShutdown]
 AutoSuspendAction=2
 AutoSuspendIdleTimeoutSec=1800

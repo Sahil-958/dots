@@ -3,3 +3,6 @@ F8:89:D2:E7:91:F6_powered=true
 
 [Devices]
 connectedDevices=
+
+[Global]
+bluetoothBlocked=true
