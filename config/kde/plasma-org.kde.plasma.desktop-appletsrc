@@ -127,12 +127,18 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][74][ConfigDialog]
-DialogHeight=730
-DialogWidth=1095
+DialogHeight=540
+DialogWidth=720
+
+[Containments][74][General]
+positions={"1920x1080":[]}
 
 [Containments][74][Wallpaper][org.kde.image][General]
 Image=/usr/share/wallpapers/Next/
 SlidePaths=/home/sawhill/.local/share/wallpapers/,/usr/share/wallpapers/
+
+[Containments][74][Wallpaper][org.kde.potd][General]
+Provider=flickr
 
 [Containments][8]
 activityId=
@@ -212,7 +218,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=0
+PreloadWeight=2
 
 [Containments][8][Applets][22][Configuration][General]
 showPercentage=true
@@ -222,7 +228,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][23][Configuration]
-PreloadWeight=0
+PreloadWeight=67
 
 [Containments][8][Applets][24]
 immutability=1
@@ -251,7 +257,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][29][Configuration]
-PreloadWeight=0
+PreloadWeight=7
 
 [Containments][8][Applets][29][Configuration][ConfigDialog]
 DialogHeight=540

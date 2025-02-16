@@ -1,10 +1,2 @@
-[Bell]
-VisibleBellColor=240,191,191
-
 [Mouse]
-MKCurve=10
-MKDelay=50
-MKInterval=20
-MKMaxSpeed=100
-MKTimeToMax=20
 MouseKeys=true
