@@ -25,7 +25,6 @@ btop
 chrpath
 cliphist
 cmake
-cmus
 cpio
 dart-sass
 dnsmasq
@@ -44,7 +43,6 @@ flatpak-kcm
 fwupd
 fzf
 gdb
-geckodriver
 ghostscript
 gimp
 git
@@ -128,8 +126,6 @@ oxygen
 oxygen-sounds
 pacman-contrib
 pavucontrol
-perl-image-exiftool
-php
 plasma-activities-stats
 plasma-browser-integration
 plasma-desktop
@@ -173,7 +169,6 @@ reflector
 ripgrep
 rsync
 rust
-sddm-kcm
 seahorse
 slurp
 smartmontools
@@ -190,7 +185,6 @@ tldr
 tmate
 tree
 ttf-cascadia-code
-ttf-firacode-nerd
 unzip
 usbutils
 vi
@@ -210,6 +204,5 @@ xorg-xev
 xorg-xinit
 xorg-xprop
 xorg-xrandr
-yakuake
 yt-dlp
 zip
