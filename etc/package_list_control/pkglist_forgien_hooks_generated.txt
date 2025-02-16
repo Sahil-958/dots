@@ -1,5 +1,6 @@
 agsv1
 aylurs-gtk-shell
+glava
 kwin-scripts-krohnkite-git
 libastal-auth-git
 libastal-tray-git
