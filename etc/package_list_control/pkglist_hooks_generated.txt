@@ -164,6 +164,7 @@ qt5-quickcontrols
 qt5-quickcontrols2
 qt5-tools
 qt6-wayland
+rclone
 reflector
 ripgrep
 rsync
