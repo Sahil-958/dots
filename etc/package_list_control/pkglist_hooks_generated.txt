@@ -23,7 +23,6 @@ breeze-icons
 brightnessctl
 btop
 chrpath
-clang
 cliphist
 cmake
 cpio
