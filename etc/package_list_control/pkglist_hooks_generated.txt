@@ -119,6 +119,7 @@ ntfs-3g
 nuspell
 obs-studio
 ocean-sound-theme
+ollama
 os-prober
 otf-comicshanns-nerd
 oxygen
