@@ -1,6 +1,8 @@
 agsv1
 aylurs-gtk-shell
 glava
+icu75
+icu75-debug
 kwin-scripts-krohnkite-git
 libastal-auth-git
 libastal-tray-git
