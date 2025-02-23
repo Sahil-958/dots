@@ -49,6 +49,7 @@ git
 gnome-bluetooth-3.0
 gnome-keyring
 go
+gradle
 grim
 grub
 grub-btrfs
@@ -65,6 +66,7 @@ hyprpicker
 hyprsunset
 imagemagick
 imlib2
+jdk17-openjdk
 jq
 kactivitymanagerd
 kconfig5
