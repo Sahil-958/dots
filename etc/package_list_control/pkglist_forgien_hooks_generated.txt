@@ -1,7 +1,6 @@
 agsv1
 aylurs-gtk-shell
 brisk-bin
-brisk-bin-debug
 glava
 icu75
 kwin-scripts-krohnkite-git
