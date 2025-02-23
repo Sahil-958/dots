@@ -8,6 +8,7 @@ aria2
 ark
 aspell
 at
+ayatana-ido
 base
 base-devel
 bash-completion
@@ -43,6 +44,7 @@ flatpak-kcm
 fwupd
 fzf
 gdb
+gendesk
 ghostscript
 gimp
 git
@@ -93,7 +95,10 @@ kwrited
 layer-shell-qt
 ldns
 lib32-glibc
+libayatana-appindicator
+libayatana-indicator
 libgtop
+libkeybinder3
 libkscreen
 libksysguard
 libplasma
