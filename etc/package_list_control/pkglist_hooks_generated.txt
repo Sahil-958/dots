@@ -73,6 +73,7 @@ kde-gtk-config
 kdeconnect
 kdeplasma-addons
 kgamma
+kget
 kglobalacceld
 kinfocenter
 kmenuedit
