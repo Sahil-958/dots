@@ -34,6 +34,7 @@ dolphin-plugins
 drkonqi
 easyeffects
 efibootmgr
+ethtool
 fastfetch
 fd
 ffmpegthumbs
