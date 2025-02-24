@@ -125,6 +125,7 @@ oxygen
 oxygen-sounds
 pacman-contrib
 pavucontrol
+persepolis
 plasma-activities-stats
 plasma-browser-integration
 plasma-desktop
