@@ -27,6 +27,7 @@ cliphist
 cmake
 cpio
 dart-sass
+dhclient
 dnsmasq
 dolphin
 dolphin-plugins
