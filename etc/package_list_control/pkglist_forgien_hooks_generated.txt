@@ -1,4 +1,3 @@
-ab-download-manager
 agsv1
 aylurs-gtk-shell
 brisk-bin
