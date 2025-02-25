@@ -117,6 +117,7 @@ noto-fonts-emoji
 npm
 ntfs-3g
 nuspell
+nvme-cli
 obs-studio
 ocean-sound-theme
 os-prober
