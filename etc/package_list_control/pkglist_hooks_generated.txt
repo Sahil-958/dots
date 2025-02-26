@@ -34,6 +34,7 @@ drkonqi
 easyeffects
 efibootmgr
 fastfetch
+fatresize
 fd
 ffmpegthumbs
 firefox
