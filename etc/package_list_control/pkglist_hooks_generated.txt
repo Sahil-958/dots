@@ -126,6 +126,7 @@ otf-comicshanns-nerd
 oxygen
 oxygen-sounds
 pacman-contrib
+pandoc-cli
 pavucontrol
 plasma-activities-stats
 plasma-browser-integration
