@@ -187,6 +187,7 @@ tldr
 tmate
 tree
 ttf-cascadia-code
+unrar
 unzip
 usbutils
 vi
