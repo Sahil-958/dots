@@ -157,10 +157,10 @@ Walk Through Windows of Current Application Alternative (Reverse)=none,,Walk Thr
 Window Above Other Windows=none,,Keep Window Above Others
 Window Below Other Windows=none,,Keep Window Below Others
 Window Close=Meta+Q\tAlt+F4,Alt+F4,Close Window
-Window Custom Quick Tile Bottom=,,Custom Quick Tile Window to the Bottom
-Window Custom Quick Tile Left=,,Custom Quick Tile Window to the Left
-Window Custom Quick Tile Right=,,Custom Quick Tile Window to the Right
-Window Custom Quick Tile Top=,,Custom Quick Tile Window to the Top
+Window Custom Quick Tile Bottom=none,,Custom Quick Tile Window to the Bottom
+Window Custom Quick Tile Left=none,,Custom Quick Tile Window to the Left
+Window Custom Quick Tile Right=none,,Custom Quick Tile Window to the Right
+Window Custom Quick Tile Top=none,,Custom Quick Tile Window to the Top
 Window Fullscreen=none,,Make Window Fullscreen
 Window Grow Horizontal=none,,Expand Window Horizontally
 Window Grow Vertical=none,,Expand Window Vertically
@@ -298,6 +298,9 @@ toggle do not disturb=none,,Toggle do not disturb
 
 [services][net.local.ocr.sh.desktop]
 _launch=Meta+O
+
+[services][org.gnome.Epiphany.WebApp_ba4ed6352675ca5f20b59a0678c30367545feaf5.desktop]
+_launch=
 
 [services][org.kde.konsole.desktop]
 _launch=Meta+Return

@@ -47,6 +47,7 @@ enableFloatingLayout=true
 enableQuarterLayout=true
 enableStackedLayout=true
 enableStairLayout=false
+floatingTitle=com-abdownloadmanager-desktop-AppKt
 limitTileWidthRatio=0.6
 noTileBorder=true
 screenGapBottom=18

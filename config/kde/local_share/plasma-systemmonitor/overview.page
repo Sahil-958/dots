@@ -4,9 +4,11 @@ memory/physical/used=61,174,233
 [Face-94410238879984][SensorColors]
 network/wlo1/ipv4address=61,174,233
 network/wlo1/ipv6address=233,120,61
+network/wlp0s20f3/ipv4address=132,65,144
+network/wlp0s20f3/ipv6address=77,144,65
 
 [Face-94410254040128][org.kde.ksysguard.applicationstable][General]
-sortColumn=netOutbound
+sortColumn=usage
 
 [Face-94410261307168][SensorColors]
 disk/all/used=61,174,233
@@ -24,3 +26,5 @@ os/system/prettyName=154,61,233
 [Face-94410280144624][SensorColors]
 network/wlo1/download=61,174,233
 network/wlo1/upload=233,120,61
+network/wlp0s20f3/download=132,65,144
+network/wlp0s20f3/upload=77,144,65
