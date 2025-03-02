@@ -41,8 +41,14 @@ cpu/cpu8/usage=174,233,61
 cpu/cpu9/usage=88,233,61
 
 [Face-94107115022400][SensorColors]
+memory/physical/total=85,144,65
 memory/physical/used=61,174,233
+memory/swap/total=144,115,65
 memory/swap/used=233,120,61
+
+[Face-94107115022400][Sensors]
+highPrioritySensorIds=["memory/physical/used","memory/swap/used"]
+lowPrioritySensorIds=["memory/swap/total","memory/physical/total"]
 
 [Face-94107150101264][SensorColors]
 network/all/download=61,174,233

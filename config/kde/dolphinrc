@@ -36,9 +36,6 @@ Places Icons Static Size=22
 1920x1080 screen: Width=438
 1920x1080 screen: Window-Maximized=true
 
-[MainWindow]
-ToolBarsMovable=Disabled
-
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,textthumbnail,ffmpegthumbs
 

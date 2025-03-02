@@ -21,13 +21,13 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=138,72,152
+BackgroundAlternate=137,74,152
 BackgroundNormal=49,54,59
-DecorationFocus=177,81,192
-DecorationHover=177,81,192
-ForegroundActive=177,81,192
+DecorationFocus=176,83,193
+DecorationHover=176,83,193
+ForegroundActive=176,83,193
 ForegroundInactive=161,169,177
-ForegroundLink=227,189,234
+ForegroundLink=225,190,233
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -37,11 +37,11 @@ ForegroundVisited=155,89,182
 [Colors:Complementary]
 BackgroundAlternate=30,87,116
 BackgroundNormal=42,46,50
-DecorationFocus=177,81,192
-DecorationHover=177,81,192
-ForegroundActive=177,81,192
+DecorationFocus=176,83,193
+DecorationHover=176,83,193
+ForegroundActive=176,83,193
 ForegroundInactive=161,169,177
-ForegroundLink=227,189,234
+ForegroundLink=225,190,233
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -51,11 +51,11 @@ ForegroundVisited=155,89,182
 [Colors:Header]
 BackgroundAlternate=42,46,50
 BackgroundNormal=49,54,59
-DecorationFocus=177,81,192
-DecorationHover=177,81,192
-ForegroundActive=177,81,192
+DecorationFocus=176,83,193
+DecorationHover=176,83,193
+ForegroundActive=176,83,193
 ForegroundInactive=161,169,177
-ForegroundLink=227,189,234
+ForegroundLink=225,190,233
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -77,13 +77,13 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Selection]
-BackgroundAlternate=132,65,144
-BackgroundNormal=132,65,144
-DecorationFocus=177,81,192
-DecorationHover=177,81,192
-ForegroundActive=177,81,192
+BackgroundAlternate=131,67,144
+BackgroundNormal=131,67,144
+DecorationFocus=176,83,193
+DecorationHover=176,83,193
+ForegroundActive=176,83,193
 ForegroundInactive=255,255,255
-ForegroundLink=129,59,140
+ForegroundLink=128,61,141
 ForegroundNegative=176,55,69
 ForegroundNeutral=198,92,0
 ForegroundNormal=255,255,255
@@ -93,11 +93,11 @@ ForegroundVisited=155,89,182
 [Colors:Tooltip]
 BackgroundAlternate=42,46,50
 BackgroundNormal=49,54,59
-DecorationFocus=177,81,192
-DecorationHover=177,81,192
-ForegroundActive=177,81,192
+DecorationFocus=176,83,193
+DecorationHover=176,83,193
+ForegroundActive=176,83,193
 ForegroundInactive=161,169,177
-ForegroundLink=227,189,234
+ForegroundLink=225,190,233
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -107,11 +107,11 @@ ForegroundVisited=155,89,182
 [Colors:View]
 BackgroundAlternate=35,38,41
 BackgroundNormal=27,30,32
-DecorationFocus=177,81,192
-DecorationHover=177,81,192
-ForegroundActive=177,81,192
+DecorationFocus=176,83,193
+DecorationHover=176,83,193
+ForegroundActive=176,83,193
 ForegroundInactive=161,169,177
-ForegroundLink=227,189,234
+ForegroundLink=225,190,233
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -121,11 +121,11 @@ ForegroundVisited=155,89,182
 [Colors:Window]
 BackgroundAlternate=49,54,59
 BackgroundNormal=42,46,50
-DecorationFocus=177,81,192
-DecorationHover=177,81,192
-ForegroundActive=177,81,192
+DecorationFocus=176,83,193
+DecorationHover=176,83,193
+ForegroundActive=176,83,193
 ForegroundInactive=161,169,177
-ForegroundLink=227,189,234
+ForegroundLink=225,190,233
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -133,11 +133,11 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=820,584
-History Items[$e]=file:$HOME/Downloads
+DirSelectDialog Size=952,1013
+History Items[$e]=file:$HOME/repos/event-manager/event-manager-backend,file:$HOME/Downloads
 
 [General]
-AccentColor=177,81,192
+AccentColor=176,83,193
 ColorSchemeHash=01662607e36cd33eacc7d7d7189f69c26b9a2cc8
 UseSystemBell=true
 accentColorFromWallpaper=true
@@ -151,7 +151,7 @@ contrast=4
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
-Breadcrumb Navigation=true
+Breadcrumb Navigation=false
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
