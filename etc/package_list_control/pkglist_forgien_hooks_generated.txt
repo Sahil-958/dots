@@ -1,13 +1,8 @@
-brisk-bin
 glava
 icu75
 kwin-scripts-krohnkite-git
-libastal-auth-git
-libastal-tray-git
 librewolf-bin
-localsend-bin
 materialgram-bin
-matugen-bin
 ungoogled-chromium-bin
 vscodium-bin
 yay
