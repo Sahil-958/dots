@@ -156,7 +156,6 @@ qt6-wayland
 rclone
 reflector
 ripgrep
-rsync
 rust
 seahorse
 slurp
