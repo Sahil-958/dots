@@ -110,7 +110,6 @@ mesa-utils
 milou
 nano
 neovim
-nethogs
 network-manager-applet
 networkmanager
 nodejs
