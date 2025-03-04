@@ -140,12 +140,8 @@ power-profiles-daemon
 powerdevil
 print-manager
 python-aiohttp
-python-opencv
 python-pip
-python-pyaudio
 python-pyqt5
-python-pyscreenshot
-python-qrencode
 qbittorrent
 qqc2-breeze-style
 qt5-graphicaleffects
