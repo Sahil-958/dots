@@ -125,7 +125,6 @@ plasma-workspace
 plasma-workspace-wallpapers
 plasma5support
 playerctl
-polkit-gnome
 polkit-kde-agent
 power-profiles-daemon
 powerdevil
