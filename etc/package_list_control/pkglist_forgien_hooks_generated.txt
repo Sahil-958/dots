@@ -1,9 +1,11 @@
+adwaita-qt4
+adwaita-qt4-debug
+adwaita-qt5-git
+adwaita-qt6-git
 icu75
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-qt4
-qt4-debug
 ungoogled-chromium-bin
 vscodium-bin
 yay
