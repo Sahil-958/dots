@@ -178,7 +178,6 @@ vi
 vim
 viu
 vlc
-webkit2gtk-4.1
 wireplumber
 wl-clipboard
 xdg-desktop-portal-gtk
