@@ -149,4 +149,5 @@ xorg-xev
 xorg-xinit
 xorg-xprop
 xorg-xrandr
+zed
 zip
