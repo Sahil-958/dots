@@ -2,7 +2,6 @@ icu75
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-pdf4qt-git
 ungoogled-chromium-bin
 vscodium-bin
 yay
