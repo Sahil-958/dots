@@ -83,7 +83,6 @@ kwayland5
 kwin
 kwrited
 layer-shell-qt
-ldns
 lib32-glibc
 libgtop
 libkscreen
