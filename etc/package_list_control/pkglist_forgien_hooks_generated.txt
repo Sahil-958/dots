@@ -1,6 +1,3 @@
-adwaita-qt4
-adwaita-qt5-git
-adwaita-qt6-git
 icu75
 kwin-scripts-krohnkite-git
 librewolf-bin
