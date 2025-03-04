@@ -1,5 +1,4 @@
 adwaita-qt4
-adwaita-qt4-debug
 adwaita-qt5-git
 adwaita-qt6-git
 icu75
