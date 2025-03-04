@@ -91,7 +91,6 @@ libplasma
 libqalculate
 libreoffice-fresh
 libva-utils
-libvoikko
 linux
 linux-firmware
 linux-lts
