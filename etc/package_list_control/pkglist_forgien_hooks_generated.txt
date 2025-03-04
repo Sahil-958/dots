@@ -1,3 +1,5 @@
+blend2d-git
+blend2d-git-debug
 icu75
 kwin-scripts-krohnkite-git
 librewolf-bin
