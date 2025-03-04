@@ -17,7 +17,6 @@ breeze-gtk
 breeze-icons
 brightnessctl
 btop
-clang
 cmake
 cpio
 dolphin
