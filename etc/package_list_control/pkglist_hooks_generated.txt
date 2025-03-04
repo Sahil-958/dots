@@ -142,7 +142,6 @@ snapper
 spectacle
 sshfs
 starship
-swappy
 systemsettings
 tesseract
 tesseract-data-eng
