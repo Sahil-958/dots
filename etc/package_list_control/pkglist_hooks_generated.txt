@@ -48,12 +48,6 @@ gtk-session-lock
 gvfs
 gwenview
 hspell
-hyprcursor
-hypridle
-hyprland-qtutils
-hyprlang
-hyprpicker
-hyprsunset
 imagemagick
 imlib2
 jq
