@@ -3,7 +3,6 @@ kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
 pdf4qt-git
-pdf4qt-git-debug
 ungoogled-chromium-bin
 vscodium-bin
 yay
