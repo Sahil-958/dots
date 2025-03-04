@@ -122,6 +122,7 @@ python-pip
 qbittorrent
 qqc2-breeze-style
 qt5-graphicaleffects
+qt5-quickcontrols2
 qt6-wayland
 rclone
 reflector
