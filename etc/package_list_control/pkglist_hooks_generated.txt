@@ -105,7 +105,6 @@ plasma-firewall
 plasma-integration
 plasma-nm
 plasma-pa
-plasma-sdk
 plasma-systemmonitor
 plasma-vault
 plasma-wayland-protocols
