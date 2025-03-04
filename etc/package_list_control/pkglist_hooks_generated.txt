@@ -33,7 +33,6 @@ flatpak-kcm
 fzf
 gimp
 git
-grim
 grub
 grub-btrfs
 gvfs
