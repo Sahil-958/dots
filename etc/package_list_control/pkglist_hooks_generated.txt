@@ -84,7 +84,6 @@ kwin
 kwrited
 layer-shell-qt
 lib32-glibc
-libgtop
 libkscreen
 libksysguard
 libplasma
