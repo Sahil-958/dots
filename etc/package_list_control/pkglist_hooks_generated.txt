@@ -5,8 +5,6 @@ amd-ucode
 android-tools
 archlinux-xdg-menu
 aria2
-ark
-aspell
 base
 base-devel
 bash-completion
@@ -47,7 +45,6 @@ grub-btrfs
 gtk-session-lock
 gvfs
 gwenview
-hspell
 imagemagick
 imlib2
 jq
