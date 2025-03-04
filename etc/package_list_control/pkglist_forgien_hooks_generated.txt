@@ -2,6 +2,8 @@ icu75
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
+qt4
+qt4-debug
 ungoogled-chromium-bin
 vscodium-bin
 yay

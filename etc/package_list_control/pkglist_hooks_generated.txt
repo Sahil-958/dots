@@ -19,7 +19,6 @@ brightnessctl
 btop
 cmake
 cpio
-cups
 dolphin
 dolphin-plugins
 easyeffects
@@ -76,7 +75,6 @@ linux
 linux-firmware
 linux-lts
 man-db
-mariadb-libs
 mesa-utils
 milou
 neovim
@@ -113,7 +111,6 @@ plasma-workspace-wallpapers
 plasma5support
 playerctl
 polkit-kde-agent
-postgresql-libs
 power-profiles-daemon
 powerdevil
 print-manager
@@ -138,7 +135,6 @@ tesseract-data-eng
 tldr
 tree
 ttf-cascadia-code
-unixodbc
 usbutils
 vi
 vim
