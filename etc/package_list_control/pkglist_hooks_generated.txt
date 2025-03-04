@@ -37,7 +37,6 @@ firefox
 firewalld
 flatpak
 flatpak-kcm
-fwupd
 fzf
 gdb
 ghostscript
