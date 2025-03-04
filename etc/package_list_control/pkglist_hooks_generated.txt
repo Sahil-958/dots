@@ -41,7 +41,6 @@ fzf
 gdb
 gimp
 git
-go
 grim
 grub
 grub-btrfs
