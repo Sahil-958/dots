@@ -182,7 +182,6 @@ systemsettings
 tesseract
 tesseract-data-eng
 tldr
-tmate
 tree
 ttf-cascadia-code
 unrar
