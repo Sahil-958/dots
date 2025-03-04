@@ -39,11 +39,8 @@ flatpak
 flatpak-kcm
 fzf
 gdb
-ghostscript
 gimp
 git
-gnome-bluetooth-3.0
-gnome-keyring
 go
 grim
 grub
