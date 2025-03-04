@@ -42,7 +42,6 @@ git
 grim
 grub
 grub-btrfs
-gtk-session-lock
 gvfs
 gwenview
 imagemagick
@@ -144,14 +143,12 @@ spectacle
 sshfs
 starship
 swappy
-swww
 systemsettings
 tesseract
 tesseract-data-eng
 tldr
 tree
 ttf-cascadia-code
-unrar
 usbutils
 vi
 vim
