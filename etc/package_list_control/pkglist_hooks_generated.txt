@@ -12,7 +12,6 @@ bc
 bind
 bluedevil
 blueman
-bluez-utils
 breeze
 breeze-gtk
 breeze-icons
