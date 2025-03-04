@@ -50,7 +50,6 @@ gwenview
 hspell
 hyprcursor
 hypridle
-hyprland
 hyprland-qtutils
 hyprlang
 hyprpicker
