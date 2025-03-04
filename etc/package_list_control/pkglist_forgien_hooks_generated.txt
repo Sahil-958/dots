@@ -1,4 +1,3 @@
-glava
 icu75
 kwin-scripts-krohnkite-git
 librewolf-bin
