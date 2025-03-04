@@ -1,5 +1,4 @@
 agsv1
-aylurs-gtk-shell
 brisk-bin
 glava
 icu75
