@@ -7,7 +7,6 @@ archlinux-xdg-menu
 aria2
 ark
 aspell
-at
 base
 base-devel
 bash-completion
@@ -27,14 +26,11 @@ cliphist
 cmake
 cpio
 dart-sass
-dnsmasq
 dolphin
 dolphin-plugins
-drkonqi
 easyeffects
 efibootmgr
 fastfetch
-fatresize
 fd
 ffmpegthumbs
 firefox
