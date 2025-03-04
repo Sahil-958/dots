@@ -126,7 +126,6 @@ otf-comicshanns-nerd
 oxygen
 oxygen-sounds
 pacman-contrib
-pandoc-cli
 pavucontrol
 plasma-activities-stats
 plasma-browser-integration
@@ -160,7 +159,6 @@ python-pyscreenshot
 python-qrencode
 qbittorrent
 qemu-full
-qpdf
 qqc2-breeze-style
 qt5-graphicaleffects
 qt5-quickcontrols
