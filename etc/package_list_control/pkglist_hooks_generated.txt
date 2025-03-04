@@ -158,7 +158,6 @@ python-pyqt5
 python-pyscreenshot
 python-qrencode
 qbittorrent
-qemu-full
 qqc2-breeze-style
 qt5-graphicaleffects
 qt5-quickcontrols
@@ -190,7 +189,6 @@ unrar
 usbutils
 vi
 vim
-virt-manager
 viu
 vlc
 webkit2gtk-4.1
