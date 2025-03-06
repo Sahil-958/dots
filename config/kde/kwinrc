@@ -1,5 +1,5 @@
 [Activities][LastVirtualDesktop]
-dabcb6b6-e2f3-4a22-a479-6bbc837bee62=cfcef2c7-06cf-4584-9579-5151f496f451
+dabcb6b6-e2f3-4a22-a479-6bbc837bee62=7ee3bdff-2726-4456-b9e5-b598a5b9bfcf
 
 [Desktops]
 Id_1=879453cc-6f50-4e25-98e2-09c8fd9166ee
@@ -35,26 +35,28 @@ TransitionTime=6
 
 [Plugins]
 cubeEnabled=true
+desktopchangeosdEnabled=false
 diminactiveEnabled=true
 dimscreenEnabled=true
 glideEnabled=true
 krohnkiteEnabled=true
 scaleEnabled=false
+videowallEnabled=false
 
 [Script-krohnkite]
 enableBTreeLayout=true
+enableColumnsLayout=false
 enableFloatingLayout=true
-enableQuarterLayout=true
-enableStackedLayout=true
+enableSpreadLayout=false
 enableStairLayout=false
-floatingTitle=com-abdownloadmanager-desktop-AppKt
 limitTileWidthRatio=0.6
+monocleMaximize=false
 noTileBorder=true
 screenGapBottom=18
-screenGapLeft=5
-screenGapRight=5
-screenGapTop=5
-tileLayoutGap=5
+screenGapLeft=8
+screenGapRight=8
+screenGapTop=8
+tileLayoutGap=8
 
 [Tiling]
 padding=4

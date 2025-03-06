@@ -14,7 +14,6 @@ ConfigVersion=1
 1920x1080 screen: Window-Maximized=true
 1920x1080 screen: XPosition=0
 1920x1080 screen: YPosition=28
-ToolBarsMovable=Disabled
 eDP-1=eDP-1
 
 [UiSettings]
