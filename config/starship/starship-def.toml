@@ -1,0 +1,364 @@
+format = """
+[░▒▓](#bfc7d6)\
+[  ](bg:#bfc7d6 fg:#29313d)\
+$sudo\
+[](fg:#bfc7d6 bg:#2b333f)\
+$username\
+$hostname\
+$directory\
+[](fg:#2b333f bg:#c4c6cd)\
+$git_branch\
+$git_status\
+[](fg:#c4c6cd bg:#46494f)\
+$buf\
+$bun\
+$c\
+${custom.cpp}\
+${custom.c_sharp}\
+$cmake\
+$cobol\
+$crystal\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$package\
+$perl\
+$php\
+$purescript\
+$python\
+$raku\
+$red\
+$rlang\
+$ruby\
+$rust\
+$scala\
+$swift\
+$typst\
+$vagrant\
+$vlang\
+$zig\
+[](fg:#46494f bg:#131314)\
+$time\
+[](fg:#131314)\
+\n$character\
+"""
+
+add_newline = false
+continuation_prompt = '[❯❯]()'
+
+[character]
+#success_symbol = '[❯](#00ff00) '
+#error_symbol = '[❯](#ff0000)'
+success_symbol = '[❯]()'
+error_symbol = '[❯](#ff0000)'
+
+[sudo]
+format ='[$symbol]($style)'
+style = 'bg:#bfc7d6 fg:#29313d'
+symbol = '󰚌 '
+disabled = false
+
+[username]
+style_user = 'fg:#bac2d1 bg:#2b333f'
+style_root = 'black bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)[@$hostname:](fg:#bac2d1 bg:#2b333f)'
+trim_at = '.'
+ssh_symbol = '󰣀'
+disabled = false
+
+[directory]
+style = "fg:#bac2d1 bg:#2b333f"
+before_repo_root_style = "fg:#bac2d1 bg:#2b333f"
+repo_root_style="fg:#bac2d1 bg:#2b333f"
+read_only= " 󰉑 "
+read_only_style= "bg:#2b333f fg:#bac2d1"
+format = "[$path]($style)[$read_only]($read_only_style)"
+repo_root_format="[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path  ]($style)[$read_only]($read_only_style)"
+truncation_length = 6
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰽰 "
+"Pictures" = " "
+
+
+[git_branch]
+symbol = "󰘬"
+style = "bg:#c4c6cd"
+format = '[[ $symbol $branch ](fg:#2e3036 bg:#c4c6cd)]($style)'
+
+[git_status]
+style = "bg:#c4c6cd"
+format = '[[($all_status$ahead_behind )](fg:#2e3036 bg:#c4c6cd)]($style)'
+#added by me
+conflicted = ' 🏳 '
+ahead = '󰵵🏎 ⇡${count}'
+behind = '󰱬 ⇣${count}'
+diverged = '󰚛 ⇕⇡${ahead_count}⇣${behind_count}'
+up_to_date = ' ✓ '
+untracked = '  '
+stashed = ' 📦 '
+modified = ' 󰷉 '
+staged = '[++\($count\)](fg:#2e3036 bg:#c4c6cd)'
+renamed = ' 󰇹 '
+deleted = ' 🗑 '
+
+[time]
+disabled = false
+time_format = "%A %d %b %I:%M %P " # Hour:Minute Format
+style = "bg:#131314"
+format = '[[ $time](fg:#bfc7d6 bg:#131314)]($style)'
+
+[status]
+style = 'fg: bg:#29313d'
+symbol = ''
+success_symbol = ''
+format = '[ $symbol $common_meaning$signal_name$maybe_int]($style)'
+map_symbol = true
+disabled = false
+
+[nodejs]
+symbol = ""
+style = "bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[buf]
+symbol="buf"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[bun]
+symbol="󰳯 "
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[c]
+symbol="󰙱 "
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[custom.cpp]
+disabled=false
+symbol=""
+extensions=["cpp"]
+style="bg:#46494f"
+command='cpp --version | head -n 1 | grep -oP "\d+\.\d+\.\d+"'
+format = '[[ $symbol ($output) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[custom.c_sharp]
+disabled=false
+symbol=" "
+extensions=["cs"]
+style="bg:#46494f"
+command='csc --version | head -n 1 | grep -oP "\d+\.\d+\.\d+"'
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[cmake]
+symbol="cmake"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[cobol]
+symbol="COBOL"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[crystal]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[daml]
+symbol=" daml"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[dart]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[deno]
+symbol="deno"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[dotnet]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[elixir]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[elm]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[erlang]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[fennel]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[haskell]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[helm]
+symbol="󰠳 helm"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[java]
+symbol="󰬷"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[julia]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[kotlin]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[lua]
+symbol="󰢱"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[nim]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[ocaml]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[opa]
+symbol="󰵰"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[package]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[perl]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[purescript]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[python]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[raku]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[red]
+symbol="󱥒 red"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[rlang]
+symbol="rlang"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[ruby]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[scala]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[swift]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[typst]
+symbol="typst"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[vagrant]
+symbol=" vagrant"
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[vlang]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
+
+[zig]
+symbol=""
+style="bg:#46494f"
+format = '[[ $symbol ($version) ](fg:#e2e4ea bg:#46494f)]($style)'
