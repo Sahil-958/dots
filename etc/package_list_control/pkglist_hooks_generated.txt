@@ -1,6 +1,5 @@
 7zip
 acpilight
-adw-gtk-theme
 amd-ucode
 android-tools
 archlinux-xdg-menu
