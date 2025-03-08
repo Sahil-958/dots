@@ -60,8 +60,8 @@ KrohnkiteFloatAll=Meta+Shift+F,none,Krohnkite: Toggle Float All
 KrohnkiteFloatingLayout=none,none,Krohnkite: Floating Layout
 KrohnkiteFocusDown=Meta+J,none,Krohnkite: Focus Down
 KrohnkiteFocusLeft=Meta+H,none,Krohnkite: Focus Left
-KrohnkiteFocusNext=Meta+>,none,Krohnkite: Focus Next
-KrohnkiteFocusPrev=Meta+<,none,Krohnkite: Focus Previous
+KrohnkiteFocusNext=,none,Krohnkite: Focus Next
+KrohnkiteFocusPrev=none,none,Krohnkite: Focus Previous
 KrohnkiteFocusRight=Meta+L,none,Krohnkite: Focus Right
 KrohnkiteFocusUp=Meta+K,none,Krohnkite: Focus Up
 KrohnkiteGrowHeight=Meta+Shift+J,none,Krohnkite: Grow Height
@@ -307,6 +307,9 @@ _launch=Meta+Return
 
 [services][org.kde.kscreen.desktop]
 ShowOSD=Display
+
+[services][org.kde.plasma.emojier.desktop]
+_launch=Meta+Ctrl+Alt+Shift+Space\tMeta+.
 
 [services][org.kde.spectacle.desktop]
 RecordRegion=none
