@@ -145,7 +145,6 @@ wireplumber
 wl-clipboard
 xdg-desktop-portal-kde
 xf86-video-amdgpu
-xorg-xev
 xorg-xprop
 xorg-xrandr
 zip
