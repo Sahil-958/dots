@@ -2,7 +2,7 @@
 
 # Function to get the current hiding state of the panel
 get_hiding_state() {
-  qdbus_output=$(qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "print(JSON.stringify(panels()[0].hiding, null, 4))")
+  qdbus_output=$(qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "print(JSON.stringify(panels()[0].hiding, null, 4))")
   echo "$qdbus_output"
 }
 
@@ -18,15 +18,15 @@ toggle_hiding_state() {
     kwriteconfig6 --file kwinrc --group Script-krohnkite --key screenGapBottom 5
   fi
 
-  qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "panels()[0].hiding = $new_state"
+  qdbus6 org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "panels()[0].hiding = $new_state"
 }
 
 reload_script() {
   kwriteconfig6 --file kwinrc --group Plugins --key krohnkiteEnabled false
-  qdbus org.kde.KWin /KWin org.kde.KWin.reconfigure
+  qdbus6 org.kde.KWin /KWin org.kde.KWin.reconfigure
   sleep 0.2s
   kwriteconfig6 --file kwinrc --group Plugins --key krohnkiteEnabled true
-  qdbus org.kde.KWin /KWin org.kde.KWin.reconfigure
+  qdbus6 org.kde.KWin /KWin org.kde.KWin.reconfigure
 }
 
 # Main script execution

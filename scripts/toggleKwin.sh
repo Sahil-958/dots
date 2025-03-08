@@ -8,4 +8,4 @@ elif [ "$current" = "false" ]; then
   kwriteconfig5 --file kwinrc --group Plugins --key krohnkiteEnabled true
 fi
 
-qdbus org.kde.KWin /KWin reconfigure
+qdbus6 org.kde.KWin /KWin reconfigure
