@@ -1,0 +1,132 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "catppuccin_mocha"
+
+
+format = """
+[░▒▓](overlay0)\
+[  ](bg:overlay1 fg:subtext0)\
+$sudo\
+[](fg:overlay1 bg:surface0)\
+$username\
+$hostname\
+$directory\
+[](fg:surface0 bg:overlay2)\
+$git_branch\
+$git_status\
+[](fg:overlay2 bg:surface0)\
+$time\
+[](fg:surface0)\
+\n$character\
+"""
+
+add_newline = false
+continuation_prompt = '[❯❯](rosewater)'
+
+[character]
+success_symbol = '[❯](green)'
+error_symbol = '[❯](red)'
+
+[sudo]
+format = '[$symbol]($style)'
+style = 'bg:subtext0 fg:#1e1e2e'
+symbol = '󰚌 '
+disabled = false
+
+[username]
+style_user = 'fg:lavender bg:surface0'
+style_root = 'black bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)[@$hostname:](fg:lavender bg:surface0)'
+trim_at = '.'
+ssh_symbol = '󰣀'
+disabled = false
+
+[directory]
+style = "fg:lavender bg:surface0"
+before_repo_root_style = "fg:lavender bg:surface0"
+repo_root_style = "fg:lavender bg:surface0"
+read_only = " 󰉑 "
+read_only_style = "bg:surface0 fg:lavender"
+format = "[$path]($style)[$read_only]($read_only_style)"
+repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path  ]($style)[$read_only]($read_only_style)"
+truncation_length = 6
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰽰 "
+"Pictures" = " "
+
+
+[git_branch]
+symbol = "󰘬"
+style = "bg:overlay2"
+format = '[[ $symbol $branch ](fg:surface1 bg:overlay2)]($style)'
+
+[git_status]
+style = "bg:overlay2"
+format = '[[($all_status$ahead_behind )](fg:surface1 bg:overlay2)]($style)'
+#added by me
+conflicted = ' 🏳 '
+ahead = '󰵵🏎 ⇡${count}'
+behind = '󰱬 ⇣${count}'
+diverged = '󰚛 ⇕⇡${ahead_count}⇣${behind_count}'
+up_to_date = ' ✓ '
+untracked = '  '
+stashed = ' 📦 '
+modified = ' 󰷉 '
+staged = '[++\($count\)](fg:surface1 bg:overlay2)'
+renamed = ' 󰇹 '
+deleted = ' 🗑 '
+
+[time]
+disabled = false
+time_format = "%A %d %b %I:%M %P "                     # Hour:Minute Format
+style = "bg:surface2"
+format = '[[ $time](fg:subtext0 bg:surface0)]($style)'
+
+[status]
+style = 'fg: bg:#1e1e2e'
+symbol = ''
+success_symbol = ''
+format = '[ $symbol $common_meaning$signal_name$maybe_int]($style)'
+map_symbol = true
+disabled = false
+
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "surface0"
+crust = "#11111b"
