@@ -1,3 +1,4 @@
+key-mon
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
