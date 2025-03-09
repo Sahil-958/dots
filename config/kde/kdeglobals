@@ -21,46 +21,46 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=121,57,138
-BackgroundNormal=56,46,73
-DecorationFocus=153,61,169
-DecorationHover=153,61,169
-ForegroundActive=153,61,169
-ForegroundInactive=176,168,206
-ForegroundLink=227,182,237
-ForegroundNegative=241,139,179
-ForegroundNeutral=254,222,195
-ForegroundNormal=215,209,250
-ForegroundPositive=182,220,180
-ForegroundVisited=208,163,248
+BackgroundAlternate=128,59,145
+BackgroundNormal=49, 50, 68
+DecorationFocus=162,64,179
+DecorationHover=162,64,179
+ForegroundActive=162,64,179
+ForegroundInactive=166, 173, 200
+ForegroundLink=227,183,238
+ForegroundNegative=243, 139, 168
+ForegroundNeutral=249, 226, 175
+ForegroundNormal=205, 214, 244
+ForegroundPositive=166, 227, 161
+ForegroundVisited=203, 166, 247
 
 [Colors:Complementary]
-BackgroundAlternate=23,13,32
-BackgroundNormal=30,20,42
-DecorationFocus=153,61,169
-DecorationHover=153,61,169
-ForegroundActive=153,61,169
-ForegroundInactive=176,168,206
-ForegroundLink=227,182,237
-ForegroundNegative=241,139,179
-ForegroundNeutral=254,222,195
-ForegroundNormal=215,209,250
-ForegroundPositive=182,220,180
-ForegroundVisited=208,163,248
+BackgroundAlternate=17, 17, 27
+BackgroundNormal=24, 24, 37
+DecorationFocus=162,64,179
+DecorationHover=162,64,179
+ForegroundActive=162,64,179
+ForegroundInactive=166, 173, 200
+ForegroundLink=227,183,238
+ForegroundNegative=243, 139, 168
+ForegroundNeutral=249, 226, 175
+ForegroundNormal=205, 214, 244
+ForegroundPositive=166, 227, 161
+ForegroundVisited=203, 166, 247
 
 [Colors:Header]
-BackgroundAlternate=23,13,32
-BackgroundNormal=30,20,42
-DecorationFocus=153,61,169
-DecorationHover=153,61,169
-ForegroundActive=153,61,169
-ForegroundInactive=176,168,206
-ForegroundLink=227,182,237
-ForegroundNegative=241,139,179
-ForegroundNeutral=254,222,195
-ForegroundNormal=215,209,250
-ForegroundPositive=182,220,180
-ForegroundVisited=208,163,248
+BackgroundAlternate=17, 17, 27
+BackgroundNormal=24, 24, 37
+DecorationFocus=162,64,179
+DecorationHover=162,64,179
+ForegroundActive=162,64,179
+ForegroundInactive=166, 173, 200
+ForegroundLink=227,183,238
+ForegroundNegative=243, 139, 168
+ForegroundNeutral=249, 226, 175
+ForegroundNormal=205, 214, 244
+ForegroundPositive=166, 227, 161
+ForegroundVisited=203, 166, 247
 
 [Colors:Header][Inactive]
 BackgroundAlternate[$d]
@@ -77,68 +77,69 @@ ForegroundPositive[$d]
 ForegroundVisited[$d]
 
 [Colors:Selection]
-BackgroundAlternate=116,51,132
-BackgroundNormal=116,51,132
-DecorationFocus=153,61,169
-DecorationHover=153,61,169
-ForegroundActive=153,61,169
+BackgroundAlternate=122,53,139
+BackgroundNormal=122,53,139
+DecorationFocus=162,64,179
+DecorationHover=162,64,179
+ForegroundActive=162,64,179
 ForegroundInactive=255,255,255
-ForegroundLink=112,45,123
-ForegroundNegative=241,139,179
-ForegroundNeutral=254,222,195
+ForegroundLink=118,47,131
+ForegroundNegative=243, 139, 168
+ForegroundNeutral=249, 226, 175
 ForegroundNormal=255,255,255
-ForegroundPositive=182,220,180
-ForegroundVisited=208,163,248
+ForegroundPositive=166, 227, 161
+ForegroundVisited=203, 166, 247
 
 [Colors:Tooltip]
-BackgroundAlternate=33,21,41
-BackgroundNormal=36,26,51
-DecorationFocus=153,61,169
-DecorationHover=153,61,169
-ForegroundActive=153,61,169
-ForegroundInactive=176,168,206
-ForegroundLink=227,182,237
-ForegroundNegative=241,139,179
-ForegroundNeutral=254,222,195
-ForegroundNormal=215,209,250
-ForegroundPositive=182,220,180
-ForegroundVisited=208,163,248
+BackgroundAlternate=27,25,35
+BackgroundNormal=30, 30, 46
+DecorationFocus=162,64,179
+DecorationHover=162,64,179
+ForegroundActive=162,64,179
+ForegroundInactive=166, 173, 200
+ForegroundLink=227,183,238
+ForegroundNegative=243, 139, 168
+ForegroundNeutral=249, 226, 175
+ForegroundNormal=205, 214, 244
+ForegroundPositive=166, 227, 161
+ForegroundVisited=203, 166, 247
 
 [Colors:View]
-BackgroundAlternate=30,20,42
-BackgroundNormal=36,26,51
-DecorationFocus=153,61,169
-DecorationHover=153,61,169
-ForegroundActive=153,61,169
-ForegroundInactive=176,168,206
-ForegroundLink=227,182,237
-ForegroundNegative=241,139,179
-ForegroundNeutral=254,222,195
-ForegroundNormal=215,209,250
-ForegroundPositive=182,220,180
-ForegroundVisited=208,163,248
+BackgroundAlternate=24, 24, 37
+BackgroundNormal=30, 30, 46
+DecorationFocus=162,64,179
+DecorationHover=162,64,179
+ForegroundActive=162,64,179
+ForegroundInactive=166, 173, 200
+ForegroundLink=227,183,238
+ForegroundNegative=243, 139, 168
+ForegroundNeutral=249, 226, 175
+ForegroundNormal=205, 214, 244
+ForegroundPositive=166, 227, 161
+ForegroundVisited=203, 166, 247
 
 [Colors:Window]
-BackgroundAlternate=23,13,32
-BackgroundNormal=30,20,42
-DecorationFocus=153,61,169
-DecorationHover=153,61,169
-ForegroundActive=153,61,169
-ForegroundInactive=176,168,206
-ForegroundLink=227,182,237
-ForegroundNegative=241,139,179
-ForegroundNeutral=254,222,195
-ForegroundNormal=215,209,250
-ForegroundPositive=182,220,180
-ForegroundVisited=208,163,248
+BackgroundAlternate=17, 17, 27
+BackgroundNormal=24, 24, 37
+DecorationFocus=162,64,179
+DecorationHover=162,64,179
+ForegroundActive=162,64,179
+ForegroundInactive=166, 173, 200
+ForegroundLink=227,183,238
+ForegroundNegative=243, 139, 168
+ForegroundNeutral=249, 226, 175
+ForegroundNormal=205, 214, 244
+ForegroundPositive=166, 227, 161
+ForegroundVisited=203, 166, 247
 
 [DirSelect Dialog]
 DirSelectDialog Size=952,1013
 History Items[$e]=file:$HOME/repos/event-manager/event-manager-backend,file:$HOME/Downloads
 
 [General]
-AccentColor=153,61,169
-ColorSchemeHash=235c05a038cd442cf8679d6aec6e6f05e270711a
+AccentColor=162,64,179
+ColorScheme=CatppuccinMochaFlamingo
+ColorSchemeHash=e36afc7799520dc4cff7662dc461a578384b549d
 UseSystemBell=true
 accentColorFromWallpaper=true
 shadeSortColumn=true
@@ -176,9 +177,9 @@ ZoomIn=Ctrl+=
 Theme=freedesktop
 
 [WM]
-activeBackground=30,20,42
+activeBackground=30,30,46
 activeBlend=205,214,244
-activeForeground=255,255,255
-inactiveBackground=30,20,42
+activeForeground=205,214,244
+inactiveBackground=17,17,27
 inactiveBlend=166,173,200
-inactiveForeground=164,160,169
+inactiveForeground=166,173,200
