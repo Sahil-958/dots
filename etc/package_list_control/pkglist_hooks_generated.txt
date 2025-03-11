@@ -132,7 +132,6 @@ systemsettings
 tesseract
 tesseract-data-eng
 tldr
-tmux
 tree
 ttf-cascadia-code
 usbutils
