@@ -6,7 +6,7 @@ palette = "catppuccin_mocha"
 
 format = """
 [░▒▓](overlay0)\
-[  ](bg:overlay1 fg:subtext0)\
+[  ](bg:overlay1 fg:surface0)\
 $sudo\
 [](fg:overlay1 bg:surface0)\
 $username\
@@ -30,7 +30,7 @@ error_symbol = '[❯](red)'
 
 [sudo]
 format = '[$symbol]($style)'
-style = 'bg:subtext0 fg:#1e1e2e'
+style = 'bg:overlay1 fg:surface0'
 symbol = '󰚌 '
 disabled = false
 
