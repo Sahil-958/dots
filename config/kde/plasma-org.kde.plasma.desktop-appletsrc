@@ -142,6 +142,18 @@ SlidePaths=/home/sawhill/.local/share/wallpapers/,/usr/share/wallpapers/
 [Containments][74][Wallpaper][org.kde.potd][General]
 Provider=flickr
 
+[Containments][75]
+activityId=dabcb6b6-e2f3-4a22-a479-6bbc837bee62
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][75][General]
+positions={"1920x1080":[]}
+
 [Containments][8]
 activityId=
 formfactor=2
@@ -179,6 +191,9 @@ PreloadWeight=100
 immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
+[Containments][8][Applets][13][Configuration]
+PreloadWeight=55
+
 [Containments][8][Applets][14]
 immutability=1
 plugin=org.kde.kscreen
@@ -195,6 +210,7 @@ plugin=org.kde.plasma.volume
 PreloadWeight=100
 
 [Containments][8][Applets][16][Configuration][General]
+currentTab=streams
 migrated=true
 
 [Containments][8][Applets][17]
