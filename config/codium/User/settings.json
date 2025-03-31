@@ -46,7 +46,7 @@
   "vim.highlightedyank.textColor": "white",
   // highlighted yank
   "vim.highlightedyank.duration": 250,
-  "vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": false,
   "vim.hlsearch": true,
   "vim.normalModeKeyBindings": [],
   "vim.insertModeKeyBindings": [
@@ -216,6 +216,9 @@
   },
   "window.menuBarVisibility": "toggle",
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
