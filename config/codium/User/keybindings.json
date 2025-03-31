@@ -1,22 +1,44 @@
 // Place your key bindings in this file to override the defaults
 [
+  //system copy and paste
   {
-    "key": "shift+space v",
-    "command": "workbench.action.openView"
+    "key": "shift+space y",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "editorTextFocus"
   },
   {
-    "key": "shift+space e f",
+    "key": "shift+space p",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "editorTextFocus"
+  },
+  //focus related keybinds
+  {
+    "key": "shift+space e n",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "shift+space e p",
+    "command": "workbench.action.previousEditor"
+  },
+
+  {
+    "key": "shift+space f e",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "!editorFocus"
   },
   {
-    "key": "shift+space s f",
+    "key": "shift+space f s",
     "command": "workbench.action.focusSideBar"
   },
   {
     "key": "shift+space f f",
     "command": "workbench.files.action.focusFilesExplorer"
   },
+  {
+    "key": "shift+space f t",
+    "command": "workbench.action.terminal.focus"
+  },
+
   {
     "key": "shift+space f w",
     "command": "workbench.action.findInFiles"
@@ -34,7 +56,13 @@
     "command": "workbench.action.openGlobalKeybindings"
   },
   {
-    "key": "shift+space c e t",
+    "key": "shift+space v",
+    "command": "workbench.action.openView"
+  },
+
+  //Close related keybinds
+  {
+    "key": "shift+space c e c",
     "command": "workbench.action.closeActiveEditor"
   },
   {
@@ -54,20 +82,17 @@
     "command": "workbench.action.closeEditorsToTheRight"
   },
   {
+    "key": "shift+space c t c",
+    "command": "workbench.action.terminal.killViewOrEditor"
+  },
+
+  {
     "key": "shift+space r f",
     "command": "renameFile"
   },
   {
     "key": "shift+space r e",
     "command": "editor.action.rename"
-  },
-  {
-    "key": "shift+space n e",
-    "command": "workbench.action.nextEditor"
-  },
-  {
-    "key": "shift+space p e",
-    "command": "workbench.action.previousEditor"
   },
   {
     "key": "shift+space s a",
@@ -96,9 +121,10 @@
     "command": "workbench.action.terminal.new"
   },
   {
-    "key": "shift+space t e",
-    "command": "workbench.action.terminal.focus"
+    "key": "shift+space t t",
+    "command": "workbench.action.terminal.toggleTerminal"
   },
+
   {
     "key": "shift+space 1",
     "command": "workbench.action.openEditorAtIndex1"
