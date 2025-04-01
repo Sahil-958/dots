@@ -116,6 +116,7 @@ powerdevil
 print-manager
 python-aiohttp
 python-pip
+python-pyqt6
 qbittorrent
 qqc2-breeze-style
 qt5-graphicaleffects
