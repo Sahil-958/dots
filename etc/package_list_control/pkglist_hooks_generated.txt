@@ -1,5 +1,4 @@
 7zip
-acpilight
 amd-ucode
 android-tools
 archlinux-xdg-menu
@@ -46,6 +45,7 @@ kde-cli-tools
 kde-gtk-config
 kdeconnect
 kdeplasma-addons
+keepassxc
 kgamma
 kglobalacceld
 kinfocenter
