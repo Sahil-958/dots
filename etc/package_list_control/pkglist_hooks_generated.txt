@@ -75,6 +75,7 @@ linux
 linux-firmware
 linux-lts
 man-db
+mediainfo
 mesa-utils
 milou
 neovim
