@@ -120,6 +120,7 @@ python-aiohttp
 python-pip
 python-pyqt6
 qbittorrent
+qpdf
 qqc2-breeze-style
 qt5-graphicaleffects
 qt5-quickcontrols2
