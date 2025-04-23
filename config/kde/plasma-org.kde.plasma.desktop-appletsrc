@@ -118,6 +118,7 @@ AppletOrder=3;4;71;67;6;7;18;19
 
 [Containments][74]
 ItemGeometries-1536x864=
+ItemGeometries-1800x1125=
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
 activityId=dabcb6b6-e2f3-4a22-a479-6bbc837bee62
@@ -133,7 +134,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][74][General]
-positions={"1920x1080":[]}
+positions={"1800x1125":[],"1920x1080":[]}
 
 [Containments][74][Wallpaper][org.kde.image][General]
 Image=/usr/share/wallpapers/Next/

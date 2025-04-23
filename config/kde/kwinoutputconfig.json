@@ -4,7 +4,7 @@
             {
                 "allowSdrSoftwareBrightness": false,
                 "autoRotation": "InTabletMode",
-                "brightness": 0.01,
+                "brightness": 0,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "eDP-1",
@@ -29,7 +29,7 @@
             {
                 "allowSdrSoftwareBrightness": false,
                 "autoRotation": "InTabletMode",
-                "brightness": 0.3,
+                "brightness": 0,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "HDMI-A-1",
@@ -118,6 +118,31 @@
                 "rgbRange": "Automatic",
                 "scale": 1,
                 "sdrBrightness": 200,
+                "sdrGamutWideness": 0,
+                "transform": "Normal",
+                "vrrPolicy": "Automatic",
+                "wideColorGamut": false
+            },
+            {
+                "allowSdrSoftwareBrightness": false,
+                "autoRotation": "InTabletMode",
+                "brightness": 0.37401574803149606,
+                "colorPowerTradeoff": "PreferEfficiency",
+                "colorProfileSource": "sRGB",
+                "connectorName": "eDP-1",
+                "edidHash": "2be66912b35cd87f3c565aa28cd10617",
+                "edidIdentifier": "SDC 16724 0 35 2020 0",
+                "highDynamicRange": false,
+                "iccProfilePath": "",
+                "mode": {
+                    "height": 1800,
+                    "refreshRate": 90001,
+                    "width": 2880
+                },
+                "overscan": 0,
+                "rgbRange": "Automatic",
+                "scale": 1.6,
+                "sdrBrightness": 400,
                 "sdrGamutWideness": 0,
                 "transform": "Normal",
                 "vrrPolicy": "Automatic",
@@ -218,6 +243,20 @@
                             "y": 0
                         },
                         "priority": 1
+                    }
+                ]
+            },
+            {
+                "lidClosed": false,
+                "outputs": [
+                    {
+                        "enabled": true,
+                        "outputIndex": 5,
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "priority": 0
                     }
                 ]
             }
