@@ -16,7 +16,6 @@ breeze-icons
 brightnessctl
 btop
 cameractrls
-chrpath
 cmake
 cpio
 dolphin
@@ -33,7 +32,6 @@ flatpak-kcm
 fzf
 gimp
 git
-go
 grub
 grub-btrfs
 guvcview
