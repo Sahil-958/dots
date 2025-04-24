@@ -5,4 +5,3 @@ materialgram-bin
 ungoogled-chromium-bin
 vscodium-bin
 yay
-yay-debug
