@@ -19,7 +19,6 @@ cameractrls
 cmake
 colord-kde
 cpio
-displaycal
 dolphin
 dolphin-plugins
 easyeffects
@@ -34,7 +33,6 @@ flatpak-kcm
 fzf
 gimp
 git
-gnome-color-manager
 grub
 grub-btrfs
 guvcview
