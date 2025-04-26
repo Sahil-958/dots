@@ -34,6 +34,7 @@ flatpak-kcm
 fzf
 gimp
 git
+gnome-color-manager
 grub
 grub-btrfs
 guvcview
