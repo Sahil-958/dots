@@ -19,6 +19,7 @@ cameractrls
 cmake
 colord-kde
 cpio
+displaycal
 dolphin
 dolphin-plugins
 easyeffects
