@@ -17,6 +17,7 @@ brightnessctl
 btop
 cameractrls
 cmake
+colord-kde
 cpio
 dolphin
 dolphin-plugins
