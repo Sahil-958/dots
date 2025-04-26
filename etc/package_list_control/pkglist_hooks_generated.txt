@@ -2,6 +2,7 @@
 amd-ucode
 android-tools
 archlinux-xdg-menu
+argyllcms
 aria2
 base
 base-devel
