@@ -1,6 +1,6 @@
 [FileDialogSize]
-1920x1080 screen: Height=1016
-1920x1080 screen: Width=947
+1920x1080 screen: Height=1010
+1920x1080 screen: Width=948
 
 [MainWindow]
 1920x1080 screen: Window-Maximized=true
