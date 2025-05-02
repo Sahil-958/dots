@@ -80,6 +80,7 @@ man-db
 mediainfo
 mesa-utils
 milou
+ncdu
 neovim
 network-manager-applet
 networkmanager
