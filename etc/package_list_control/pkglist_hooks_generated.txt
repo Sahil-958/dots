@@ -130,6 +130,7 @@ qt6-wayland
 rclone
 reflector
 ripgrep
+rustup
 smartmontools
 snapper
 spectacle
