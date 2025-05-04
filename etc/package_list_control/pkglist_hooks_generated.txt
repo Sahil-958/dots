@@ -152,4 +152,5 @@ xdg-desktop-portal-kde
 xf86-video-amdgpu
 xorg-xprop
 xorg-xrandr
+zed
 zip
