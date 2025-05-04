@@ -146,6 +146,7 @@ vi
 vim
 viu
 vlc
+vulkan-radeon
 wireplumber
 wl-clipboard
 xdg-desktop-portal-kde
