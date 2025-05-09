@@ -15,7 +15,6 @@ breeze-gtk
 breeze-icons
 brightnessctl
 btop
-calligra
 cameractrls
 cmake
 colord-kde
