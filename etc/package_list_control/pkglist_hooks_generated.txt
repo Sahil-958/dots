@@ -40,6 +40,7 @@ gvfs
 gwenview
 imagemagick
 imlib2
+inkscape
 jq
 kactivitymanagerd
 kconfig5
