@@ -294,10 +294,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][9][Configuration]
-PreloadWeight=70
-
-[Containments][8][Applets][9][Configuration][General]
-barcodeType=Aztec
+PreloadWeight=75
 
 [Containments][8][ConfigDialog]
 DialogHeight=540
