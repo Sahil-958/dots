@@ -93,7 +93,6 @@ nuspell
 nvme-cli
 obs-studio
 ocean-sound-theme
-ollama
 os-prober
 otf-comicshanns-nerd
 oxygen
