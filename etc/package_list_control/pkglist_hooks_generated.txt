@@ -30,6 +30,7 @@ firefox
 firewalld
 flatpak
 flatpak-kcm
+foliate
 fzf
 gimp
 git
