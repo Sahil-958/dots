@@ -16,6 +16,7 @@ breeze-icons
 brightnessctl
 btop
 cameractrls
+chrpath
 cmake
 colord-kde
 cpio
