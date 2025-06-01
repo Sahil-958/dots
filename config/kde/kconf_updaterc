@@ -1,19 +1,24 @@
 updateInfoAdded=true
 
 [dolphin_detailsmodesettings.upd]
-ctime=1745737846
+ctime=1747568593
 done=rename-leading-padding,rename-side-padding,move-content-display
-mtime=1745619206
+mtime=1747075011
 
 [dolphin_statusandlocationbarssettings.upd]
-ctime=1745737846
+ctime=1747568593
 done=move-content-display,25.04-convert-bool-showstatusbar-to-enum-showstatusbar
-mtime=1745619206
+mtime=1747075011
 
 [gtkconfig.upd]
 ctime=1746795506
 done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
 mtime=1746692800
+
+[konsole.upd]
+ctime=1747568599
+done=konsole_globalaccel,add-hamburgermenu-to-toolbar
+mtime=1747084971
 
 [kwin.upd]
 ctime=1746795506
@@ -21,9 +26,9 @@ done=remove_deprecated_gtk4_option,kwin-6.0-reset-active-mouse-screen,kwin-6.0-d
 mtime=1746691386
 
 [migrate-calendar-to-plugin-id.upd]
-ctime=1746795507
+ctime=1747568604
 done=kwin-6.1-remove-gridview-expose-shortcuts,migrate-calendar-plugins
-mtime=1746692000
+mtime=1747553918
 
 [plasma-systemmonitor.upd]
 ctime=1746795509
@@ -31,29 +36,29 @@ done=memory-column
 mtime=1746693613
 
 [plasma6.0-remove-dpi-settings.upd]
-ctime=1746795507
+ctime=1747568604
 done=migrate-calendar-plugins,plasma6.0-remove-dpi-settings
-mtime=1746692000
+mtime=1747553918
 
 [plasma6.0-remove-old-shortcuts.upd]
-ctime=1746795507
+ctime=1747568604
 done=plasma6.0-remove-dpi-settings,plasma6.0-remove-old-shortcuts
-mtime=1746692000
+mtime=1747553918
 
 [plasma6.3-update-clipboard-database-2-to-3.upd]
-ctime=1746795507
+ctime=1747568604
 done=plasma6.3-update-clipboard-database-2-to-3
-mtime=1746692000
+mtime=1747553918
 
 [plasmashell-6.0-keep-custom-position-of-panels.upd]
-ctime=1746795507
+ctime=1747568604
 done=plasma6.0-remove-old-shortcuts,plasmashell-6.0-keep-custom-position-of-panels,plasma6.3-update-clipboard-database-2-to-3
-mtime=1746692000
+mtime=1747553918
 
 [plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels.upd]
-ctime=1746795507
+ctime=1747568604
 done=plasmashell-6.0-keep-custom-position-of-panels,plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels
-mtime=1746692000
+mtime=1747553918
 
 [spectacle.upd]
 ctime=1746795509
