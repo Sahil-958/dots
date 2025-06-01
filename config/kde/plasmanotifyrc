@@ -1,7 +1,13 @@
+[Applications][chromium]
+Seen=true
+
 [Applications][firefox]
 Seen=true
 
 [Applications][io.github.kukuruzka165.materialgram]
+Seen=true
+
+[Applications][librewolf]
 Seen=true
 
 [Notifications]
