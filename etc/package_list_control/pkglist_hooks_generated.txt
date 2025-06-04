@@ -41,6 +41,7 @@ gvfs
 gwenview
 imagemagick
 imlib2
+inetutils
 inkscape
 jq
 kactivitymanagerd
