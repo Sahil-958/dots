@@ -6,29 +6,21 @@
   "editor.fontLigatures": true,
   "editor.fontVariations": true,
   "workbench.colorTheme": "Catppuccin Mocha",
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
   "workbench.tips.enabled": true,
   "workbench.startupEditor": "welcomePage",
   "breadcrumbs.enabled": true,
-  // choose what you like! I like tabs
   "workbench.editor.showTabs": "multiple",
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "auto",
-  // if you opt for tabs :)
   "window.density.editorTabHeight": "default",
+  "window.menuBarVisibility": "visible",
   "window.restoreWindows": "all",
   "editor.cursorSurroundingLines": 10,
-
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+
+  "editor.stickyScroll.enabled": false,
 
   "vim.leader": "<space>",
   "vim.showmodename": true,
@@ -213,16 +205,5 @@
     "<C-k>": false,
     "<C-p>": false,
     "<C-d>": true
-  },
-  "window.menuBarVisibility": "toggle",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.stickyScroll.enabled": false
+  }
 }
