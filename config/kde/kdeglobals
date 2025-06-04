@@ -23,11 +23,11 @@ IntensityEffect=0
 [Colors:Button]
 BackgroundAlternate=128,59,145
 BackgroundNormal=49, 50, 68
-DecorationFocus=162,64,179
-DecorationHover=162,64,179
-ForegroundActive=162,64,179
+DecorationFocus=163,64,179
+DecorationHover=163,64,179
+ForegroundActive=163,64,179
 ForegroundInactive=166, 173, 200
-ForegroundLink=227,183,238
+ForegroundLink=228,183,238
 ForegroundNegative=243, 139, 168
 ForegroundNeutral=249, 226, 175
 ForegroundNormal=205, 214, 244
@@ -37,11 +37,11 @@ ForegroundVisited=203, 166, 247
 [Colors:Complementary]
 BackgroundAlternate=17, 17, 27
 BackgroundNormal=24, 24, 37
-DecorationFocus=162,64,179
-DecorationHover=162,64,179
-ForegroundActive=162,64,179
+DecorationFocus=163,64,179
+DecorationHover=163,64,179
+ForegroundActive=163,64,179
 ForegroundInactive=166, 173, 200
-ForegroundLink=227,183,238
+ForegroundLink=228,183,238
 ForegroundNegative=243, 139, 168
 ForegroundNeutral=249, 226, 175
 ForegroundNormal=205, 214, 244
@@ -51,11 +51,11 @@ ForegroundVisited=203, 166, 247
 [Colors:Header]
 BackgroundAlternate=17, 17, 27
 BackgroundNormal=24, 24, 37
-DecorationFocus=162,64,179
-DecorationHover=162,64,179
-ForegroundActive=162,64,179
+DecorationFocus=163,64,179
+DecorationHover=163,64,179
+ForegroundActive=163,64,179
 ForegroundInactive=166, 173, 200
-ForegroundLink=227,183,238
+ForegroundLink=228,183,238
 ForegroundNegative=243, 139, 168
 ForegroundNeutral=249, 226, 175
 ForegroundNormal=205, 214, 244
@@ -77,13 +77,13 @@ ForegroundPositive[$d]
 ForegroundVisited[$d]
 
 [Colors:Selection]
-BackgroundAlternate=122,53,139
-BackgroundNormal=122,53,139
-DecorationFocus=162,64,179
-DecorationHover=162,64,179
-ForegroundActive=162,64,179
+BackgroundAlternate=123,53,139
+BackgroundNormal=123,53,139
+DecorationFocus=163,64,179
+DecorationHover=163,64,179
+ForegroundActive=163,64,179
 ForegroundInactive=255,255,255
-ForegroundLink=118,47,131
+ForegroundLink=119,47,131
 ForegroundNegative=243, 139, 168
 ForegroundNeutral=249, 226, 175
 ForegroundNormal=255,255,255
@@ -93,11 +93,11 @@ ForegroundVisited=203, 166, 247
 [Colors:Tooltip]
 BackgroundAlternate=27,25,35
 BackgroundNormal=30, 30, 46
-DecorationFocus=162,64,179
-DecorationHover=162,64,179
-ForegroundActive=162,64,179
+DecorationFocus=163,64,179
+DecorationHover=163,64,179
+ForegroundActive=163,64,179
 ForegroundInactive=166, 173, 200
-ForegroundLink=227,183,238
+ForegroundLink=228,183,238
 ForegroundNegative=243, 139, 168
 ForegroundNeutral=249, 226, 175
 ForegroundNormal=205, 214, 244
@@ -107,11 +107,11 @@ ForegroundVisited=203, 166, 247
 [Colors:View]
 BackgroundAlternate=24, 24, 37
 BackgroundNormal=30, 30, 46
-DecorationFocus=162,64,179
-DecorationHover=162,64,179
-ForegroundActive=162,64,179
+DecorationFocus=163,64,179
+DecorationHover=163,64,179
+ForegroundActive=163,64,179
 ForegroundInactive=166, 173, 200
-ForegroundLink=227,183,238
+ForegroundLink=228,183,238
 ForegroundNegative=243, 139, 168
 ForegroundNeutral=249, 226, 175
 ForegroundNormal=205, 214, 244
@@ -121,11 +121,11 @@ ForegroundVisited=203, 166, 247
 [Colors:Window]
 BackgroundAlternate=17, 17, 27
 BackgroundNormal=24, 24, 37
-DecorationFocus=162,64,179
-DecorationHover=162,64,179
-ForegroundActive=162,64,179
+DecorationFocus=163,64,179
+DecorationHover=163,64,179
+ForegroundActive=163,64,179
 ForegroundInactive=166, 173, 200
-ForegroundLink=227,183,238
+ForegroundLink=228,183,238
 ForegroundNegative=243, 139, 168
 ForegroundNeutral=249, 226, 175
 ForegroundNormal=205, 214, 244
@@ -138,7 +138,7 @@ History Items[$e]=file:$HOME/browser-extension,file:$HOME/Downloads/uBlock0.chro
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x8c\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
-AccentColor=162,64,179
+AccentColor=163,64,179
 ColorScheme=CatppuccinMochaFlamingo
 ColorSchemeHash=e36afc7799520dc4cff7662dc461a578384b549d
 UseSystemBell=true
