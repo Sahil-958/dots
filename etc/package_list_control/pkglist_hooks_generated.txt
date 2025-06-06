@@ -85,6 +85,7 @@ mesa-utils
 milou
 ncdu
 neovim
+net-tools
 network-manager-applet
 networkmanager
 nodejs
