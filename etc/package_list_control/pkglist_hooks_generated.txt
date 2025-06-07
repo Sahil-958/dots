@@ -1,5 +1,6 @@
 7zip
 amd-ucode
+android-file-transfer
 android-tools
 archlinux-xdg-menu
 aria2
