@@ -104,7 +104,7 @@ DialogWidth=720
 [Containments][2][Applets][71][Configuration][General]
 groupingAppIdBlacklist=abdownloadmanager.desktop
 groupingLauncherUrlBlacklist=applications:abdownloadmanager.desktop
-launchers=applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,preferred://browser
+launchers=applications:systemsettings.desktop,preferred://browser,applications:org.kde.dolphin.desktop
 maxStripes=2
 showOnlyCurrentDesktop=false
 showOnlyCurrentScreen=true
@@ -236,7 +236,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][22][Configuration][General]
 showPercentage=true
@@ -268,14 +268,14 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][28][Configuration]
-PreloadWeight=28
+PreloadWeight=33
 
 [Containments][8][Applets][29]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][29][Configuration]
-PreloadWeight=0
+PreloadWeight=15
 
 [Containments][8][Applets][29][Configuration][ConfigDialog]
 DialogHeight=540

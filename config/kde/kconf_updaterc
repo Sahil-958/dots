@@ -1,14 +1,14 @@
 updateInfoAdded=true
 
 [dolphin_detailsmodesettings.upd]
-ctime=1747568593
+ctime=1749447275
 done=rename-leading-padding,rename-side-padding,move-content-display
-mtime=1747075011
+mtime=1749050513
 
 [dolphin_statusandlocationbarssettings.upd]
-ctime=1747568593
+ctime=1749447275
 done=move-content-display,25.04-convert-bool-showstatusbar-to-enum-showstatusbar
-mtime=1747075011
+mtime=1749050513
 
 [gtkconfig.upd]
 ctime=1746795506
@@ -16,14 +16,14 @@ done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_op
 mtime=1746692800
 
 [konsole.upd]
-ctime=1747568599
+ctime=1749447276
 done=konsole_globalaccel,add-hamburgermenu-to-toolbar
-mtime=1747084971
+mtime=1749061598
 
 [kwin.upd]
-ctime=1746795506
+ctime=1749224931
 done=remove_deprecated_gtk4_option,kwin-6.0-reset-active-mouse-screen,kwin-6.0-delete-desktop-switching-shortcuts,kwin-6.0-remove-breeze-tabbox-default,kwin-6.1-remove-gridview-expose-shortcuts
-mtime=1746691386
+mtime=1748941870
 
 [migrate-calendar-to-plugin-id.upd]
 ctime=1747568604
