@@ -36,7 +36,6 @@ foliate
 fzf
 gimp
 git
-go
 grub
 grub-btrfs
 guvcview
