@@ -1,4 +1,5 @@
 acpilight
+captive-browser-git
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
