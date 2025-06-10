@@ -56,7 +56,6 @@ kgamma
 kglobalacceld
 kinfocenter
 kmenuedit
-konqueror
 konsole
 kpipewire
 krdp
