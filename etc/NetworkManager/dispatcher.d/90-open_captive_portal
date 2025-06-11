@@ -1,0 +1,51 @@
+#!/bin/sh -e
+#
+# Runs shows a login webpage on walled garden networks.
+
+# man 8 NetworkManager-dispatcher
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+if [ -x "/usr/bin/logger" ]; then
+  logger="/usr/bin/logger -s -t captive-portal"
+else
+  logger=":"
+fi
+
+$logger "dispatching captive with args: $@"
+
+wait_for_process() {
+    PNAME=$1
+    while [ -z "$(/usr/bin/pgrep $PNAME)" ]; do
+        sleep 3;
+    done
+}
+
+
+open_captive() {
+  #i don't use nm-applet so i just wait for firewall-applet
+  wait_for_process firewall-applet
+  uid=$(id -u "$1")
+  captive_url=http://$(ip --oneline route get 1.1.1.1 | awk '{print $3}')
+  sudo -u "$1" env \
+  WAYLAND_DISPLAY=wayland-0 \
+  DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus \
+  XDG_RUNTIME_DIR=/run/user/$uid \
+  bash -c '${BROWSER:-xdg-open} "'"${captive_url}"'"'
+}
+
+case "$2" in
+  connectivity-change)
+    $logger -p user.debug \
+      "dispatcher script triggered on connectivity change: $CONNECTIVITY_STATE"
+
+    if [ "$CONNECTIVITY_STATE" = "PORTAL" ]; then
+      user=$(who | head -n1 | cut -d' ' -f 1)
+
+      $logger -p user.debug "Running browser as '$user' to login in captive portal"
+
+      open_captive "$user" || $logger -p user.err "Failed for user: '$user'"
+    fi
+    ;;
+  *) exit 0 ;;
+esac
