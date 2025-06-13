@@ -37,7 +37,6 @@ gimp
 git
 grub
 grub-btrfs
-gunicorn
 guvcview
 gvfs
 gwenview
