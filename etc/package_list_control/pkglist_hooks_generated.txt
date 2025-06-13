@@ -123,7 +123,6 @@ polkit-kde-agent
 power-profiles-daemon
 powerdevil
 print-manager
-pyenv
 python-aiohttp
 python-pip
 python-pyqt6
