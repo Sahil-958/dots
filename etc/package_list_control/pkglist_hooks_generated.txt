@@ -141,6 +141,7 @@ spectacle
 sshfs
 starship
 systemsettings
+tensorflow
 tesseract
 tesseract-data-eng
 tldr
