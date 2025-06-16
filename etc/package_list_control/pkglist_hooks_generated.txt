@@ -93,6 +93,7 @@ networkmanager
 noto-fonts-emoji
 ntfs-3g
 nuspell
+nvm
 nvme-cli
 obs-studio
 ocean-sound-theme
