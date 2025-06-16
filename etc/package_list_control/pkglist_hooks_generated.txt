@@ -47,6 +47,7 @@ inetutils
 inkscape
 jq
 kactivitymanagerd
+kamoso
 kconfig5
 kde-cli-tools
 kde-gtk-config
