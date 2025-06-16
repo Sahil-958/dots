@@ -90,9 +90,7 @@ neovim
 net-tools
 network-manager-applet
 networkmanager
-nodejs
 noto-fonts-emoji
-npm
 ntfs-3g
 nuspell
 nvme-cli
@@ -161,5 +159,4 @@ xf86-video-amdgpu
 xorg-xprop
 xorg-xrandr
 yt-dlp
-zed
 zip
