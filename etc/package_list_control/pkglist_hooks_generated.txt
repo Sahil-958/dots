@@ -140,6 +140,7 @@ reflector
 ripgrep
 smartmontools
 snapper
+snapshot
 spectacle
 sshfs
 starship
