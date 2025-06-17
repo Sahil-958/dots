@@ -128,7 +128,6 @@ print-manager
 python-aiohttp
 python-pip
 python-pyqt6
-python-virtualenv
 qbittorrent
 qpdf
 qqc2-breeze-style
