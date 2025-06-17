@@ -127,7 +127,6 @@ powerdevil
 print-manager
 python-aiohttp
 python-pip
-python-pipenv
 python-pyqt6
 qbittorrent
 qpdf
