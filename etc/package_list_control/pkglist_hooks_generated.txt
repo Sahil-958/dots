@@ -151,6 +151,7 @@ tldr
 tree
 ttf-cascadia-code
 usbutils
+uv
 vi
 vim
 viu
