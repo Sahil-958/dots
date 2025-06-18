@@ -98,6 +98,7 @@ nvidia-open
 nvidia-settings
 nvm
 nvme-cli
+nvtop
 obs-studio
 ocean-sound-theme
 os-prober
