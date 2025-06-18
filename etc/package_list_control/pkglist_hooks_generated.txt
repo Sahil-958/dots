@@ -20,6 +20,7 @@ cameractrls
 cmake
 colord-kde
 cpio
+cuda
 dolphin
 dolphin-plugins
 easyeffects
