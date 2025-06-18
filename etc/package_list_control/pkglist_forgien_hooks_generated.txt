@@ -1,5 +1,4 @@
 acpilight
-envycontrol
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
