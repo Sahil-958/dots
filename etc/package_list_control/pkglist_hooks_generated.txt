@@ -21,6 +21,7 @@ cmake
 colord-kde
 cpio
 cuda
+cudnn
 dolphin
 dolphin-plugins
 easyeffects
