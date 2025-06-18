@@ -94,6 +94,7 @@ networkmanager
 noto-fonts-emoji
 ntfs-3g
 nuspell
+nvidia-open
 nvm
 nvme-cli
 obs-studio
