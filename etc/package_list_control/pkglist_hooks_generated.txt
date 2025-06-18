@@ -95,6 +95,7 @@ noto-fonts-emoji
 ntfs-3g
 nuspell
 nvidia-open
+nvidia-settings
 nvm
 nvme-cli
 obs-studio
