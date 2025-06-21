@@ -10,6 +10,8 @@ Seen=true
 [Applications][librewolf]
 Seen=true
 
+[DoNotDisturb]
+WhenFullscreen=false
+
 [Notifications]
 LowPriorityHistory=true
-NormalAlwaysOnTop=true
