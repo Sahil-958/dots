@@ -103,6 +103,7 @@ nvme-cli
 nvtop
 obs-studio
 ocean-sound-theme
+ollama-cuda
 os-prober
 otf-comicshanns-nerd
 oxygen
