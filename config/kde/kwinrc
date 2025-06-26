@@ -1,5 +1,5 @@
 [Activities][LastVirtualDesktop]
-dabcb6b6-e2f3-4a22-a479-6bbc837bee62=a392a48f-2ef2-4d1f-81f5-4433178cdbc2
+dabcb6b6-e2f3-4a22-a479-6bbc837bee62=cb163b2d-ccf6-411d-907e-4eaff8ae63b1
 
 [Desktops]
 Id_1=879453cc-6f50-4e25-98e2-09c8fd9166ee
@@ -20,9 +20,6 @@ Rows=3
 [Effect-diminactive]
 DimKeepAbove=true
 Strength=12
-
-[Effect-slide]
-HorizontalGap=20
 
 [NightColor]
 Active=true

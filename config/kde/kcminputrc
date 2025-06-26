@@ -3,6 +3,7 @@ DisableWhileTyping=false
 Enabled=true
 NaturalScroll=true
 PointerAcceleration=0.400
+PointerAccelerationProfile=1
 
 [Libinput][6392][3993][USB OPTICAL MOUSE ]
 PointerAcceleration=0.800
