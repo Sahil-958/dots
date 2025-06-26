@@ -152,6 +152,7 @@ starship
 systemsettings
 tesseract
 tesseract-data-eng
+tgpt
 tldr
 tree
 ttf-cascadia-code
