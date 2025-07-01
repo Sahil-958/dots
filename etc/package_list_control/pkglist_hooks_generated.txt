@@ -38,6 +38,7 @@ fzf
 gimp
 git
 git-lfs
+gnome-sound-recorder
 grub
 grub-btrfs
 guvcview
