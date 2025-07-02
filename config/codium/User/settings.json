@@ -205,5 +205,9 @@
     "<C-k>": false,
     "<C-p>": false,
     "<C-d>": true
-  }
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "twinny.completionCacheEnabled": true
 }
