@@ -1,4 +1,5 @@
 acpilight
+docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
