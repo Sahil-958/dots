@@ -23,6 +23,7 @@ cpio
 cuda
 cudnn
 docker
+docker-compose
 dolphin
 dolphin-plugins
 easyeffects
