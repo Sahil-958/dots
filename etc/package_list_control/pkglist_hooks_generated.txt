@@ -21,6 +21,7 @@ colord-kde
 cpio
 cuda
 cudnn
+dbus-glib
 docker
 docker-buildx
 docker-compose
