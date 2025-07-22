@@ -16,7 +16,6 @@ breeze-gtk
 breeze-icons
 brightnessctl
 btop
-cli11
 cmake
 colord-kde
 cpio
@@ -169,7 +168,6 @@ vim
 viu
 vlc
 vulkan-radeon
-wayland-protocols
 wireplumber
 wl-clipboard
 xdg-desktop-portal-kde
