@@ -1,5 +1,4 @@
 7zip
-adw-gtk-theme
 amd-ucode
 android-file-transfer
 android-tools
@@ -38,7 +37,6 @@ firewalld
 flatpak
 flatpak-kcm
 foliate
-foot
 fzf
 gimp
 git
@@ -49,9 +47,7 @@ grub-btrfs
 guvcview
 gvfs
 gwenview
-hypridle
 hyprland
-hyprpicker
 imagemagick
 imlib2
 inetutils
@@ -119,7 +115,6 @@ otf-comicshanns-nerd
 oxygen
 oxygen-sounds
 pacman-contrib
-papirus-icon-theme
 pavucontrol
 plasma-activities-stats
 plasma-browser-integration
@@ -150,9 +145,7 @@ qpdf
 qqc2-breeze-style
 qt5-graphicaleffects
 qt5-quickcontrols2
-qt5ct
 qt6-wayland
-qt6ct
 rainfrog
 rclone
 reflector
@@ -168,7 +161,6 @@ tesseract
 tesseract-data-eng
 tgpt
 tldr
-trash-cli
 tree
 ttf-cascadia-code
 usbutils
@@ -180,8 +172,6 @@ vlc
 vulkan-radeon
 wireplumber
 wl-clipboard
-xdg-desktop-portal-gtk
-xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
 xf86-video-amdgpu
 xorg-xprop
