@@ -133,8 +133,8 @@ ForegroundPositive=166, 227, 161
 ForegroundVisited=203, 166, 247
 
 [DirSelect Dialog]
-DirSelectDialog Size=948,1010
-History Items[$e]=file:$HOME/agent,file:$HOME/browser-extension,file:$HOME/Downloads/uBlock0.chromium,file:$HOME/party_sahil,file:$HOME/party_sahil,file:$HOME/admk,file:$HOME/Documents/markdown/admk,file:$HOME/sunaina,file:///home,file:$HOME/repos/event-manager/event-manager-backend,file:$HOME/Downloads
+DirSelectDialog Size=1904,1010
+History Items[$e]=file:$HOME/fusionpact/parneet,file:$HOME/nano,file:$HOME/agent,file:$HOME/browser-extension,file:$HOME/Downloads/uBlock0.chromium,file:$HOME/party_sahil,file:$HOME/party_sahil,file:$HOME/admk,file:$HOME/Documents/markdown/admk,file:$HOME/sunaina,file:///home,file:$HOME/repos/event-manager/event-manager-backend,file:$HOME/Downloads
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x8c\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
