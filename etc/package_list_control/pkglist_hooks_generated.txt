@@ -47,6 +47,7 @@ grub-btrfs
 guvcview
 gvfs
 gwenview
+hyprland
 imagemagick
 imlib2
 inetutils
