@@ -1,6 +1,5 @@
 acpilight
 caelestia-shell-git
-caelestia-shell-git-debug
 docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
