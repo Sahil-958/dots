@@ -1,9 +1,14 @@
 acpilight
+app2unit-git
 docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
+python-materialyoucolor
+python-materialyoucolor-debug
 quickshell-git
 ungoogled-chromium-bin
 vscodium-bin
+wl-screenrec
+wl-screenrec-debug
 yay
