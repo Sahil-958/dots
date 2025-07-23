@@ -1,4 +1,5 @@
 acpilight
+caelestia-meta
 caelestia-shell-git
 docker-rootless-extras
 kwin-scripts-krohnkite-git
