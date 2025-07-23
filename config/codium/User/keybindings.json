@@ -247,17 +247,17 @@
   {
     "key": "ctrl+0",
     "command": "workbench.action.terminal.fontZoomReset",
-    "when": "terminal.active"
+    "when": "terminalFocus"
   },
   {
     "key": "ctrl+=",
     "command": "workbench.action.terminal.fontZoomIn",
-    "when": "terminal.active"
+    "when": "terminalFocus"
   },
   {
     "key": "ctrl+-",
     "command": "workbench.action.terminal.fontZoomOut",
-    "when": "terminal.active"
+    "when": "terminalFocus"
   },
   {
     "key": "ctrl+0",
@@ -277,17 +277,17 @@
   {
     "key": "ctrl+0",
     "command": "workbench.action.zoomReset",
-    "when": "!editorFocus"
+    "when": "!editorFocus && !terminalFocus"
   },
   {
     "key": "ctrl+=",
     "command": "workbench.action.zoomIn",
-    "when": "!editorFocus"
+    "when": "!editorFocus && !terminalFocus"
   },
   {
     "key": "ctrl+-",
     "command": "workbench.action.zoomOut",
-    "when": "!editorFocus"
+    "when": "!editorFocus && !terminalFocus"
   },
 
   //Vim and LSP Related

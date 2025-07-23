@@ -209,5 +209,5 @@
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
-  "twinny.completionCacheEnabled": true
+  "terminal.integrated.fontSize": 17
 }
