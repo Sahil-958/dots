@@ -52,6 +52,7 @@ imagemagick
 imlib2
 inetutils
 inkscape
+inotify-tools
 jq
 kactivitymanagerd
 kamoso
