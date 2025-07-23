@@ -21,11 +21,11 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=86,83,147
+BackgroundAlternate=87,83,147
 BackgroundNormal=49, 50, 68
-DecorationFocus=103,98,182
-DecorationHover=103,98,182
-ForegroundActive=103,98,182
+DecorationFocus=104,98,182
+DecorationHover=104,98,182
+ForegroundActive=104,98,182
 ForegroundInactive=166, 173, 200
 ForegroundLink=197,196,222
 ForegroundNegative=243, 139, 168
@@ -37,9 +37,9 @@ ForegroundVisited=203, 166, 247
 [Colors:Complementary]
 BackgroundAlternate=17, 17, 27
 BackgroundNormal=24, 24, 37
-DecorationFocus=103,98,182
-DecorationHover=103,98,182
-ForegroundActive=103,98,182
+DecorationFocus=104,98,182
+DecorationHover=104,98,182
+ForegroundActive=104,98,182
 ForegroundInactive=166, 173, 200
 ForegroundLink=197,196,222
 ForegroundNegative=243, 139, 168
@@ -51,9 +51,9 @@ ForegroundVisited=203, 166, 247
 [Colors:Header]
 BackgroundAlternate=17, 17, 27
 BackgroundNormal=24, 24, 37
-DecorationFocus=103,98,182
-DecorationHover=103,98,182
-ForegroundActive=103,98,182
+DecorationFocus=104,98,182
+DecorationHover=104,98,182
+ForegroundActive=104,98,182
 ForegroundInactive=166, 173, 200
 ForegroundLink=197,196,222
 ForegroundNegative=243, 139, 168
@@ -79,11 +79,11 @@ ForegroundVisited[$d]
 [Colors:Selection]
 BackgroundAlternate=81,77,141
 BackgroundNormal=81,77,141
-DecorationFocus=103,98,182
-DecorationHover=103,98,182
-ForegroundActive=103,98,182
+DecorationFocus=104,98,182
+DecorationHover=104,98,182
+ForegroundActive=104,98,182
 ForegroundInactive=255,255,255
-ForegroundLink=71,63,169
+ForegroundLink=73,63,168
 ForegroundNegative=243, 139, 168
 ForegroundNeutral=249, 226, 175
 ForegroundNormal=255,255,255
@@ -93,9 +93,9 @@ ForegroundVisited=203, 166, 247
 [Colors:Tooltip]
 BackgroundAlternate=27,25,35
 BackgroundNormal=30, 30, 46
-DecorationFocus=103,98,182
-DecorationHover=103,98,182
-ForegroundActive=103,98,182
+DecorationFocus=104,98,182
+DecorationHover=104,98,182
+ForegroundActive=104,98,182
 ForegroundInactive=166, 173, 200
 ForegroundLink=197,196,222
 ForegroundNegative=243, 139, 168
@@ -107,9 +107,9 @@ ForegroundVisited=203, 166, 247
 [Colors:View]
 BackgroundAlternate=24, 24, 37
 BackgroundNormal=30, 30, 46
-DecorationFocus=103,98,182
-DecorationHover=103,98,182
-ForegroundActive=103,98,182
+DecorationFocus=104,98,182
+DecorationHover=104,98,182
+ForegroundActive=104,98,182
 ForegroundInactive=166, 173, 200
 ForegroundLink=197,196,222
 ForegroundNegative=243, 139, 168
@@ -121,9 +121,9 @@ ForegroundVisited=203, 166, 247
 [Colors:Window]
 BackgroundAlternate=17, 17, 27
 BackgroundNormal=24, 24, 37
-DecorationFocus=103,98,182
-DecorationHover=103,98,182
-ForegroundActive=103,98,182
+DecorationFocus=104,98,182
+DecorationHover=104,98,182
+ForegroundActive=104,98,182
 ForegroundInactive=166, 173, 200
 ForegroundLink=197,196,222
 ForegroundNegative=243, 139, 168
@@ -138,7 +138,7 @@ History Items[$e]=file:$HOME/fusionpact/parneet,file:$HOME/nano,file:$HOME/agent
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x8c\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
-AccentColor=103,98,182
+AccentColor=104,98,182
 ColorScheme=CatppuccinMochaFlamingo
 ColorSchemeHash=e36afc7799520dc4cff7662dc461a578384b549d
 UseSystemBell=true
