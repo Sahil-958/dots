@@ -129,6 +129,9 @@ PreloadWeight=55
 immutability=1
 plugin=org.kde.kscreen
 
+[Containments][2][Applets][7][Applets][14][Configuration]
+PreloadWeight=65
+
 [Containments][2][Applets][7][Applets][15]
 immutability=1
 plugin=org.kde.plasma.keyboardlayout
@@ -166,7 +169,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][2][Applets][7][Applets][22][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][2][Applets][7][Applets][22][Configuration][General]
 showPercentage=true
@@ -198,7 +201,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][7][Applets][28][Configuration]
-PreloadWeight=100
+PreloadWeight=92
 
 [Containments][2][Applets][7][Applets][29]
 immutability=1
@@ -301,7 +304,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][75][General]
-positions={"1920x1080":[]}
+positions={"1366x768":[],"1920x1080":[]}
 
 [ScreenMapping]
 itemsOnDisabledScreens=

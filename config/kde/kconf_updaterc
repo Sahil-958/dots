@@ -1,71 +1,71 @@
 updateInfoAdded=true
 
 [dolphin_detailsmodesettings.upd]
-ctime=1749447275
+ctime=1751694319
 done=rename-leading-padding,rename-side-padding,move-content-display
-mtime=1749050513
+mtime=1751383565
 
 [dolphin_statusandlocationbarssettings.upd]
-ctime=1749447275
+ctime=1751694319
 done=move-content-display,25.04-convert-bool-showstatusbar-to-enum-showstatusbar
-mtime=1749050513
+mtime=1751383565
 
 [gtkconfig.upd]
-ctime=1750855282
+ctime=1752653760
 done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
-mtime=1750794224
+mtime=1752601083
 
 [konsole.upd]
-ctime=1749447276
+ctime=1751694320
 done=konsole_globalaccel,add-hamburgermenu-to-toolbar
-mtime=1749061598
+mtime=1751393006
 
 [kwin.upd]
-ctime=1750855282
+ctime=1752653761
 done=remove_deprecated_gtk4_option,kwin-6.0-reset-active-mouse-screen,kwin-6.0-delete-desktop-switching-shortcuts,kwin-6.0-remove-breeze-tabbox-default,kwin-6.1-remove-gridview-expose-shortcuts
-mtime=1750792748
+mtime=1752599694
 
 [migrate-calendar-to-plugin-id.upd]
-ctime=1750855284
+ctime=1752653762
 done=kwin-6.1-remove-gridview-expose-shortcuts,migrate-calendar-plugins
-mtime=1750793367
+mtime=1752600277
 
 [plasma-systemmonitor.upd]
-ctime=1750855288
+ctime=1752653778
 done=memory-column
-mtime=1750795221
+mtime=1752602081
 
 [plasma6.0-remove-dpi-settings.upd]
-ctime=1750855284
+ctime=1752653762
 done=migrate-calendar-plugins,plasma6.0-remove-dpi-settings
-mtime=1750793367
+mtime=1752600277
 
 [plasma6.0-remove-old-shortcuts.upd]
-ctime=1750855284
+ctime=1752653762
 done=plasma6.0-remove-dpi-settings,plasma6.0-remove-old-shortcuts
-mtime=1750793367
+mtime=1752600277
 
 [plasma6.3-update-clipboard-database-2-to-3.upd]
-ctime=1750855284
+ctime=1752653762
 done=plasma6.3-update-clipboard-database-2-to-3
-mtime=1750793367
+mtime=1752600277
 
 [plasma6.4-migrate-fullscreen-notifications-to-dnd.upd]
-ctime=1750855284
+ctime=1752653762
 done=plasma6.4-migrate-fullscreen-notifications-to-dnd
-mtime=1750793367
+mtime=1752600277
 
 [plasmashell-6.0-keep-custom-position-of-panels.upd]
-ctime=1750855284
+ctime=1752653762
 done=plasma6.0-remove-old-shortcuts,plasmashell-6.0-keep-custom-position-of-panels,plasma6.3-update-clipboard-database-2-to-3,plasma6.4-migrate-fullscreen-notifications-to-dnd
-mtime=1750793367
+mtime=1752600277
 
 [plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels.upd]
-ctime=1750855284
+ctime=1752653762
 done=plasmashell-6.0-keep-custom-position-of-panels,plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels
-mtime=1750793367
+mtime=1752600277
 
 [spectacle.upd]
-ctime=1750855288
+ctime=1752653779
 done=24.02.0-video_format,24.02.0-keep_old_save_location,24.02.0-rename_settings,24.02.0-keep_old_filename_templates,24.05.2-change_placeholder_format,memory-column
-mtime=1750795590
+mtime=1752602476
