@@ -4,7 +4,6 @@ android-file-transfer
 android-tools
 archlinux-xdg-menu
 aria2
-aubio
 base
 base-devel
 bash-completion
@@ -12,13 +11,11 @@ bc
 bind
 bluedevil
 blueman
-bluez-utils
 breeze
 breeze-gtk
 breeze-icons
 brightnessctl
 btop
-cava
 cmake
 colord-kde
 cpio
@@ -37,7 +34,6 @@ fd
 ffmpegthumbs
 firefox
 firewalld
-fish
 flatpak
 flatpak-kcm
 foliate
@@ -165,7 +161,6 @@ tgpt
 tldr
 tree
 ttf-cascadia-code
-ttf-jetbrains-mono-nerd
 usbutils
 uv
 vi
