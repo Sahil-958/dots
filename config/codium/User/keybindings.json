@@ -377,6 +377,11 @@
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && vim.mode == 'Insert'"
   },
   {
+    "key": "ctrl+i",
+    "command": "geminicodeassist.showinEditor",
+    "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus  && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor && !editorReadonly && !suggestWidgetVisible && vim.mode == 'Visual'"
+  },
+  {
     "key": "ctrl+p",
     "command": "editor.action.triggerParameterHints",
     "when": "editorHasSignatureHelpProvider && editorTextFocus && vim.mode == 'Insert'"
