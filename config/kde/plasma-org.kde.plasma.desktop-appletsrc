@@ -160,6 +160,9 @@ plugin=org.kde.plasma.networkmanagement
 [Containments][2][Applets][7][Applets][20][Configuration]
 PreloadWeight=100
 
+[Containments][2][Applets][7][Applets][20][Configuration][General]
+currentDetailsTab=details
+
 [Containments][2][Applets][7][Applets][21]
 immutability=1
 plugin=org.kde.plasma.nightcolorcontrol
@@ -201,7 +204,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][7][Applets][28][Configuration]
-PreloadWeight=97
+PreloadWeight=91
 
 [Containments][2][Applets][7][Applets][29]
 immutability=1
@@ -255,7 +258,7 @@ DialogWidth=720
 [Containments][2][Applets][71][Configuration][General]
 groupingAppIdBlacklist=abdownloadmanager.desktop
 groupingLauncherUrlBlacklist=applications:abdownloadmanager.desktop
-launchers=applications:systemsettings.desktop,preferred://browser,applications:org.kde.dolphin.desktop
+launchers=applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,preferred://browser
 maxStripes=2
 showOnlyCurrentDesktop=false
 showOnlyCurrentScreen=true
