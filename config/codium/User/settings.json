@@ -209,5 +209,6 @@
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
-  "terminal.integrated.fontSize": 17
+  "terminal.integrated.fontSize": 17,
+  "diffEditor.codeLens": true
 }
