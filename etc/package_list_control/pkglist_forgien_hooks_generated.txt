@@ -3,7 +3,6 @@ docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-quickshell-git
 ungoogled-chromium-bin
 vscodium-bin
 yay
