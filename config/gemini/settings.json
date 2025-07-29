@@ -1,0 +1,20 @@
+{
+  "selectedAuthType": "oauth-personal",
+  "contextFileName": "CONTEXT.md",
+  "fileFiltering": {
+    "respectGitIgnore": true,
+    "enableRecursiveFileSearch": true
+  },
+  "vimMode": true,
+  "checkpointing": {
+    "enabled": true
+  },
+  "hideBanner": true,
+  "telemetry": {
+    "enabled": false,
+    "target": "local",
+    "otlpEndpoint": "http://localhost:16686",
+    "logPrompts": false
+  },
+  "usageStatisticsEnabled": false
+}
