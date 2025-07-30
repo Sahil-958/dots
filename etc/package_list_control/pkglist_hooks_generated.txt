@@ -44,6 +44,7 @@ git-lfs
 gnome-sound-recorder
 grub
 grub-btrfs
+gunicorn
 guvcview
 gvfs
 gwenview
