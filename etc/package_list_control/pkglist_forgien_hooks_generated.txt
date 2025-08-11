@@ -4,7 +4,6 @@ kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
 pspp
-pspp-debug
 ungoogled-chromium-bin
 vscodium-bin
 yay
