@@ -135,6 +135,7 @@ plasma-workspace-wallpapers
 plasma5support
 playerctl
 polkit-kde-agent
+postgresql
 power-profiles-daemon
 powerdevil
 print-manager
