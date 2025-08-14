@@ -91,6 +91,7 @@ libreoffice-fresh
 linux
 linux-firmware
 linux-lts
+lsof
 man-db
 mediainfo
 mesa-utils
