@@ -28,7 +28,7 @@
     st = status            ; Shortcut for 'status'
     br = branch            ; Shortcut for 'branch'
     df = diff              ; Shortcut for 'diff'
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit    ; Custom log format with graph (Default: none)
+    lg = log --graph --abbrev-commit --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit    ; Custom log format with graph (Default: none)
 
 [credential]
     ; Configuration for storing credentials
