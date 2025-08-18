@@ -1,5 +1,4 @@
 {
-  "selectedAuthType": "oauth-personal",
   "contextFileName": "CONTEXT.md",
   "fileFiltering": {
     "respectGitIgnore": true,
@@ -16,5 +15,16 @@
     "otlpEndpoint": "http://localhost:16686",
     "logPrompts": false
   },
-  "usageStatisticsEnabled": false
+  "usageStatisticsEnabled": false,
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    }
+  },
+  "selectedAuthType": "gemini-api-key",
+  "preferredEditor": "vscodium"
 }
