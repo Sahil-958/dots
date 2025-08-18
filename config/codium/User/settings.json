@@ -57,6 +57,10 @@
       "after": ["<c-w>", "s"]
     },
     {
+      "before": ["<c-w> c"],
+      "after": ["workbench.action.closeActiveEditor"]
+    },
+    {
       "before": ["<c-h>"],
       "after": ["<c-w>", "h"]
     },
@@ -201,8 +205,8 @@
   ],
   "vim.handleKeys": {
     "<C-n>": false,
-    "<C-j>": false,
-    "<C-k>": false,
+    "<C-j>": true,
+    "<C-k>": true,
     "<C-p>": false,
     "<C-d>": true
   },
@@ -210,5 +214,6 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "terminal.integrated.fontSize": 17,
-  "diffEditor.codeLens": true
+  "diffEditor.codeLens": true,
+  "liveServer.settings.donotShowInfoMsg": true
 }
