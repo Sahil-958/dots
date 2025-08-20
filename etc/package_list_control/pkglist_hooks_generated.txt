@@ -159,6 +159,7 @@ snapper
 snapshot
 spectacle
 sshfs
+sshpass
 starship
 systemsettings
 tesseract
