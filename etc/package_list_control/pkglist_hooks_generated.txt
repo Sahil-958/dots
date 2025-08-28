@@ -158,6 +158,7 @@ smartmontools
 snapper
 snapshot
 spectacle
+speech-dispatcher
 sshfs
 sshpass
 starship
