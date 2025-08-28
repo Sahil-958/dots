@@ -1,4 +1,5 @@
 7zip
+alsa-utils
 amd-ucode
 android-file-transfer
 android-tools
