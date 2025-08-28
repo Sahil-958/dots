@@ -3,8 +3,7 @@ docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-piper-tts
-piper-tts-debug
+piper-voices-common
 pspp
 ungoogled-chromium-bin
 vscodium-bin
