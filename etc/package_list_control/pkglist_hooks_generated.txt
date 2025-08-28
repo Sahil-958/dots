@@ -96,6 +96,7 @@ man-db
 mediainfo
 mesa-utils
 milou
+mpv
 ncdu
 neovim
 net-tools
