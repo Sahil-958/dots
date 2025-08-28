@@ -142,8 +142,13 @@ power-profiles-daemon
 powerdevil
 print-manager
 python-aiohttp
+python-build
+python-installer
+python-onnxruntime
 python-pip
 python-pyqt6
+python-scikit-build
+python-setuptools
 qbittorrent
 qpdf
 qqc2-breeze-style
