@@ -4,7 +4,7 @@ kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
 piper-tts-bin
-piper-voices-common
+piper-voices-en-us
 pspp
 ungoogled-chromium-bin
 vscodium-bin
