@@ -17,6 +17,7 @@ breeze-icons
 brightnessctl
 btop
 catdoc
+chrpath
 cmake
 colord-kde
 cpio
