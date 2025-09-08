@@ -142,6 +142,7 @@ power-profiles-daemon
 powerdevil
 print-manager
 python-aiohttp
+python-black
 python-pip
 python-pyqt6
 qbittorrent
