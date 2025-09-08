@@ -18,7 +18,6 @@ brightnessctl
 btop
 catdoc
 cmake
-code
 colord-kde
 cpio
 cuda
