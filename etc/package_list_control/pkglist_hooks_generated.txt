@@ -154,6 +154,7 @@ rainfrog
 rclone
 reflector
 ripgrep
+ruff
 sbt
 smartmontools
 snapper
