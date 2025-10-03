@@ -179,6 +179,7 @@ vim
 viu
 vlc
 vulkan-radeon
+webkit2gtk-4.1
 wireplumber
 wl-clipboard
 xdg-desktop-portal-kde
