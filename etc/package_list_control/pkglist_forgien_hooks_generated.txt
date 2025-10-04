@@ -6,7 +6,6 @@ materialgram-bin
 piper-voices-common
 pspp
 rapidraw-bin
-rapidraw-bin-debug
 ungoogled-chromium-bin
 vscodium-bin
 yay
