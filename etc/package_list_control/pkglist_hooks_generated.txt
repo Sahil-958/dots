@@ -155,8 +155,10 @@ rainfrog
 rclone
 reflector
 ripgrep
+rootlesskit
 ruff
 sbt
+slirp4netns
 smartmontools
 snapper
 snapshot
