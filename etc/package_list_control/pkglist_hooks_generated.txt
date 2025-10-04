@@ -43,7 +43,6 @@ gimp
 git
 git-lfs
 gnome-sound-recorder
-go
 grub
 grub-btrfs
 gunicorn
