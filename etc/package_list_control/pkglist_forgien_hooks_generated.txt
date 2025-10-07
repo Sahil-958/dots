@@ -3,7 +3,6 @@ docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-ngrok
 piper-voices-common
 pspp
 rapidraw-bin
