@@ -23,6 +23,7 @@ cpio
 cuda
 cudnn
 dbus-glib
+dialog
 docker
 docker-buildx
 docker-compose
@@ -113,6 +114,7 @@ nvtop
 obs-studio
 ocean-sound-theme
 ollama-cuda
+openbsd-netcat
 os-prober
 otf-comicshanns-nerd
 oxygen
