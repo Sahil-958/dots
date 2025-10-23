@@ -17,7 +17,6 @@ breeze-icons
 brightnessctl
 btop
 catdoc
-chrpath
 cmake
 colord-kde
 cpio
@@ -35,6 +34,7 @@ efibootmgr
 fastfetch
 fd
 ffmpegthumbs
+filelight
 firefox
 firewalld
 flatpak
