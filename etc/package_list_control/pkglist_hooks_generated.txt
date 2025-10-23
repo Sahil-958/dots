@@ -23,6 +23,7 @@ cpio
 cuda
 cudnn
 cups
+cups-pdf
 dbus-glib
 dialog
 docker
@@ -49,6 +50,7 @@ gnome-sound-recorder
 grub
 grub-btrfs
 gunicorn
+gutenprint
 guvcview
 gvfs
 gwenview
@@ -106,6 +108,7 @@ net-tools
 network-manager-applet
 networkmanager
 noto-fonts-emoji
+nss-mdns
 ntfs-3g
 nuspell
 nvidia-open
