@@ -22,6 +22,7 @@ colord-kde
 cpio
 cuda
 cudnn
+cups
 dbus-glib
 dialog
 docker
