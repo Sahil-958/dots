@@ -3,7 +3,6 @@ docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-pspp
 rapidraw-bin
 ungoogled-chromium-bin
 vscodium-bin
