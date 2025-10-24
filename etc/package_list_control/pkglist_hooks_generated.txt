@@ -4,7 +4,6 @@ android-file-transfer
 android-tools
 archlinux-xdg-menu
 aria2
-asar
 base
 base-devel
 bash-completion
@@ -18,7 +17,6 @@ breeze-icons
 brightnessctl
 btop
 catdoc
-clojure
 cmake
 colord-kde
 cpio
@@ -35,7 +33,6 @@ dolphin
 dolphin-plugins
 easyeffects
 efibootmgr
-electron34
 fastfetch
 fd
 ffmpegthumbs
@@ -128,7 +125,6 @@ otf-comicshanns-nerd
 oxygen
 oxygen-sounds
 pacman-contrib
-patchelf
 pavucontrol
 perl-image-exiftool
 plasma-activities-stats
@@ -156,7 +152,6 @@ python-aiohttp
 python-black
 python-pip
 python-pyqt6
-python-setuptools
 qbittorrent
 qpdf
 qqc2-breeze-style
@@ -200,5 +195,4 @@ xorg-xprop
 xorg-xrandr
 yad
 yt-dlp
-zettlr
 zip
