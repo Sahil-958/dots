@@ -195,4 +195,5 @@ xorg-xprop
 xorg-xrandr
 yad
 yt-dlp
+zettlr
 zip
