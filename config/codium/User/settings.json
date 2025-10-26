@@ -210,10 +210,14 @@
     "<C-p>": false,
     "<C-d>": true
   },
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff"
-  },
+
   "terminal.integrated.fontSize": 17,
   "diffEditor.codeLens": true,
-  "liveServer.settings.donotShowInfoMsg": true
+  "git.openRepositoryInParentFolders": "always",
+  "geminicodeassist.project": "gen-lang-client-0723067918",
+  "[python]": {
+    "editor.defaultFormatter": "KylinIDETeam.kylin-python"
+  },
+  "python.formatting.blackPath": "/usr/bin/ruff",
+  "python.formatting.provider": "black"
 }
