@@ -72,3 +72,8 @@
     auto = 670              ; Automatically run 'git gc' if loose object count exceeds this number (Default: 670)
 
 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
