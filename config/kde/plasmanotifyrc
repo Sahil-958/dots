@@ -10,7 +10,11 @@ Seen=true
 [Applications][librewolf]
 Seen=true
 
+[Applications][org.qbittorrent.qBittorrent]
+Seen=true
+
 [DoNotDisturb]
+Until=2025,10,8,17,6,0.792
 WhenFullscreen=false
 
 [Notifications]

@@ -133,8 +133,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=948,1010
-History Items[$e]=file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client/,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/dist,file:$HOME/fusionpact/agent-api,file:$HOME/fusionpact/parneet,file:$HOME/nano,file:$HOME/agent,file:$HOME/browser-extension,file:$HOME/Downloads/uBlock0.chromium,file:$HOME/party_sahil,file:$HOME/party_sahil,file:$HOME/admk,file:$HOME/Documents/markdown/admk,file:$HOME/sunaina,file:///home,file:$HOME/repos/event-manager/event-manager-backend,file:$HOME/Downloads
+DirSelectDialog Size=999,714
+History Items[$e]=file:$HOME/Claude-Code-Everything-You-Need-to-Know,file:$HOME/Claude-Code-Everything-You-Need-to-Know,file:$HOME/AgenticAITech/document_analyzer,file:$HOME,file:$HOME,file:$HOME/fusionpact/AgenticAITech/document_analyzer,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client/,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/dist,file:$HOME/fusionpact/agent-api,file:$HOME/fusionpact/parneet,file:$HOME/nano,file:$HOME/agent,file:$HOME/browser-extension,file:$HOME/Downloads/uBlock0.chromium,file:$HOME/party_sahil,file:$HOME/party_sahil,file:$HOME/admk,file:$HOME/Documents/markdown/admk,file:$HOME/sunaina,file:///home,file:$HOME/repos/event-manager/event-manager-backend,file:$HOME/Downloads
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x8c\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
@@ -155,15 +155,12 @@ Allow Expansion=false
 Automatically select filename extension=true
 Breadcrumb Navigation=false
 Decoration position=2
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
-Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
 Show Speedbar=true
 Show hidden files=true
-Sort by=Name
+Sort by=Date
 Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
