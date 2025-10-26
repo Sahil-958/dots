@@ -94,4 +94,6 @@ eval "$(starship init bash)"
 alias kref="qdbus org.kde.KWin /KWin reconfigure"
 # Added path to access scripts more easily
 export PATH="$HOME/dots/scripts:$PATH"
+export PATH="/home/sawhill/.local/bin:$PATH"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+export WINAPPS_SRC_DIR="$HOME/.local/bin/winapps-src"
