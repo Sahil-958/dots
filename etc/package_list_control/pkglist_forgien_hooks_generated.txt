@@ -1,4 +1,9 @@
 acpilight
+android-sdk
+android-sdk-build-tools
+android-sdk-debug
+android-sdk-platform-tools
+android-sdk-platform-tools-debug
 docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
