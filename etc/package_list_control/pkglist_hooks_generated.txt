@@ -60,6 +60,7 @@ imagemagick
 imlib2
 inetutils
 inkscape
+jdk17-openjdk
 jq
 kactivitymanagerd
 kamoso
