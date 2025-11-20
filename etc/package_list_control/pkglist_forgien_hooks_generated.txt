@@ -1,11 +1,6 @@
 acpilight
-android-platform
-android-sdk
-android-sdk-build-tools
-android-sdk-platform-tools
 docker-rootless-extras
 helium-browser-bin
-helium-browser-bin-debug
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
