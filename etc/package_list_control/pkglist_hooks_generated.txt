@@ -148,6 +148,7 @@ plasma5support
 playerctl
 polkit-kde-agent
 postgresql
+postgresql-libs
 power-profiles-daemon
 powerdevil
 print-manager
@@ -180,6 +181,7 @@ systemsettings
 tesseract
 tesseract-data-eng
 tgpt
+thunderbird
 tldr
 tree
 ttf-cascadia-code
