@@ -1,11 +1,8 @@
 acpilight
-android-studio
 docker-rootless-extras
-helium-browser-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-rapidraw-bin
 ungoogled-chromium-bin
 vscodium-bin
 yay
