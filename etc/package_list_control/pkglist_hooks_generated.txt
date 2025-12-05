@@ -47,6 +47,7 @@ gimp
 git
 git-lfs
 gnome-sound-recorder
+gnumeric
 gradle
 grub
 grub-btrfs
