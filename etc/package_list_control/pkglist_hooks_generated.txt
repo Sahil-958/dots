@@ -64,6 +64,7 @@ jdk17-openjdk
 jq
 kactivitymanagerd
 kamoso
+kcolorchooser
 kconfig5
 kde-cli-tools
 kde-gtk-config
