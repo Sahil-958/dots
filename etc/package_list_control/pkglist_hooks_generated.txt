@@ -33,6 +33,7 @@ dolphin
 dolphin-plugins
 easyeffects
 efibootmgr
+eyedropper
 fastfetch
 fd
 ffmpegthumbs
