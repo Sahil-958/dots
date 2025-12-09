@@ -56,7 +56,6 @@ guvcview
 gvfs
 gwenview
 hyprland
-hyprpicker
 imagemagick
 imlib2
 inetutils
