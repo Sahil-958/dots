@@ -9,6 +9,7 @@ base-devel
 bash-completion
 bc
 bind
+blender
 bluedevil
 blueman
 breeze
