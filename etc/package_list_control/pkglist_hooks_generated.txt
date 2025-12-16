@@ -112,6 +112,7 @@ neovim
 net-tools
 network-manager-applet
 networkmanager
+nmap
 noto-fonts-emoji
 nss-mdns
 ntfs-3g
