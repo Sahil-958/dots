@@ -88,6 +88,73 @@ cnf() {
   pacman -F "$1"
 }
 
+up() {
+  if [ -z "$1" ]; then
+    echo "Usage: sharefile <file_to_upload>"
+    return 1
+  fi
+
+  local file_path="$1"
+  local filename
+  filename="$(basename "$file_path")"
+
+  if [ ! -f "$file_path" ]; then
+    echo "Error: File not found: $file_path"
+    return 1
+  fi
+
+  if ! command -v qrencode >/dev/null 2>&1; then
+    echo "Note: install qrencode for QR output:"
+    echo "  sudo pacman -S qrencode"
+  fi
+
+  echo "📤 Uploading: $file_path"
+  echo "------------------------------------"
+
+  # **Multiple known-reliable upload providers**
+  declare -A services=(
+    ["file.io"]="curl --silent -F file=@\"$file_path\" https://file.io"
+    ["oshi.at"]="curl --silent -T \"$file_path\" https://oshi.at"
+    ["0x0.st"]="curl --silent -F file=@\"$file_path\" https://0x0.st"
+    ["transfer.sh"]="curl --silent --upload-file \"$file_path\" https://transfer.sh/\"$filename\""
+    ["tmpfiles.org"]="curl --silent -F file=@\"$file_path\" https://tmpfiles.org/api/v1/upload"
+  )
+
+  local response=""
+  local url=""
+
+  for name in "${!services[@]}"; do
+    echo "Trying: $name"
+    response=$(eval "${services[$name]}")
+
+    # Extract URLs from JSON or plain text:
+    if [[ "$response" =~ https?://[a-zA-Z0-9./?=_-]+ ]]; then
+      url="${BASH_REMATCH[0]}"
+      echo "✔ Success via $name"
+      break
+    fi
+
+    echo "✖ Failed on $name"
+  done
+
+  if [[ -z "$url" ]]; then
+    echo "❌ All services failed."
+    return 1
+  fi
+
+  echo ""
+  echo "🔗 Download URL:"
+  echo "$url"
+  echo ""
+
+  if command -v qrencode >/dev/null 2>&1; then
+    echo "📱 QR Code:"
+    qrencode -t ANSIUTF8 "$url"
+  fi
+
+  echo "------------------------------------"
+}
+
 #PS1='[\u@\h \W]\$ '
 #Starship function to generate the custom prompt
 eval "$(starship init bash)"
