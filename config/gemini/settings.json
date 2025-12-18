@@ -25,6 +25,6 @@
       ]
     }
   },
-  "selectedAuthType": "gemini-api-key",
+  "selectedAuthType": "oauth-personal",
   "preferredEditor": "vscodium"
 }
