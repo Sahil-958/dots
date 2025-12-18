@@ -1,6 +1,3 @@
-[Activities][LastVirtualDesktop]
-dabcb6b6-e2f3-4a22-a479-6bbc837bee62=44339a4d-565c-4bae-bcc8-9ca544dc08b9
-
 [Desktops]
 Id_1=879453cc-6f50-4e25-98e2-09c8fd9166ee
 Id_10=e62da8d8-da98-4e12-8109-4d092f5e843d
@@ -24,11 +21,7 @@ Strength=12
 [NightColor]
 Active=true
 DayTemperature=6200
-LatitudeFixed=27.374420549001997
-LongitudeFixed=78.05861054080412
-Mode=Times
 NightTemperature=5600
-TransitionTime=6
 
 [Plugins]
 cubeEnabled=true

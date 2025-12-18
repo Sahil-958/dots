@@ -67,10 +67,10 @@ KrohnkiteQuarterLayout=none,none,Krohnkite: Quarter Layout
 KrohnkiteRotate=Meta+R,none,Krohnkite: Rotate
 KrohnkiteRotatePart=Meta+Alt+R,none,Krohnkite: Rotate Part
 KrohnkiteSetMaster=Meta+Ctrl+M,none,Krohnkite: Set master
-KrohnkiteShiftDown=Meta+Alt+J,none,Krohnkite: Move Down/Next
-KrohnkiteShiftLeft=Meta+Alt+H,none,Krohnkite: Move Left
-KrohnkiteShiftRight=Meta+Alt+L,none,Krohnkite: Move Right
-KrohnkiteShiftUp=Meta+Alt+K,none,Krohnkite: Move Up/Prev
+KrohnkiteShiftDown=none,none,Krohnkite: Move Down/Next
+KrohnkiteShiftLeft=none,none,Krohnkite: Move Left
+KrohnkiteShiftRight=none,none,Krohnkite: Move Right
+KrohnkiteShiftUp=none,none,Krohnkite: Move Up/Prev
 KrohnkiteShrinkHeight=Meta+Shift+K,none,Krohnkite: Shrink Height
 KrohnkiteShrinkWidth=Meta+Shift+H,none,Krohnkite: Shrink Width
 KrohnkiteSpiralLayout=none,none,Krohnkite: Spiral Layout
@@ -136,7 +136,6 @@ Switch to Screen Above=none,,Switch to Screen Above
 Switch to Screen Below=none,,Switch to Screen Below
 Switch to Screen to the Left=none,,Switch to Screen to the Left
 Switch to Screen to the Right=none,,Switch to Screen to the Right
-Toggle=Meta+Ctrl+Alt+P,Meta+Ctrl+Alt+P,Toggle Show Paint
 Toggle Night Color=none,none,Suspend/Resume Night Light
 Toggle Window Raise/Lower=none,,Toggle Window Raise/Lower
 ToggleCurrentThumbnail=Meta+Ctrl+T,Meta+Ctrl+T,Toggle Thumbnail for Current Window
@@ -167,15 +166,15 @@ Window Move=none,,Move Window
 Window Move Center=none,,Move Window to the Center
 Window No Border=none,,Toggle Window Titlebar and Frame
 Window On All Desktops=Meta+Shift+P,,Keep Window on All Desktops
-Window One Desktop Down=Alt+J\tMeta+Ctrl+Shift+Down,Meta+Ctrl+Shift+Down,Window One Desktop Down
-Window One Desktop Up=Meta+Ctrl+Shift+Up\tAlt+K,Meta+Ctrl+Shift+Up,Window One Desktop Up
-Window One Desktop to the Left=Alt+H\tMeta+Ctrl+Shift+Left,Meta+Ctrl+Shift+Left,Window One Desktop to the Left
-Window One Desktop to the Right=Meta+Ctrl+Shift+Right\tAlt+L,Meta+Ctrl+Shift+Right,Window One Desktop to the Right
+Window One Desktop Down=Meta+Alt+J\tMeta+Ctrl+Shift+Down,Meta+Ctrl+Shift+Down,Window One Desktop Down
+Window One Desktop Up=Meta+Ctrl+Shift+Up\tMeta+Alt+K,Meta+Ctrl+Shift+Up,Window One Desktop Up
+Window One Desktop to the Left=Meta+Alt+H\tMeta+Ctrl+Shift+Left,Meta+Ctrl+Shift+Left,Window One Desktop to the Left
+Window One Desktop to the Right=Meta+Ctrl+Shift+Right\tMeta+Alt+L,Meta+Ctrl+Shift+Right,Window One Desktop to the Right
 Window One Screen Down=none,,Move Window One Screen Down
 Window One Screen Up=none,,Move Window One Screen Up
 Window One Screen to the Left=none,,Move Window One Screen to the Left
 Window One Screen to the Right=none,,Move Window One Screen to the Right
-Window Operations Menu=Alt+F3,Alt+F3,Window Operations Menu
+Window Operations Menu=Alt+F3,Alt+F3,Window Menu
 Window Pack Down=none,,Move Window Down
 Window Pack Left=none,,Move Window Left
 Window Pack Right=none,,Move Window Right
@@ -190,7 +189,7 @@ Window Quick Tile Top Left=none,,Quick Tile Window to the Top Left
 Window Quick Tile Top Right=none,,Quick Tile Window to the Top Right
 Window Raise=none,,Raise Window
 Window Resize=none,,Resize Window
-Window Shade=none,,Shade Window
+Window Shade=none,none,Shade Window
 Window Shrink Horizontal=none,,Shrink Window Horizontally
 Window Shrink Vertical=none,,Shrink Window Vertically
 Window to Desktop 1=Meta+Alt+1,,Window to Desktop 1
@@ -242,6 +241,16 @@ playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
 
+[org.chromium.Chromium]
+B7B9BD083370546F11D9001567ACFC77-launch-element-picker=none,none,Enter element picker mode
+B7B9BD083370546F11D9001567ACFC77-launch-element-zapper=none,none,Enter element zapper mode
+B7B9BD083370546F11D9001567ACFC77-launch-logger=none,none,Open the logger
+B7B9BD083370546F11D9001567ACFC77-open-dashboard=none,none,Open the dashboard
+B7B9BD083370546F11D9001567ACFC77-relax-blocking-mode=none,none,Relax blocking mode
+B7B9BD083370546F11D9001567ACFC77-toggle-cosmetic-filtering=none,none,Toggle cosmetic filtering
+B7B9BD083370546F11D9001567ACFC77-toggle-javascript=none,none,Toggle JavaScript
+_k_friendly_name=org.chromium.Chromium
+
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
 Decrease Screen Brightness=Shift+Monitor Brightness Down,Monitor Brightness Down,Decrease Screen Brightness
@@ -259,6 +268,7 @@ _k_friendly_name=Power Management
 powerProfile=Battery\tMeta+B,Battery\tMeta+B,Switch Power Profile
 
 [plasmashell]
+Slideshow Wallpaper Next Image=none,,Next Wallpaper Image
 _k_friendly_name=plasmashell
 activate application launcher=Meta\tAlt+F1,Meta\tAlt+F1,Activate Application Launcher
 activate task manager entry 1=none,Meta+1,Activate Task Manager Entry 1
@@ -286,7 +296,6 @@ repeat_action=Meta+Ctrl+R,,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=none,,Show Barcode…
 show-on-mouse-pos=Meta+V,Meta+V,Show Clipboard Items at Mouse Position
-stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
@@ -314,12 +323,20 @@ RecordWindow=none
 [services][org.kde.touchpadshortcuts.desktop]
 ToggleTouchpad=Touchpad Toggle
 
+[token_ashpd_N0lDTTeWLP]
+EyedropperColorPick=Meta+Ctrl+P,Ctrl+P,Pick a New Color
+_k_friendly_name=token_ashpd_N0lDTTeWLP
+
+[token_ashpd_Swed5K8YOI]
+EyedropperColorPick=none,Ctrl+P,Pick a New Color
+_k_friendly_name=token_ashpd_Swed5K8YOI
+
 [wacomtablet]
 Map to fullscreen=Meta+Ctrl+F,Meta+Ctrl+F,Map to fullscreen
 Map to screen 1=Meta+Ctrl+1,Meta+Ctrl+1,Map to screen 1
 Map to screen 2=Meta+Ctrl+2,Meta+Ctrl+2,Map to screen 2
 Next Profile=Meta+Ctrl+N,Meta+Ctrl+N,Next profile
-Previous Profile=Meta+Ctrl+P,Meta+Ctrl+P,Previous Profile
+Previous Profile=none,Meta+Ctrl+P,Previous Profile
 Toggle screen map selection=none,Meta+Ctrl+M,Toggle between all screens
 Toggle stylus mode=Meta+Ctrl+S,Meta+Ctrl+S,Toggle the Stylus Tool Relative/Absolute
 Toggle touch tool=none,Meta+Ctrl+T,Enable/Disable the Touch Tool
