@@ -12,6 +12,7 @@ Parent=FALLBACK/
 TerminalMargin=11
 
 [Scrolling]
+HistorySize=2000
 ScrollBarPosition=2
 
 [Terminal Features]
