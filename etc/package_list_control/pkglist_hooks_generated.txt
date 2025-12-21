@@ -19,8 +19,6 @@ catdoc
 cmake
 colord-kde
 cpio
-cuda
-cudnn
 cups
 cups-pdf
 dbus-glib
