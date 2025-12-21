@@ -124,7 +124,6 @@ nvme-cli
 nvtop
 obs-studio
 ocean-sound-theme
-ollama-cuda
 openbsd-netcat
 os-prober
 otf-comicshanns-nerd
