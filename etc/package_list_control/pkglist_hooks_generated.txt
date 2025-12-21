@@ -1,6 +1,5 @@
 7zip
 amd-ucode
-android-file-transfer
 android-tools
 archlinux-xdg-menu
 aria2
@@ -9,7 +8,6 @@ base-devel
 bash-completion
 bc
 bind
-blender
 bluedevil
 blueman
 breeze
@@ -48,7 +46,6 @@ gimp
 git
 git-lfs
 gnome-sound-recorder
-gradle
 grub
 grub-btrfs
 gunicorn
@@ -60,11 +57,8 @@ hyprland
 imagemagick
 imlib2
 inetutils
-inkscape
-jdk17-openjdk
 jq
 kactivitymanagerd
-kamoso
 kcolorchooser
 kconfig5
 kde-cli-tools
@@ -76,7 +70,6 @@ kgamma
 kglobalacceld
 kinfocenter
 kmenuedit
-kodi
 konsole
 kpipewire
 krdp
@@ -169,7 +162,6 @@ rclone
 reflector
 ripgrep
 ruff
-sbt
 smartmontools
 snapper
 snapshot
