@@ -186,6 +186,7 @@ vlc
 vlc-plugin-ffmpeg
 vulkan-radeon
 wgcf
+wireguard-tools
 wireplumber
 wl-clipboard
 xdg-desktop-portal-kde
