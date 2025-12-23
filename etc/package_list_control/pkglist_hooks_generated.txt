@@ -185,6 +185,7 @@ viu
 vlc
 vlc-plugin-ffmpeg
 vulkan-radeon
+wgcf
 wireplumber
 wl-clipboard
 xdg-desktop-portal-kde
