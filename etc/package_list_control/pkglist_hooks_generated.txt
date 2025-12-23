@@ -51,6 +51,7 @@ gutenprint
 guvcview
 gvfs
 gwenview
+hdparm
 hyprland
 imagemagick
 imlib2
