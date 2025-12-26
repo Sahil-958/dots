@@ -16,10 +16,8 @@ breeze-icons
 brightnessctl
 btop
 catdoc
-clang
 cmake
 colord-kde
-compiler-rt
 cpio
 cups
 cups-pdf
@@ -45,9 +43,7 @@ fzf
 gimp
 git
 git-lfs
-gn
 gnome-sound-recorder
-gperf
 grub
 grub-btrfs
 gunicorn
@@ -60,7 +56,6 @@ hyprland
 imagemagick
 imlib2
 inetutils
-jdk-openjdk
 jq
 kactivitymanagerd
 kcolorchooser
@@ -98,7 +93,6 @@ libreoffice-fresh
 linux
 linux-firmware
 linux-lts
-lld
 lsof
 man-db
 mediainfo
@@ -110,7 +104,6 @@ neovim
 net-tools
 network-manager-applet
 networkmanager
-ninja
 nmap
 noto-fonts-emoji
 nss-mdns
@@ -155,11 +148,8 @@ powerdevil
 print-manager
 python-aiohttp
 python-black
-python-httplib2
 python-pip
-python-pyparsing
 python-pyqt6
-python-six
 qbittorrent
 qpdf
 qqc2-breeze-style
@@ -170,10 +160,7 @@ rainfrog
 rclone
 reflector
 ripgrep
-rsync
 ruff
-rust
-rust-bindgen
 smartmontools
 snapper
 snapshot

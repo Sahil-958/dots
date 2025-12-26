@@ -1,5 +1,6 @@
 acpilight
 docker-rootless-extras
+helium-browser-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
