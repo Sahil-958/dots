@@ -2,8 +2,11 @@ acpilight
 docker-rootless-extras
 kwin-scripts-krohnkite-git
 librewolf-bin
+librewolf-bin-debug
 materialgram-bin
 ungoogled-chromium-bin
+ungoogled-chromium-bin-debug
 vscodium-bin
+vscodium-bin-debug
 yay
 yay-debug
