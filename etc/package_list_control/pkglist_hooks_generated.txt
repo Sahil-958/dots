@@ -178,7 +178,6 @@ thunderbird
 tldr
 tree
 ttf-cascadia-code
-typescript
 usbutils
 uv
 vi
