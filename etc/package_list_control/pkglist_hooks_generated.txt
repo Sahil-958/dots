@@ -18,6 +18,7 @@ btop
 catdoc
 cmake
 colord-kde
+composer
 cpio
 cups
 cups-pdf
