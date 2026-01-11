@@ -177,6 +177,7 @@ tesseract
 tesseract-data-eng
 tgpt
 thunderbird
+tigervnc
 tldr
 tree
 ttf-cascadia-code
