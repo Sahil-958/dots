@@ -1,6 +1,4 @@
 acpilight
-beutl-git
-beutl-git-debug
 docker-rootless-extras
 helium-browser-bin
 kwin-scripts-krohnkite-git
