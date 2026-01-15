@@ -166,6 +166,7 @@ rclone
 reflector
 ripgrep
 ruff
+shotcut
 smartmontools
 snapper
 snapshot
