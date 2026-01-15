@@ -5,7 +5,6 @@ kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
 rapidraw
-rapidraw-debug
 ungoogled-chromium-bin
 vscodium-bin
 yay
