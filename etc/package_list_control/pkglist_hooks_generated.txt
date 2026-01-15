@@ -29,6 +29,8 @@ docker-buildx
 docker-compose
 dolphin
 dolphin-plugins
+dotnet-runtime
+dotnet-sdk
 easyeffects
 efibootmgr
 fastfetch
