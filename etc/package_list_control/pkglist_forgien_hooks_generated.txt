@@ -4,6 +4,8 @@ helium-browser-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
+qt5-webchannel
+qt5-webchannel-debug
 rapidraw
 ungoogled-chromium-bin
 vscodium-bin
