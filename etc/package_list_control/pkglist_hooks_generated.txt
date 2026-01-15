@@ -30,6 +30,7 @@ docker-buildx
 docker-compose
 dolphin
 dolphin-plugins
+doxygen
 easyeffects
 efibootmgr
 fastfetch
@@ -153,13 +154,16 @@ powerdevil
 print-manager
 python-aiohttp
 python-black
+python-html5lib
 python-pip
 python-pyqt6
 qbittorrent
 qpdf
 qqc2-breeze-style
 qt5-graphicaleffects
+qt5-location
 qt5-quickcontrols2
+qt5-tools
 qt6-wayland
 rainfrog
 rclone
