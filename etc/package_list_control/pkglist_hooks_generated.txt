@@ -65,6 +65,7 @@ kconfig5
 kde-cli-tools
 kde-gtk-config
 kdeconnect
+kdenlive
 kdeplasma-addons
 keepassxc
 kgamma
