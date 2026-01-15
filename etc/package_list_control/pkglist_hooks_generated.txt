@@ -15,7 +15,6 @@ breeze-gtk
 breeze-icons
 brightnessctl
 btop
-cargo-tauri
 catdoc
 cmake
 colord-kde
@@ -115,6 +114,7 @@ nss-mdns
 ntfs-3g
 nuspell
 nvidia-open
+nvidia-prime
 nvidia-settings
 nvm
 nvme-cli
