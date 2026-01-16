@@ -189,7 +189,6 @@ ttf-cascadia-code
 usbutils
 uv
 vi
-vidcutter
 vim
 viu
 vlc
