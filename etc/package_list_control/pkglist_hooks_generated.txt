@@ -16,7 +16,6 @@ breeze-icons
 brightnessctl
 btop
 catdoc
-chrpath
 cmake
 colord-kde
 composer
@@ -199,6 +198,7 @@ wgcf
 wireguard-tools
 wireplumber
 wl-clipboard
+wtype
 xdg-desktop-portal-kde
 xf86-video-amdgpu
 xorg-xprop
