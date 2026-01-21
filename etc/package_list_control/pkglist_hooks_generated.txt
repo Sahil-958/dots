@@ -154,7 +154,6 @@ powerdevil
 print-manager
 python-aiohttp
 python-black
-python-openai-whisper
 python-pip
 python-pyqt6
 qbittorrent
