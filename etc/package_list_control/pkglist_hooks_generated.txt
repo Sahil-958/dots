@@ -167,7 +167,6 @@ rainfrog
 rclone
 reflector
 ripgrep
-roundcubemail
 ruff
 shotcut
 smartmontools
