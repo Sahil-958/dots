@@ -32,6 +32,7 @@ dolphin
 dolphin-plugins
 easyeffects
 efibootmgr
+ex-vi-compat
 fastfetch
 fd
 ffmpegthumbs
@@ -188,7 +189,6 @@ tree
 ttf-cascadia-code
 usbutils
 uv
-vi
 vim
 viu
 vlc
