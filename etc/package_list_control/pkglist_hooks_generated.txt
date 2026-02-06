@@ -177,6 +177,7 @@ speech-dispatcher
 sshfs
 sshpass
 starship
+syncthing
 system-config-printer
 systemsettings
 tesseract
