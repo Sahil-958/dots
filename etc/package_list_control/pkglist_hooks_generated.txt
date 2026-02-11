@@ -46,6 +46,7 @@ fzf
 gimp
 git
 git-lfs
+github-cli
 gnome-sound-recorder
 grub
 grub-btrfs
