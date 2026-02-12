@@ -26,5 +26,18 @@
     }
   },
   "selectedAuthType": "oauth-personal",
-  "preferredEditor": "vscodium"
+  "preferredEditor": "vscodium",
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    },
+    "enablePermanentToolApproval": true
+  },
+  "general": {
+    "previewFeatures": true
+  },
+  "ui": {
+    "showMemoryUsage": true,
+    "showModelInfoInChat": true
+  }
 }
