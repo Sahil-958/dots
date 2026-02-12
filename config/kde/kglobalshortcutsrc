@@ -60,10 +60,13 @@ KrohnkiteFocusRight=Meta+Ctrl+L,none,Krohnkite: Focus Right
 KrohnkiteFocusUp=Meta+Ctrl+K,none,Krohnkite: Focus Up
 KrohnkiteGrowHeight=Meta+Shift+J,none,Krohnkite: Grow Height
 KrohnkiteIncrease=Meta+I,none,Krohnkite: Increase
+KrohnkiteLowerSurfaceCapacity=none,none,Krohnkite: Lower Surface Capacity
+KrohnkiteMeta=none,none,Krohnkite: Meta Key
 KrohnkiteMonocleLayout=Meta+M,none,Krohnkite: Monocle Layout
 KrohnkiteNextLayout=Meta+\\\\,none,Krohnkite: Next Layout
 KrohnkitePreviousLayout=Meta+|,none,Krohnkite: Previous Layout
 KrohnkiteQuarterLayout=none,none,Krohnkite: Quarter Layout
+KrohnkiteRaiseSurfaceCapacity=none,none,Krohnkite: Raise Surface Capacity
 KrohnkiteRotate=Meta+R,none,Krohnkite: Rotate
 KrohnkiteRotatePart=Meta+Alt+R,none,Krohnkite: Rotate Part
 KrohnkiteSetMaster=Meta+Ctrl+M,none,Krohnkite: Set master
@@ -79,8 +82,9 @@ KrohnkiteStackedLayout=none,none,Krohnkite: Stacked Layout
 KrohnkiteStairLayout=none,none,Krohnkite: Stair Layout
 KrohnkiteTileLayout=none,none,Krohnkite: Tile Layout
 KrohnkiteToggleFloat=Meta+F,none,Krohnkite: Toggle Float
-KrohnkiteTreeColumnLayout=none,none,Krohnkite: Tree Column Layout
+KrohnkiteTreeColumnLayout=none,none,Krohnkite: Three Column Layout
 KrohnkitegrowWidth=Meta+Shift+L,none,Krohnkite: Grow Width
+KrohnkitetoggleDock=none,none,Krohnkite: Toggle Dock
 Move Tablet to Next Output=none,none,Move the tablet to the next output
 MoveMouseToCenter=Meta+F6,Meta+F6,Move Mouse to Center
 MoveMouseToFocus=Meta+F5,Meta+F5,Move Mouse to Focus
@@ -242,6 +246,8 @@ previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
 
 [org.chromium.Chromium]
+33F38510CC2BEC494B9FCA987E9A64EE-open_popup=none,none,Open Popup
+33F38510CC2BEC494B9FCA987E9A64EE-toggle_capture_downloads=none,none,Toggle Capture Downloads
 B7B9BD083370546F11D9001567ACFC77-launch-element-picker=none,none,Enter element picker mode
 B7B9BD083370546F11D9001567ACFC77-launch-element-zapper=none,none,Enter element zapper mode
 B7B9BD083370546F11D9001567ACFC77-launch-logger=none,none,Open the logger
@@ -250,6 +256,18 @@ B7B9BD083370546F11D9001567ACFC77-relax-blocking-mode=none,none,Relax blocking mo
 B7B9BD083370546F11D9001567ACFC77-toggle-cosmetic-filtering=none,none,Toggle cosmetic filtering
 B7B9BD083370546F11D9001567ACFC77-toggle-javascript=none,none,Toggle JavaScript
 _k_friendly_name=org.chromium.Chromium
+
+[org.kde.konsole]
+33F38510CC2BEC494B9FCA987E9A64EE-open_popup=none,none,Open Popup
+33F38510CC2BEC494B9FCA987E9A64EE-toggle_capture_downloads=none,none,Toggle Capture Downloads
+B7B9BD083370546F11D9001567ACFC77-launch-element-picker=none,none,Enter element picker mode
+B7B9BD083370546F11D9001567ACFC77-launch-element-zapper=none,none,Enter element zapper mode
+B7B9BD083370546F11D9001567ACFC77-launch-logger=none,none,Open the logger
+B7B9BD083370546F11D9001567ACFC77-open-dashboard=none,none,Open the dashboard
+B7B9BD083370546F11D9001567ACFC77-relax-blocking-mode=none,none,Relax blocking mode
+B7B9BD083370546F11D9001567ACFC77-toggle-cosmetic-filtering=none,none,Toggle cosmetic filtering
+B7B9BD083370546F11D9001567ACFC77-toggle-javascript=none,none,Toggle JavaScript
+_k_friendly_name=Konsole
 
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness

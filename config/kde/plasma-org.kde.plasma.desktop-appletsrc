@@ -161,9 +161,6 @@ plugin=org.kde.plasma.networkmanagement
 [Containments][2][Applets][7][Applets][20][Configuration]
 PreloadWeight=100
 
-[Containments][2][Applets][7][Applets][20][Configuration][General]
-currentDetailsTab=details
-
 [Containments][2][Applets][7][Applets][21]
 immutability=1
 plugin=org.kde.plasma.nightcolorcontrol
@@ -173,7 +170,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][2][Applets][7][Applets][22][Configuration]
-PreloadWeight=35
+PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][22][Configuration][General]
 showPercentage=true
@@ -201,7 +198,7 @@ immutability=1
 plugin=org.kde.plasma.printmanager
 
 [Containments][2][Applets][7][Applets][26][Configuration]
-PreloadWeight=75
+PreloadWeight=90
 
 [Containments][2][Applets][7][Applets][28]
 immutability=1
@@ -215,7 +212,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][2][Applets][7][Applets][29][Configuration]
-PreloadWeight=20
+PreloadWeight=40
 
 [Containments][2][Applets][7][Applets][29][Configuration][ConfigDialog]
 DialogHeight=540
@@ -318,4 +315,4 @@ positions={"1366x768":[],"1920x1080":[]}
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=
+screenMapping=desktop:/bc9454b0eea74a14903bb3a839960641_synopsis_5002004924_20251230_101918.html,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/EXTERNAL AREA,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/external_extracted,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/ap,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/Copy of Synopsis.docx.pdf,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/fddb1568f08b4412879830b90585a7e0_synopsis_5002004924_20251230_104018.html,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/Price_Schedule.pdf,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/test,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/8be0f3eb7a5f4fcf99b1716a67ccc4a2_synopsis_5002004924_20251230_102256.html,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/OneDrive_2025-12-30.zip,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/priv_ten,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62

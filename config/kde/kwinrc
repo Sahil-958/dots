@@ -42,6 +42,7 @@ enableStairLayout=false
 limitTileWidthRatio=0.6
 monocleMaximize=false
 noTileBorder=true
+screenGapBetween=4
 screenGapBottom=18
 screenGapLeft=8
 screenGapRight=8
