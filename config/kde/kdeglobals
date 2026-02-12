@@ -132,11 +132,6 @@ ForegroundNormal=252,252,252
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
-[DirSelect Dialog]
-DirSelectDialog Size=999,714
-History Items[$e]=file:$HOME/Claude-Code-Everything-You-Need-to-Know,file:$HOME/Claude-Code-Everything-You-Need-to-Know,file:$HOME/AgenticAITech/document_analyzer,file:$HOME,file:$HOME,file:$HOME/fusionpact/AgenticAITech/document_analyzer,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/spano/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/build/client/,file:$HOME/creative-flow-reimagined-main/build/client,file:$HOME/creative-flow-reimagined-main/dist,file:$HOME/fusionpact/agent-api,file:$HOME/fusionpact/parneet,file:$HOME/nano,file:$HOME/agent,file:$HOME/browser-extension,file:$HOME/Downloads/uBlock0.chromium,file:$HOME/party_sahil,file:$HOME/party_sahil,file:$HOME/admk,file:$HOME/Documents/markdown/admk,file:$HOME/sunaina,file:///home,file:$HOME/repos/event-manager/event-manager-backend,file:$HOME/Downloads
-Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x8c\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
-
 [General]
 AccentColor=168,70,210
 ColorSchemeHash=21becf88b9b072f42b430c2041922a6c2bed0997
@@ -153,7 +148,7 @@ contrast=4
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
-Breadcrumb Navigation=false
+Breadcrumb Navigation=true
 Decoration position=2
 Show Full Path=false
 Show Inline Previews=true

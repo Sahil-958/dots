@@ -1,9 +1,11 @@
 [Libinput][1267][12541][ELAN0718:00 04F3:30FD Touchpad]
+ClickMethod=1
 DisableWhileTyping=true
 Enabled=true
 NaturalScroll=true
-PointerAcceleration=1.000
-PointerAccelerationProfile=1
+PointerAcceleration=0.400
+PointerAccelerationProfile=2
+TapToClick=true
 
 [Libinput][6392][3993][USB OPTICAL MOUSE ]
 PointerAcceleration=0.800
