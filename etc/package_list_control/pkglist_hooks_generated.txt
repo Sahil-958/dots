@@ -132,6 +132,7 @@ oxygen
 oxygen-sounds
 pacman-contrib
 pavucontrol
+pdfarranger
 plasma-activities-stats
 plasma-browser-integration
 plasma-desktop
