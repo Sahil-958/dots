@@ -55,6 +55,7 @@ gutenprint
 guvcview
 gvfs
 gwenview
+hashcat
 hdparm
 hyprland
 imagemagick
