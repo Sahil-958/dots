@@ -1,4 +1,5 @@
 7zip
+aircrack-ng
 amd-ucode
 android-tools
 archlinux-xdg-menu
