@@ -108,6 +108,7 @@ mediainfo
 mesa-utils
 milou
 mpv
+mumble
 ncdu
 neovim
 net-tools
