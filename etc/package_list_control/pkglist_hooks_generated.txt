@@ -4,6 +4,7 @@ amd-ucode
 android-tools
 archlinux-xdg-menu
 aria2
+arp-scan
 base
 base-devel
 bash-completion
