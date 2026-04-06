@@ -5,6 +5,9 @@ helium-browser-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
+ocrmypdf
+python-pdf2image
+python-unoserver
 rapidraw
 ungoogled-chromium-bin
 vscodium-bin
