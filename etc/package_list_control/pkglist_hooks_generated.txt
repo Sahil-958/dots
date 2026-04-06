@@ -154,7 +154,6 @@ plasma-workspace
 plasma-workspace-wallpapers
 plasma5support
 playerctl
-pngquant
 polkit-kde-agent
 postgresql
 postgresql-libs
@@ -163,16 +162,8 @@ powerdevil
 print-manager
 python-aiohttp
 python-black
-python-deprecation
-python-hatch-vcs
-python-importlib_resources
-python-pdfminer
 python-pip
-python-pydantic
 python-pyqt6
-python-reportlab
-python-rich
-python-tqdm
 qbittorrent
 qpdf
 qqc2-breeze-style
@@ -204,7 +195,6 @@ tigervnc
 tldr
 tree
 ttf-cascadia-code
-unpaper
 usbutils
 uv
 vim

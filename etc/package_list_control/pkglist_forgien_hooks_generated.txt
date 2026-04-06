@@ -5,6 +5,9 @@ helium-browser-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
+python-fpdf2
+python-uharfbuzz
+python-uharfbuzz-debug
 rapidraw
 ungoogled-chromium-bin
 vscodium-bin
