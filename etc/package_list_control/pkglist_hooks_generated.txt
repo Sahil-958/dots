@@ -25,6 +25,7 @@ cpio
 cudnn
 cups
 cups-pdf
+cython
 dbus-glib
 dialog
 docker
@@ -162,8 +163,16 @@ powerdevil
 print-manager
 python-aiohttp
 python-black
+python-build
+python-defusedxml
+python-fonttools
+python-installer
 python-pip
+python-pkgconfig
 python-pyqt6
+python-pytest
+python-scikit-build
+python-setuptools-scm
 qbittorrent
 qpdf
 qqc2-breeze-style
