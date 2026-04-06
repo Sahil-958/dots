@@ -162,8 +162,10 @@ powerdevil
 print-manager
 python-aiohttp
 python-black
+python-opencv
 python-pip
 python-pyqt6
+python-weasyprint
 qbittorrent
 qpdf
 qqc2-breeze-style
