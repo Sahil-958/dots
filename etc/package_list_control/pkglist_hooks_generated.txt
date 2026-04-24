@@ -9,6 +9,7 @@ base
 base-devel
 bash-completion
 bc
+bettercap
 bind
 bluedevil
 blueman
