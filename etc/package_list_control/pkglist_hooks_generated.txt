@@ -36,6 +36,7 @@ dolphin
 dolphin-plugins
 easyeffects
 efibootmgr
+epiphany
 ex-vi-compat
 fastfetch
 fd
