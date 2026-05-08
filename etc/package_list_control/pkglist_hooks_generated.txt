@@ -134,6 +134,7 @@ nvtop
 obs-studio
 ocean-sound-theme
 openbsd-netcat
+opencode
 openresolv
 os-prober
 otf-comicshanns-nerd
