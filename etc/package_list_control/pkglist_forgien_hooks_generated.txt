@@ -7,6 +7,8 @@ materialgram-bin
 rapidraw
 stirling-pdf-bin
 ungoogled-chromium-bin
+ventoy-bin
+ventoy-bin-debug
 vscodium-bin
 yay
 yay-debug
