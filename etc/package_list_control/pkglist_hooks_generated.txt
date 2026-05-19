@@ -35,6 +35,7 @@ docker-buildx
 docker-compose
 dolphin
 dolphin-plugins
+dosfstools
 easyeffects
 efibootmgr
 epiphany
