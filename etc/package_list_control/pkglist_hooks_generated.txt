@@ -24,8 +24,6 @@ cmake
 colord-kde
 composer
 cpio
-cuda
-cudnn
 cups
 cups-pdf
 dbus-glib
