@@ -1,9 +1,11 @@
+accounts-qml-module-debug
 acpilight
 docker-rootless-extras
 helium-browser-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
+qt5-location-debug
 rapidraw
 stirling-pdf-bin
 ungoogled-chromium-bin
