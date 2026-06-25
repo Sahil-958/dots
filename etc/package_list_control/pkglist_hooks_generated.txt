@@ -132,7 +132,6 @@ nvm
 nvme-cli
 nvtop
 obs-studio
-obsidian
 ocean-sound-theme
 openbsd-netcat
 openresolv
