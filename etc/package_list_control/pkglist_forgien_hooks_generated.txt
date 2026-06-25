@@ -3,6 +3,7 @@ docker-rootless-extras
 helium-browser-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
+logseq-desktop-bin
 materialgram-bin
 rapidraw
 stirling-pdf-bin
