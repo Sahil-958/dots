@@ -52,6 +52,7 @@ git
 git-lfs
 github-cli
 gnome-sound-recorder
+gptfdisk
 grub
 grub-btrfs
 gunicorn
