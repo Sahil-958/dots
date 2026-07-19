@@ -2,6 +2,8 @@ acpilight
 docker-rootless-extras
 helium-browser-bin
 kwin-scripts-krohnkite-git
+libjodycode
+libjodycode-debug
 librewolf-bin
 logseq-desktop-bin
 materialgram-bin
