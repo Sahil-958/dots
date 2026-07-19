@@ -2,6 +2,7 @@ acpilight
 czkawka-gui-bin
 docker-rootless-extras
 helium-browser-bin
+krokiet-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 logseq-desktop-bin

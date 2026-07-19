@@ -47,7 +47,6 @@ flatpak
 flatpak-kcm
 foliate
 fzf
-gendesk
 gimp
 git
 git-lfs
