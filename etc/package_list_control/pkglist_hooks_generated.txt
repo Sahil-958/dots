@@ -169,8 +169,11 @@ powerdevil
 print-manager
 python-aiohttp
 python-black
+python-evdev
 python-pip
 python-pyqt6
+python-requests
+python-xlib
 qbittorrent
 qpdf
 qqc2-breeze-style
