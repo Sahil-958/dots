@@ -7,11 +7,10 @@ kwin-scripts-krohnkite-git
 librewolf-bin
 logseq-desktop-bin
 materialgram-bin
-python-pynput
-python-pywhispercpp-cpu
 rapidraw
 stirling-pdf-bin
 ungoogled-chromium-bin
 ventoy-bin
+vocalinux
 vscodium-bin
 yay
