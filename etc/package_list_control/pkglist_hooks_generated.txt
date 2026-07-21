@@ -52,7 +52,6 @@ git
 git-lfs
 github-cli
 gnome-sound-recorder
-gobject-introspection
 gptfdisk
 grub
 grub-btrfs
@@ -66,7 +65,6 @@ hcxtools
 hdparm
 httrack
 hyprland
-ibus
 imagemagick
 img2pdf
 imlib2
@@ -172,9 +170,6 @@ print-manager
 python-aiohttp
 python-black
 python-pip
-python-psutil
-python-pyaudio
-python-pydub
 python-pyqt6
 qbittorrent
 qpdf
@@ -241,8 +236,6 @@ wgcf
 wireguard-tools
 wireplumber
 wl-clipboard
-wtype
-xclip
 xdg-desktop-portal-kde
 xf86-video-amdgpu
 xorg-xprop
