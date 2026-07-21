@@ -224,6 +224,7 @@ tigervnc
 tldr
 tree
 ttf-cascadia-code
+typst
 usbutils
 uv
 vim
