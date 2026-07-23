@@ -1,4 +1,5 @@
 acpilight
+android-studio
 czkawka-gui-bin
 docker-rootless-extras
 helium-browser-bin
