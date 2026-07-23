@@ -11,6 +11,5 @@ rapidraw
 stirling-pdf-bin
 ungoogled-chromium-bin
 ventoy-bin
-vocalinux
 vscodium-bin
 yay
