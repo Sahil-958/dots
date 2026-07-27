@@ -170,6 +170,7 @@ print-manager
 python-aiohttp
 python-black
 python-pip
+python-playwright
 python-pyqt6
 qbittorrent
 qpdf
