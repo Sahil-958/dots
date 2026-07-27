@@ -191,6 +191,7 @@ shotcut
 smartmontools
 snapper
 snapshot
+sox
 spectacle
 speech-dispatcher
 sshfs
