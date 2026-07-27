@@ -19,6 +19,7 @@ breeze-gtk
 breeze-icons
 brightnessctl
 btop
+bun
 catdoc
 cmake
 colord-kde
@@ -71,6 +72,7 @@ imlib2
 inetutils
 iotop
 jq
+just
 kactivitymanagerd
 kcolorchooser
 kconfig5
