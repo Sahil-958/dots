@@ -13,6 +13,9 @@ LidAction=2
 BatteryCriticalLevel=10
 BatteryLowLevel=20
 
+[Inhibitions]
+BlockedInhibitions=librewolf:Playing video
+
 [LowBattery][Display]
 DisplayBrightness=1
 

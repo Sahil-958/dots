@@ -2,21 +2,41 @@
     {
         "data": [
             {
+                "abmLevel": 0,
                 "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": false,
+                "autoBrightnessCurve": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
                 "autoRotation": "InTabletMode",
+                "automaticBrightness": false,
                 "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "eDP-1",
+                "customModes": [
+                ],
                 "detectedDdcCi": false,
                 "edidHash": "aeb0bab93f7456c4de962c09685a1b76",
                 "edidIdentifier": "CMN 5409 0 10 2020 0",
                 "edrPolicy": "always",
+                "hdrColorProfileSource": "EDID",
+                "hdrIccProfilePath": "",
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "maxBitsPerColor": 0,
                 "mode": {
+                    "flags": 1,
                     "height": 1080,
                     "refreshRate": 144003,
                     "width": 1920
@@ -26,6 +46,7 @@
                 "scale": 1,
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
+                "sharpness": 0,
                 "transform": "Normal",
                 "uuid": "d59be874-3512-46a0-9a16-9314e0a39a2d",
                 "vrrPolicy": "Automatic",
@@ -43,6 +64,7 @@
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "mode": {
+                    "flags": 0,
                     "height": 1080,
                     "refreshRate": 60000,
                     "width": 1920
@@ -67,6 +89,7 @@
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "mode": {
+                    "flags": 0,
                     "height": 1080,
                     "refreshRate": 60008,
                     "width": 1920
@@ -92,6 +115,7 @@
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "mode": {
+                    "flags": 0,
                     "height": 1080,
                     "refreshRate": 60160,
                     "width": 1920
@@ -106,15 +130,38 @@
                 "wideColorGamut": false
             },
             {
+                "abmLevel": 0,
+                "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": true,
+                "autoBrightnessCurve": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
                 "autoRotation": "InTabletMode",
+                "automaticBrightness": false,
                 "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "Virtual-virtual-xdp-kde-librewolf",
+                "customModes": [
+                ],
+                "detectedDdcCi": false,
+                "edrPolicy": "always",
+                "hdrColorProfileSource": "EDID",
+                "hdrIccProfilePath": "",
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "mode": {
+                    "flags": 0,
                     "height": 1080,
                     "refreshRate": 60000,
                     "width": 1920
@@ -124,7 +171,9 @@
                 "scale": 1,
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
+                "sharpness": 0,
                 "transform": "Normal",
+                "uuid": "51c871c1-e337-40c3-8d27-1f1cb0aaf6ec",
                 "vrrPolicy": "Automatic",
                 "wideColorGamut": false
             },
@@ -140,6 +189,7 @@
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "mode": {
+                    "flags": 0,
                     "height": 1800,
                     "refreshRate": 90001,
                     "width": 2880
@@ -168,6 +218,7 @@
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "mode": {
+                    "flags": 0,
                     "height": 768,
                     "refreshRate": 59790,
                     "width": 1366
@@ -197,7 +248,7 @@
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0,
+                        "priority": 1,
                         "replicationSource": ""
                     }
                 ]
@@ -227,7 +278,7 @@
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0,
+                        "priority": 1,
                         "replicationSource": ""
                     }
                 ]

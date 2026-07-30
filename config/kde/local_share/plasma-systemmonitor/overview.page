@@ -3,10 +3,18 @@ Title=Networks
 chartFace=org.kde.ksysguard.textonly
 
 [Face-101427258480848][SensorColors]
+network/eno1/download=135,81,128
+network/eno1/ipv4address=81,135,88
+network/eno1/ipv6address=81,101,135
+network/eno1/upload=135,115,81
 network/wlo1/download=81,77,141
 network/wlo1/ipv4address=137,141,77
 network/wlo1/ipv6address=77,141,113
 network/wlo1/upload=141,77,105
+network/wlp5s0f4u1/download=98,84,137
+network/wlp5s0f4u1/ipv4address=84,137,85
+network/wlp5s0f4u1/ipv6address=84,137,125
+network/wlp5s0f4u1/upload=137,84,96
 
 [Face-101427258480848][Sensors]
 highPrioritySensorIds=["network/(?!all).*/download","network/(?!all).*/upload","network/(?!all).*/ipv4address","network/(?!all).*/ipv6address"]
@@ -62,6 +70,7 @@ Title=Disks
 chartFace=org.kde.ksysguard.horizontalbars
 
 [Face-106123488899456][SensorColors]
+disk/0a823a6a823a5b01/used=137,99,85
 disk/2f63a845-ac97-4bd4-8660-4c8761a25551/used=81,77,141
 disk/84917298-875a-4e25-9d8a-1648be1813e3/used=137,141,77
 disk/d1e9d226-fa73-4886-b814-6932257af717/used=92,144,120

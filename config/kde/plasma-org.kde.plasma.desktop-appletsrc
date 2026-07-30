@@ -19,7 +19,6 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][18][Configuration]
-PreloadWeight=100
 popupHeight=451
 popupWidth=810
 
@@ -40,7 +39,6 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
-PreloadWeight=100
 popupHeight=540
 popupWidth=688
 
@@ -101,9 +99,6 @@ wallpaperplugin=org.kde.image
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
-[Containments][2][Applets][7][Applets][10][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][10][Configuration][General]
 allDevices=true
 removableDevices=false
@@ -116,22 +111,13 @@ plugin=org.kde.plasma.manage-inputmethod
 immutability=1
 plugin=org.kde.plasma.notifications
 
-[Containments][2][Applets][7][Applets][12][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][13]
 immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
-[Containments][2][Applets][7][Applets][13][Configuration]
-PreloadWeight=60
-
 [Containments][2][Applets][7][Applets][14]
 immutability=1
 plugin=org.kde.kscreen
-
-[Containments][2][Applets][7][Applets][14][Configuration]
-PreloadWeight=70
 
 [Containments][2][Applets][7][Applets][15]
 immutability=1
@@ -141,9 +127,6 @@ plugin=org.kde.plasma.keyboardlayout
 immutability=1
 plugin=org.kde.plasma.volume
 
-[Containments][2][Applets][7][Applets][16][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][16][Configuration][General]
 migrated=true
 
@@ -151,15 +134,9 @@ migrated=true
 immutability=1
 plugin=org.kde.plasma.vault
 
-[Containments][2][Applets][7][Applets][17][Configuration]
-PreloadWeight=55
-
 [Containments][2][Applets][7][Applets][20]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
-
-[Containments][2][Applets][7][Applets][20][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][21]
 immutability=1
@@ -169,9 +146,6 @@ plugin=org.kde.plasma.nightcolorcontrol
 immutability=1
 plugin=org.kde.plasma.battery
 
-[Containments][2][Applets][7][Applets][22][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][22][Configuration][General]
 showPercentage=true
 
@@ -179,15 +153,9 @@ showPercentage=true
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
-[Containments][2][Applets][7][Applets][23][Configuration]
-PreloadWeight=0
-
 [Containments][2][Applets][7][Applets][24]
 immutability=1
 plugin=org.kde.kdeconnect
-
-[Containments][2][Applets][7][Applets][24][Configuration]
-PreloadWeight=60
 
 [Containments][2][Applets][7][Applets][25]
 immutability=1
@@ -197,22 +165,13 @@ plugin=org.kde.plasma.cameraindicator
 immutability=1
 plugin=org.kde.plasma.printmanager
 
-[Containments][2][Applets][7][Applets][26][Configuration]
-PreloadWeight=90
-
 [Containments][2][Applets][7][Applets][28]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
-[Containments][2][Applets][7][Applets][28][Configuration]
-PreloadWeight=100
-
 [Containments][2][Applets][7][Applets][29]
 immutability=1
 plugin=org.kde.plasma.brightness
-
-[Containments][2][Applets][7][Applets][29][Configuration]
-PreloadWeight=40
 
 [Containments][2][Applets][7][Applets][29][Configuration][ConfigDialog]
 DialogHeight=540
@@ -222,29 +181,17 @@ DialogWidth=720
 immutability=1
 plugin=org.kde.plasma.diskquota
 
-[Containments][2][Applets][7][Applets][68][Configuration]
-PreloadWeight=55
-
 [Containments][2][Applets][7][Applets][69]
 immutability=1
 plugin=org.kde.plasma.weather
-
-[Containments][2][Applets][7][Applets][69][Configuration]
-PreloadWeight=55
 
 [Containments][2][Applets][7][Applets][9]
 immutability=1
 plugin=org.kde.plasma.clipboard
 
-[Containments][2][Applets][7][Applets][9][Configuration]
-PreloadWeight=75
-
 [Containments][2][Applets][7][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
-
-[Containments][2][Applets][7][Configuration]
-PreloadWeight=100
 
 [Containments][2][Applets][7][General]
 extraItems=org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.kdeconnect,org.kde.plasma.cameraindicator,org.kde.plasma.brightness,org.kde.plasma.printmanager,org.kde.plasma.diskquota,org.kde.plasma.weather
@@ -263,7 +210,6 @@ DialogWidth=720
 groupingAppIdBlacklist=abdownloadmanager.desktop
 groupingLauncherUrlBlacklist=applications:abdownloadmanager.desktop
 launchers=applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,preferred://browser
-maxStripes=2
 showOnlyCurrentDesktop=false
 showOnlyCurrentScreen=true
 
@@ -292,7 +238,10 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][74][General]
-positions={"1800x1125":[],"1920x1080":[]}
+changedPositions={}
+lastResolution=1920x1080
+positions={"1920x1080":["1","17","desktop:/WhatsApp Chat with +91 91190 30704.zip","0","5","desktop:/WhatsApp Unknown 2026-07-27 at 10.35.22 AM.zip","0","3","desktop:/chat","0","6","desktop:/results_duplicates_compact.json","0","8","desktop:/wtsp","0","4","desktop:/301 BL.pdf","0","1","desktop:/results_duplicates.txt","0","10","desktop:/301 BL.pdf.crdownload","0","1","desktop:/offer letter sahil 04-01-2026 @ (1).pdf","0","0","desktop:/results_duplicates_pretty.json","0","9","desktop:/Combined_Notificatin_SSC_T_-68.pdf","0","2","desktop:/MPOWER+ NECKBAND CATLOUGE.pdf","0","7"]}
+sortMode=-1
 
 [Containments][74][Wallpaper][org.kde.image][General]
 Image=/usr/share/wallpapers/Next/
@@ -315,4 +264,4 @@ positions={"1366x768":[],"1920x1080":[]}
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/bc9454b0eea74a14903bb3a839960641_synopsis_5002004924_20251230_101918.html,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/EXTERNAL AREA,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/external_extracted,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/ap,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/Copy of Synopsis.docx.pdf,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/fddb1568f08b4412879830b90585a7e0_synopsis_5002004924_20251230_104018.html,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/Price_Schedule.pdf,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/test,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/8be0f3eb7a5f4fcf99b1716a67ccc4a2_synopsis_5002004924_20251230_102256.html,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/OneDrive_2025-12-30.zip,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62,desktop:/priv_ten,0,dabcb6b6-e2f3-4a22-a479-6bbc837bee62
+screenMapping=

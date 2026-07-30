@@ -17,6 +17,8 @@ Title=Networks
 chartFace=org.kde.ksysguard.textonly
 
 [Face-94410238879984][SensorColors]
+network/eno1/ipv4address=135,81,87
+network/eno1/ipv6address=81,135,129
 network/wlo1/ipv4address=61,174,233
 network/wlo1/ipv6address=233,120,61
 network/wlp0s20f3/ipv4address=132,65,144
@@ -82,6 +84,8 @@ Title=Network Rates
 chartFace=org.kde.ksysguard.textonly
 
 [Face-94410280144624][SensorColors]
+network/eno1/download=135,81,87
+network/eno1/upload=81,135,129
 network/wlo1/download=61,174,233
 network/wlo1/upload=233,120,61
 network/wlp0s20f3/download=132,65,144
