@@ -49,6 +49,7 @@ firewalld
 flatpak
 flatpak-kcm
 foliate
+fvm
 fzf
 gimp
 git
