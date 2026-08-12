@@ -1,6 +1,5 @@
 acpilight
 android-studio
-czkawka-gui-bin
 docker-rootless-extras
 helium-browser-bin
 krokiet-bin
@@ -8,8 +7,6 @@ kwin-scripts-krohnkite-git
 librewolf-bin
 logseq-desktop-bin
 materialgram-bin
-rapidraw
-stirling-pdf-bin
 ungoogled-chromium-bin
 ventoy-bin
 vscodium-bin
