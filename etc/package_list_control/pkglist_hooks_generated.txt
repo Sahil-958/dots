@@ -167,13 +167,10 @@ plasma-workspace-wallpapers
 plasma5support
 playerctl
 polkit-kde-agent
-postgresql
-postgresql-libs
 power-profiles-daemon
 powerdevil
 print-manager
 python-aiohttp
-python-black
 python-pip
 python-playwright
 python-pyqt6
@@ -187,8 +184,6 @@ rainfrog
 rclone
 reflector
 ripgrep
-ruff
-shotcut
 smartmontools
 snapper
 snapshot
@@ -227,7 +222,6 @@ texlive-publishers
 texlive-xetex
 tgpt
 thunderbird
-tigervnc
 tldr
 tree
 ttf-cascadia-code
