@@ -74,6 +74,7 @@ img2pdf
 imlib2
 inetutils
 iotop
+jdk21-openjdk
 jq
 just
 kactivitymanagerd
