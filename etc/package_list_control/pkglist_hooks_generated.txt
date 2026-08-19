@@ -119,8 +119,6 @@ man-db
 mediainfo
 mesa-utils
 milou
-mitmproxy
-mitmproxy2swagger
 mpv
 mumble
 mumble-server
