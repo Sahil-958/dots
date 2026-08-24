@@ -49,6 +49,7 @@ firewalld
 flatpak
 flatpak-kcm
 foliate
+foot
 fvm
 fzf
 gimp
@@ -89,6 +90,7 @@ keepassxc
 kgamma
 kglobalacceld
 kinfocenter
+kitty
 kmenuedit
 konsole
 kpipewire
@@ -232,6 +234,7 @@ viu
 vlc
 vlc-plugin-ffmpeg
 vulkan-radeon
+wezterm
 wgcf
 wireguard-tools
 wireplumber
