@@ -52,6 +52,7 @@ foliate
 foot
 fvm
 fzf
+ghostty
 gimp
 git
 git-lfs
