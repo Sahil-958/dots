@@ -49,10 +49,8 @@ firewalld
 flatpak
 flatpak-kcm
 foliate
-foot
 fvm
 fzf
-ghostty
 gimp
 git
 git-lfs
@@ -235,7 +233,6 @@ viu
 vlc
 vlc-plugin-ffmpeg
 vulkan-radeon
-wezterm
 wgcf
 wireguard-tools
 wireplumber
