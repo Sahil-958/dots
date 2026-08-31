@@ -55,6 +55,7 @@ gimp
 git
 git-lfs
 github-cli
+glow
 gnome-sound-recorder
 gptfdisk
 grub
