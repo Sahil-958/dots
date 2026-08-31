@@ -15,6 +15,7 @@ bettercap-caplets
 bind
 bluedevil
 blueman
+blueprint-compiler
 breeze
 breeze-gtk
 breeze-icons
@@ -109,6 +110,7 @@ kwin
 kwrited
 layer-shell-qt
 lib32-glibc
+libgee
 libkscreen
 libksysguard
 libplasma
@@ -121,6 +123,7 @@ lsof
 man-db
 mediainfo
 mesa-utils
+meson
 milou
 mpv
 ncdu
@@ -230,6 +233,7 @@ ttf-cascadia-code
 typst
 usbutils
 uv
+vala
 vim
 viu
 vlc
