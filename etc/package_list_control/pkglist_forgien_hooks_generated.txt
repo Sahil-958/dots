@@ -6,8 +6,6 @@ krokiet-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 logseq-desktop-bin
-markflowy-bin
-markflowy-bin-debug
 materialgram-bin
 ungoogled-chromium-bin
 ventoy-bin
