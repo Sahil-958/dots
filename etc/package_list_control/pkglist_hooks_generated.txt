@@ -2,6 +2,7 @@
 aircrack-ng
 amd-ucode
 android-tools
+apostrophe
 archlinux-xdg-menu
 aria2
 arp-scan
