@@ -1,7 +1,6 @@
 acpilight
 android-studio
 docker-rootless-extras
-folio
 helium-browser-bin
 krokiet-bin
 kwin-scripts-krohnkite-git
