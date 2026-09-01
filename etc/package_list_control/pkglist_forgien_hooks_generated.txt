@@ -1,6 +1,5 @@
 acpilight
 android-studio
-helium-browser-bin
 krokiet-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
