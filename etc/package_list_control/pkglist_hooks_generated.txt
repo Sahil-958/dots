@@ -32,9 +32,6 @@ cups
 cups-pdf
 dbus-glib
 dialog
-docker
-docker-buildx
-docker-compose
 dolphin
 dolphin-plugins
 easyeffects
