@@ -4,7 +4,6 @@ helium-browser-bin
 krokiet-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
-logseq-desktop-bin
 materialgram-bin
 ungoogled-chromium-bin
 ventoy-bin
