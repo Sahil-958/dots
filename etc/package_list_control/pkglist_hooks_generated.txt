@@ -182,6 +182,10 @@ rainfrog
 rclone
 reflector
 ripgrep
+ruby
+ruby-addressable
+ruby-getoptlong
+ruby-resolv-replace
 smartmontools
 snapper
 snapshot
