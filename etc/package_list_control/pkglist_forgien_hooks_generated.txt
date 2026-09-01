@@ -7,5 +7,4 @@ materialgram-bin
 ungoogled-chromium-bin
 ventoy-bin
 vscodium-bin
-whatweb
 yay
