@@ -9,6 +9,7 @@ arp-scan
 base
 base-devel
 bash-completion
+bat
 bc
 bettercap
 bettercap-caplets
@@ -38,6 +39,7 @@ easyeffects
 efibootmgr
 epiphany
 ex-vi-compat
+eza
 fastfetch
 fd
 ffmpegthumbs
@@ -246,3 +248,4 @@ xorg-xprop
 xorg-xrandr
 yad
 zip
+zoxide
