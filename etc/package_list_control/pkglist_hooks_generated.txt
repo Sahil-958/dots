@@ -51,6 +51,7 @@ flatpak-kcm
 foliate
 fuse-overlayfs
 fvm
+fwupd
 fzf
 gimp
 git
