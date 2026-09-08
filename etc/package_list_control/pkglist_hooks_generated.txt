@@ -241,6 +241,7 @@ vlc-plugin-ffmpeg
 vulkan-radeon
 wgcf
 wireguard-tools
+wireless-regdb
 wireplumber
 wl-clipboard
 wp-cli
