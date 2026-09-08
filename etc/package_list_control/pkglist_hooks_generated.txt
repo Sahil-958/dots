@@ -47,6 +47,7 @@ firewalld
 flatpak
 flatpak-kcm
 foliate
+fuse-overlayfs
 fvm
 fzf
 gimp
