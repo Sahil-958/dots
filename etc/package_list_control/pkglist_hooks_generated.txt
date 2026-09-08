@@ -164,6 +164,8 @@ plasma-workspace
 plasma-workspace-wallpapers
 plasma5support
 playerctl
+podman
+podman-compose
 polkit-kde-agent
 power-profiles-daemon
 powerdevil
