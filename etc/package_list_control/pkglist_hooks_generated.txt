@@ -167,6 +167,7 @@ plasma5support
 playerctl
 podman
 podman-compose
+podman-docker
 polkit-kde-agent
 power-profiles-daemon
 powerdevil
