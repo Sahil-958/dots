@@ -3,6 +3,7 @@ aircrack-ng
 amd-ucode
 android-tools
 apostrophe
+arch-audit
 archlinux-xdg-menu
 aria2
 arp-scan
@@ -131,6 +132,7 @@ net-tools
 network-manager-applet
 networkmanager
 nmap
+noto-fonts-cjk
 noto-fonts-emoji
 nss-mdns
 ntfs-3g
@@ -229,6 +231,7 @@ texlive-xetex
 tgpt
 thunderbird
 tldr
+trash-cli
 tree
 ttf-cascadia-code
 typst
