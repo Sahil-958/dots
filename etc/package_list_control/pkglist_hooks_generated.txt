@@ -249,3 +249,4 @@ xorg-xrandr
 yad
 zip
 zoxide
+zram-generator
