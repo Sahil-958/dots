@@ -147,7 +147,6 @@ nvtop
 obs-studio
 ocean-sound-theme
 openbsd-netcat
-openresolv
 os-prober
 otf-comicshanns-nerd
 oxygen
@@ -203,6 +202,7 @@ sshpass
 starship
 syncthing
 system-config-printer
+systemd-resolvconf
 systemsettings
 tesseract
 tesseract-data-eng
