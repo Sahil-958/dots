@@ -31,6 +31,7 @@ cpio
 cuda
 cudnn
 cups
+cups-browsed
 cups-pdf
 dbus-glib
 dialog
