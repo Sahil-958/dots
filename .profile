@@ -37,3 +37,7 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     ;;
   esac
 fi
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/sawhill/.local/bin:$PATH"

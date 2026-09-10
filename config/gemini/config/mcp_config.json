@@ -1,0 +1,52 @@
+{
+  "mcpServers": {
+    "hostinger-hosting": {
+      "command": "npx",
+      "args": [
+        "--package=hostinger-api-mcp@latest",
+        "hostinger-hosting-mcp"
+      ]
+    },
+    "hostinger-domains": {
+      "command": "npx",
+      "args": [
+        "--package=hostinger-api-mcp@latest",
+        "hostinger-domains-mcp"
+      ]
+    },
+    "hostinger-dns": {
+      "command": "npx",
+      "args": [
+        "--package=hostinger-api-mcp@latest",
+        "hostinger-dns-mcp"
+      ]
+    },
+    "hostinger-billing": {
+      "command": "npx",
+      "args": [
+        "--package=hostinger-api-mcp@latest",
+        "hostinger-billing-mcp"
+      ]
+    },
+    "hostinger-reach": {
+      "command": "npx",
+      "args": [
+        "--package=hostinger-api-mcp@latest",
+        "hostinger-reach-mcp"
+      ]
+    },
+    "hostinger-vps": {
+      "command": "npx",
+      "args": [
+        "--package=hostinger-api-mcp@latest",
+        "hostinger-vps-mcp"
+      ]
+    },
+    "grounded-docs": {
+      "serverUrl": "https://docs.sahil.dedyn.io/mcp"
+    },
+    "omnifeed": {
+      "serverUrl": "http://localhost:8081/mcp"
+    }
+  }
+}

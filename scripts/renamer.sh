@@ -2,9 +2,8 @@
 
 # Removed Azure resources: 
 # The Microsoft Vision API key and endpoint have been removed. 
-# Please replace the following variables with your own:
-MICROSOFT_VISION_API_KEY='YOUR_MICROSOFT_VISION_API_KEY'
-MICROSOFT_VISION_API_ENDPOINT='https://basher.cognitiveservices.azure.com'
+MICROSOFT_VISION_API_KEY="${MICROSOFT_VISION_API_KEY:-}"
+MICROSOFT_VISION_API_ENDPOINT="${MICROSOFT_VISION_API_ENDPOINT:-https://basher.cognitiveservices.azure.com}"
 
 # Maximum number of parallel processes
 MAX_PARALLEL_JOBS=3

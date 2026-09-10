@@ -19,7 +19,7 @@
                            ;   - true: Convert CRLF to LF on commit and vice versa
                            ;   - false: No line ending conversion (Default: input)
     excludesfile = ~/.gitignore    ; Path to global gitignore file (Default: none)
-    editor = vim           ; Default text editor for Git (Default: none)
+	editor = nvim
 
 [alias]
     ; Custom Git aliases for commands
@@ -39,6 +39,7 @@
 [diff]
     ; Configuration for how Git displays differences
     tool = vimdiff          ; Diff tool to be used 
+	colorMoved = default
                              ;   - vimdiff: Vim's diff mode
                              ;   - meld: Visual diff and merge tool
                              ;   - vscode: Visual Studio Code's built-in diff tool (Default: none)
@@ -46,12 +47,14 @@
 [merge]
     ; Configuration for handling merges
     tool = vimdiff          ; Merge tool to be used 
+	conflictstyle = zdiff3
                              ;   - vimdiff: Vim's diff mode
                              ;   - meld: Visual diff and merge tool
                              ;   - vscode: Visual Studio Code's built-in diff tool (Default: none)
 [push]
     ; Configuration for push behavior
     default = simple        ; Pushes the current branch to its upstream branch
+	autoSetupRemote = true
                              ;   - simple: Pushes the current branch to the corresponding remote branch
                              ;   - matching: Pushes all local branches to corresponding remote branches (Default: matching)
 
@@ -77,3 +80,16 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/sawhill/.local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/sawhill/.local/bin/gh auth git-credential
+[rerere]
+	enabled = true
+	autoupdate = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate

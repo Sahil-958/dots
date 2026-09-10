@@ -11,6 +11,11 @@ Name=Profile 1
 Parent=FALLBACK/
 TerminalMargin=11
 
+[Interaction Options]
+TrimLeadingSpacesInSelectedText=true
+TrimTrailingSpacesInSelectedText=true
+WordCharacters=
+
 [Scrolling]
 HistorySize=2000
 ScrollBarPosition=2

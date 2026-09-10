@@ -1,5 +1,15 @@
+# Antigravity CLI Runtime & Sensitive Data
+antigravity-cli/
+
+# Secrets & Environment
+.env
+*.env
+*.key
+*.pem
+
+# Legacy Gemini CLI (in case of restore)
 google_accounts.json
-history
+history/
 installation_id
 oauth_creds.json
-tmp
+tmp/

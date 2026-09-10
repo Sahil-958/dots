@@ -1,0 +1,11 @@
+{
+  "id":  "2f1e15f0-3718-42f7-9cc3-3b30a8328820",
+  "name":  "/home/sawhill",
+  "projectResources":  {
+    "resources":  [
+      {
+        "folderUri":  "file:///home/sawhill"
+      }
+    ]
+  }
+}

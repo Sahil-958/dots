@@ -1,0 +1,9 @@
+{
+  "hooks": {
+    "PreInvocation": [
+      {
+        "command": "/home/sawhill/.gemini/bin/shake-prune --hook"
+      }
+    ]
+  }
+}

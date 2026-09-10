@@ -1,5 +1,32 @@
-**.env
+# Environment & Secrets
+.env
+*.env
+.env.*
+*.pem
+*.key
+secrets.sh
 
+# Backups & Temp Files
+*.backup
+*.bak
+*~
+*.swp
+*.swo
+
+# KDE Connect Keys & Paired Devices
+config/kde/kdeconnect/
+
+# Aria2 Runtime Data & Logs
+config/aria2/session.dat
+config/aria2/aria2.log
+
+# Legacy Keys
+config/legacy/ags/keys.js
+
+# Antigravity CLI Runtime & State
+config/gemini/antigravity-cli/
+
+# Generated cache & lock files
 **lazy-lock.json
 **/gtk-3.0/colors.css
 **/gtk-4.0/colors.css
@@ -11,4 +38,3 @@
 **/glava/radial.glsl
 **/glava/wave.glsl
 **/konsole/matugen.colorscheme
-

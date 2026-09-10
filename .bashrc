@@ -9,10 +9,15 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 # neovim with custom lazyvim config alias
 alias lvim='XDG_CONFIG_HOME=$HOME/lvim/ nvim'
+# Use Kitty's ssh kitten when running inside Kitty
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
-#To avoid duplicate commands in History
+# History Configuration
+shopt -s histappend
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
+export HISTFILESIZE=50000
+PROMPT_COMMAND="history -a; ${PROMPT_COMMAND:-}"
 #When resizing a terminal emulator, Bash may not receive the resize signal. This will cause typed text to not wrap correctly and overlap the prompt. The checkwinsize shell option checks the window size after each command and, if necessary, updates the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
@@ -164,3 +169,55 @@ export PATH="$HOME/dots/scripts:$PATH"
 export PATH="/home/sawhill/.local/bin:$PATH"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export WINAPPS_SRC_DIR="$HOME/.local/bin/winapps-src"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/sawhill/google-cloud-sdk/path.bash.inc' ]; then . '/home/sawhill/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/sawhill/google-cloud-sdk/completion.bash.inc' ]; then . '/home/sawhill/google-cloud-sdk/completion.bash.inc'; fi
+
+# Load private environment variables if present
+if [ -f "$HOME/.env" ]; then
+    source "$HOME/.env"
+elif [ -f "$HOME/dots/.env" ]; then
+    source "$HOME/dots/.env"
+fi
+
+# Android and Flutter Env Vars
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator
+export PATH=$PATH:$HOME/fvm/bin:$HOME/fvm/default/bin
+
+export PATH=/home/sawhill/bin:$PATH
+
+[[ -e "/home/sawhill/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/sawhill/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh"
+
+# Sensible Application & Environment Defaults
+export EDITOR="nvim"
+export VISUAL="nvim"
+export TERMINAL="kitty"
+export BROWSER="librewolf"
+
+# CLI Productivity Aliases (eza, bat, zoxide)
+if command -v eza >/dev/null 2>&1; then
+    alias ls="eza --icons --group-directories-first"
+    alias ll="eza -la --icons --group-directories-first"
+    alias tree="eza --tree --icons"
+fi
+
+if command -v bat >/dev/null 2>&1; then
+    alias cat="bat --paging=never"
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
+if command -v zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init bash)"
+fi
+
+# ArchWiki: Robust Persistent Bash History
+export HISTSIZE=50000
+export HISTFILESIZE=100000
+export HISTCONTROL=ignoreboth:erasedups
+export HISTTIMEFORMAT="%F %T  "
+shopt -s histappend
+shopt -s checkwinsize

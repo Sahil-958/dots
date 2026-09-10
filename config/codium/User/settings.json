@@ -44,171 +44,171 @@
   "vim.insertModeKeyBindings": [
     {
       "before": ["<c-j>"],
-      "after": ["<CR>"]
-    }
+      "after": ["<CR>"],
+    },
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["|"],
-      "after": ["<c-w>", "v"]
+      "after": ["<c-w>", "v"],
     },
     {
       "before": ["\\"],
-      "after": ["<c-w>", "s"]
+      "after": ["<c-w>", "s"],
     },
     {
       "before": ["<c-w> c"],
-      "after": ["workbench.action.closeActiveEditor"]
+      "after": ["workbench.action.closeActiveEditor"],
     },
     {
       "before": ["<c-h>"],
-      "after": ["<c-w>", "h"]
+      "after": ["<c-w>", "h"],
     },
     {
       "before": ["<c-l>"],
-      "after": ["<c-w>", "l"]
+      "after": ["<c-w>", "l"],
     },
     {
       "before": ["<c-j>"],
-      "after": ["<c-w>", "j"]
+      "after": ["<c-w>", "j"],
     },
     {
       "before": ["<c-k>"],
-      "after": ["<c-w>", "k"]
+      "after": ["<c-w>", "k"],
     },
 
     {
       "before": ["<c-u>"],
-      "after": ["<c-u>", "z", "z"]
+      "after": ["<c-u>", "z", "z"],
     },
     {
       "before": ["<c-d>"],
-      "after": ["<c-d>", "z", "z"]
+      "after": ["<c-d>", "z", "z"],
     },
     {
       "before": ["leader", "s", "c"],
-      "commands": [":nohl"]
+      "commands": [":nohl"],
     },
 
     {
       "before": ["f"],
-      "after": ["<leader>", "<leader>", "s"]
+      "after": ["<leader>", "<leader>", "s"],
     },
     {
       "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
+      "commands": ["editor.action.marker.prev"],
     },
     {
       "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
+      "commands": ["editor.action.marker.next"],
     },
     {
       "before": ["<leader>", "a"],
-      "commands": ["editor.action.quickFix"]
+      "commands": ["editor.action.quickFix"],
     },
     {
       "before": ["<leader>", "s"],
-      "commands": ["editor.action.triggerSuggest"]
+      "commands": ["editor.action.triggerSuggest"],
     },
     {
       "before": ["H"],
-      "after": ["^"]
+      "after": ["^"],
     },
     {
       "before": ["L"],
-      "after": ["$"]
+      "after": ["$"],
     },
     {
       "before": ["n"],
-      "after": ["n", "z", "z"]
+      "after": ["n", "z", "z"],
     },
     {
       "before": ["N"],
-      "after": ["N", "z", "z"]
+      "after": ["N", "z", "z"],
     },
     {
       "before": ["g", "d"],
-      "commands": ["editor.action.revealDefinition"]
+      "commands": ["editor.action.revealDefinition"],
     },
     {
       "before": ["g", "p", "d"],
-      "commands": ["editor.action.peekDefinition"]
+      "commands": ["editor.action.peekDefinition"],
     },
     {
       "before": ["g", "I"],
-      "commands": ["editor.action.goToImplementation"]
+      "commands": ["editor.action.goToImplementation"],
     },
     {
       "before": ["g", "p", "I"],
-      "commands": ["editor.action.peekImplementation"]
+      "commands": ["editor.action.peekImplementation"],
     },
     {
       "before": ["g", "D"],
-      "commands": ["editor.action.revealDeclaration"]
+      "commands": ["editor.action.revealDeclaration"],
     },
     {
       "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
+      "commands": ["editor.action.goToReferences"],
     },
     {
       "before": ["g", "R"],
-      "commands": ["references-view.findReferences"]
+      "commands": ["references-view.findReferences"],
     },
     {
       "before": ["g", "t"],
-      "commands": ["editor.action.goToTypeDefinition"]
+      "commands": ["editor.action.goToTypeDefinition"],
     },
     {
       "before": ["g", "p", "t"],
-      "commands": ["editor.action.peekTypeDefinition"]
+      "commands": ["editor.action.peekTypeDefinition"],
     },
     {
       "before": ["g", "L"],
-      "commands": ["workbench.actions.view.problems"]
-    }
+      "commands": ["workbench.actions.view.problems"],
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["H"],
-      "after": ["^"]
+      "after": ["^"],
     },
     {
       "before": ["L"],
-      "after": ["$"]
-    }
+      "after": ["$"],
+    },
   ],
   "vim.operatorPendingModeKeyBindings": [
     {
       "before": ["H"],
-      "after": ["^"]
+      "after": ["^"],
     },
     {
       "before": ["L"],
-      "after": ["$"]
-    }
+      "after": ["$"],
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "commands": ["editor.action.indentLines"],
     },
     {
       "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    }
+      "commands": ["editor.action.outdentLines"],
+    },
   ],
   "vim.operatorPendingModeKeyBindingsNonRecursive": [
     {
       "before": ["("],
-      "after": ["i("]
-    }
+      "after": ["i("],
+    },
   ],
   "vim.handleKeys": {
     "<C-n>": false,
     "<C-j>": true,
     "<C-k>": true,
     "<C-p>": false,
-    "<C-d>": true
+    "<C-d>": true,
   },
 
   "terminal.integrated.fontSize": 17,
@@ -216,8 +216,9 @@
   "git.openRepositoryInParentFolders": "always",
   "geminicodeassist.project": "gen-lang-client-0723067918",
   "[python]": {
-    "editor.defaultFormatter": "KylinIDETeam.kylin-python"
+    "editor.defaultFormatter": "KylinIDETeam.kylin-python",
   },
   "python.formatting.blackPath": "/usr/bin/ruff",
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "debug.breakpointsView.presentation": "tree",
 }

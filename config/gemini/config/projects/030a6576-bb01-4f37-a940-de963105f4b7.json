@@ -1,0 +1,11 @@
+{
+  "id":  "030a6576-bb01-4f37-a940-de963105f4b7",
+  "name":  "/home/sawhill/vFlow",
+  "projectResources":  {
+    "resources":  [
+      {
+        "folderUri":  "file:///home/sawhill/vFlow"
+      }
+    ]
+  }
+}
