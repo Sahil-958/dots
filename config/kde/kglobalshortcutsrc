@@ -343,6 +343,9 @@ switch to next activity=none,none,Switch to Next Activity
 switch to previous activity=none,none,Switch to Previous Activity
 toggle do not disturb=none,none,Toggle do not disturb
 
+[services][kitty.desktop]
+_launch=Meta+Return
+
 [services][net.local.ocr.sh.desktop]
 _launch=Meta+O
 
@@ -350,12 +353,14 @@ _launch=Meta+O
 _launch=
 
 [services][org.kde.konsole.desktop]
-_launch=Meta+Return
+_launch=none
 
 [services][org.kde.kscreen.desktop]
 ShowOSD=Display
 
 [services][org.kde.spectacle.desktop]
+CurrentMonitorScreenShot=none
+OpenWithoutScreenshot=none
 RecordRegion=none
 RecordScreen=none
 RecordWindow=none
