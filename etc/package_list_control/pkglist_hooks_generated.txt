@@ -35,6 +35,7 @@ cups-browsed
 cups-pdf
 dbus-glib
 dialog
+dnsmasq
 dolphin
 dolphin-plugins
 easyeffects
@@ -243,6 +244,7 @@ viu
 vlc
 vlc-plugin-ffmpeg
 vulkan-radeon
+waydroid
 wgcf
 wireguard-tools
 wireless-regdb
