@@ -193,6 +193,7 @@ rainfrog
 rclone
 reflector
 ripgrep
+scrcpy
 smartmontools
 snapper
 snapshot
