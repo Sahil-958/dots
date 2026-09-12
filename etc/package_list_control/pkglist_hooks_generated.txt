@@ -174,6 +174,7 @@ plasma-workspace
 plasma-workspace-wallpapers
 plasma5support
 playerctl
+plezy
 podman
 podman-compose
 podman-docker
