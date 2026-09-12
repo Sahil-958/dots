@@ -81,6 +81,7 @@ imlib2
 inetutils
 iotop
 jdk21-openjdk
+jellyfin-web
 jq
 just
 kactivitymanagerd
