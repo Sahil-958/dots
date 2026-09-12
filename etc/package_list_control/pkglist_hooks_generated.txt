@@ -34,6 +34,7 @@ cups
 cups-browsed
 cups-pdf
 dbus-glib
+delfin
 dialog
 dnsmasq
 dolphin
