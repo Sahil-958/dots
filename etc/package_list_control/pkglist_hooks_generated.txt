@@ -127,6 +127,7 @@ lsof
 man-db
 mediainfo
 mesa-utils
+meson
 milou
 mpv
 ncdu
@@ -182,8 +183,10 @@ power-profiles-daemon
 powerdevil
 print-manager
 python-aiohttp
+python-markdown
 python-pip
 python-playwright
+python-pygments
 python-pyqt6
 qbittorrent
 qpdf
