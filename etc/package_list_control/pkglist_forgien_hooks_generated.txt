@@ -4,7 +4,6 @@ krokiet-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-oryx-editor
 stenmark
 ungoogled-chromium-bin
 ventoy-bin
