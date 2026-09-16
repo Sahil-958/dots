@@ -2,7 +2,6 @@
 aircrack-ng
 amd-ucode
 android-tools
-apostrophe
 arch-audit
 archlinux-xdg-menu
 aria2
