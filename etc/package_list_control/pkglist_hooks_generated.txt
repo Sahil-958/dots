@@ -154,6 +154,7 @@ otf-comicshanns-nerd
 oxygen
 oxygen-sounds
 pacman-contrib
+pastel
 pavucontrol
 pdfarranger
 plasma-activities-stats
