@@ -1,5 +1,7 @@
 acpilight
 android-studio
+crush-bin
+crush-bin-debug
 krokiet-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
