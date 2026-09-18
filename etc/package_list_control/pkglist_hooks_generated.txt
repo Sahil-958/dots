@@ -47,6 +47,7 @@ fd
 ffmpegthumbs
 filelight
 firefox
+firewall-applet
 firewalld
 flatpak
 flatpak-kcm
