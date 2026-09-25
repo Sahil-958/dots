@@ -73,6 +73,7 @@ gwenview
 hashcat
 hcxtools
 hdparm
+himalaya
 httrack
 hyprland
 imagemagick
