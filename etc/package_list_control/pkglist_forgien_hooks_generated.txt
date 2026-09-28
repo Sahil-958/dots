@@ -6,7 +6,8 @@ kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
 orchard-packages
-paru-bin
+paru
+paru-debug
 stenmark
 ungoogled-chromium-bin
 ventoy-bin
