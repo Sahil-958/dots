@@ -65,6 +65,7 @@ gnome-sound-recorder
 gptfdisk
 grub
 grub-btrfs
+gst-libav
 gunicorn
 gutenprint
 guvcview
