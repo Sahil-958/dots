@@ -7,7 +7,6 @@ librewolf-bin
 materialgram-bin
 orchard-packages
 paru-bin
-paru-bin-debug
 stenmark
 ungoogled-chromium-bin
 ventoy-bin
