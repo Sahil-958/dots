@@ -23,7 +23,6 @@ brightnessctl
 btop
 bun
 catdoc
-chrpath
 cmake
 colord-kde
 composer
@@ -57,7 +56,6 @@ fuse-overlayfs
 fvm
 fwupd
 fzf
-gendesk
 gimp
 git
 git-lfs
@@ -244,7 +242,6 @@ tldr
 trash-cli
 tree
 ttf-cascadia-code
-typescript
 typst
 usbutils
 uv

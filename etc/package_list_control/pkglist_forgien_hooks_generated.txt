@@ -8,6 +8,8 @@ materialgram-bin
 orchard-packages
 stenmark
 ungoogled-chromium-bin
+ungoogled-chromium-bin-debug
 ventoy-bin
+ventoy-bin-debug
 vscodium-bin
 yay
