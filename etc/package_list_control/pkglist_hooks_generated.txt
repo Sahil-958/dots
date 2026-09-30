@@ -140,6 +140,7 @@ nmap
 noto-fonts-cjk
 noto-fonts-emoji
 nss-mdns
+nsxiv
 ntfs-3g
 ntfsprogs
 nuspell
