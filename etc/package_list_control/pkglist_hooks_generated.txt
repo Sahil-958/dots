@@ -74,6 +74,7 @@ gwenview
 hashcat
 hcxtools
 hdparm
+helvum
 himalaya
 httrack
 hyprland
