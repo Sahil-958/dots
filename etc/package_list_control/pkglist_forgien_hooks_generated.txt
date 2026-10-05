@@ -1,6 +1,7 @@
 acpilight
 android-studio
 crush-bin
+hyperhdr-git
 krokiet-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
