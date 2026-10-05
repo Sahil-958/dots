@@ -23,9 +23,11 @@ brightnessctl
 btop
 bun
 catdoc
+chrpath
 cmake
 colord-kde
 composer
+confuse
 cpio
 cuda
 cudnn
@@ -49,9 +51,11 @@ filelight
 firefox
 firewall-applet
 firewalld
+flatbuffers
 flatpak
 flatpak-kcm
 foliate
+freetds
 fuse-overlayfs
 fvm
 fwupd
@@ -117,6 +121,9 @@ kwin
 kwrited
 layer-shell-qt
 lib32-glibc
+libayatana-appindicator
+libfbclient
+libftdi
 libkscreen
 libksysguard
 libplasma
@@ -194,6 +201,7 @@ qpdf
 qqc2-breeze-style
 qt5-graphicaleffects
 qt5-quickcontrols2
+qt6-serialport
 qt6-wayland
 rainfrog
 rclone
@@ -245,6 +253,7 @@ trash-cli
 tree
 ttf-cascadia-code
 typst
+unixodbc
 usbutils
 uv
 vim
