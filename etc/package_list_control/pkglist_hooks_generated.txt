@@ -186,6 +186,7 @@ polkit-kde-agent
 power-profiles-daemon
 powerdevil
 print-manager
+pulseaudio-alsa
 python-aiohttp
 python-pip
 python-playwright
