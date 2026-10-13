@@ -6,7 +6,6 @@ krokiet-bin
 kwin-scripts-krohnkite-git
 librewolf-bin
 materialgram-bin
-orchard-packages
 paru
 stenmark
 ungoogled-chromium-bin
