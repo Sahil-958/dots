@@ -60,6 +60,7 @@ gimp
 git
 git-lfs
 github-cli
+glab
 glow
 gnome-sound-recorder
 gptfdisk
