@@ -4,7 +4,6 @@ crush-bin
 hyperhdr-git
 krokiet-bin
 kwin-scripts-krohnkite-git
-librewolf-bin
 materialgram-bin
 paru
 stenmark

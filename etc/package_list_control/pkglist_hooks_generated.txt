@@ -124,6 +124,7 @@ libksysguard
 libplasma
 libqalculate
 libreoffice-fresh
+librewolf
 linux
 linux-firmware
 linux-lts
