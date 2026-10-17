@@ -1,7 +1,9 @@
 acpilight
 android-studio
+colord-kde
 crush-bin
 hyperhdr-git
+kgamma
 krokiet-bin
 kwin-scripts-krohnkite-git
 materialgram-bin
