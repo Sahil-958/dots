@@ -12,4 +12,3 @@ stenmark
 ungoogled-chromium-bin
 ventoy-bin
 vscodium-bin
-windscribe-v2-bin
