@@ -218,7 +218,6 @@ speech-dispatcher
 sshfs
 sshpass
 starship
-steam
 syncthing
 system-config-printer
 systemd-resolvconf
