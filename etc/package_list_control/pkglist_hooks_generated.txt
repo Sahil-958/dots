@@ -21,6 +21,7 @@ breeze-gtk
 breeze-icons
 brightnessctl
 btop
+btrfsmaintenance
 bun
 catdoc
 cmake
