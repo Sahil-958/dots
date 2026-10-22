@@ -2,6 +2,7 @@ acpilight
 android-studio
 colord-kde
 crush-bin
+hopper
 hyperhdr-git
 kgamma
 krokiet-bin
