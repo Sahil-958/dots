@@ -57,6 +57,7 @@ fvm
 fwupd
 fzf
 gamemode
+ghidra
 gimp
 git
 git-lfs
@@ -85,6 +86,8 @@ img2pdf
 imlib2
 inetutils
 iotop
+jadx
+jdk-openjdk
 jdk21-openjdk
 jellyfin-web
 jq
