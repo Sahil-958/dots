@@ -212,7 +212,6 @@ rclone
 reflector
 ripgrep
 scrcpy
-simdutf
 smartmontools
 snapper
 snapshot
