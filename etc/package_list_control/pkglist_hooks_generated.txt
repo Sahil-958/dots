@@ -211,7 +211,10 @@ rainfrog
 rclone
 reflector
 ripgrep
+sane
+sane-airscan
 scrcpy
+skanpage
 smartmontools
 snapper
 snapshot
