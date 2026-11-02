@@ -25,6 +25,7 @@ btrfsmaintenance
 bun
 catdoc
 cmake
+compiler-rt
 composer
 cpio
 cuda
@@ -135,6 +136,7 @@ librewolf
 linux
 linux-firmware
 linux-lts
+lld
 lsof
 man-db
 mangohud
@@ -211,6 +213,7 @@ rainfrog
 rclone
 reflector
 ripgrep
+rust
 sane
 sane-airscan
 scrcpy
