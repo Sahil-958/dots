@@ -229,6 +229,7 @@ syncthing
 system-config-printer
 systemd-resolvconf
 systemsettings
+tcpdump
 tesseract
 tesseract-data-eng
 texlive-basic
