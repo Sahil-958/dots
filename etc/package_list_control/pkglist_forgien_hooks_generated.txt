@@ -9,6 +9,7 @@ krokiet-bin
 kwin-scripts-krohnkite-git
 materialgram-bin
 paru
+prowlarr-bin
 stenmark
 ungoogled-chromium-bin
 ventoy-bin
