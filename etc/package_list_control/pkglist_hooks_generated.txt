@@ -170,6 +170,7 @@ otf-comicshanns-nerd
 oxygen
 oxygen-sounds
 pacman-contrib
+pass
 pastel
 pavucontrol
 pdfarranger
@@ -208,6 +209,7 @@ qqc2-breeze-style
 qt5-graphicaleffects
 qt5-quickcontrols2
 qt6-wayland
+qtpass
 rainfrog
 rclone
 reflector
