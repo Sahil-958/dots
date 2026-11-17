@@ -36,12 +36,15 @@ cups-pdf
 dbus-glib
 dialog
 dnsmasq
+docbook-xml
+docbook-xsl
 dolphin
 dolphin-plugins
 easyeffects
 efibootmgr
 epiphany
 ex-vi-compat
+extra-cmake-modules
 eza
 fastfetch
 fd
@@ -101,6 +104,7 @@ kde-gtk-config
 kdeconnect
 kdenlive
 kdeplasma-addons
+kdoctools
 keepassxc
 kernel-modules-hook
 kglobalacceld
@@ -141,6 +145,7 @@ man-db
 mangohud
 mediainfo
 mesa-utils
+meson
 milou
 mpv
 ncdu
@@ -148,6 +153,7 @@ neovim
 net-tools
 network-manager-applet
 networkmanager
+ninja
 nmap
 noto-fonts-cjk
 noto-fonts-emoji
@@ -200,9 +206,12 @@ powerdevil
 print-manager
 pulseaudio-alsa
 python-aiohttp
+python-markdown-it-py
+python-mdurl
 python-pip
 python-playwright
 python-pyqt6
+python-tqdm
 qbittorrent
 qpdf
 qqc2-breeze-style
