@@ -1,7 +1,6 @@
 acpilight
 android-studio
 colord-kde
-crush-bin
 flaresolverr-bin
 hopper
 hyperhdr-git
